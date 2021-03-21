@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid" style="height: 100vh; background-image: url('/static/assets/home1.svg'); background-repeat: no-repeat; background-size:100% 100%;">
+
+    <div class="center-block" style="margin: 2% 10% 10%; color: var(--gray); font-family: gilroy,serif;">
+        <div class="col-12" style="text-align: center;">
+            <h1><strong>Python and Flask</strong></h1>
+        </div>
+
+        <div class="col-12" style="text-align: left; ">
+            <h3><strong>What is Flask?</strong> Flask is a web application framework written in Python. It was developed by Armin Ronacher, who led a team of international Python enthusiasts called Poocco. Flask is often referred to as a microframework. It is designed to keep the core of the application simple and scalable.</h3>
+            <h3><strong>What is WSGI?</strong> The Web Server Gateway Interface (Web Server Gateway Interface, WSGI) has been used as a standard for Python web application development. WSGI is the specification of a common interface between web servers and web applications.</h3>
+            <h3><strong>What is Werkzeug?</strong> Werkzeug is a WSGI toolkit that implements requests, response objects, and utility functions. This enables a web frame to be built on it. The Flask framework uses Werkzeg as one of its bases.</h3>
+            <h3><strong>What is Jinja2?</strong> Jinja2 is a popular template engine for Python.  A web template system combines a template with a specific data source to render a dynamic web page. This allows you to pass Python variables into HTML. </h3>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from y2021.tri1 import y2021_tri1_bp
 from y2021.tri2 import y2021_tri2_bp
 from y2021.tri3 import y2021_tri3_bp
@@ -12,7 +12,7 @@ app.register_blueprint(y2021_tri3_bp, url_prefix='/y2021/tri3')
 
 @app.route('/')
 def index():
-    return "Student Home Site"
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
