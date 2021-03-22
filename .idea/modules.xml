@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/nighthawk-society.iml" filepath="$PROJECT_DIR$/nighthawk-society.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nighthawk-csp.iml" filepath="$PROJECT_DIR$/nighthawk-csp.iml" />
     </modules>
   </component>
 </project>

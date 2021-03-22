@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, render_template
 
 y2021_tri1_bp = Blueprint('y2021_tri1', __name__,
                           template_folder='templates',
@@ -7,4 +7,5 @@ y2021_tri1_bp = Blueprint('y2021_tri1', __name__,
 
 @y2021_tri1_bp.route('/')
 def index():
-    return "Y2021 tri1 Home Site"
+    return render_template("course/timelines.html", padlet="https://padlet.com/jmortensen7/csptime1_2")
+
