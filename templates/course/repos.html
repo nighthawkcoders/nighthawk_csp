@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-10" style="text-align: center;">
+            <h1>GitHub</h1>
+        </div>
+    </div>
+
+    <div id="github" class="repo block">
+        <div class="row justify-content-center" style="margin: 2%;">
+            <object type="image/svg+xml" data="https://gh-card.dev/repos/nighthawkcoders/nighthawk_csp.svg?link_target=_blank>"></object>
+            <object type="image/svg+xml" data="https://gh-card.dev/repos/nighthawkcoders/flask-idea-homesite.svg?link_target=_blank>"></object>
+            <object type="image/svg+xml" data="https://gh-card.dev/repos/nighthawkcoders/flask-idea-portfolio.svg?link_target=_blank"></object>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-10" style="text-align: center;">
+            <h1>Repl.it</h1>
+        </div>
+    </div>
+
+    <div id="repl" class="repl block">
+        <div class="row justify-content-center" style="margin: 2%;">
+            <iframe width="80%" height="500px" src="https://repl.it/@jmort1021/Python-Hello-Series?lite=true"></iframe>
+        </div>
+    </div>
+{% endblock %}
