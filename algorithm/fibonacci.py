@@ -32,17 +32,20 @@ class Fibonacci:
         self._dict[self._dictID] = self._list.copy()
         self._dictID += 1
 
-    """Getter with decorator"""
+    """Getters with decorator to allow . notation access"""
+    @property
+    def series(self):
+        return self._series
+
     @property
     def list(self):
         return self._list
 
-    """Getter with decorator"""
     @property
     def number(self):
         return self._list[self._dictID - 1]
 
-    """Traditional Getter"""
+    """Traditional Getter requires method access"""
     def get_sequence(self, nth):
         return self._dict[nth]
 
