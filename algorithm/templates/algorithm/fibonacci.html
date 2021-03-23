@@ -19,7 +19,6 @@
 
         <div class="col-12" style="text-align: left; ">
             <h3>Fibonacci series for {{fibonacci.series}}</h3>
-
             <table>
                 <tr>
                     <th scope="col">Number</th>
@@ -30,6 +29,14 @@
                     <td>{{fibonacci.list}}</td>
                 </tr>
             </table>
+        </div>
+
+        <div class="col-12" style="text-align: left; ">
+            <h1></h1>
+            <h3>Fibonacci build up for series: {{fibonacci.series}} number: {{fibonacci.number}}</h3>
+            {% for i in range(fibonacci.series) %}
+                <h5>{{fibonacci.get_sequence(i)}}</h5>
+            {% endfor %}
         </div>
 
         <div class="col-12" style="text-align: left; ">
