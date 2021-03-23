@@ -2,16 +2,17 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="fibonacci">
+<div class="container">
 
     <div class="center-block" style="margin: 2% 5% 5%; font-family: gilroy,serif;">
         <div class="col-12" style="text-align: center;">
             <h1><strong>Fibonacci series in Python</strong></h1>
         </div>
 
-        <div class="jumbotron jumbotron-fluid" style="text-align: left; ">
+        <div class="jumbotron text-center col-mid-6">
+            <h3>Type the nth number in the fibonacci sequence?</h3>
+            <img class="img-responsive" src="/static/assets/Fibonacci_spiral.svg" alt="" width="15%" height="15%">
             <form id="fibForm" action="/algorithm/fibonacci" method="POST" >
-                <label for="series">Type the nth number in the fibonacci sequence?</label>
                 <input name="series" id="series" type="number" min="2" max="100" >
                 <button>Go!</button>
             </form>
@@ -19,6 +20,7 @@
 
         <div class="col-12" style="text-align: left; ">
             <h3>Fibonacci series for {{fibonacci.series}}</h3>
+            <!-- Number, List table -->
             <table>
                 <tr>
                     <th scope="col">Number</th>
@@ -29,18 +31,16 @@
                     <td>{{fibonacci.list}}</td>
                 </tr>
             </table>
-        </div>
-
-        <div class="col-12" style="text-align: left; ">
+            <!-- Series -->
             <h1></h1>
             <h3>Fibonacci build up for series: {{fibonacci.series}} number: {{fibonacci.number}}</h3>
             {% for i in range(fibonacci.series) %}
                 <h5>{{fibonacci.get_sequence(i)}}</h5>
             {% endfor %}
+            <!-- Code -->
+            <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Falgorithm%2Ffibonacci.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>        </div>
         </div>
 
-        <div class="col-12" style="text-align: left; ">
-            <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Falgorithm%2Ffibonacci.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>        </div>
     </div>
 </div>
 <style>
