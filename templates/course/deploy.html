@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+{% extends "layout.html" %}
+
+{% block meta %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha512-Oy18vBnbSJkXTndr2n6lDMO5NN31UljR8e/ICzVPrGpSud4Gkckb8yUpqhKuUNoE+o9gAb4O/rAxxw1ojyUVzg==" crossorigin="anonymous" />
+<title>Course Deployment Guide</title>
+{% endblock %}
+
+{% block content %}
+<div class="center-block" style="margin: 2% 3% 3%; font-family: gilroy,serif;">
+
+    <div class="col-12" style="text-align: center;">
+        <a href="https://github.com//nighthawkcoders/nighthawk_csa" target="_blank" class="standard-link">
+            <p class="lead">View on Github <span class="fa fa-github"></span></p>
+        </a>
+    </div>
+
+    <div class="jumbotron justify-content-left row">
+        <div class="col-12" id="readme"></div>
+    </div>
+
+</div>
+
+<script>
+
+    const MARKDOWN_API = "https://api.github.com/markdown/raw";
+    const DATA_URL = "https://raw.githubusercontent.com/nighthawkcoders/nighthawk_csa/master/README.md";
+
+    const main = async()=>{
+        const markdownResponse = await fetch(DATA_URL);
+        const markdownData = await markdownResponse.text();
+
+        console.log(markdownData);
+
+        const htmlResponse = await fetch(MARKDOWN_API, {method:"POST", body:markdownData});
+        const htmlData = await htmlResponse.text();
+
+        $("#readme").append(htmlData);
+        console.log(htmlData);
+    }
+
+    main();
+
+</script>
+{% endblock %}

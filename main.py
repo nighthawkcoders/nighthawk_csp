@@ -7,7 +7,7 @@ from y2021.tri3 import y2021_tri3_bp
 from algorithm.app import algorithm_bp
 
 app = Flask(__name__)
-app.register_blueprint(y2021_bp, url_prefix='/y2021/repos')
+app.register_blueprint(y2021_bp, url_prefix='/y2021')
 app.register_blueprint(y2021_prep_bp, url_prefix='/y2021/prep')
 app.register_blueprint(y2021_tri1_bp, url_prefix='/y2021/tri1')
 app.register_blueprint(y2021_tri2_bp, url_prefix='/y2021/tri2')
@@ -28,4 +28,4 @@ def page_not_found(e):
 
 if __name__ == "__main__":
     # runs the application on the repl development server
-    app.run(debug=True, port="5002")
+    app.run(debug=True, port="5003")
