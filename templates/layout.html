@@ -38,7 +38,7 @@
             -moz-animation: fadein 2s; /* Firefox */
             -webkit-animation: fadein 2s; /* Safari and Chrome */
             -o-animation: fadein 2s; /* Opera */
-            background-color: var(--white);
+            background-color: var(--lblue);
             color: var(--black);
         }
 
@@ -51,6 +51,22 @@
             color: var(--black);
         }
 
+        .jumbotron {
+            background-color:var(--green);
+        }
+
+        .navbar-custom {
+            background-color:var(--green);
+        }
+        /* Modify brand and text color */
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-text {
+            color: var(--lblue);
+        }
+
+
+
     </style>
 
     <!-- Use this block for page specific meta data -->
@@ -62,7 +78,7 @@
 
 <body style="font-family: gilroyLIGHT,serif; color: var(--gray);" >
     <!-- Bootstrap Navigation Code -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-custom">
         <!-- Feature button -->
         <a class="navbar-brand" href="http://nighthawkcoders.cf/">
             <img src="/static/assets/ncs_logo.png" width="50" height="50" class="d-inline-block align-center" alt="">
