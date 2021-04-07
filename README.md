@@ -18,7 +18,7 @@ pi@raspberrypi:~ $  ``` cd ~```
 
 pi@raspberrypi:~ $  ```git clone https://github.com/nighthawkcoders/flask-idea-homesite```
 
-pi@raspberrypi:~ $  ``` cd ~/flask-idea-homesite
+pi@raspberrypi:~ $  ```cd ~/flask-idea-homesite```
 
 #### Activate virual environment prior to updating packages...
 
