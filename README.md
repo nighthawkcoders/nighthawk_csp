@@ -13,7 +13,7 @@ pi@raspberrypi:~ $  ``` cd ~```
 
 ```diff
 - This clone and cd name MUST change to matcch your repository
-+ REPLACE with flask-idea-homesite with your repo name
++ REPLACE flask-idea-homesite with your repo name
 ```
 
 pi@raspberrypi:~ $  ```git clone https://github.com/nighthawkcoders/flask-idea-homesite```
