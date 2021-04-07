@@ -9,12 +9,14 @@ pi@raspberrypi:~ $  ``` sudo apt install python3-pip nginx```
 
 pi@raspberrypi:~ $  ``` sudo pip3 install virtualenv```
 
+pi@raspberrypi:~ $  ``` cd ~```
+
 ```diff
 - This clone and cd name MUST change to matcch your repository
 + REPLACE with flask-idea-homesite with your repo name
 ```
 
-pi@raspberrypi:~ $  ``` cd ~; git clone https://github.com/nighthawkcoders/flask-idea-homesite```
+pi@raspberrypi:~ $  ```git clone https://github.com/nighthawkcoders/flask-idea-homesite```
 
 pi@raspberrypi:~ $  ``` cd ~/flask-idea-homesite
 
