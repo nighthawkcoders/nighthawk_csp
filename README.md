@@ -107,6 +107,11 @@ http://localhost:8080/
 ## Validate Gunicorn configuration file and enable service permanently
 #### In console/terminal start Gunicorn
 
+```diff
+- This service file name MUST CHANGE to match your name of your gunicorn service 
++ REPLACE with <filename>.service
+```
+
 pi@raspberrypi:~ $ ```sudo systemctl start homesite.service```
 
 pi@raspberrypi:~ $ ```sudo systemctl enable homesite.service```
