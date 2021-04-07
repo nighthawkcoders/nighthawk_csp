@@ -22,7 +22,7 @@ pi@raspberrypi:~ $  ```cd ~/flask-idea-homesite```
 
 #### Activate virual environment prior to updating packages...
 
-pi@raspberrypi:~/flask-idea-homesite $  ``` virtualenv -p /usr/bin/python3 homesite
+pi@raspberrypi:~/flask-idea-homesite $  ```virtualenv -p /usr/bin/python3 homesite```
 
 #### pip install and/or requirements.txt (if you have one) to satisfy dependencies...
 
