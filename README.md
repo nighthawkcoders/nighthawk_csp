@@ -180,7 +180,7 @@ http://192.168.1.245/
 ```
 
 #### This illustration shows configuration of A records within the domain
-<img src="static/assets/freenom.png" width="1000">
+<img src="static/assets/freenom.png">
 
 
 ## Port Forward your Web application on Internal Host (aka RPi) to the Internet
