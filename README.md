@@ -1,3 +1,5 @@
+<img src="static/assets/ncs_logo.png" width="200" height="200">
+
 # Deployment Guide
 
 ## Setup Virtual environment and clone code from GitHub
@@ -177,4 +179,12 @@ http://192.168.1.245/
 + REPLACE freenom config with your-domain and your-public-ip, make one or more a records for each project
 ```
 
-![Select EC2 OS](static/assets/freenom.png)
+![Configure Freenom Domain](static/assets/freenom.png)
+
+## Port Forward your Web application on Internal Host (aka RPi) to the Internet
+```diff
+- Your Public IP Address needs to connect to your host on Private IP network through Port Forwarding 
++ PROCESS will vary on every home network, but basic premis is to Port forward external port 80 to your Private Host (aka RPi) on internal port 80
+```
+![Configure Router](static/assets/portforward.png)
+
