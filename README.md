@@ -1,4 +1,4 @@
-<img src="assets/ncs_logo.png" width="200" height="200">
+<img src="static/assets/ncs_logo.png" width="200" height="200">
 
 # Deployment Guide
 
@@ -180,7 +180,7 @@ http://192.168.1.245/
 ```
 
 #### This illustration shows configuration of A records within the domain
-<img src="assets/freenom.png">
+<img src="static/assets/freenom.png">
 
 
 ## Port Forward your Web application on Internal Host (aka RPi) to the Internet
@@ -190,5 +190,5 @@ http://192.168.1.245/
 ```
 
 #### This illustration shows configuration of HTTP, as well as some other common service to access a Private IP host computer through port forwarding.  It is always recommended to minimize access points from internet to your home network.
-<img src="assets/portforward.png" width="600">
+<img src="static/assets/portforward.png" width="600">
 
