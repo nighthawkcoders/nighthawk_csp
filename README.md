@@ -1,3 +1,5 @@
+![Nighhawk](static/assets/ncslogo.png)
+
 # Deployment Guide
 
 ## Setup Virtual environment and clone code from GitHub
@@ -177,4 +179,4 @@ http://192.168.1.245/
 + REPLACE freenom config with your-domain and your-public-ip, make one or more a records for each project
 ```
 
-![Select EC2 OS](static/assets/freenom.png)
+![Configure Freenom Domain](static/assets/freenom.png)
