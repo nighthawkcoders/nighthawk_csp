@@ -19,6 +19,9 @@ app.register_blueprint(algorithm_bp, url_prefix='/algorithm')
 def index():
     return render_template("index.html")
 
+@app.route('/deploy')
+def deploy():
+    return render_template("course/deploy.html")
 
 @app.errorhandler(404)
 def page_not_found(e):
