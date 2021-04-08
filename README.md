@@ -51,7 +51,7 @@ stop test server by typing control-c in terminal
 (homesite) pi@raspberrypi:~/flask-idea-homesite $ ``` ^c ``` 
 
 #### Verify Gunicorn instalation, In console/terminal test Gunicorn test Server...
-#### Verify Python virual environment and package dependencies, if it fails pip install missing dependencies
+#### Verify Python virual environment and package dependencies. If it fails pip install each missing dependency, best to get these into requirements.txt
 ```diff
 - The main:app with file that contain Flask app 
 + REPLACE main:app with your <my-python-file>:app
@@ -169,3 +169,12 @@ in address bar of browser on another device in LAN type IP address of this Nginx
 + REPLACE with yourpi-ip
 ```
 http://192.168.1.245/
+
+## Goto freenom.com and register public IP Address to a Domain
+
+```diff
+- Domain and Public IP Address match your nginx configuration files 
++ REPLACE freenom config with your-domain and your-public-ip, make one or more a records for each project
+```
+
+![Select EC2 OS](static/assets/freenom.png)
