@@ -1,4 +1,4 @@
-<img src="static/assets/ncs_logo.png" width="200" height="200">
+<img src="assets/ncs_logo.png" width="200" height="200">
 
 # Deployment Guide
 
