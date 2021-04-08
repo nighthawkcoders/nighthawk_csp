@@ -180,7 +180,7 @@ http://192.168.1.245/
 ```
 
 #### This illustration shows configuration of A records within the domain
-<img src="static/assets/freenom.png" width="600">
+<img src="static/assets/freenom.png" width="800">
 
 
 ## Port Forward your Web application on Internal Host (aka RPi) to the Internet
@@ -189,6 +189,6 @@ http://192.168.1.245/
 + PROCESS will vary on every home network, but basic premis is to Port forward external port 80 to your Private Host (aka RPi) on internal port 80
 ```
 
-#### This illustration shows configuration of HTTP, as well as some other common service to access a Pi remotely.  It is always recommended to minimize access points from internet to your home network.
+#### This illustration shows configuration of HTTP, as well as some other common service to access a Private IP host computer through port forwarding.  It is always recommended to minimize access points from internet to your home network.
 <img src="static/assets/portforward.png" width="600">
 
