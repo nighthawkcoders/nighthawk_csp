@@ -1,4 +1,4 @@
-![Nighhawk](static/assets/ncslogo.png)
+![Nighhawk](static/assets/ncs_logo.png)
 
 # Deployment Guide
 
