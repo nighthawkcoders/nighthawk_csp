@@ -1,4 +1,4 @@
-![Nighhawk](static/assets/ncs_logo.png =50x50)
+<img src="static/assets/ncs_logo.png" width="200" height="200">
 
 # Deployment Guide
 
