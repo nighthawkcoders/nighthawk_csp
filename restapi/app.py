@@ -6,11 +6,6 @@ restapi_bp = Blueprint('restapi', __name__,
                        template_folder='templates',
                        static_folder='static', static_url_path='assets')
 
-# connects default URL to a function
-@restapi_bp.route('/')
-def index():
-    return render_template("restapi/index.html")
-
 
 @restapi_bp.route('/joke', methods=['GET', 'POST'])
 def joke():

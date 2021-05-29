@@ -2,21 +2,26 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h1>Random Joke</h1>
-    <p class="setup">{{setup}}</p>
-    <p class="punchline">{{punchline}}</p>
-    <form method="POST" ID="myForm" action={{url_for('restapi_bp.joke')}} >
-        <input type="submit" value="New Joke">
-    </form>
+<div class="container">
 
-    <style>
-
-        h1, p, form{
-            margin-top: 2.5%;
-            margin-left: 2.5%;
-        }
+    <div class="center-block" style="margin: 2% 5% 5%; font-family: gilroy,serif;">
+        <div class="col-12" style="text-align: center;">
+            <h1><strong>Random Joke</strong></h1>
+            <form action={{url_for('restapi.joke')}}>
+                <button>Refresh!</button>
+            </form>
+        </div>
 
 
-    </style>
+        <!-- Input and Content -->
+        <div class="jumbotron text-left row">
+            <div class="col-md">
+                <p class="setup">Setup: {{setup}}</p>
+                <p class="punchline">Punchline: {{punchline}}</p>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 {% endblock %}

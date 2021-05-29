@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template
 
 y2021_tri1_bp = Blueprint('y2021_tri1', __name__,
+                          url_prefix='/y2021/tri1',
                           template_folder='templates',
                           static_folder='static', static_url_path='assets')
 
