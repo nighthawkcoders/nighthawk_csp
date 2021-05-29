@@ -6,7 +6,7 @@ from y2021.tri2 import y2021_tri2_bp
 from y2021.tri3 import y2021_tri3_bp
 from algorithm.app import algorithm_bp
 from restapi.app import restapi_bp
-
+from recipe.app import recipe_bp
 
 app = Flask(__name__)
 app.register_blueprint(y2021_bp)
@@ -16,15 +16,18 @@ app.register_blueprint(y2021_tri2_bp)
 app.register_blueprint(y2021_tri3_bp)
 app.register_blueprint(restapi_bp)
 app.register_blueprint(algorithm_bp)
+app.register_blueprint(recipe_bp)
 
 
 @app.route('/')
 def index():
     return render_template("index.html")
 
+
 @app.route('/deploy')
 def deploy():
     return render_template("course/deploy.html")
+
 
 @app.errorhandler(404)
 def page_not_found(e):

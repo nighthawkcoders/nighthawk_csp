@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<head>
+    <title> recipes </title>
+
+    <link href='https://fonts.googleapis.com/css?family=Fraunces:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href="https://static.tumblr.com/p0knose/fW7nwe95q/normalize.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://static.tumblr.com/fuu6t9w/eubml0pm0/jquery.isotope.min.js"></script>
+    <script src="https://static.tumblr.com/aptzszz/s5fp15zyp/candlelight.js"></script>
+    <script src="https://static.tumblr.com/ikeq9mi/DfYl6o46t/scrolltotop.min.js"></script>
+
+    <style>
+        :root {
+            --bg-color:#fbfbf9;
+            --text:#1a1a18;
+            --accent:#b4c6df;
+            --accent-text:#0f0a0a;
+        }
+
+        /* scrollbar */
+        ::-webkit-scrollbar {
+            width:10px;
+            height:10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background:var(--accent);
+            border:4px solid var(--bg-color);
+            border-width:0 4px;
+        }
+
+        ::-webkit-scrollbar-track-piece {
+            background:var(--box-two);
+            border:4px solid var(--bg-color);
+            border-width:0 4px;
+        }
+
+
+        /* filter button */
+        a,.button {
+            transition:0.2s ease-in;
+            -webkit-transition:0.2s ease-in;
+            -moz-transition:0.2s ease-in;
+        }
+
+        b,strong {color:#444;}
+
+        a:hover {
+            color:#444;
+            text-decoration:none;
+        }
+        /* header */
+        header {
+            width:60vw;
+            margin:90px auto 30px;
+        }
+
+        header > * {display:inline-block;}
+
+        /* page title */
+        header h1 {
+            font:36px/45px "Alata";
+            color:var(--accent);
+            text-decoration:none;
+            margin:0;
+            text-transform:uppercase;
+            letter-spacing: 8px;
+        }
+
+        /* navigation effect */
+        header nav {
+            float:right;
+            line-height:45px;
+            text-transform:lowercase;
+            font:normal 12px "B612 Mono",consolas,monospace;
+        }
+
+        /* navigation effect */
+        header nav a {
+            position:relative;
+            display:inline-block;
+            margin:0 5px;
+            line-height:100%;
+            padding:5px 4px 5px 0;
+            color:var(--text);
+        }
+
+        /* navigation effect */
+        header nav a::after {
+            content:"";
+            display:block;
+            position:absolute;
+            width:3px;
+            height:3px;
+            bottom:6px;
+            right:0px;
+            transition:
+                    width 0.5s ease-in-out,
+                    padding 0.5s ease-in-out,
+                    bottom 0.3s ease-in-out 0.5s;
+            background:var(--accent);
+            border-radius:3px;
+        }
+
+        /* navigation effect */
+        header nav a:hover {color:var(--accent-text);}
+
+        /* navigation effect */
+        header nav a:hover::after {
+            width:100%;
+            bottom:0px;
+            padding:0 2px 0 0;
+        }
+
+        /* language toggle */
+        .toggle {
+            background-color: var(--accent);
+            border: none;
+            outline: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            position: fixed;
+            margin: 4px 2px;
+        }
+
+        /* language toggle effect */
+        .toggle:hover {
+            background-color: #ededed;
+            color: var(--accent);
+        }
+
+        /* style for filter buttons */
+        .button {
+            background:#fff;
+            border:0;
+            border-radius:0;
+            outline:0;
+            padding:0;
+            display:inline-block;
+            cursor:help;
+            text-shadow:none;
+            box-shadow:none;
+            line-height:inherit;
+            color:#767676;
+            font-size:inherit;
+            font-family:inherit;
+            letter-spacing:inherit;
+            margin-right:10px;
+        }
+
+        /* position for filter buttons */
+        .filters {
+            width:60vw;
+            margin:50px auto 30px;
+            font-family: Alata;
+        }
+
+        body {
+            background:#fff;
+            font-family:'Fraunces', serif;
+            font-size:14px;
+            font-weight:300;
+            line-height:190%;
+            color:#767676;
+            -webkit-animation-name: fadein;
+            -webkit-animation-duration: 1s;
+            -moz-osx-font-smoothing:grayscale;
+            -webkit-font-smoothing:antialiased;
+            font-smoothing:antialiased;
+        }
+
+        /* card/article in body */
+        article {
+            position:center;
+            width:260px;
+            margin:20px 100px;
+            box-sizing:border-box;
+            padding:15px;
+            border:1px solid #eee;
+            display:inline-block;
+            transition-duration:.35s;
+            -moz-transition-duration:.35s;
+            -webkit-transition-duration:.35s;
+            -o-transition-duration:.35s;
+        }
+
+        /* center text in card/article body */
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* h1 in card */
+        h1 {
+            font-weight:400;
+            color:#444;
+            font-size:16px;
+            display:inline;
+            border-bottom:1px solid #a4afc1;
+        }
+
+        /* scroll to top */
+        #scrollToTop:link,
+        #scrollToTop:visited {
+            display: none;
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+            color: var(--text);
+            z-index: 100;
+        }
+
+        #scrollToTop:hover { color: #b4c6df; }
+
+        #scrollToTopSymbol {
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+            opacity: 0.5;
+            color: #b4c6df;
+            z-index: 20;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- menu -->
+<header>
+    <h1>recipe box</h1>
+    <nav id="links">
+        <a href="/">home</a>
+        <a href="https://github.com/nighthawk_csp/recipe" target="_blank">repo</a>
+    </nav>
+</header>
+
+<form method="POST" ID="toggle" action="/recipe/viewer">
+    <button class="toggle">{{ recipes.prompt }}</button>
+</form>
+
+<div class="filters">
+    <!-- recipe filters -->
+    {% for filter in recipes.filters %}
+        <div class="button-group js-radio-button-group" data-filter-group="keys">
+            <b><button class="button is-checked" data-filter="">{{ filter["key"].upper() }}</button></b>
+            {% for data in filter["data"] %}
+                <button class="button" data-filter=".{{ data.upper() }}"> {{ data.lower() }} </button>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+
+<section>
+    <!-- recipe cards -->
+    {% for recipe in recipes.list %}
+        {% set keys = recipe["keys"] %}
+        <article class="{{ keys.upper() }}">
+            {% if recipes.default %}
+                <h1>{{ recipe["name"] }}</h1><br><i>{{ recipe["jpn"] }}</i> <!-- English -->
+            {% else %}
+                <h1>{{ recipe["jpn"] }}</h1><br><i>{{ recipe["name"] }}</i> <!-- Japanese -->
+            {% endif %}
+            <div class="d">
+                <img src="{{ url_for('recipe.static', filename=recipe['image']) }}" width="100" height="100" class="center">
+                {{recipe["description"]}}
+            </div>
+        </article>
+    {% endfor %}
+</section>
+
+<!-- Back to Top -->
+<div class="backToTop">
+    <a class="scrollToTop" href="javascript:;" id="scrollToTop" rel="nofollow" title="To top">↑</a>
+    <div id="scrollToTopSymbol">↑</div>
+</div>
+
+</body>
