@@ -14,4 +14,4 @@ recipe_bp = Blueprint('recipe', __name__,
 def viewer():
     if request.method == 'POST':
         recipes_object.flip()
-    return render_template('recipes.html', recipes=recipes_object)
+    return render_template('recipe/recipes.html', recipes=recipes_object)
