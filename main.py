@@ -5,6 +5,8 @@ from y2021.tri1 import y2021_tri1_bp
 from y2021.tri2 import y2021_tri2_bp
 from y2021.tri3 import y2021_tri3_bp
 from algorithm.app import algorithm_bp
+from restapi.app import restapi_bp
+
 
 app = Flask(__name__)
 app.register_blueprint(y2021_bp, url_prefix='/y2021')
@@ -12,6 +14,7 @@ app.register_blueprint(y2021_prep_bp, url_prefix='/y2021/prep')
 app.register_blueprint(y2021_tri1_bp, url_prefix='/y2021/tri1')
 app.register_blueprint(y2021_tri2_bp, url_prefix='/y2021/tri2')
 app.register_blueprint(y2021_tri3_bp, url_prefix='/y2021/tri3')
+app.register_blueprint(restapi_bp)
 app.register_blueprint(algorithm_bp, url_prefix='/algorithm')
 
 
