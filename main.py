@@ -24,7 +24,7 @@ app.register_blueprint(algorithm_bp)
 app.register_blueprint(recipe_bp)
 
 """ database setup to support db examples """
-dbURI = 'sqlite:///pythondb/myDB.db'
+dbURI = 'sqlite:///model/myDB.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = dbURI
 app.config['SECRET_KEY'] = 'SECRET_KEY'
