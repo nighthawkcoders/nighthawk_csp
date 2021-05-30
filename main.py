@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request
-from flask_login import LoginManager, UserMixin, login_required, current_user, login_user, logout_user
+from flask import Flask, render_template, request, url_for, redirect
+from flask_login import LoginManager, UserMixin
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import func
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from y2021 import y2021_bp
@@ -28,17 +29,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = dbURI
 app.config['SECRET_KEY'] = 'SECRET_KEY'
 db = SQLAlchemy(app)
-login_manager = LoginManager()
-login_manager.init_app(app)
-
-
-# declare the temps DB model
-class Temps(db.Model):
-    ID = db.Column(db.Integer, primary_key=True)
-    City = db.Column(db.String, nullable=False)
-    DateRecorded = db.Column(db.String, nullable=False)
-    MaxTemp = db.Column(db.Integer, nullable=False)
-    MinTemp = db.Column(db.Integer, nullable=False)
 
 
 # declare the users database model
@@ -119,7 +109,7 @@ def create():
                      'email': request.form.get("email"), 'phone_number': request.form.get("phone_number")}
         # model_create expects: username, password, email, phone_number
         model_create(user_dict)
-    return redirect(url_for('pythondb_bp.databases'))
+    return redirect(url_for('crud'))
 
 
 # CRUD read, which is filtering table based off of ID
@@ -132,7 +122,7 @@ def read():
         user_dict = model_read(userid)
         # model_read returns: username, password, email, phone_number
         record = [user_dict]  # placed in list for compatibility with index.html
-    return render_template("pythondb/index.html", table=record)
+    return render_template("crud.html", table=record)
 
 
 # CRUD update
@@ -146,7 +136,7 @@ def update():
         }
         # model_update expects userid, email, phone_number
         model_update(user_dict)
-    return redirect(url_for('pythondb_bp.databases'))
+    return redirect(url_for('crud'))
 
 
 # CRUD delete
@@ -156,7 +146,7 @@ def delete():
         """fetch userid"""
         userid = request.form.get("ID")
         model_delete(userid)
-    return redirect(url_for('pythondb_bp.databases'))
+    return redirect(url_for('crud'))
 
 
 # if email url, show the email table only
@@ -164,7 +154,7 @@ def delete():
 def emails():
     # fill the table with emails only
     records = model_query_emails()
-    return render_template("pythondb/index.html", table=records)
+    return render_template("crud.html", table=records)
 
 
 # if phones url, show phones table only
@@ -172,89 +162,7 @@ def emails():
 def phones():
     # fill the table with phone numbers only
     records = model_query_phones()
-    return render_template("pythondb/index.html", table=records)
-
-
-# Authorise User Section
-# if auth user is the signup section
-# the public page does not include @login_required
-@app.route('/public/')
-def public():
-    return render_template("pythondb/public_page.html")
-
-
-@app.route('/auth_user/', methods=["GET", "POST"])
-def auth_user():
-    # check form inputs and create auth user
-    if request.form:
-        # validation should be in HTML
-        user_dict = {
-            'user_name': request.form.get("txtUsername"),
-            'email': request.form.get("txtEmail"),
-            'password': request.form.get("txtPwd1")
-        }
-        # model_authorize requires user_dict: user_name, email, password
-        model_authorize(user_dict)
-        return redirect(url_for('pythondb_bp.login'))
-    # show the auth user page if the above fails for some reason
-    return render_template("pythondb/auth_user.html")
-
-
-# if login url, show phones table only
-@app.route('/login/', methods=["GET", "POST"])
-def login():
-    if request.form:
-        # validation should be in HTML
-        user_dict = {
-            'user_name': request.form.get("txtUsername"),
-            'email': request.form.get("txtEmail"),
-            'password': request.form.get("txtPwd1")
-        }
-        if model_login(user_dict):
-            return redirect(url_for('pythondb_bp.dashboard'))
-
-    # if not logged in, show the login page
-    return render_template("pythondb/login.html")
-
-
-# logged in users can see the dashboard
-@app.route('/dashboard/')
-@login_required  # this is the code that Flask-Login uses to stop non logged in users
-def dashboard():
-    return render_template("pythondb/dashboard.html")
-
-
-# give users a way to log out
-@app.route("/logout")
-@login_required
-def logout():
-    """User log-out logic."""
-    model_logout()
-    return redirect(url_for('pythondb_bp.login'))
-
-
-# this code lets Flask-Login take unauthorised users back to the login page
-@login_manager.unauthorized_handler
-def unauthorized():
-    """Redirect unauthorized users to Login page."""
-    return redirect(url_for('pythondb_bp.login'))
-
-
-# def register(fm_request):
-@app.route('/temps/', methods=["GET", "POST"])
-def temps():
-    if request.form.get("txtCity") is not None:
-        city = request.form.get("txtCity")
-    else:
-        city = ''
-    count = temps_query_count()  # gets the count of records for this filtered set, and sets the module variable
-    maxt = temps_query_max()  # gets the maximum temp in the filtered set
-    mint = temps_query_min()  # gets the minimum temp in the filtered set
-    meanh = temps_query_meanhigh()  # gets the mean high temp in the filtered set
-    meanl = temps_query_meanlow()  # gets the mean low temp in the filtered set
-    table = temps_query_table()  # gets the table of data
-    return render_template('pythondb/temps.html', count=count, maxt=maxt, mint=mint, meanh=meanh, meanl=meanl,
-                           city=city, table=table)
+    return render_template("crud.html", table=records)
 
 
 # CRUD create/add a new record to the table
@@ -372,244 +280,6 @@ def model_query_phones():
         user_dict = {'id': phone.UserID, 'phone_numbers': phone.phone_number}
         records.append(user_dict)
     return records
-
-
-# TEMPS count: filter the temps as required, and return the count of the records
-def temps_query_count():
-    my_filters = {}
-    if request.form.get("txtCity") != '' and request.form.get("txtCity") is not None:
-        my_filters["City"] = request.form.get("txtCity")
-    if request.form.get("txtMin") != '' and request.form.get("txtMin") is not None:
-        my_filters["MinTemp"] = int(request.form.get("txtMin"))
-    if request.form.get("txtMax") != '' and request.form.get("txtMax") is not None:
-        my_filters["MaxTemp"] = int(request.form.get("txtMax"))
-    if request.form.get("txtDate") != '' and request.form.get("txtDate") is not None:
-        my_filters["DateRecorded"] = str(request.form.get("txtDate"))
-    query = db.session.query(Temps)
-    for attr, value in my_filters.items():
-        if attr == "MinTemp":
-            query = query.filter(getattr(Temps, attr) >= value)
-        else:
-            if attr == "MaxTemp":
-                query = query.filter(getattr(Temps, attr) <= value)
-            else:
-                query = query.filter(getattr(Temps, attr) == value)
-    print("Fil: " + str(my_filters))
-    count = query.count()
-    m.fullCount = count  # module wide variable set here
-    return count
-
-
-# TEMPS Max Temp query
-def temps_query_max():
-    my_filters = {}
-    if request.form.get("txtCity") != '' and request.form.get("txtCity") is not None:
-        my_filters["City"] = request.form.get("txtCity")
-    if request.form.get("txtMin") != '' and request.form.get("txtMin") is not None:
-        my_filters["MinTemp"] = int(request.form.get("txtMin"))
-    if request.form.get("txtMax") != '' and request.form.get("txtMax") is not None:
-        my_filters["MaxTemp"] = int(request.form.get("txtMax"))
-    if request.form.get("txtDate") != '' and request.form.get("txtDate") is not None:
-        my_filters["DateRecorded"] = str(request.form.get("txtDate"))
-    query = db.session.query(func.max(Temps.MaxTemp))
-    for attr, value in my_filters.items():
-        if attr == "MinTemp":
-            query = query.filter(getattr(Temps, attr) >= value)
-        else:
-            if attr == "MaxTemp":
-                query = query.filter(getattr(Temps, attr) <= value)
-            else:
-                query = query.filter(getattr(Temps, attr) == value)
-
-    print("Fil: " + str(my_filters))
-    if m.fullCount != 0:  # this ensures there are results in this filtered set
-        myresult = query.first()
-        strResult = extract_value(str(myresult))
-        maxtemp = int(strResult)
-    else:
-        maxtemp = 0
-    return maxtemp
-
-
-# TEMPS Min Temp query
-def temps_query_min():
-    my_filters = {}
-    if request.form.get("txtCity") != '' and request.form.get("txtCity") is not None:
-        my_filters["City"] = request.form.get("txtCity")
-    if request.form.get("txtMin") != '' and request.form.get("txtMin") is not None:
-        my_filters["MinTemp"] = int(request.form.get("txtMin"))
-    if request.form.get("txtMax") != '' and request.form.get("txtMax") is not None:
-        my_filters["MaxTemp"] = int(request.form.get("txtMax"))
-    if request.form.get("txtDate") != '' and request.form.get("txtDate") is not None:
-        my_filters["DateRecorded"] = str(request.form.get("txtDate"))
-    query = db.session.query(func.min(Temps.MinTemp))
-    for attr, value in my_filters.items():
-        if attr == "MinTemp":
-            query = query.filter(getattr(Temps, attr) >= value)
-        else:
-            if attr == "MaxTemp":
-                query = query.filter(getattr(Temps, attr) <= value)
-            else:
-                query = query.filter(getattr(Temps, attr) == value)
-    # count = db.engine.execute('select count(id) from temps').scalar()
-    if m.fullCount != 0:  # this ensures there are results in this filtered set
-        myresult = query.first()
-        strResult = extract_value(str(myresult))
-        mintemp = int(strResult)
-    else:
-        mintemp = 0
-    return mintemp
-
-
-# TEMPS mean Hign Temp query
-def temps_query_meanhigh():
-    my_filters = {}
-    if request.form.get("txtCity") != '' and request.form.get("txtCity") is not None:
-        my_filters["City"] = request.form.get("txtCity")
-    if request.form.get("txtMin") != '' and request.form.get("txtMin") is not None:
-        my_filters["MinTemp"] = int(request.form.get("txtMin"))
-    if request.form.get("txtMax") != '' and request.form.get("txtMax") is not None:
-        my_filters["MaxTemp"] = int(request.form.get("txtMax"))
-    if request.form.get("txtDate") != '' and request.form.get("txtDate") is not None:
-        my_filters["DateRecorded"] = str(request.form.get("txtDate"))
-    query = db.session.query(func.avg(Temps.MaxTemp))
-    for attr, value in my_filters.items():
-        if attr == "MinTemp":
-            query = query.filter(getattr(Temps, attr) >= value)
-        else:
-            if attr == "MaxTemp":
-                query = query.filter(getattr(Temps, attr) <= value)
-            else:
-                query = query.filter(getattr(Temps, attr) == value)
-    # count = db.engine.execute('select count(id) from temps').scalar()
-    print("Fil: " + str(my_filters))
-    if m.fullCount != 0:  # this ensures there are results in this filtered set
-        myresult = query.first()
-        strResult = extract_value(str(myresult))
-        meanhigh = round(float(strResult), 2)
-    else:
-        meanhigh = 0
-
-    return meanhigh
-
-
-# TEMPS mean low Temp query
-def temps_query_meanlow():
-    my_filters = {}
-    if request.form.get("txtCity") != '' and request.form.get("txtCity") is not None:
-        my_filters["City"] = request.form.get("txtCity")
-    if request.form.get("txtMin") != '' and request.form.get("txtMin") is not None:
-        my_filters["MinTemp"] = int(request.form.get("txtMin"))
-    if request.form.get("txtMax") != '' and request.form.get("txtMax") is not None:
-        my_filters["MaxTemp"] = int(request.form.get("txtMax"))
-    if request.form.get("txtDate") != '' and request.form.get("txtDate") is not None:
-        my_filters["DateRecorded"] = str(request.form.get("txtDate"))
-    query = db.session.query(func.avg(Temps.MinTemp))
-    for attr, value in my_filters.items():
-        if attr == "MinTemp":
-            query = query.filter(getattr(Temps, attr) >= value)
-        else:
-            if attr == "MaxTemp":
-                query = query.filter(getattr(Temps, attr) <= value)
-            else:
-                query = query.filter(getattr(Temps, attr) == value)
-    # count = db.engine.execute('select count(id) from temps').scalar()
-    print("Fil: " + str(my_filters))
-    if m.fullCount != 0:  # this ensures there are results in this filtered set
-        myresult = query.first()
-        strResult = extract_value(str(myresult))
-        meanlow = round(float(strResult), 2)
-    else:
-        meanlow = 0
-    return meanlow
-
-
-def temps_query_table():
-    my_filters = {}
-    if request.form.get("txtCity") != '' and request.form.get("txtCity") is not None:
-        my_filters["City"] = request.form.get("txtCity")
-    if request.form.get("txtMin") != '' and request.form.get("txtMin") is not None:
-        my_filters["MinTemp"] = int(request.form.get("txtMin"))
-    if request.form.get("txtMax") != '' and request.form.get("txtMax") is not None:
-        my_filters["MaxTemp"] = int(request.form.get("txtMax"))
-    if request.form.get("txtDate") != '' and request.form.get("txtDate") is not None:
-        my_filters["DateRecorded"] = str(request.form.get("txtDate"))
-    query = db.session.query(Temps)
-    for attr, value in my_filters.items():
-        if attr == "MinTemp":
-            query = query.filter(getattr(Temps, attr) >= value)
-        else:
-            if attr == "MaxTemp":
-                query = query.filter(getattr(Temps, attr) <= value)
-            else:
-                query = query.filter(getattr(Temps, attr) == value)
-    # count = db.engine.execute('select count(id) from temps').scalar()
-    print("Fil: " + str(my_filters))
-    records = []
-    if m.fullCount != 0:  # this ensures there are results in this filtered set
-        mytable = query.all()
-        for record in mytable:
-            temp_dict = {'id': record.ID, 'city': record.City, 'daterecorded': record.DateRecorded,
-                         'mintemp': record.MinTemp, 'maxtemp': record.MaxTemp}
-            # append to records
-            records.append(temp_dict)
-    else:
-        temp_dict = {'id': 0, 'city': '', 'mintemp': 0, 'maxtempt': 0}
-        records.append(temp_dict)
-    return records
-
-
-# extract the numeric value from the result
-# this splits the string between "(" and ",)", which are in the DB result
-def extract_value(in_result):
-    m = in_result.split('(', 1)[1].split(',)', 1)[0]
-    return m
-
-
-# Authorise User
-# user_dict requires user_name, email, password
-def model_authorize(user_dict):
-    # check to see if the user is already registered
-    existing_user = AuthUser.query.filter_by(email=user_dict['email']).first()
-    # if not, register them
-    if existing_user is None:
-        auth_user = AuthUser(
-            name=user_dict['user_name'],
-            email=user_dict['email']
-        )
-        # encrypt their password and add it to the authuser object
-        auth_user.set_password(user_dict['password'])
-        db.session.add(auth_user)
-        db.session.commit()  # Create new user
-
-
-# if login url, show phones table only
-def model_login(user_dict):
-    # Bypass if user is logged in
-    if current_user.is_authenticated:
-        return True
-    # if not already logged in, show the login form
-    print(user_dict['email'])
-    user_record = AuthUser.query.filter_by(email=user_dict['email']).first()
-    if user_record and AuthUser.check_password(user_record, user_dict['password']):
-        login_user(user_record)
-        return True
-    # login failed
-    return False
-
-
-# logout user
-def model_logout():
-    logout_user()
-
-
-# this function is needed for Flask-Login to work.
-@login_manager.user_loader
-def model_user_loader(user_id):
-    """Check if user is logged-in on every page load."""
-    if user_id is not None:
-        return AuthUser.query.get(user_id)
-    return None
 
 
 if __name__ == "__main__":
