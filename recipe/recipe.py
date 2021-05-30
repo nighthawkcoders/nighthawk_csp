@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-from recipe.recipes import Recipes
+from recipe.recipeclass import Recipes
 
 recipes_object = Recipes()
 
