@@ -183,10 +183,10 @@ def model_tester():
     print("--------------------------")
     db.create_all()
     """Tester data for table"""
-    u1 = Users(name='Thomas Edison', email='tedison@example.com', password='toby', phone="1111111111")
-    u2 = Users(name='Nicholas Tesla', email='ntesla@example.com', password='niko', phone="1111112222")
-    u3 = Users(name='Alexander Graham Bell', email='agbell@example.com', password='lex', phone="1111113333")
-    u4 = Users(name='Eli Whitney', email='eliw@example.com', password='whit', phone="1111114444")
+    u1 = Users(name='Thomas Edison', email='tedison@example.com', password='123toby', phone="1111111111")
+    u2 = Users(name='Nicholas Tesla', email='ntesla@example.com', password='123niko', phone="1111112222")
+    u3 = Users(name='Alexander Graham Bell', email='agbell@example.com', password='123lex', phone="1111113333")
+    u4 = Users(name='Eli Whitney', email='eliw@example.com', password='123whit', phone="1111114444")
     u5 = Users(name='John Mortensen', email='jmort1021@gmail.com', password='123qwerty', phone="8587754956")
     u6 = Users(name='John Mortensen', email='jmort1021@yahoo.com', password='123qwerty', phone="8587754956")
     # U7 intended to fail as duplicate key
@@ -210,7 +210,7 @@ def api_tester():
         ['/read/', "get"],
         ['/userid/3', "get"],
         ['/name/John Mortensen', "get"],
-        ['/create/Wilma Flinstone/wilma@bedrock.org/123dino/000111222', "post"],
+        ['/create/Wilma Flinstone/wilma@bedrock.org/123wifli/0001112222', "post"],
         ['/update/John C Mortensen/jmort1021@yahoo.com', "put"],
         ['/name/John Mortensen', "get"],
         ['/name/John C Mortensen', "get"],
