@@ -1,5 +1,6 @@
 """ database setup to support db examples """
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.exc import IntegrityError
 
 from __init__ import app
 
@@ -102,7 +103,7 @@ def model_query_phones():
 
 
 if __name__ == "__main__":
-    """Tester for table"""
+    """Tester data for table"""
     db.create_all()
     u1 = Users(name='Thomas Edison', email='tedison@example.com', password='toby', phone="111-111-1111")
     u2 = Users(name='Nicholas Tesla', email='ntesla@example.com', password='niko', phone="111-111-2222")
@@ -116,11 +117,11 @@ if __name__ == "__main__":
         try:
             db.session.add(row)
             db.session.commit()
-        except:
+        except IntegrityError:
+            db.session.remove()
             print(f"Records exist or duplicate email: {row.email}")
 
     print("Table: Users")
-    db.session.remove()
     result = model_query_all()
     for row in result:
         print(row)
