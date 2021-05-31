@@ -15,7 +15,7 @@ model_bp = Blueprint('model', __name__,
 def crud():
     """convert Users table into a list of dictionary rows"""
     records = model_query_all()
-    return render_template("crud.html", table=records)
+    return render_template("model/crud.html", table=records)
 
 
 # create/add a new record to the table
@@ -23,9 +23,11 @@ def crud():
 def create():
     if request.form:
         """extract data from form"""
-        user_dict = {'username': request.form.get("username"), 'password': request.form.get("password"),
-                     'email': request.form.get("email"), 'phone_number': request.form.get("phone_number")}
-        # model_create expects: username, password, email, phone_number
+        user_dict = {'name': request.form.get("name"),
+                     'email': request.form.get("email"),
+                     'password': request.form.get("password"),
+                     'phone': request.form.get("phone")}
+        # model_create expects: username, password, email, phone
         model_create(user_dict)
     return redirect(url_for('model.crud'))
 
@@ -38,9 +40,9 @@ def read():
         userid = request.form.get("ID")
         # model_read expects userid
         user_dict = model_read(userid)
-        # model_read returns: username, password, email, phone_number
+        # model_read returns: username, password, email, phone
         record = [user_dict]  # placed in list for compatibility with index.html
-    return render_template("crud.html", table=record)
+    return render_template("model/crud.html", table=record)
 
 
 # CRUD update
@@ -50,9 +52,9 @@ def update():
         user_dict = {
             'userid': request.form.get("ID"),
             'email': request.form.get("email"),
-            'phone_number': request.form.get("phone_number")
+            'phone': request.form.get("phone")
         }
-        # model_update expects userid, email, phone_number
+        # model_update expects userid, email, phone
         model_update(user_dict)
     return redirect(url_for('model.crud'))
 
@@ -72,7 +74,7 @@ def delete():
 def emails():
     # fill the table with emails only
     records = model_query_emails()
-    return render_template("crud.html", table=records)
+    return render_template("model/crud.html", table=records)
 
 
 # if phones url, show phones table only
@@ -80,7 +82,7 @@ def emails():
 def phones():
     # fill the table with phone numbers only
     records = model_query_phones()
-    return render_template("crud.html", table=records)
+    return render_template("model/crud.html", table=records)
 
 
 

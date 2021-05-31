@@ -1,6 +1,5 @@
 """ database setup to support db examples """
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import func
 
 from __init__ import app
 
@@ -14,39 +13,22 @@ db = SQLAlchemy(app)
 # declare the users database model
 class Users(db.Model):
     UserID = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(255), unique=True, nullable=False)
-    password = db.Column(db.String(255), unique=True, nullable=False)
-
-
-# Declare emails database model
-class Emails(db.Model):
-    UserID = db.Column(db.Integer, primary_key=True)
-    email_address = db.Column(db.String(255), unique=True, nullable=False)
-
-
-# declare phone numbers database model
-class PhoneNumbers(db.Model):
-    UserID = db.Column(db.Integer, primary_key=True)
-    phone_number = db.Column(db.String(255), unique=True, nullable=False)
+    name = db.Column(db.String(255), unique=False, nullable=False)
+    email = db.Column(db.String(255), unique=True, nullable=False)
+    password = db.Column(db.String(255), unique=False, nullable=False)
+    phone = db.Column(db.String(255), unique=False, nullable=False)
 
 
 # CRUD create/add a new record to the table
-# user_dict{} expects username, password, email, phone_number
+# user_dict{} expects name, email, password, phone
 def model_create(user_dict):
     """prepare data for primary table extracting from form"""
-    user = Users(username=user_dict["username"], password=user_dict["password"])
+    user = Users(name=user_dict["name"],
+                 email=user_dict["email"],
+                 password=user_dict["password"],
+                 phone=user_dict["phone"])
     """add and commit data to user table"""
     db.session.add(user)
-    db.session.commit()
-    """prepare data for related tables extracting from form and using new UserID """
-    userid = db.session.query(func.max(Users.UserID))
-    email = Emails(email_address=user_dict["email"], UserID=userid)
-    phone_number = PhoneNumbers(phone_number=user_dict["phone_number"], UserID=userid)
-    """email table add and commit"""
-    db.session.add(email)
-    db.session.commit()
-    """phone number table add and commit"""
-    db.session.add(phone_number)
     db.session.commit()
 
 
@@ -55,37 +37,22 @@ def model_create(user_dict):
 def model_read(userid):
     """filter users by userid"""
     user = Users.query.filter_by(UserID=userid).first()
-    user_dict = {'id': user.UserID, 'name': user.username, 'password': user.password}
-    """filter email by userid"""
-    email = Emails.query.filter_by(UserID=userid).first()
-    if email:
-        user_dict['emails'] = email.email_address
-    """filter phone number by userid"""
-    pn = PhoneNumbers.query.filter_by(UserID=userid).first()
-    if pn:
-        user_dict['phone_numbers'] = pn.phone_number
+    user_dict = {'id': user.UserID,
+                 'name': user.name,
+                 'email': user.email,
+                 'password': user.password,
+                 'phone': user.phone}
     return user_dict
 
 
 # CRUD update
-# user_dict{} expects userid, email, phone_number
+# user_dict{} expects userid, email, phone
 def model_update(user_dict):
     """fetch userid"""
     userid = user_dict["userid"]
-    """update email in table from data in form if it exists, insert if not"""
-    if Emails.query.filter_by(UserID=userid).first() is not None:
-        db.session.query(Emails).filter_by(UserID=userid).update({Emails.email_address: user_dict["email"]})
-    else:
-        email = Emails(email_address=user_dict["email"], UserID=userid)
-        db.session.add(email)
-    """update phone number in table from data in form"""
-    if PhoneNumbers.query.filter_by(UserID=userid).first() is not None:
-        db.session.query(PhoneNumbers).filter_by(UserID=userid).update(
-            {PhoneNumbers.phone_number: user_dict["phone_number"]})
-    else:
-        phone_number = PhoneNumbers(phone_number=user_dict["phone_number"], UserID=userid)
-        db.session.add(phone_number)
-
+    if Users.query.filter_by(UserID=userid).first() is not None:
+        db.session.query(Users).filter_by(UserID=userid).update(
+            {Users.phone: user_dict['phone']})
     """commit changes to database"""
     db.session.commit()
 
@@ -95,11 +62,6 @@ def model_update(user_dict):
 def model_delete(userid):
     """fetch userid"""
     userid = userid
-    """delete userid rows from emails table"""
-    db.session.query(Emails).filter(Emails.UserID == userid).delete()
-    """delete userid rows from phone numbers table"""
-    db.session.query(PhoneNumbers).filter(PhoneNumbers.UserID == userid).delete()
-    """delete userid rows from users table"""
     db.session.query(Users).filter(Users.UserID == userid).delete()
     """commit changes to database"""
     db.session.commit()
@@ -111,16 +73,8 @@ def model_query_all():
     records = []
     users = Users.query.all()
     for user in users:
-        user_dict = {'id': user.UserID, 'name': user.username, 'password': user.password}
-        # filter email
-        email = Emails.query.filter_by(UserID=user.UserID).first()
-        if email:
-            user_dict['emails'] = email.email_address
-        # filter phone number
-        pn = PhoneNumbers.query.filter_by(UserID=user.UserID).first()
-        if pn:
-            user_dict['phone_numbers'] = pn.phone_number
-        # append to records
+        user_dict = {'id': user.UserID, 'name': user.name, 'email': user.email, 'password': user.password,
+                     'phone': user.phone}
         records.append(user_dict)
     return records
 
@@ -128,20 +82,45 @@ def model_query_all():
 # CRUD read: query emails table
 def model_query_emails():
     # fill the table with emails only
-    records = []
-    emails = Emails.query.all()
-    for email in emails:
-        user_dict = {'id': email.UserID, 'emails': email.email_address}
-        records.append(user_dict)
-    return records
+    users = []
+    records = Users.query.all()
+    for record in records:
+        user_dict = {'id': record.UserID, 'email': record.email}
+        users.append(user_dict)
+    return users
 
 
 # CRUD read: query phones table
 def model_query_phones():
     # fill the table with phone numbers only
-    records = []
-    phone_numbers = PhoneNumbers.query.all()
-    for phone in phone_numbers:
-        user_dict = {'id': phone.UserID, 'phone_numbers': phone.phone_number}
-        records.append(user_dict)
-    return records
+    users = []
+    records = Users.query.all()
+    for record in records:
+        user_dict = {'id': record.UserID, 'phone': record.phone}
+        users.append(user_dict)
+    return users
+
+
+if __name__ == "__main__":
+    """Tester for table"""
+    db.create_all()
+    u1 = Users(name='Thomas Edison', email='tedison@example.com', password='toby', phone="111-111-1111")
+    u2 = Users(name='Nicholas Tesla', email='ntesla@example.com', password='niko', phone="111-111-2222")
+    u3 = Users(name='Alexander Graham Bell', email='agbell@example.com', password='lex', phone="111-111-3333")
+    u4 = Users(name='Eli Whitney', email='eliw@example.com', password='whit', phone="111-111-4444")
+    u5 = Users(name='John Mortensen', email='jmort1021@gmail.com', password='123qwerty', phone="858-775-4956")
+    u6 = Users(name='John Mortensen', email='jmort1021@yahoo.com', password='123qwerty', phone="858-775-4956")
+    u7 = Users(name='John Mortensen', email='jmort1021@yahoo.com', password='123qwerty', phone="858-679-1294")
+    table = [u1, u2, u3, u4, u5, u6, u7]
+    for row in table:
+        try:
+            db.session.add(row)
+            db.session.commit()
+        except:
+            print(f"Records exist or duplicate email: {row.email}")
+
+    print("Table: Users")
+    db.session.remove()
+    result = model_query_all()
+    for row in result:
+        print(row)

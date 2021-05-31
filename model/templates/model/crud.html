@@ -108,9 +108,9 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
+            <th>Email</th>
             <th>Password</th>
-            <th>Emails</th>
-            <th>Phone Numbers</th>
+            <th>Phone</th>
         </tr>
         <!-- Loop through rows in table -->
         {% for row in table %}
@@ -118,13 +118,13 @@
             Prepare table for display
                 caution: phone number needs "~" format step to force type to string
             -->
-            {% set pn = "" ~ row['phone_numbers'] %}
+            {% set pn = "" ~ row['phone'] %}
             {% set pnf = "(" ~ pn[0:3] ~ ")" ~ pn[3:6] ~ "-" ~ pn[6:10] %}
             <tr>
                 <td>{{ row['id'] }}</td>
                 <td>{{ row['name'] }}</td>
+                <td>{{ row['email'] }}</td>
                 <td>{{ row['password'] }}</td>
-                <td>{{ row['emails'] }}</td>
                 <td>{{ pnf }}</td>
             </tr>
         {% endfor %}
@@ -147,15 +147,15 @@
             <table>
                 <tr>
                     <th><label for="username">Name</label></th>
-                    <th><label for="password">Password</label></th>
                     <th><label for="email">Email</label></th>
-                    <th><label for="phone_number">Phone Number</label></th>
+                    <th><label for="password">Password</label></th>
+                    <th><label for="phone">Phone</label></th>
                 </tr>
                 <tr>
-                    <td><input type="text" name="username" id="username" required></td>
-                    <td><input type="password" name="password" id="password" required></td>
+                    <td><input type="text" name="name" id="name" required></td>
                     <td><input type="email" name="email" id="email" placeholder="abc@xyz.org" required></td>
-                    <td><input required type="tel" name="phone_number" id="phone_number" pattern="[0-9]{10}" placeholder="1234567890"></td>
+                    <td><input type="password" name="password" id="password" required></td>
+                    <td><input required type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="1234567890"></td>
                     <td><input type="submit" value="Add"></td>
                 </tr>
             </table>
@@ -177,7 +177,7 @@
     <div class="row courses-buttons justify-content-center">
 
         <form method="POST" ID="read" action={{url_for('.read')}} >
-            <table id="links">
+            <table id="table">
                 <tr><th><label for="ID">ID</label></th></tr>
                 <tr><td><select name="ID" id="ID">
                     <optgroup label="userid">
@@ -194,7 +194,7 @@
     </div>
 </div>
 
-<!-- Update action, change selected rows email and phone number -->
+<!-- Update action, change selected rows email and phone -->
 <div class="jumbotron jumbotron-fluid" style="height: 50%; ">
 
     <div class="row justify-content-center">
@@ -210,7 +210,7 @@
                 <tr>
                     <th><label for="Update_ID">ID</label></th>
                     <th><label for="Update_email">Email</label></th>
-                    <th><label for="Update_phone_number">Phone Number</label></th>
+                    <th><label for="Update_phone">Phone</label></th>
                 </tr>
                 <tr>
                     <td>
@@ -223,7 +223,7 @@
                     </select>
                     </td>
                     <td><input type="email" name="email" id="update_email" placeholder="abc@xyz.org"></td>
-                    <td><input type="tel" name="phone_number" id="update_phone_number" pattern="[0-9]{10}" placeholder="1234567890"></td>
+                    <td><input type="tel" name="phone" id="update_phone" pattern="[0-9]{10}" placeholder="1234567890"></td>
                     <td><input type="submit" value="Update"></td>
                 </tr>
             </table>
