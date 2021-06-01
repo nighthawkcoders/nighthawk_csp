@@ -22,13 +22,13 @@ def crud():
 @model_bp.route('/create/', methods=["POST"])
 def create():
     if request.form:
-        """extract data from form"""
-        user_dict = {'name': request.form.get("name"),
-                     'email': request.form.get("email"),
-                     'password': request.form.get("password"),
-                     'phone': request.form.get("phone")}
-        # model_create expects: username, password, email, phone
-        model_create(user_dict)
+        """extract data from form and call model_create"""
+        model_create(
+            request.form.get("name"),
+            request.form.get("email"),
+            request.form.get("password"),
+            request.form.get("phone")
+        )
     return redirect(url_for('model.crud'))
 
 

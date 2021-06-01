@@ -41,22 +41,19 @@ class Users(db.Model):
             "phone": self.phone
         }
 
-    class CreateUser(Resource):
+    class Create(Resource):
         def post(self, name, email, password, phone):
-            person = Users(name=name, email=email, password=password, phone=phone)
-            db.session.add(person)
-            db.session.commit()
-
-            return person.json()
+            person = model_create(name, email, password, phone)
+            if person:
+                return person.json()
+            return {'email': None}, 404         # need to have better message on errors
 
     class Read(Resource):
         def get(self):
-            people = Users.query.all()
-
-            return [peep.json() for peep in people]
+            return model_query_all()
 
     class UpdateName(Resource):
-        def put(self, name, email):
+        def put(self, userid, email, name, password, phone):
             person = Users.query.filter_by(email=email)
             person.update(dict(name=name))
             db.session.commit()
@@ -85,7 +82,7 @@ class Users(db.Model):
             db.session.delete(person)
             db.session.commit()
 
-    api.add_resource(CreateUser, url_prefix + '/create/<string:name>/<string:email>/<string:password>/<string:phone>')
+    api.add_resource(Create, url_prefix + '/create/<string:name>/<string:email>/<string:password>/<string:phone>')
     api.add_resource(Read, url_prefix + '/read/')
     api.add_resource(UpdateName, url_prefix + '/update/<string:name>/<string:email>')
     api.add_resource(UserID, url_prefix + '/userid/<int:userid>')
@@ -94,16 +91,20 @@ class Users(db.Model):
 
 # CRUD create/add a new record to the table
 # user_dict{} expects name, email, password, phone
-def model_create(user_dict):
+def model_create(name, email, password, phone):
     """prepare data for primary table extracting from form"""
-    if Users.query.filter_by(email=user_dict['email']).first() is None:
-        user = Users(name=user_dict["name"],
-                     email=user_dict["email"],
-                     password=user_dict["password"],
-                     phone=user_dict["phone"])
-        """add and commit data to user table"""
-        db.session.add(user)
+    try:
+        person = Users(
+            name=name,
+            email=email,
+            password=password,
+            phone=phone
+        )
+        db.session.add(person)
         db.session.commit()
+        return person
+    except:
+        return None
 
 
 # CRUD read: filter single record in table based off of userid
@@ -111,16 +112,11 @@ def model_create(user_dict):
 def model_read(userid):
     """filter users by userid"""
     user = Users.query.filter_by(userID=userid).first()
-    user_dict = {'id': user.userID,
-                 'name': user.name,
-                 'email': user.email,
-                 'password': user.password,
-                 'phone': user.phone}
-    return user_dict
+    return user.json()
 
 
 # CRUD update
-# user_dict{} expects userid, email, phone
+# model_update allows anything to be updated (excluding email)
 def model_update(user_dict):
     """fetch userid"""
     userid = user_dict["userid"]
@@ -144,35 +140,22 @@ def model_delete(userid):
 # CRUD read: query all tables and records in the table
 def model_query_all():
     """convert Users table into a list of dictionary rows"""
-    records = []
-    users = Users.query.all()
-    for user in users:
-        user_dict = {'id': user.userID, 'name': user.name, 'email': user.email, 'password': user.password,
-                     'phone': user.phone}
-        records.append(user_dict)
-    return records
+    people = Users.query.all()
+    return [peep.json() for peep in people]
 
 
-# CRUD read: query emails table
+# CRUD read: query emails
 def model_query_emails():
     # fill the table with emails only
-    users = []
-    records = Users.query.all()
-    for record in records:
-        user_dict = {'id': record.userID, 'email': record.email}
-        users.append(user_dict)
-    return users
+    people = Users.query.all()
+    return [{'userID': peep.userID, 'email': peep.email} for peep in people]
 
 
-# CRUD read: query phones table
+# CRUD read: query phones
 def model_query_phones():
     # fill the table with phone numbers only
-    users = []
-    records = Users.query.all()
-    for record in records:
-        user_dict = {'id': record.userID, 'phone': record.phone}
-        users.append(user_dict)
-    return users
+    people = Users.query.all()
+    return [{'userID': peep.userID, 'phone': peep.phone} for peep in people]
 
 
 #### testing section
@@ -217,26 +200,23 @@ def api_tester():
         ['/read/', "get"],
     ]
     # test conditions need to be incorporated in main api's
+    API = 0
+    METHOD = 1
     for test in tests:
         print()
-        print(f"({test[1]}, {test[0]})")
-        email = test[0].split("/")
-        if test[1] == 'post':
-            if Users.query.filter_by(email=email[3]).first() is None:  # need to add check prior to post
-                response = requests.post(url + test[0])
-            else:
-                print(f"{email[3]} in data")
-                continue
-        elif test[1] == 'put':
-            if Users.query.filter_by(email=email[3]).first() is not None:  # need to add check prior to put
-                response = requests.put(url + test[0])
-            else:
-                print(f"{email[3]} in data")
-                continue
+        print(f"({test[METHOD]}, {test[API]})")
+        email = test[API].split("/")
+        if test[METHOD] == 'post':
+            response = requests.post(url + test[API])
+        elif test[METHOD] == 'put':
+            response = requests.put(url + test[API])
         else:
-            response = requests.get(url + test[0])
+            response = requests.get(url + test[API])
         print(response)
-        print(response.json())
+        try:
+            print(response.json())
+        except:
+            print("unhandled error")
 
 
 # simple listing of table

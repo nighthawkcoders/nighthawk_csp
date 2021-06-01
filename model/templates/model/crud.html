@@ -94,7 +94,7 @@
 
     <!-- backend filtering actions -->
     <div class="row courses-buttons justify-content-center">
-        <table id="links">
+        <table id="main_table">
         <tr>
             <td><a href={{url_for('.crud')}}>Full Table </a></td>
             <td><a href={{url_for('.emails')}}>E-Mails only</a></td>
@@ -121,7 +121,7 @@
             {% set pn = "" ~ row['phone'] %}
             {% set pnf = "(" ~ pn[0:3] ~ ")" ~ pn[3:6] ~ "-" ~ pn[6:10] %}
             <tr>
-                <td>{{ row['id'] }}</td>
+                <td>{{ row['userID'] }}</td>
                 <td>{{ row['name'] }}</td>
                 <td>{{ row['email'] }}</td>
                 <td>{{ row['password'] }}</td>
@@ -146,7 +146,7 @@
         <form method="POST" ID="create" action={{url_for('.create')}} >
             <table>
                 <tr>
-                    <th><label for="username">Name</label></th>
+                    <th><label for="name">Name</label></th>
                     <th><label for="email">Email</label></th>
                     <th><label for="password">Password</label></th>
                     <th><label for="phone">Phone</label></th>
@@ -177,12 +177,12 @@
     <div class="row courses-buttons justify-content-center">
 
         <form method="POST" ID="read" action={{url_for('.read')}} >
-            <table id="table">
+            <table id="read_table">
                 <tr><th><label for="ID">ID</label></th></tr>
                 <tr><td><select name="ID" id="ID">
                     <optgroup label="userid">
                         {% for row in table %}
-                            <option label="{{ row['id'] }}">{{ row['id'] }}</option>
+                            <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
                         {% endfor %}
                     </optgroup>
                 </select></td>
@@ -206,7 +206,7 @@
     <div class="row courses-buttons justify-content-center">
 
         <form method="POST" ID="update" action={{url_for('.update')}} >
-            <table id="links">
+            <table id="update_table">
                 <tr>
                     <th><label for="Update_ID">ID</label></th>
                     <th><label for="Update_email">Email</label></th>
@@ -217,7 +217,7 @@
                     <select name="ID" id="update_ID">
                         <optgroup label="userid">
                             {% for row in table %}
-                                <option label="{{ row['id'] }}">{{ row['id'] }}</option>
+                                <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
                             {% endfor %}
                         </optgroup>
                     </select>
@@ -244,7 +244,7 @@
     <div class="row courses-buttons justify-content-center">
 
         <form method="POST" ID="delete" action={{url_for('.delete')}} >
-            <table id="links">
+            <table id="delete_table">
                 <tr><th><label for="delete_ID">ID</label></th></tr>
                 <tr><td><select name="ID" id="delete_ID">
                     <optgroup label="userid">
