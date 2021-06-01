@@ -1,0 +1,45 @@
+import requests
+
+from model import print_tester, url_prefix
+
+
+# play with api
+def api_tester():
+    # local host URL for model
+    url = 'http://127.0.0.1:5000/' + url_prefix
+
+    tests = [
+        ['/create/Wilma Flinstone/wilma@bedrock.org/123wifli/0001112222', "post"],
+        ['/read/', "get"],
+        ['/update/jmort1021@yahoo.com/John C Mortensen', "put"],
+        ['/delete/6', "delete"]
+    ]
+    # test conditions need to be incorporated in main api's
+    API = 0
+    METHOD = 1
+    for test in tests:
+        print()
+        print(f"({test[METHOD]}, {test[API]})")
+        email = test[API].split("/")
+        if test[METHOD] == 'get':
+            response = requests.get(url + test[API])
+        elif test[METHOD] == 'post':
+            response = requests.post(url + test[API])
+        elif test[METHOD] == 'put':
+            response = requests.put(url + test[API])
+        elif test[METHOD] == 'delete':
+            response = requests.put(url + test[API])
+        else:
+            print("unknown RESTapi method")
+            continue
+
+        print(response)
+        try:
+            print(response.json())
+        except:
+            print("unkown error")
+
+
+if __name__ == "__main__":
+    api_tester()  # validates api's requires server to be running
+    print_tester()

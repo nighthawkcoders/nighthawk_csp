@@ -1,21 +1,20 @@
 from flask import Blueprint, render_template, request, url_for, redirect
 
-from model.myDB import model_create, model_read, model_update_name, model_delete, model_query_all, model_query_emails, \
-    model_query_phones
-
-model_bp = Blueprint('model', __name__,
-                     url_prefix='/model',
+from crud.model import model_create, model_read, model_read_all, model_read_emails, \
+    model_read_phones, model_update_name, model_delete
+model_bp = Blueprint('crud', __name__,
+                     url_prefix='/crud',
                      template_folder='templates',
                      static_folder='static',
                      static_url_path='assets')
 
 
 # connects default URL to a function
-@model_bp.route('/crud')
+@model_bp.route('/')
 def crud():
     """convert Users table into a list of dictionary rows"""
-    records = model_query_all()
-    return render_template("model/crud.html", table=records)
+    records = model_read_all()
+    return render_template("crud/crud.html", table=records)
 
 
 # create/add a new record to the table
@@ -42,7 +41,7 @@ def read():
         user_dict = model_read(userid)
         # model_read returns: username, password, email, phone
         record = [user_dict]  # placed in list for compatibility with index.html
-    return render_template("model/crud.html", table=record)
+    return render_template("cryd/crud.html", table=record)
 
 
 # CRUD update
@@ -72,16 +71,16 @@ def delete():
 @model_bp.route('/emails/')
 def emails():
     # fill the table with emails only
-    records = model_query_emails()
-    return render_template("model/crud.html", table=records)
+    records = model_read_emails()
+    return render_template("crud/crud.html", table=records)
 
 
 # if phones url, show phones table only
 @model_bp.route('/phones/')
 def phones():
     # fill the table with phone numbers only
-    records = model_query_phones()
-    return render_template("model/crud.html", table=records)
+    records = model_read_phones()
+    return render_template("crud/crud.html", table=records)
 
 
 

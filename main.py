@@ -9,7 +9,7 @@ from y2021.tri3 import y2021_tri3_bp
 from algorithm.algorithm import algorithm_bp
 from restapi.restapi import restapi_bp
 from recipe.recipe import recipe_bp
-from model.model import model_bp
+from crud.crud import model_bp
 
 
 @app.route('/')

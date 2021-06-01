@@ -1,5 +1,4 @@
 """ database setup to support db examples """
-import requests
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError
 from flask_migrate import Migrate
@@ -15,7 +14,7 @@ db = SQLAlchemy(app)
 
 Migrate(app, db)
 api = Api(app)
-url_prefix = "/model"
+url_prefix = "/crud"
 
 
 # declare the users database model
@@ -50,9 +49,9 @@ class Users(db.Model):
 
     class Read(Resource):
         def get(self):
-            return model_query_all()
+            return model_read_all()
 
-    class UpdateName(Resource):
+    class Update(Resource):
         def put(self, email, name):
             user = model_read_email(email)
             if user is None:
@@ -60,35 +59,14 @@ class Users(db.Model):
             model_update_name({'userid': user['userID'], 'name': name})
             return None  # needs error handling
 
-    class UserID(Resource):
-        def get(self, userid):
-            person = Users.query.filter_by(userID=userid).first()
-            if person:
-                return person.json()
-            return {'userID': None}, 404
-
+    class Delete(Resource):
         def delete(self, userid):
-            person = Users.query.filter_by(userID=userid).first()
-            db.session.delete(person)
-            db.session.commit()
-
-    class Name(Resource):
-        def get(self, name):
-            person = Users.query.filter_by(name=name).first()
-            if person:
-                return person.json()
-            return {'name': None}, 404
-
-        def delete(self, name):
-            person = Users.query.filter_by(name=name).first()
-            db.session.delete(person)
-            db.session.commit()
+            model_delete(userid)
 
     api.add_resource(Create, url_prefix + '/create/<string:name>/<string:email>/<string:password>/<string:phone>')
     api.add_resource(Read, url_prefix + '/read/')
-    api.add_resource(UpdateName, url_prefix + '/update/<string:email>/<string:name>')
-    api.add_resource(UserID, url_prefix + '/userid/<int:userid>')
-    api.add_resource(Name, url_prefix + '/name/<string:name>')
+    api.add_resource(Update, url_prefix + '/update/<string:email>/<string:name>')
+    api.add_resource(Delete, url_prefix + '/delete/<int:userid>')
 
 
 # CRUD create/add a new record to the table
@@ -150,21 +128,21 @@ def model_delete(userid):
 
 
 # CRUD read: query all tables and records in the table
-def model_query_all():
+def model_read_all():
     """convert Users table into a list of dictionary rows"""
     people = Users.query.all()
     return [peep.json() for peep in people]
 
 
 # CRUD read: query emails
-def model_query_emails():
+def model_read_emails():
     # fill the table with emails only
     people = Users.query.all()
     return [{'userID': peep.userID, 'email': peep.email} for peep in people]
 
 
 # CRUD read: query phones
-def model_query_phones():
+def model_read_phones():
     # fill the table with phone numbers only
     people = Users.query.all()
     return [{'userID': peep.userID, 'phone': peep.phone} for peep in people]
@@ -199,53 +177,16 @@ def model_tester():
     print("New Email Method", record['userID'], record['email'], record['name'])
 
 
-# play with api
-def api_tester():
-    # local host URL for model
-    url = 'http://127.0.0.1:5000/model'
-
-    tests = [
-        ['/read/', "get"],
-        ['/userid/3', "get"],
-        ['/name/John Mortensen', "get"],
-        ['/create/Wilma Flinstone/wilma@bedrock.org/123wifli/0001112222', "post"],
-        ['/update/jmort1021@yahoo.com/John C Mortensen', "put"],
-        ['/name/John Mortensen', "get"],
-        ['/name/John C Mortensen', "get"],
-        ['/read/', "get"],
-    ]
-    # test conditions need to be incorporated in main api's
-    API = 0
-    METHOD = 1
-    for test in tests:
-        print()
-        print(f"({test[METHOD]}, {test[API]})")
-        email = test[API].split("/")
-        if test[METHOD] == 'post':
-            response = requests.post(url + test[API])
-        elif test[METHOD] == 'put':
-            response = requests.put(url + test[API])
-        else:
-            response = requests.get(url + test[API])
-        print(response)
-        try:
-            print(response.json())
-        except:
-            print("unhandled error")
-
-
 # simple listing of table
 def print_tester():
     print("------------")
     print("Table: users")
     print("------------")
-    result = model_query_all()
+    result = model_read_all()
     for row in result:
         print(row)
 
 
 if __name__ == "__main__":
     model_tester()  # builds model for user
-    print_tester()
-    api_tester()  # validates api's requires server to be running
     print_tester()
