@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 
-<!-- EXTEND (base.html), homesite/base.html is template for all rendered pages in the project -->
+<!-- EXTEND (layout.html), this is a template for all rendered pages in the project -->
 {% extends "layout.html" %}
 
-<!-- CONTENT (in <body>), content for this page -->
-{% block content %}
+<!-- CONTENT (in <head>), content for this page -->
+{% block meta %}
+<title>CRUD page</title>
 <style>
     table {
         font-family: arial, sans-serif;
@@ -64,7 +65,11 @@
     }); //end DOMContentLoaded listener
 
 </script>
+{% endblock %}
 
+
+<!-- CONTENT (in <body>), content for this page -->
+{% block content %}
 <!-- Links to code for Front End and Backend for this lesson;  Also, link to Login example  -->
 <div class="jumbotron jumbotron-fluid" style="height: 50%; ">
     <div class="row justify-content-center">
@@ -72,6 +77,7 @@
             <h1>Hello to Databases and Python</h1>
             <table id="navigator">
                 <tr>
+                    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/tree/master/crud">GitHub Blueprint</a></td>
                     <td><a href=#FE-HTML>HTML Code</a></td>
                     <td><a href=#BE-ROUTE>Route Code</a></td>
                     <td><a href=#BE-MODEL>SQL, RESTapi</a></td>
