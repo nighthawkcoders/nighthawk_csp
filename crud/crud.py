@@ -9,7 +9,7 @@ model_bp = Blueprint('crud', __name__,
                      static_url_path='assets')
 
 
-# connects default URL to a function
+# connects default URL of blueprint to a function
 @model_bp.route('/')
 def crud():
     """convert Users table into a list of dictionary rows"""
@@ -17,7 +17,7 @@ def crud():
     return render_template("crud.html", table=records)
 
 
-# create/add a new record to the table
+# CRUD create/add a new record to the table
 @model_bp.route('/create/', methods=["POST"])
 def create():
     if request.form:
@@ -37,10 +37,9 @@ def read():
     record = []
     if request.form:
         userid = request.form.get("ID")
-        # model_read expects userid
+        # model_read expects userid and returns a dictionary of user data: username, password, email, phone
         user_dict = model_read(userid)
-        # model_read returns: username, password, email, phone
-        record = [user_dict]  # placed in list for compatibility with index.html
+        record = [user_dict]  # placed in list for easy use within HTML
     return render_template("crud.html", table=record)
 
 
@@ -52,7 +51,7 @@ def update():
             'userid': request.form.get("userid"),
             'name': request.form.get("name")
         }
-        # model_update expects userid, email, phone
+        # model_update expects userid and name in a dictionary
         model_update_name(user_dict)
     return redirect(url_for('.crud'))
 
@@ -63,6 +62,7 @@ def delete():
     if request.form:
         """fetch userid"""
         userid = request.form.get("ID")
+        # model_delete expects a userid
         model_delete(userid)
     return redirect(url_for('.crud'))
 
@@ -81,6 +81,3 @@ def phones():
     # fill the table with phone numbers only
     records = model_read_phones()
     return render_template("crud.html", table=records)
-
-
-
