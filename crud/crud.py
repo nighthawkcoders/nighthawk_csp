@@ -4,7 +4,7 @@ from crud.model import model_create, model_read, model_read_all, model_read_emai
     model_read_phones, model_update_name, model_delete
 model_bp = Blueprint('crud', __name__,
                      url_prefix='/crud',
-                     template_folder='templates',
+                     template_folder='templates/crud',
                      static_folder='static',
                      static_url_path='assets')
 
@@ -14,7 +14,7 @@ model_bp = Blueprint('crud', __name__,
 def crud():
     """convert Users table into a list of dictionary rows"""
     records = model_read_all()
-    return render_template("crud/crud.html", table=records)
+    return render_template("crud.html", table=records)
 
 
 # create/add a new record to the table
@@ -28,7 +28,7 @@ def create():
             request.form.get("password"),
             request.form.get("phone")
         )
-    return redirect(url_for('model.crud'))
+    return redirect(url_for('.crud'))
 
 
 # CRUD read, which is filtering table based off of ID
@@ -41,7 +41,7 @@ def read():
         user_dict = model_read(userid)
         # model_read returns: username, password, email, phone
         record = [user_dict]  # placed in list for compatibility with index.html
-    return render_template("cryd/crud.html", table=record)
+    return render_template("crud.html", table=record)
 
 
 # CRUD update
@@ -54,7 +54,7 @@ def update():
         }
         # model_update expects userid, email, phone
         model_update_name(user_dict)
-    return redirect(url_for('model.crud'))
+    return redirect(url_for('.crud'))
 
 
 # CRUD delete
@@ -64,7 +64,7 @@ def delete():
         """fetch userid"""
         userid = request.form.get("ID")
         model_delete(userid)
-    return redirect(url_for('model.crud'))
+    return redirect(url_for('.crud'))
 
 
 # if email url, show the email table only
@@ -72,7 +72,7 @@ def delete():
 def emails():
     # fill the table with emails only
     records = model_read_emails()
-    return render_template("crud/crud.html", table=records)
+    return render_template("crud.html", table=records)
 
 
 # if phones url, show phones table only
@@ -80,7 +80,7 @@ def emails():
 def phones():
     # fill the table with phone numbers only
     records = model_read_phones()
-    return render_template("crud/crud.html", table=records)
+    return render_template("crud.html", table=records)
 
 
 
