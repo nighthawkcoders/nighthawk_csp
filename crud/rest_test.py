@@ -32,7 +32,7 @@ def api_tester():
         elif test[METHOD] == 'put':
             response = requests.put(url + test[API])
         elif test[METHOD] == 'delete':
-            response = requests.put(url + test[API])
+            response = requests.delete(url + test[API])
         else:
             print("unknown RESTapi method")
             continue
