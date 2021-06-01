@@ -12,7 +12,7 @@ model_bp = Blueprint('crud', __name__,
                      static_url_path='assets')
 
 
-# ##### Routes within this blueprint that interact between HTML and Model code
+# ##### Routes within this blueprint broker information between HTML and Model code
 # Default URL of blueprint and connecting to crud() function
 @model_bp.route('/')
 def crud():
