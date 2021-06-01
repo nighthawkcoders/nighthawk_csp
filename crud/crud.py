@@ -1,7 +1,10 @@
+# flask imports
 from flask import Blueprint, render_template, request, url_for, redirect
-
+# model imports
 from crud.model import model_create, model_read, model_read_all, model_read_emails, \
     model_read_phones, model_update_name, model_delete
+
+# blueprint defaults
 model_bp = Blueprint('crud', __name__,
                      url_prefix='/crud',
                      template_folder='templates/crud',
@@ -9,10 +12,11 @@ model_bp = Blueprint('crud', __name__,
                      static_url_path='assets')
 
 
-# connects default URL of blueprint to a function
+# ##### Routes within this blueprint that interact between HTML and Model code
+# Default URL of blueprint and connecting to crud() function
 @model_bp.route('/')
 def crud():
-    """convert Users table into a list of dictionary rows"""
+    """extracts Users table from DB and returns in json format"""
     records = model_read_all()
     return render_template("crud.html", table=records)
 
