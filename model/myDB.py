@@ -46,18 +46,19 @@ class Users(db.Model):
             person = model_create(name, email, password, phone)
             if person:
                 return person.json()
-            return {'email': None}, 404         # need to have better message on errors
+            return {'email': None}, 404  # need to have better message on errors
 
     class Read(Resource):
         def get(self):
             return model_query_all()
 
     class UpdateName(Resource):
-        def put(self, name, email):
-            person = Users.query.filter_by(email=email)
-            person.update(dict(name=name))
-            db.session.commit()
-            return person
+        def put(self, email, name):
+            user = model_read_email(email)
+            if user is None:
+                return None
+            model_update_name({'userid': user['userID'], 'name': name})
+            return None  # needs error handling
 
     class UserID(Resource):
         def get(self, userid):
@@ -85,7 +86,7 @@ class Users(db.Model):
 
     api.add_resource(Create, url_prefix + '/create/<string:name>/<string:email>/<string:password>/<string:phone>')
     api.add_resource(Read, url_prefix + '/read/')
-    api.add_resource(UpdateName, url_prefix + '/update/<string:name>/<string:email>')
+    api.add_resource(UpdateName, url_prefix + '/update/<string:email>/<string:name>')
     api.add_resource(UserID, url_prefix + '/userid/<int:userid>')
     api.add_resource(Name, url_prefix + '/name/<string:name>')
 
@@ -116,16 +117,26 @@ def model_read(userid):
     return user.json()
 
 
+def model_read_email(email):
+    """filter users by userid"""
+    user = Users.query.filter_by(email=email).first()
+    if user is None:
+        return None
+    return user.json()
+
+
 # CRUD update
 # model_update allows anything to be updated (excluding email)
 def model_update_name(user_dict):
     """fetch userid"""
     userid = user_dict["userid"]
-    if Users.query.filter_by(userID=userid).first() is not None:
-        db.session.query(Users).filter_by(userID=userid).update(
-            {Users.name: user_dict['name']})
+    user = Users.query.filter_by(userID=userid).first()
+    if user is None:
+        return None
+    db.session.query(Users).filter_by(userID=userid).update({Users.name: user_dict['name']})
     """commit changes to database"""
     db.session.commit()
+    return user.json
 
 
 # CRUD delete
@@ -183,6 +194,9 @@ def model_tester():
         except IntegrityError:
             db.session.remove()
             print(f"Records exist, duplicate email, or error: {row.email}")
+    record = model_read_email('jmort1021@yahoo.com')
+    print()
+    print("New Email Method", record['userID'], record['email'], record['name'])
 
 
 # play with api
@@ -195,7 +209,7 @@ def api_tester():
         ['/userid/3', "get"],
         ['/name/John Mortensen', "get"],
         ['/create/Wilma Flinstone/wilma@bedrock.org/123wifli/0001112222', "post"],
-        ['/update/John C Mortensen/jmort1021@yahoo.com', "put"],
+        ['/update/jmort1021@yahoo.com/John C Mortensen', "put"],
         ['/name/John Mortensen', "get"],
         ['/name/John C Mortensen', "get"],
         ['/read/', "get"],
