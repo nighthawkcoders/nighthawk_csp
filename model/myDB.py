@@ -53,10 +53,11 @@ class Users(db.Model):
             return model_query_all()
 
     class UpdateName(Resource):
-        def put(self, userid, email, name, password, phone):
+        def put(self, name, email):
             person = Users.query.filter_by(email=email)
             person.update(dict(name=name))
             db.session.commit()
+            return person
 
     class UserID(Resource):
         def get(self, userid):
@@ -117,12 +118,12 @@ def model_read(userid):
 
 # CRUD update
 # model_update allows anything to be updated (excluding email)
-def model_update(user_dict):
+def model_update_name(user_dict):
     """fetch userid"""
     userid = user_dict["userid"]
     if Users.query.filter_by(userID=userid).first() is not None:
         db.session.query(Users).filter_by(userID=userid).update(
-            {Users.phone: user_dict['phone']})
+            {Users.name: user_dict['name']})
     """commit changes to database"""
     db.session.commit()
 

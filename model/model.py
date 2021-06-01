@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, url_for, redirect
 
-from model.myDB import model_create, model_read, model_update, model_delete, model_query_all, model_query_emails, \
+from model.myDB import model_create, model_read, model_update_name, model_delete, model_query_all, model_query_emails, \
     model_query_phones
 
 model_bp = Blueprint('model', __name__,
@@ -50,12 +50,11 @@ def read():
 def update():
     if request.form:
         user_dict = {
-            'userid': request.form.get("ID"),
-            'email': request.form.get("email"),
-            'phone': request.form.get("phone")
+            'userid': request.form.get("userid"),
+            'name': request.form.get("name")
         }
         # model_update expects userid, email, phone
-        model_update(user_dict)
+        model_update_name(user_dict)
     return redirect(url_for('model.crud'))
 
 

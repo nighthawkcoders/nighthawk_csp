@@ -208,13 +208,12 @@
         <form method="POST" ID="update" action={{url_for('.update')}} >
             <table id="update_table">
                 <tr>
-                    <th><label for="Update_ID">ID</label></th>
-                    <th><label for="Update_email">Email</label></th>
-                    <th><label for="Update_phone">Phone</label></th>
+                    <th><label for="update_userid">ID</label></th>
+                    <th><label for="update_name">Name</label></th>
                 </tr>
                 <tr>
                     <td>
-                    <select name="ID" id="update_ID">
+                    <select name="userid" id="update_userid">
                         <optgroup label="userid">
                             {% for row in table %}
                                 <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
@@ -222,8 +221,7 @@
                         </optgroup>
                     </select>
                     </td>
-                    <td><input type="email" name="email" id="update_email" placeholder="abc@xyz.org"></td>
-                    <td><input type="tel" name="phone" id="update_phone" pattern="[0-9]{10}" placeholder="1234567890"></td>
+                    <td><input type="text" name="name" id="update_name" required></td>
                     <td><input type="submit" value="Update"></td>
                 </tr>
             </table>
