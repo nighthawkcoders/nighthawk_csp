@@ -25,12 +25,14 @@ class Users(db.Model):
     password = db.Column(db.String(255), unique=False, nullable=False)
     phone = db.Column(db.String(255), unique=False, nullable=False)
 
+    # self variables
     def __init__(self, name, email, password, phone):
         self.name = name
         self.email = email
         self.password = password
         self.phone = phone
 
+    # json/dictionary converter
     def json(self):
         return {
             "userID": self.userID,
@@ -40,6 +42,7 @@ class Users(db.Model):
             "phone": self.phone
         }
 
+    # class for create/post
     class Create(Resource):
         def post(self, name, email, password, phone):
             person = model_create(name, email, password, phone)
@@ -47,10 +50,12 @@ class Users(db.Model):
                 return person.json()
             return {'email': None}, 404  # need to have better message on errors
 
+    # class for read/get
     class Read(Resource):
         def get(self):
             return model_read_all()
 
+    # class for update/put
     class Update(Resource):
         def put(self, email, name):
             user = model_read_email(email)
@@ -59,10 +64,12 @@ class Users(db.Model):
             model_update_name({'userid': user['userID'], 'name': name})
             return None  # needs error handling
 
+    # class for delete
     class Delete(Resource):
         def delete(self, userid):
             model_delete(userid)
 
+    # building RESTapi resource
     api.add_resource(Create, url_prefix + '/create/<string:name>/<string:email>/<string:password>/<string:phone>')
     api.add_resource(Read, url_prefix + '/read/')
     api.add_resource(Update, url_prefix + '/update/<string:email>/<string:name>')
@@ -70,7 +77,7 @@ class Users(db.Model):
 
 
 # CRUD create/add a new record to the table
-# user_dict{} expects name, email, password, phone
+# user_dict{} expects name, email, password, phone; returns person object on success
 def model_create(name, email, password, phone):
     """prepare data for primary table extracting from form"""
     try:
@@ -88,13 +95,15 @@ def model_create(name, email, password, phone):
 
 
 # CRUD read: filter single record in table based off of userid
-# userid required
+# userid required, returns json/dictionary
 def model_read(userid):
     """filter users by userid"""
     user = Users.query.filter_by(userID=userid).first()
     return user.json()
 
 
+# CRUD read: filter single record in table based off of email
+# userid required, returns json/dictionary
 def model_read_email(email):
     """filter users by userid"""
     user = Users.query.filter_by(email=email).first()
@@ -103,8 +112,8 @@ def model_read_email(email):
     return user.json()
 
 
-# CRUD update
-# model_update allows anything to be updated (excluding email)
+# CRUD update: updates users name
+# requires userid, returns json/dictionary
 def model_update_name(user_dict):
     """fetch userid"""
     userid = user_dict["userid"]
@@ -114,10 +123,10 @@ def model_update_name(user_dict):
     db.session.query(Users).filter_by(userID=userid).update({Users.name: user_dict['name']})
     """commit changes to database"""
     db.session.commit()
-    return user.json
+    return user.json()
 
 
-# CRUD delete
+# CRUD delete: removes record from table
 # userid required
 def model_delete(userid):
     """fetch userid"""
@@ -188,5 +197,5 @@ def print_tester():
 
 
 if __name__ == "__main__":
-    model_tester()  # builds model for user
+    model_tester()  # builds model of Users
     print_tester()
