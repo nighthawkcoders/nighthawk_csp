@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-from algorithm.fibonacci import Fibonacci
+from .fibonacci import Fibonacci
 
 algorithm_bp = Blueprint('algorithm', __name__,
                          url_prefix='/algorithm',
@@ -8,7 +8,12 @@ algorithm_bp = Blueprint('algorithm', __name__,
                          static_url_path='assets')
 
 
-@algorithm_bp.route('/fibonacci', methods=["GET", "POST"])
+@algorithm_bp.route('/binary/')
+def binary():
+    return render_template("algorithm/binary.html")
+
+
+@algorithm_bp.route('/fibonacci/', methods=["GET", "POST"])
 def fibonacci():
     if request.form:
         return render_template("algorithm/fibonacci.html", fibonacci=Fibonacci(int(request.form.get("series"))))

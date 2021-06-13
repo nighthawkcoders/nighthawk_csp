@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+<h1>Binary Math with Illustrations</h1>
+<p id="binary"></p>
+<p id="decimal"></p>
+
+<div class="row">
+  <div class="column">
+      <table border="1" width="90%" align="center">
+        <tr>
+          <td><img class="img-responsive py-3" id="bulb1" src="/static/assets/bulb_on.gif" alt="" width="100" height="Auto">
+            <button type="button" onclick="changeImage('1')">On/Off</button>
+          </td>
+          <td><img class="img-responsive py-3" id="bulb2" src="/static/assets/bulb_on.gif" alt="" width="100" height="Auto">
+            <button type="button" onclick="changeImage('2')">On/Off</button>
+          </td>
+          <td><img class="img-responsive py-3" id="bulb3" src="/static/assets/bulb_on.gif" alt="" width="100" height="Auto">
+            <button type="button" onclick="changeImage('3')">On/Off</button>
+          </td>
+          <td><img class="img-responsive py-3" id="bulb4" src="/static/assets/bulb_on.gif" alt="" width="100" height="Auto">
+            <button type="button" onclick="changeImage('4')">On/Off</button>
+          </td>
+          <td><img class="img-responsive py-3" id="bulb5" src="/static/assets/bulb_on.gif" alt="" width="100" height="Auto">
+            <button type="button" onclick="changeImage('5')">On/Off</button>
+          </td>
+          <td><img class="img-responsive py-3" id="bulb6" src="/static/assets/bulb_on.gif" alt="" width="100" height="Auto">
+            <button type="button" onclick="changeImage('6')">On/Off</button>
+          </td>
+          <td><img class="img-responsive py-3" id="bulb7" src="/static/assets/bulb_on.gif" alt="" width="100" height="Auto">
+            <button type="button" onclick="changeImage('7')">On/Off</button>
+          </td>
+          <td><img class="img-responsive py-3" id="bulb8" src="/static/assets/bulb_on.gif" alt="" width="100" height="Auto">
+            <button type="button" onclick="changeImage('8')">On/Off</button>
+          </td>
+        </tr>
+        <tr>
+          <td><input type='text' id='digit1' Value="1" size="1" onclick="math()"></td>
+          <td><input type='text' id='digit2' Value="1" size="1" onclick="math()"></td>
+          <td><input type='text' id='digit3' Value="1" size="1" onclick="math()"></td>
+          <td><input type='text' id='digit4' Value="1" size="1" onclick="math()"></td>
+          <td><input type='text' id='digit5' Value="1" size="1" onclick="math()"></td>
+          <td><input type='text' id='digit6' Value="1" size="1" onclick="math()"></td>
+          <td><input type='text' id='digit7' Value="1" size="1" onclick="math()"></td>
+          <td><input type='text' id='digit8' Value="1" size="1" onclick="math()"></td>
+        </tr>
+      </table>
+  </div>
+
+</div>
+<script>
+  function math(){
+    //alert("get binary");
+    const binary = document.getElementById('digit1').value +
+            document.getElementById('digit2').value +
+            document.getElementById('digit3').value +
+            document.getElementById('digit4').value +
+            document.getElementById('digit5').value +
+            document.getElementById('digit6').value +
+            document.getElementById('digit7').value +
+            document.getElementById('digit8').value;
+    //alert("myBin: " & myBin);
+    document.getElementById('binary').value = binary;
+    document.getElementById('decimal').value = parseInt(binary, 2);;
+  }
+  function changeImage(i) {
+    //alert("Image: " + i);
+    var image = document.getElementById('bulb' + i);
+    var dig = document.getElementById('digit' + i);
+    //alert("!_" + image.src)
+    if (image.src.match("/static/assets/bulb_on.gif")) {
+      image.src = "/static/assets/bulb_off1.gif";
+      dig.value = 0;
+    } else {
+      image.src = "/static/assets/bulb_on.gif";
+      dig.value = 1;
+    }
+  }
+</script>
+{% endblock %}
+</html>
