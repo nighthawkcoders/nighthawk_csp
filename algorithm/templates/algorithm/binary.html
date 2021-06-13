@@ -2,14 +2,84 @@
 <html>
 {% extends "layout.html" %}
 
+{% block meta %}
+<title>Binary page</title>
+<style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+</style>
+<script>
+  function changeImage(i) {
+    //alert("Digit action: " + i );
+    const image = document.getElementById('bulb' + i);
+    const dig = document.getElementById('digit' + i);
+    // Change digit and visual
+    if (image.src.match("/static/assets/bulb_on.gif")) {
+      image.src = "/static/assets/bulb_off1.gif";
+      dig.value = 0;
+    } else {
+      image.src = "/static/assets/bulb_on.gif";
+      dig.value = 1;
+    }
+
+    // Binary numbers
+    const binary = document.getElementById('digit1').value +
+            document.getElementById('digit2').value +
+            document.getElementById('digit3').value +
+            document.getElementById('digit4').value +
+            document.getElementById('digit5').value +
+            document.getElementById('digit6').value +
+            document.getElementById('digit7').value +
+            document.getElementById('digit8').value;
+    //alert("Binary number: " + binary );
+    document.getElementById('binary').innerHTML = binary;
+
+    // Decimal conversion
+    const octal = parseInt(binary, 2).toString(8);
+    //alert("Decimal number: " + decimal );
+    document.getElementById('octal').innerHTML = octal;
+    // Decimal conversion
+    const hexadecimal = parseInt(binary, 2).toString(16);
+    //alert("Decimal number: " + decimal );
+    document.getElementById('hexadecimal').innerHTML = hexadecimal;
+    // Decimal conversion
+    const decimal = parseInt(binary, 2).toString();
+    //alert("Decimal number: " + decimal );
+    document.getElementById('decimal').innerHTML = decimal;
+  }
+</script>
+{% endblock %}
 
 {% block content %}
 <h1>Binary Math with Illustrations</h1>
 
 <div class="row">
   <div class="column">
-      <table border="1" width="90%" align="center">
+    <table>
+      <tr id="table">
+        <th>Binary</th>
+        <th>Octal</th>
+        <th>Hexadecimal</th>
+        <th>Decimal</th>
+      </tr>
+      <tr>
+        <td id="binary">11111111</td>
+        <td id="octal">377</td>
+        <td id="hexadecimal">FF</td>
+        <td id="decimal">255</td>
+      </tr>
+    </table>
+    <table border="1" width="90%" align="center">
         <tr>
           <td><img class="img-responsive py-3" id="bulb1" src="/static/assets/bulb_on.gif" alt="" width="100" height="Auto">
             <button type="button" onclick="changeImage('1')">On/Off</button>
@@ -37,57 +107,20 @@
           </td>
         </tr>
         <tr>
-          <td><input type='text' id='digit1' Value="1" size="1" onclick="math()"></td>
-          <td><input type='text' id='digit2' Value="1" size="1" onclick="math()"></td>
-          <td><input type='text' id='digit3' Value="1" size="1" onclick="math()"></td>
-          <td><input type='text' id='digit4' Value="1" size="1" onclick="math()"></td>
-          <td><input type='text' id='digit5' Value="1" size="1" onclick="math()"></td>
-          <td><input type='text' id='digit6' Value="1" size="1" onclick="math()"></td>
-          <td><input type='text' id='digit7' Value="1" size="1" onclick="math()"></td>
-          <td><input type='text' id='digit8' Value="1" size="1" onclick="math()"></td>
+          <td><input type='text' id='digit1' Value="1" size="1"></td>
+          <td><input type='text' id='digit2' Value="1" size="1"></td>
+          <td><input type='text' id='digit3' Value="1" size="1"></td>
+          <td><input type='text' id='digit4' Value="1" size="1"></td>
+          <td><input type='text' id='digit5' Value="1" size="1"></td>
+          <td><input type='text' id='digit6' Value="1" size="1"></td>
+          <td><input type='text' id='digit7' Value="1" size="1"></td>
+          <td><input type='text' id='digit8' Value="1" size="1"></td>
         </tr>
-      </table>
-      <table>
-        <tr>
-          <th>Binary</th>
-          <th>Decimal</th>
-        </tr>
-        <tr>
-          <td id="binary">11111111</td>
-          <td id="decimal">255</td>
-        </tr>
-      </table>
+    </table>
+
   </div>
 
 </div>
-<script>
-  function math(){
-    //alert("get binary");
-    const binary = document.getElementById('digit1').value +
-            document.getElementById('digit2').value +
-            document.getElementById('digit3').value +
-            document.getElementById('digit4').value +
-            document.getElementById('digit5').value +
-            document.getElementById('digit6').value +
-            document.getElementById('digit7').value +
-            document.getElementById('digit8').value;
-    //alert("myBin: " & myBin);
-    document.getElementById('binary').value = binary;
-    document.getElementById('decimal').value = parseInt(binary, 2);;
-  }
-  function changeImage(i) {
-    //alert("Image: " + i);
-    var image = document.getElementById('bulb' + i);
-    var dig = document.getElementById('digit' + i);
-    //alert("!_" + image.src)
-    if (image.src.match("/static/assets/bulb_on.gif")) {
-      image.src = "/static/assets/bulb_off1.gif";
-      dig.value = 0;
-    } else {
-      image.src = "/static/assets/bulb_on.gif";
-      dig.value = 1;
-    }
-  }
-</script>
+
 {% endblock %}
 </html>
