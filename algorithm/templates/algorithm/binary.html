@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 {% extends "layout.html" %}
+
+{% set BITS = 8 %}
 {% set imgBulbOn = "/static/assets/bulb_on.gif" %}
 {% set imgBulbOff = "/static/assets/bulb_off.png" %}
 {% set msgTurnOn = "Turn On" %}
@@ -9,10 +11,11 @@
 {% block meta %}
 <title>Binary page</title>
 <script>
+  let BITS = 8; let MAX = 255;
   // return string with current value of each bit
   function getBits() {
     let bits = "";
-    for(let i = 0; i < 8; i++) {
+    for(let i = 0; i < BITS; i++) {
       bits = bits + document.getElementById('digit' + i).value;
     }
     return bits;
@@ -22,7 +25,7 @@
     //alert("Binary number: " + binary );
     document.getElementById('binary').innerHTML = binary;
     // Decimal conversion
-    const octal = parseInt(binary, 2).toString(8);
+    const octal = parseInt(binary, 2).toString(BITS);
     //alert("Decimal number: " + decimal );
     document.getElementById('octal').innerHTML = octal;
     // Decimal conversion
@@ -37,18 +40,18 @@
   //
   function decimal_2_base(decimal, base) {
     let conversion = "";
+    // loop to convert to base
     do {
       let digit = decimal % base;
-      conversion = "" + digit + conversion;    // what does this do?
-      decimal = ~~(decimal / base);                         // what does this do?
-    } while (decimal > 0);                 // why while at the end? what is ~~?
-
-    if (base == 2) {
-      for (let i = 0; conversion.length < 8; i++) {
+      conversion = "" + digit + conversion; // what does this do?
+      decimal = ~~(decimal / base);         // what does this do?
+    } while (decimal > 0);                  // why while at the end? what is ~~?
+    // loop to pad with zeros
+    if (base == 2) {                        // only pad for binary conversions
+      for (let i = 0; conversion.length < BITS; i++) {
         conversion = "0" + conversion;
       }
     }
-
     return conversion;
   }
 
@@ -76,7 +79,12 @@
   function add(n) {
     let binary = getBits();
     // add n to current bits
-    const decimal = parseInt(binary, 2) + n;
+    let decimal = parseInt(binary, 2);
+    if (n > 0) {  // PLUS
+      decimal = decimal == MAX ? 0 : decimal += n; // OVERFLOW or PLUS
+    } else  {     // MINUS
+      decimal = decimal == 0 ? MAX : decimal += n; // OVERFLOW or MINUS
+    }
     // convert the result back to binary
     binary = decimal_2_base(decimal, 2);
     // update conversions
@@ -126,14 +134,14 @@
     <div class="col-12">
       <table class="table">
         <tr>
-          {% for i in range(8) %}
+          {% for i in range(BITS) %}
             <td><img class="img-responsive py-3" id="bulb{{i}}" src="{{ imgBulbOff }}" alt="" width="60" height="Auto">
               <button type="button" id="butt{{i}}" onclick="toggleBit('{{i}}')">{{ msgTurnOn }}</button>
             </td>
           {% endfor %}
         </tr>
         <tr>
-          {% for i in range(8) %}
+          {% for i in range(BITS) %}
             <td><input type='text' id='digit{{i}}' Value="0" size="1" readonly></td>
           {% endfor %}
         </tr>
