@@ -9,30 +9,16 @@
 {% block meta %}
 <title>Binary page</title>
 <script>
-  function changeImage(i) {
-    //alert("Digit action: " + i );
-    const dig = document.getElementById('digit' + i);
-    const image = document.getElementById('bulb' + i);
-    const butt = document.getElementById('butt' + i);
-    // Change digit and visual
-    if (image.src.match("{{ imgBulbOn }}")) {
-      dig.value = 0;
-      image.src = "{{ imgBulbOff }}";
-      butt.innerHTML = "{{ msgTurnOn }}";
-    } else {
-      dig.value = 1;
-      image.src = "{{ imgBulbOn }}";
-      butt.innerHTML = "{{ msgTurnOff }}";
+  // return string with current value of each bit
+  function getBits() {
+    let bits = "";
+    for(let i = 0; i < 8; i++) {
+      bits = bits + document.getElementById('digit' + i).value;
     }
-    // Binary numbers
-    const binary = document.getElementById('digit0').value +
-            document.getElementById('digit1').value +
-            document.getElementById('digit2').value +
-            document.getElementById('digit3').value +
-            document.getElementById('digit4').value +
-            document.getElementById('digit5').value +
-            document.getElementById('digit6').value +
-            document.getElementById('digit7').value;
+    return bits;
+  }
+  // setter for DOM values
+  function setConversions(binary) {
     //alert("Binary number: " + binary );
     document.getElementById('binary').innerHTML = binary;
     // Decimal conversion
@@ -48,6 +34,54 @@
     //alert("Decimal number: " + decimal );
     document.getElementById('decimal').innerHTML = decimal;
   }
+  //
+  function decimal_2_base(decimal, base) {
+    let conversion = "";
+    do {
+      let digit = decimal % base;
+      conversion = "" + digit + conversion;    // what does this do?
+      decimal = ~~(decimal / base);                         // what does this do?
+    } while (decimal > 0);                 // why while at the end? what is ~~?
+
+    if (base == 2) {
+      for (let i = 0; conversion.length < 8; i++) {
+        conversion = "0" + conversion;
+      }
+    }
+
+    return conversion;
+  }
+
+  // toggle selected bit and recalculate
+  function toggleBit(i) {
+    //alert("Digit action: " + i );
+    const dig = document.getElementById('digit' + i);
+    const image = document.getElementById('bulb' + i);
+    const butt = document.getElementById('butt' + i);
+    // Change digit and visual
+    if (image.src.match("{{ imgBulbOn }}")) {
+      dig.value = 0;
+      image.src = "{{ imgBulbOff }}";
+      butt.innerHTML = "{{ msgTurnOn }}";
+    } else {
+      dig.value = 1;
+      image.src = "{{ imgBulbOn }}";
+      butt.innerHTML = "{{ msgTurnOff }}";
+    }
+    // Binary numbers
+    const binary = getBits();
+    setConversions(binary);
+  }
+  // add is positive integer, subtract is negative integer
+  function add(n) {
+    let binary = getBits();
+    const decimal = parseInt(binary, 2) + n;
+
+    binary = decimal_2_base(decimal, 2);
+    alert("Binary" + binary);
+
+    setConversions(binary);
+  }
 </script>
 {% endblock %}
 
@@ -59,16 +93,20 @@
     <div class="col-8">
       <table class="table">
       <tr id="table">
+        <th>Plus</th>
         <th>Binary</th>
         <th>Octal</th>
         <th>Hexadecimal</th>
         <th>Decimal</th>
+        <th>Minus</th>
       </tr>
       <tr>
-        <td id="binary">11111111</td>
-        <td id="octal">377</td>
-        <td id="hexadecimal">FF</td>
-        <td id="decimal">255</td>
+        <td><button type="button" id="add1" onclick="add(1)">+1</button></td>
+        <td id="binary">00000000</td>
+        <td id="octal">0</td>
+        <td id="hexadecimal">0</td>
+        <td id="decimal">0</td>
+        <td><button type="button" id="sub1" onclick="add(-1)">-1</button></td>
       </tr>
       </table>
     </div>
@@ -77,20 +115,20 @@
       <table class="table">
         <tr>
           {% for i in range(8) %}
-            <td><img class="img-responsive py-3" id="bulb{{i}}" src="{{ imgBulbOn }}" alt="" width="60" height="Auto">
-              <button type="button" id="butt{{i}}" onclick="changeImage('{{i}}')">{{ msgTurnOff }}</button>
+            <td><img class="img-responsive py-3" id="bulb{{i}}" src="{{ imgBulbOff }}" alt="" width="60" height="Auto">
+              <button type="button" id="butt{{i}}" onclick="toggleBit('{{i}}')">{{ msgTurnOn }}</button>
             </td>
           {% endfor %}
         </tr>
         <tr>
           {% for i in range(8) %}
-            <td><input type='text' id='digit{{i}}' Value="1" size="1" readonly></td>
+            <td><input type='text' id='digit{{i}}' Value="0" size="1" readonly></td>
           {% endfor %}
         </tr>
       </table>
     </div>
 
-  </div>
+    </div>
 </div>
 {% endblock %}
 </html>
