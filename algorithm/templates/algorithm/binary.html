@@ -2,8 +2,8 @@
 <html>
 {% extends "layout.html" %}
 
-{% set BITS = 8 %}
-{% set MAX = 255 %}
+{% set BITS = 16 %}
+{% set MAX = 2 ** BITS - 1%}
 
 {% set imgBulbOn = "/static/assets/bulb_on.gif" %}
 {% set imgBulbOff = "/static/assets/bulb_off.png" %}
@@ -137,7 +137,7 @@
       <table class="table">
         <tr>
           {% for i in range(BITS) %}
-            <td><img class="img-responsive py-3" id="bulb{{i}}" src="{{ imgBulbOff }}" alt="" width="60" height="Auto">
+            <td><img class="img-responsive py-3" id="bulb{{i}}" src="{{ imgBulbOff }}" alt="" width="40" height="Auto">
               <button type="button" id="butt{{i}}" onclick="toggleBit('{{i}}')">{{ msgTurnOn }}</button>
             </td>
           {% endfor %}
