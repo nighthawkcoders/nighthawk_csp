@@ -3,6 +3,8 @@
 {% extends "layout.html" %}
 
 {% set BITS = 8 %}
+{% set MAX = 255 %}
+
 {% set imgBulbOn = "/static/assets/bulb_on.gif" %}
 {% set imgBulbOff = "/static/assets/bulb_off.png" %}
 {% set msgTurnOn = "Turn On" %}
@@ -11,7 +13,7 @@
 {% block meta %}
 <title>Binary page</title>
 <script>
-  let BITS = 8; let MAX = 255;
+  const BITS = '{{ BITS }}'; let MAX = '{{ MAX }}';
   // return string with current value of each bit
   function getBits() {
     let bits = "";
@@ -25,7 +27,7 @@
     //alert("Binary number: " + binary );
     document.getElementById('binary').innerHTML = binary;
     // Decimal conversion
-    const octal = parseInt(binary, 2).toString(BITS);
+    const octal = parseInt(binary, 2).toString(8);
     //alert("Decimal number: " + decimal );
     document.getElementById('octal').innerHTML = octal;
     // Decimal conversion
@@ -78,7 +80,7 @@
   // add is positive integer, subtract is negative integer
   function add(n) {
     let binary = getBits();
-    // add n to current bits
+    // convert to decimal and do math
     let decimal = parseInt(binary, 2);
     if (n > 0) {  // PLUS
       decimal = decimal == MAX ? 0 : decimal += n; // OVERFLOW or PLUS
@@ -148,7 +150,7 @@
       </table>
     </div>
 
-    </div>
+  </div>
 </div>
 {% endblock %}
 </html>
