@@ -75,12 +75,24 @@
   // add is positive integer, subtract is negative integer
   function add(n) {
     let binary = getBits();
+    // add n to current bits
     const decimal = parseInt(binary, 2) + n;
-
+    // convert the result back to binary
     binary = decimal_2_base(decimal, 2);
-    alert("Binary" + binary);
-
+    // update conversions
     setConversions(binary);
+    // update bits
+    for (let i = 0; i < binary.length; i++) {
+      let digit = binary.substr(i, 1);
+      document.getElementById('digit' + i).value = digit;
+      if (digit == "1") {
+        document.getElementById('bulb' + i).src = "{{ imgBulbOn }}";
+        document.getElementById('butt' + i).innerHTML = "{{ msgTurnOff }}";
+      } else {
+        document.getElementById('bulb' + i).src = "{{ imgBulbOff }}";
+        document.getElementById('butt' + i).innerHTML = "{{ msgTurnOn }}";
+      }
+    }
   }
 </script>
 {% endblock %}
