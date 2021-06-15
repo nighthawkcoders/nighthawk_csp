@@ -1,49 +1,40 @@
 <!DOCTYPE html>
 <html>
 {% extends "layout.html" %}
+{% set imgBulbOn = "/static/assets/bulb_on.gif" %}
+{% set imgBulbOff = "/static/assets/bulb_off.png" %}
+{% set msgTurnOn = "Turn On" %}
+{% set msgTurnOff = "Turn Off" %}
 
 {% block meta %}
 <title>Binary page</title>
-<style>
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-</style>
 <script>
   function changeImage(i) {
     //alert("Digit action: " + i );
-    const image = document.getElementById('bulb' + i);
     const dig = document.getElementById('digit' + i);
+    const image = document.getElementById('bulb' + i);
+    const butt = document.getElementById('butt' + i);
     // Change digit and visual
-    if (image.src.match("/static/assets/bulb_on.gif")) {
-      image.src = "/static/assets/bulb_off.png";
+    if (image.src.match("{{ imgBulbOn }}")) {
       dig.value = 0;
+      image.src = "{{ imgBulbOff }}";
+      butt.innerHTML = "{{ msgTurnOn }}";
     } else {
-      image.src = "/static/assets/bulb_on.gif";
       dig.value = 1;
+      image.src = "{{ imgBulbOn }}";
+      butt.innerHTML = "{{ msgTurnOff }}";
     }
-
     // Binary numbers
-    const binary = document.getElementById('digit1').value +
+    const binary = document.getElementById('digit0').value +
+            document.getElementById('digit1').value +
             document.getElementById('digit2').value +
             document.getElementById('digit3').value +
             document.getElementById('digit4').value +
             document.getElementById('digit5').value +
             document.getElementById('digit6').value +
-            document.getElementById('digit7').value +
-            document.getElementById('digit8').value;
+            document.getElementById('digit7').value;
     //alert("Binary number: " + binary );
     document.getElementById('binary').innerHTML = binary;
-
     // Decimal conversion
     const octal = parseInt(binary, 2).toString(8);
     //alert("Decimal number: " + decimal );
@@ -61,11 +52,12 @@
 {% endblock %}
 
 {% block content %}
-<h1>Binary Math with Illustrations</h1>
+<h1 class="text-center">Binary Math with Conversions</h1>
+<div class="container">
+  <div class="row justify-content-md-center">
 
-<div class="row">
-  <div class="column">
-    <table>
+    <div class="col-8">
+      <table class="table">
       <tr id="table">
         <th>Binary</th>
         <th>Octal</th>
@@ -78,49 +70,27 @@
         <td id="hexadecimal">FF</td>
         <td id="decimal">255</td>
       </tr>
-    </table>
-    <table border="1" width="90%" align="center">
+      </table>
+    </div>
+
+    <div class="col-12">
+      <table class="table">
         <tr>
-          <td><img class="img-responsive py-3" id="bulb1" src="/static/assets/bulb_on.gif" alt="" width="100" height="Auto">
-            <button type="button" onclick="changeImage('1')">On/Off</button>
-          </td>
-          <td><img class="img-responsive py-3" id="bulb2" src="/static/assets/bulb_on.gif" alt="" width="100" height="Auto">
-            <button type="button" onclick="changeImage('2')">On/Off</button>
-          </td>
-          <td><img class="img-responsive py-3" id="bulb3" src="/static/assets/bulb_on.gif" alt="" width="100" height="Auto">
-            <button type="button" onclick="changeImage('3')">On/Off</button>
-          </td>
-          <td><img class="img-responsive py-3" id="bulb4" src="/static/assets/bulb_on.gif" alt="" width="100" height="Auto">
-            <button type="button" onclick="changeImage('4')">On/Off</button>
-          </td>
-          <td><img class="img-responsive py-3" id="bulb5" src="/static/assets/bulb_on.gif" alt="" width="100" height="Auto">
-            <button type="button" onclick="changeImage('5')">On/Off</button>
-          </td>
-          <td><img class="img-responsive py-3" id="bulb6" src="/static/assets/bulb_on.gif" alt="" width="100" height="Auto">
-            <button type="button" onclick="changeImage('6')">On/Off</button>
-          </td>
-          <td><img class="img-responsive py-3" id="bulb7" src="/static/assets/bulb_on.gif" alt="" width="100" height="Auto">
-            <button type="button" onclick="changeImage('7')">On/Off</button>
-          </td>
-          <td><img class="img-responsive py-3" id="bulb8" src="/static/assets/bulb_on.gif" alt="" width="100" height="Auto">
-            <button type="button" onclick="changeImage('8')">On/Off</button>
-          </td>
+          {% for i in range(8) %}
+            <td><img class="img-responsive py-3" id="bulb{{i}}" src="{{ imgBulbOn }}" alt="" width="60" height="Auto">
+              <button type="button" id="butt{{i}}" onclick="changeImage('{{i}}')">{{ msgTurnOff }}</button>
+            </td>
+          {% endfor %}
         </tr>
         <tr>
-          <td><input type='text' id='digit1' Value="1" size="1" readonly></td>
-          <td><input type='text' id='digit2' Value="1" size="1" readonly></td>
-          <td><input type='text' id='digit3' Value="1" size="1" readonly></td>
-          <td><input type='text' id='digit4' Value="1" size="1" readonly></td>
-          <td><input type='text' id='digit5' Value="1" size="1" readonly></td>
-          <td><input type='text' id='digit6' Value="1" size="1" readonly></td>
-          <td><input type='text' id='digit7' Value="1" size="1" readonly></td>
-          <td><input type='text' id='digit8' Value="1" size="1" readonly></td>
+          {% for i in range(8) %}
+            <td><input type='text' id='digit{{i}}' Value="1" size="1" readonly></td>
+          {% endfor %}
         </tr>
-    </table>
+      </table>
+    </div>
 
   </div>
-
 </div>
-
 {% endblock %}
 </html>
