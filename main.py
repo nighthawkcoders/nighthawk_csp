@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request
 from __init__ import app
 
 from y2021 import y2021_bp
@@ -15,6 +15,17 @@ from crud.crud import model_bp
 @app.route('/')
 def index():
     return render_template("index.html")
+
+
+@app.route('/greet', methods=['GET', 'POST'])
+def greet():
+    # submit button has been pushed
+    if request.form:
+        name = request.form.get("name")
+        if len(name) != 0:  # input field has content
+            return render_template("greet.html", name=name)
+    # starting and empty input default
+    return render_template("greet.html", name="World")
 
 
 @app.route('/deploy')

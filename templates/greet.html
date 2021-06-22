@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="contact" style="height: 35vh;">
+        <div class="row justify-content-left" style="margin: 2%;">
+            <form action="/greet" id="greet" method="POST" >
+                <div>
+                    <label for="name">Type a greeting name?</label>
+                    <input name="name" id="name">
+                    <input type="submit" value="Greetings!">
+                    <p>Hello, {{name}}!</p>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
