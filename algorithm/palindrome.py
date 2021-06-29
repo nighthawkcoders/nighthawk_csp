@@ -1,3 +1,6 @@
+import re
+
+
 class Palindrome:
     def __init__(self, candidate):
         self._candidate = candidate
@@ -6,7 +9,8 @@ class Palindrome:
         self.is_palindrome()
 
     def is_palindrome(self):
-        c = self._candidate.replace(" ", "")  # remove spaces
+        # remove all non alphanumeric using regular expression
+        c = re.sub(r'[^a-zA-Z0-9]', '', self._candidate)
         # Run loop from 0 to len/2 of string (middle is exit point)
         tests = int(len(c) / 2)
         for i in range(0, tests):

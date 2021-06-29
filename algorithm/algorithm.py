@@ -24,5 +24,5 @@ def fibonacci():
 def palindrome():
     if request.form:
         return render_template("algorithm/palindrome.html", palindrome=Palindrome(request.form.get("candidate")))
-    return render_template("algorithm/palindrome.html", palindrome=Palindrome("radar"))
+    return render_template("algorithm/palindrome.html", palindrome=Palindrome("a toyota"))
 
