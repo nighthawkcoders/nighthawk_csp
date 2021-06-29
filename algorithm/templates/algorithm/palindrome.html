@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+
+  <div class="center-block" style="margin: 2% 5% 5%; font-family: gilroy,serif;">
+    <!-- Title -->
+    <div class="col-12" style="text-align: center;">
+      <h1><strong>Palindrome test using Python</strong></h1>
+    </div>
+
+    <!-- Input and Content -->
+    <div class="jumbotron text-center row">
+      <div class="col-md-6">
+        <h3>Type a candidate work or phrase?</h3>
+        <img class="img-responsive py-3" src="{{url_for('.static', filename='palindrome.jpeg')}}" alt="" width="75%" height="Auto">
+        <form id="fibForm" action="/algorithm/palindrome" method="POST" >
+          <input name="candidate" id="candidate" type="text" >
+          <button>Test!</button>
+        </form>
+      </div>
+
+      <div class="col-md-6">
+        <h3>Palindrome test for {{palindrome.candidate}}</h3>
+        <!-- Number, List table -->
+        <table class="mx-auto">
+          <tr>
+            <th scope="col">Number</th>
+            <th scope="col">List</th>
+          </tr>
+          <tr>
+            <td>{{palindrome.number}}</td>
+            <td>{{palindrome.test}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  </div>>
+
+</div>
+</div>
+<style>
+  table, td, th {
+    border: 1px solid var(--dblue);
+  }
+  td, th {
+    text-align:left;
+  }
+</style>
+{% endblock %}

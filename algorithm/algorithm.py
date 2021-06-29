@@ -18,3 +18,10 @@ def fibonacci():
     if request.form:
         return render_template("algorithm/fibonacci.html", fibonacci=Fibonacci(int(request.form.get("series"))))
     return render_template("algorithm/fibonacci.html", fibonacci=Fibonacci(2))
+
+@algorithm_bp.route('/palindrome/', methods=["GET", "POST"])
+def palindrome():
+    if request.form:
+        return render_template("algorithm/palindrome.html", palindrome=Fibonacci(2))
+    return render_template("algorithm/palindrome.html", palindrome=Fibonacci(2))
+
