@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request
 from .fibonacci import Fibonacci
+from .palindrome import Palindrome
 
 algorithm_bp = Blueprint('algorithm', __name__,
                          url_prefix='/algorithm',
@@ -22,6 +23,6 @@ def fibonacci():
 @algorithm_bp.route('/palindrome/', methods=["GET", "POST"])
 def palindrome():
     if request.form:
-        return render_template("algorithm/palindrome.html", palindrome=Fibonacci(2))
-    return render_template("algorithm/palindrome.html", palindrome=Fibonacci(2))
+        return render_template("algorithm/palindrome.html", palindrome=Palindrome(request.form.get("candidate")))
+    return render_template("algorithm/palindrome.html", palindrome=Palindrome("radar"))
 
