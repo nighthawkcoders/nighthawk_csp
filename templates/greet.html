@@ -2,16 +2,38 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class="contact" style="height: 35vh;">
-        <div class="row justify-content-left" style="margin: 2%;">
+    <div class="center-block" style="margin: 2% 5% 5%; font-family: gilroy,serif;">
+
+        <div class="col-12" style="text-align: left;">
+            <p>Hello, {{name}}!</p>
+        </div>
+
+        <div class="col-12" style="text-align: left;">
             <form action="/greet" id="greet" method="POST" >
-                <div>
-                    <label for="name">Type a greeting name?</label>
-                    <input name="name" id="name">
-                    <input type="submit" value="Greetings!">
-                    <p>Hello, {{name}}!</p>
-                </div>
+                <label for="name">Type a greeting name?</label>
+                <input name="name" id="name">
+                <input type="submit" value="Greetings!">
             </form>
         </div>
+
     </div>
+
+    <!-- display code from GitHub -->
+    <div class="center-block" style="margin: 2% 5% 5%; font-family: gilroy,serif;">
+        <div class="col-8" style="text-align: left;">
+            <p>Python backend code</p>
+            <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Fmain.py%23L20-L28&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+        </div>
+
+        <div class="col-8" style="text-align: left;">
+            <p>Jinja2 response code</p>
+            <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Ftemplates%2Fgreet.html%23L8-L8&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+        </div>
+
+        <div class="col-8" style="text-align: left;">
+            <p>HTML Form</p>
+            <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Ftemplates%2Fgreet.html%23L12-L16&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+        </div>
+    </div>
+
 {% endblock %}
