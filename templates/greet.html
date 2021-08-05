@@ -2,13 +2,13 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class="center-block" style="margin: 2% 5% 5%; font-family: gilroy,serif;">
+    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
 
-        <div class="col-12" style="text-align: left;">
+        <div class="col-12">
             <p>Hello, {{name}}!</p>
         </div>
 
-        <div class="col-12" style="text-align: left;">
+        <div class="col-12">
             <form action="/greet" id="greet" method="POST" >
                 <label for="name">Type a greeting name?</label>
                 <input name="name" id="name">
@@ -16,23 +16,28 @@
             </form>
         </div>
 
+        <div class="col-12">
+            <img src="/static/assets/PythonFlask.jpeg" style="height: 400px" >
+        </div>
+
     </div>
 
     <!-- display code from GitHub -->
-    <div class="center-block" style="margin: 2% 5% 5%; font-family: gilroy,serif;">
-        <div class="col-8" style="text-align: left;">
-            <p>Python backend code.  This code sets up the "name=" variable that is passed to the HTML (greet.html).  This code contains "if statements (selections/conditionals)" to test for input being entered from form (name=name).  The default condition (name="World") occurs when either if condition evaluates to false. </p>
-            <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Fmain.py%23L20-L28&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
-        </div>
+    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
 
-        <div class="col-8" style="text-align: left;">
-            <p>Jinja2 pre-processor code.  This shows the variable name within double curly/squiggly brackets.  This is a variable in Jinja and is replaced with variable value before the HTML is presented in browser (pre-processor).</p>
+        <div class="col-8">
+            <p>Jinja2 pre-processor code.  This code shows a variable name within double curly/squiggly brackets, or the variable syntax of Jinja2.  The variable is replaced with the value before the HTML is given to the browser by Flask/Jinja2 (a pre-processor means a step before code is transferred to another tool or engine.</p>
             <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Ftemplates%2Fgreet.html%23L8-L8&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
         </div>
 
-        <div class="col-8" style="text-align: left;">
-            <p>HTML Form.  Form action and input interacts between HTML and the backend server, the POST is the HTML method.</p>
+        <div class="col-8">
+            <p>HTML input form.  A form action gathers input interacts between HTML and the backend server, POST via HTTP is the method of interaction.</p>
             <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Ftemplates%2Fgreet.html%23L12-L16&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+        </div>
+
+        <div class="col-8">
+            <p>Python backend code.  This code, contained in a Python function, sets up the "name=" variable. The name variable is passed to the HTML (greet.html) via Flask.  This code contains "if statements",  these statements are referred to as selection statements by College Board.  Most developers refer to if statements as conditionals.  This code tests to see if input is entered from the HTML Form.  If input is set then Python variable "name" set the Jinja2 variable "name" (name=name) with the value from the HTML form.  The default/else condition (last statement in function), sets "name" to a constant value name="World". Conditional logic is fundamental to all programming languages. Observe this closely, make sure you understand it thoroughly.</p>
+            <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Fmain.py%23L20-L28&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
         </div>
     </div>
 
