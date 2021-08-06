@@ -8,12 +8,6 @@ algorithm_bp = Blueprint('algorithm', __name__,
                          static_folder='static',
                          static_url_path='assets')
 
-
-@algorithm_bp.route('/binary/')
-def binary():
-    return render_template("algorithm/binary.html")
-
-
 @algorithm_bp.route('/fibonacci/', methods=["GET", "POST"])
 def fibonacci():
     if request.form:

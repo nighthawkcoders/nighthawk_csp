@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <img class="img-responsive py-3" src="{{url_for('.static', filename='black-square.png')}}" alt="" width="25%" height="Auto">
+            </div>
+
+            <div class="col-2">
+                <img class="img-responsive py-3" src="{{url_for('.static', filename='red-square.png')}}" alt="" width="25%" height="Auto">
+            </div>
+
+            <div class="col-2">
+                <img class="img-responsive py-3" src="{{url_for('.static', filename='green-square.png')}}" alt="" width="25%" height="Auto">
+            </div>
+
+            <div class="col-2">
+                <img class="img-responsive py-3" src="{{url_for('.static', filename='blue-square.png')}}" alt="" width="25%" height="Auto">
+            </div>
+
+            <div class="col-2">
+                <img class="img-responsive py-3" src="{{url_for('.static', filename='white-square.png')}}" alt="" width="25%" height="Auto">
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
