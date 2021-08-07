@@ -10,13 +10,30 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <table class="mx-auto">
+                <tr>
+                    <th>Meta Data</th>
+                    <th>Image</th>
+                    <th>Data</th>
+                </tr>
                 {% for color in colors %}
                     <tr>
                         <td>
-                            <img class="img-responsive py-3" src="{{url_for('.static', filename=color.file)}}" alt="" width="25%" height="Auto">
+                            <div>{{color.format}}</div>
+                            <div>{{color.size}}</div>
                         </td>
                         <td>
-                            {{color.format}}, {{color.mode}}, {{color.size}}, {{color.array}}
+                            <img class="img-responsive py-3" src="{{url_for('.static', filename=color.file)}}" alt="" width="256" height="Auto">
+                        </td>
+                        <td>
+                            <div class="overflow-auto" style="height: 256px">
+                                <div>row:  {{color.mode}}</div>
+                                {% for row in color.array[:256+1] %}
+                                    <div>{{loop.index}}:  {{row}}</div>
+                                    {% if loop.index > 256 %}
+                                        <div> truncated </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
                         </td>
                     </tr>
                 {% endfor %}

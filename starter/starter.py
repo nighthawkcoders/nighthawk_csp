@@ -12,11 +12,14 @@ starter_bp = Blueprint('starter', __name__,
 def color_data(path="starter/static/"):  # path of blueprint run is default
     # prefill with label and file
     color_dict = [
-        {'label': "black", 'file': "black-square.png"},
-        {'label': "red", 'file': "red-square.png"},
-        {'label': "green", 'file': "green-square.png"},
-        {'label': "blue", 'file': "blue-square.png"},
-        {'label': "white", 'file': "white-square.png"}
+        {'label': "lassen painting", 'file': "painting.jpg"},
+        {'label': "black square", 'file': "black-square-16.png"},
+        {'label': "red square", 'file': "red-square-16.png"},
+        {'label': "green square", 'file': "green-square-16.png"},
+        {'label': "blue square", 'file': "blue-square-16.png"},
+        {'label': "white square", 'file': "white-square-16.png"},
+        {'label': "blue square", 'file': "blue-square-16.jpg"},
+        {'label': "blue square", 'file': "blue-square-16.gif"}
     ]
     # calculate attributes of image
     for color in color_dict:
