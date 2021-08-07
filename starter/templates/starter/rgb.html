@@ -28,9 +28,13 @@
                         </td>
                         <td>
                             <div class="overflow-auto" style="height: 256px">
-                                <div>px:  {{color.mode}}</div>
-                                {% for row in color.array[:256+1] %}
-                                    <div>{{loop.index}}:  {{row}}</div>
+                                <div>px:  {{color.mode}},  Color Code (Hexadecimal),  Binary </div>
+                                {% for row in color.data[:256+1] %}
+                                    <div>
+                                        {{loop.index}}:  {{row}},
+                                        {{color.hex_array[loop.index - 1]}},
+                                        {{color.binary_array[loop.index - 1]}}
+                                    </div>
                                     {% if loop.index > 256 %}
                                         <div> truncated </div>
                                     {% endif %}
