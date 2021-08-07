@@ -6,3 +6,5 @@ flask_login
 flask_sqlalchemy
 flask_migrate
 flask_restful
+numpy~=1.20.2
+Pillow~=8.2.0

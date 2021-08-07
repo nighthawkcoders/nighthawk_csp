@@ -6,15 +6,22 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="text-center">Red Green Blue values within a PNG file</h1>
+    <h1 class="text-center">Red Green Blue values within an Image</h1>
     <div class="container">
         <div class="row justify-content-md-center">
-            {% for color in colors %}
-                <div class="col-2">
-                    <img class="img-responsive py-3" src="{{url_for('.static', filename=color.file)}}" alt="" width="25%" height="Auto">
-                    <p>{{color.label}}</p>
-                </div>
-            {% endfor %}
+            <table class="mx-auto">
+                {% for color in colors %}
+                    <tr>
+                        <td>
+                            <img class="img-responsive py-3" src="{{url_for('.static', filename=color.file)}}" alt="" width="25%" height="Auto">
+                        </td>
+                        <td>
+                            {{color.format}}, {{color.mode}}, {{color.size}}, {{color.array}}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+
         </div>
     </div>
 {% endblock %}
