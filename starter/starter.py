@@ -22,7 +22,7 @@ def rgb():
 def color_data(path="starter/static/"):  # path of blueprint run is default
     # prefill with label and file
     color_dict = [
-        {'source': "Peter Carolin", 'label': "Lassen Volcano", 'file': "painting.jpg"},
+        {'source': "Peter Carolin", 'label': "Lassen Volcano", 'file': "lassen-volcano-256.jpg"},
         {'source': "iconsdb.com", 'label': "Black square", 'file': "black-square-16.png"},
         {'source': "iconsdb.com", 'label': "Red square", 'file': "red-square-16.png"},
         {'source': "iconsdb.com", 'label': "Green square", 'file': "green-square-16.png"},
