@@ -9,12 +9,15 @@
     <h1 class="text-center">Red Green Blue values within an Image</h1>
     <div class="container">
         <div class="row justify-content-md-center">
-            <table class="mx-auto">
+            <table class="table">
+                <thead>
                 <tr>
                     <th>Meta Data</th>
                     <th>Image</th>
                     <th>Data</th>
                 </tr>
+                </thead>
+                <tbody>
                 {% for color in colors %}
                     <tr>
                         <td>
@@ -28,21 +31,35 @@
                         </td>
                         <td>
                             <div class="overflow-auto" style="height: 256px">
-                                <div>px:  {{color.mode}},  Color Code (Hexadecimal),  Binary </div>
-                                {% for row in color.data[:256+1] %}
-                                    <div>
-                                        {{loop.index}}:  {{row}},
-                                        {{color.hex_array[loop.index - 1]}},
-                                        {{color.binary_array[loop.index - 1]}}
-                                    </div>
-                                    {% if loop.index > 256 %}
-                                        <div> truncated </div>
-                                    {% endif %}
-                                {% endfor %}
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>{{color.mode}}</th>
+                                        <th>Hex Code</th>
+                                        <th>Binary</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for row in color.data[:256+1] %}
+                                    <tr>
+                                        <td>{{loop.index}}</td>
+                                        {% if loop.index > 256 %}
+                                        <td>truncated</td>
+                                        {% else %}
+                                        <td>{{row}}</td>
+                                        <td>{{color.hex_array[loop.index - 1]}}</td>
+                                        <td>{{color.binary_array[loop.index - 1]}}
+                                        {% endif %}
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
                             </div>
                         </td>
                     </tr>
                 {% endfor %}
+                </tbody>
             </table>
 
         </div>

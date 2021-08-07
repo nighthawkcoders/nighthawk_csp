@@ -45,9 +45,9 @@ def color_data(path="starter/static/"):  # path of blueprint run is default
         for code in color['data']:
             hex_value = hex(code[0])[-2:] + hex(code[1])[-2:] + hex(code[2])[-2:]
             hex_value = hex_value.replace("x", "0")
-            color['hex_array'].append("#"+hex_value)
+            color['hex_array'].append("#" + hex_value)
             bin_value = bin(int('1'+hex_value, 16))[3:]
-            color['binary_array'].append(bin_value)
+            color['binary_array'].append("0b" + bin_value)
     return color_dict
 
 
