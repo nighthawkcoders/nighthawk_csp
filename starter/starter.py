@@ -12,14 +12,14 @@ starter_bp = Blueprint('starter', __name__,
 def color_data(path="starter/static/"):  # path of blueprint run is default
     # prefill with label and file
     color_dict = [
-        {'label': "lassen painting", 'file': "painting.jpg"},
-        {'label': "black square", 'file': "black-square-16.png"},
-        {'label': "red square", 'file': "red-square-16.png"},
-        {'label': "green square", 'file': "green-square-16.png"},
-        {'label': "blue square", 'file': "blue-square-16.png"},
-        {'label': "white square", 'file': "white-square-16.png"},
-        {'label': "blue square", 'file': "blue-square-16.jpg"},
-        {'label': "blue square", 'file': "blue-square-16.gif"}
+        {'source': "Peter Carolin", 'label': "Lassen Volcano", 'file': "painting.jpg"},
+        {'source': "iconsdb.com", 'label': "Black square", 'file': "black-square-16.png"},
+        {'source': "iconsdb.com", 'label': "Red square", 'file': "red-square-16.png"},
+        {'source': "iconsdb.com", 'label': "Green square", 'file': "green-square-16.png"},
+        {'source': "iconsdb.com", 'label': "Blue square", 'file': "blue-square-16.png"},
+        {'source': "iconsdb.com", 'label': "White square", 'file': "white-square-16.png"},
+        {'source': "iconsdb.com", 'label': "Blue square", 'file': "blue-square-16.jpg"},
+        {'source': "iconsdb.com", 'label': "Blue square", 'file': "blue-square-16.gif"}
     ]
     # calculate attributes of image
     for color in color_dict:

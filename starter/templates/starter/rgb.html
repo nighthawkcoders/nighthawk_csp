@@ -20,13 +20,15 @@
                         <td>
                             <div>{{color.format}}</div>
                             <div>{{color.size}}</div>
+                            <div>{{color.label}}</div>
+                            <div>{{color.source}}</div>
                         </td>
                         <td>
                             <img class="img-responsive py-3" src="{{url_for('.static', filename=color.file)}}" alt="" width="256" height="Auto">
                         </td>
                         <td>
                             <div class="overflow-auto" style="height: 256px">
-                                <div>row:  {{color.mode}}</div>
+                                <div>px:  {{color.mode}}</div>
                                 {% for row in color.array[:256+1] %}
                                     <div>{{loop.index}}:  {{row}}</div>
                                     {% if loop.index > 256 %}
