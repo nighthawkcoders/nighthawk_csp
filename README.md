@@ -59,13 +59,13 @@ stop test server by typing control-c in terminal
 + REPLACE main:app with your <my-python-file>:app
 ```
 
-(homesite) pi@raspberrypi:~/flask-idea-homesite $ ```homesite/bin/gunicorn --bind 0.0.0.0:8080 main:app```
+(homesite) pi@raspberrypi:~/flask-idea-homesite $ ```homesite/bin/gunicorn --bind 0.0.0.0:5000 main:app```
 
 in your browser ...
 
 #### Test Gunicorn run in browser ...
 
-http://localhost:8080/ 
+http://localhost:5000/ 
 
 (homesite) pi@raspberrypi:~/flask-idea-homesite $ ``` ^c ``` 
 
