@@ -115,14 +115,14 @@ pi@raspberrypi:~ $  ``` sudo nano /etc/nginx/sites-available/homesite```
 
     server {
         listen 80;
-        server_name nighthawkcoders.cf 70.95.179.231;
-
+        listen [::]:80;
+        server_name idea.nighthawkcodingsociety.com;
+    
         location / {
             include proxy_params;
             proxy_pass http://unix:/home/pi/flask-idea-homesite/homesite.sock;
         }
     }
-
 
 ## Validate Gunicorn configuration file and enable service permanently
 #### In console/terminal start Gunicorn
