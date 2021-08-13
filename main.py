@@ -6,11 +6,7 @@ from crud.crud import model_bp
 from recipe.recipe import recipe_bp
 from restapi.restapi import restapi_bp
 from starter.starter import starter_bp
-from y2021 import y2021_bp
-from y2021.prep import y2021_prep_bp
-from y2021.tri1 import y2021_tri1_bp
-from y2021.tri2 import y2021_tri2_bp
-from y2021.tri3 import y2021_tri3_bp
+from y2022 import y2022_bp
 
 
 @app.route('/')
@@ -45,11 +41,7 @@ app.register_blueprint(model_bp)
 app.register_blueprint(recipe_bp)
 app.register_blueprint(restapi_bp)
 app.register_blueprint(starter_bp)
-app.register_blueprint(y2021_bp)
-app.register_blueprint(y2021_prep_bp)
-app.register_blueprint(y2021_tri1_bp)
-app.register_blueprint(y2021_tri2_bp)
-app.register_blueprint(y2021_tri3_bp)
+app.register_blueprint(y2022_bp)
 
 if __name__ == "__main__":
     # runs the application on the repl development server

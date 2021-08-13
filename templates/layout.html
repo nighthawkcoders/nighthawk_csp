@@ -89,65 +89,7 @@
         </button>
         <!-- Bootstrap menus -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <!--root menu -->
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarStarters" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Starters
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/greet">Flask Greetings</a>
-                        <a class="dropdown-item" href="/starter/binary">Binary Math</a>
-                        <a class="dropdown-item" href="/starter/rgb">RGB Intro</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarWeb" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Web
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/snake">Snake Game</a>
-                        <a class="dropdown-item" href="/restapi/joke">Joke RESTapi</a>
-                        <a class="dropdown-item" href="/restapi/covid19">Covid19 RESTapi</a>
-                        <a class="dropdown-item" href="/recipe/viewer">Recipe Viewer</a>
-
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarModel" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Model
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/crud/">SQL CRUD</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarLabs" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Mini-labs
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/algorithm/fibonacci">Fibonacci</a>
-                        <a class="dropdown-item" href="/algorithm/palindrome">Palindrome</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarMaterials" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Course-materials
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/y2021/repos">Repos</a>
-                        <a class="dropdown-item" href="/deploy">Deployment</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/y2021/prep">Summer Prep</a>
-                        <a class="dropdown-item" href="/y2021/tri1">Tri 1</a>
-                        <a class="dropdown-item" href="/y2021/tri2">Tri 2</a>
-                        <a class="dropdown-item" href="/y2021/tri3">Tri 3</a>
-                    </div>
-                </li>
-            </ul>
+            {% include "fragments/navbar.html" %}
             <!-- Clock display -->
             <div class="px-3">
                 <span id="clock"></span>
