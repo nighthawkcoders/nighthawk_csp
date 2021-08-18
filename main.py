@@ -45,4 +45,4 @@ app.register_blueprint(y2022_bp)
 
 if __name__ == "__main__":
     # runs the application on the repl development server
-    app.run(debug=True)
+    app.run(debug=True, port="5222")

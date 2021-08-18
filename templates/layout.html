@@ -29,11 +29,9 @@
             --grey: grey;
         }
 
-        .row{
-            margin: auto;
-        }
-
-        body{
+        html, body{
+            margin: 0;
+            height: 100%;
             animation: fadein 2s;
             -moz-animation: fadein 2s; /* Firefox */
             -webkit-animation: fadein 2s; /* Safari and Chrome */
@@ -42,30 +40,73 @@
             color: var(--black);
         }
 
+        .dark-mode {
+            background-color: var(--white);
+            color: var(--black);
+        }
+
+        h1{
+            font-size: 5em;
+        }
+
         a {
             color: midnightblue;
         }
 
-        .jumbotron {
-            background-color:var(--green);
+        .fa{
+            font-size: 3em;
+            letter-spacing: 1em;
+            transition: all .2s;
+            color: white;
         }
 
-        .navbar-custom {
-            background-color:var(--green);
+        .fa:hover{
+            transform: translateY(10px);
         }
-        /* Modify brand and text color */
+
+        .fa-youtube-play:hover{
+            color: #cc0000;
+        }
+
+        .fa-twitter:hover{
+            color: #1da1f2;
+        }
+
+        .fa-github:hover{
+            color: #000000;
+        }
+
+        .btn:link,
+        .btn:visited {
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 15px 40px;
+            display: inline-block;
+            border-radius: 100px;
+            transition: all .2s;
+            position: absolute;
+            color: white;
+            font-size: 2.5em;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .row{
+            margin: auto;
+        }
 
         .navbar-custom .navbar-brand,
         .navbar-custom .navbar-text {
             color: var(--lblue);
         }
-
-        .dark-mode {
-            background-color: var(--white);
-            color: var(--gray);
-        }
-
-
 
     </style>
 
@@ -76,12 +117,13 @@
 
 </head>
 
+
 <body style="font-family: gilroyLIGHT,serif; color: var(--gray);" >
     <!-- Bootstrap Navigation Code -->
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <!-- Feature button -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="http://nighthawkcodingsociety.com/">
             <img src="/static/assets/ncs_logo.png" width="50" height="50" class="d-inline-block align-center" alt="">
+
             Nighthawk Coders
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
