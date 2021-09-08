@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 {% extends "layout.html" %}
 
-{% set BITS = 16 %}
-{% set MAX = 2 ** BITS - 1%}
+<!-- Hack: Drive bit updates via Frontend form and Python -->
+{% set BITS = 8 %}
+{% set MAX = ((2 ** BITS) - 1) %}
 
+<!-- Hack: Set bulbs and pass as variables via Python -->
 {% set imgBulbOn = "/static/assets/bulb_on.gif" %}
 {% set imgBulbOff = "/static/assets/bulb_off.png" %}
 {% set msgTurnOn = "Turn On" %}
@@ -13,7 +15,7 @@
 {% block meta %}
 <title>Binary page</title>
 <script>
-  const BITS = '{{ BITS }}'; let MAX = '{{ MAX }}';
+  const BITS = '{{ BITS }}'; let max = '{{ MAX }}'; let MAX = parseInt(max, 10);
   // return string with current value of each bit
   function getBits() {
     let bits = "";
@@ -24,32 +26,27 @@
   }
   // setter for DOM values
   function setConversions(binary) {
-    //alert("Binary number: " + binary );
     document.getElementById('binary').innerHTML = binary;
-    // Decimal conversion
-    const octal = parseInt(binary, 2).toString(8);
-    //alert("Decimal number: " + decimal );
-    document.getElementById('octal').innerHTML = octal;
-    // Decimal conversion
-    const hexadecimal = parseInt(binary, 2).toString(16);
-    //alert("Decimal number: " + decimal );
-    document.getElementById('hexadecimal').innerHTML = hexadecimal;
-    // Decimal conversion
-    const decimal = parseInt(binary, 2).toString();
-    //alert("Decimal number: " + decimal );
-    document.getElementById('decimal').innerHTML = decimal;
+    // DOM assignment to Octal conversion
+    document.getElementById('octal').innerHTML = parseInt(binary, 2).toString(8);
+    // DOM assignment to Hexadecimal conversion
+    document.getElementById('hexadecimal').innerHTML = parseInt(binary, 2).toString(16);
+    // DOM assignment to Decimal conversion
+    document.getElementById('decimal').innerHTML = parseInt(binary, 2).toString(10);
+    <!-- Hack: derive printable character(s) for each 8 bits -->
   }
-  //
+
+  // algorithm to convert decimal to base using division and remainder
   function decimal_2_base(decimal, base) {
     let conversion = "";
     // loop to convert to base
     do {
       let digit = decimal % base;
       conversion = "" + digit + conversion; // what does this do?
-      decimal = ~~(decimal / base);         // what does this do?
-    } while (decimal > 0);                  // why while at the end? what is ~~?
+      decimal = ~~(decimal / base);         // what does this do?  what is ~~?
+    } while (decimal > 0);                  // why while at the end?
     // loop to pad with zeros
-    if (base == 2) {                        // only pad for binary conversions
+    if (base === 2) {                        // only pad for binary conversions
       for (let i = 0; conversion.length < BITS; i++) {
         conversion = "0" + conversion;
       }
@@ -83,9 +80,9 @@
     // convert to decimal and do math
     let decimal = parseInt(binary, 2);
     if (n > 0) {  // PLUS
-      decimal = decimal == MAX ? 0 : decimal += n; // OVERFLOW or PLUS
+      decimal = MAX === decimal ? 0 : decimal += n; // OVERFLOW or PLUS
     } else  {     // MINUS
-      decimal = decimal == 0 ? MAX : decimal += n; // OVERFLOW or MINUS
+      decimal = 0 === decimal ? MAX : decimal += n; // OVERFLOW or MINUS
     }
     // convert the result back to binary
     binary = decimal_2_base(decimal, 2);
@@ -95,7 +92,7 @@
     for (let i = 0; i < binary.length; i++) {
       let digit = binary.substr(i, 1);
       document.getElementById('digit' + i).value = digit;
-      if (digit == "1") {
+      if (digit === "1") {
         document.getElementById('bulb' + i).src = "{{ imgBulbOn }}";
         document.getElementById('butt' + i).innerHTML = "{{ msgTurnOff }}";
       } else {
@@ -120,6 +117,7 @@
         <th>Octal</th>
         <th>Hexadecimal</th>
         <th>Decimal</th>
+        <!-- Hack: display label for printable character(s)  -->
         <th>Minus</th>
       </tr>
       <tr>
@@ -128,6 +126,7 @@
         <td id="octal">0</td>
         <td id="hexadecimal">0</td>
         <td id="decimal">0</td>
+        <!-- Hack: display printable character(s)  -->
         <td><button type="button" id="sub1" onclick="add(-1)">-1</button></td>
       </tr>
       </table>
