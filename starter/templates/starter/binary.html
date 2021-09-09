@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 {% extends "layout.html" %}
 
 <!-- Hack: Drive bit updates via HTML Input Frontend on top of Page and Python route -->
@@ -8,7 +7,7 @@
 {% set MAX = ((2 ** BITS) - 1) %}
 
 <!-- Hack: Set bulbs and pass as variables via Python route, add PNGs to project -->
-<!-- use your PNGs as defaul -->
+<!-- use your PNGs as default -->
 {% set imgBulbOn = "/static/assets/bulb_on.gif" %}
 {% set imgBulbOff = "/static/assets/bulb_off.png" %}
 {% set msgTurnOn = "Turn On" %}
@@ -35,9 +34,11 @@
     document.getElementById('hexadecimal').innerHTML = parseInt(binary, 2).toString(16);
     // DOM assignment to Decimal conversion
     document.getElementById('decimal').innerHTML = parseInt(binary, 2).toString(10);
-    <!-- Hack: show ASCII printable character(s) for each 8 bits
-               USE JAVASCRIPT function decimal to ASCII
-                look below ASCII for more ideas of where to make changes -->  }
+    /* Hack: show ASCII printable character(s) for each 8 bits
+     DOM assignment by converting decimal https://www.w3schools.com/jsref/jsref_fromcharcode.asplook
+     below ASCII for more ideas of where to make changes
+     */
+  }
 
   // algorithm to convert decimal to base using division and remainder
   function decimal_2_base(decimal, base) {
@@ -156,4 +157,3 @@
   </div>
 </div>
 {% endblock %}
-</html>
