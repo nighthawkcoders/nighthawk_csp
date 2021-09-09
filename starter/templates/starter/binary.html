@@ -2,11 +2,13 @@
 <html lang="en">
 {% extends "layout.html" %}
 
-<!-- Hack: Drive bit updates via Frontend form and Python -->
+<!-- Hack: Drive bit updates via HTML Input Frontend on top of Page and Python route -->
+<!-- Hack: use 8 as default -->
 {% set BITS = 8 %}
 {% set MAX = ((2 ** BITS) - 1) %}
 
-<!-- Hack: Set bulbs and pass as variables via Python -->
+<!-- Hack: Set bulbs and pass as variables via Python route, add PNGs to project -->
+<!-- use your PNGs as defaul -->
 {% set imgBulbOn = "/static/assets/bulb_on.gif" %}
 {% set imgBulbOff = "/static/assets/bulb_off.png" %}
 {% set msgTurnOn = "Turn On" %}
@@ -33,8 +35,9 @@
     document.getElementById('hexadecimal').innerHTML = parseInt(binary, 2).toString(16);
     // DOM assignment to Decimal conversion
     document.getElementById('decimal').innerHTML = parseInt(binary, 2).toString(10);
-    <!-- Hack: derive printable character(s) for each 8 bits -->
-  }
+    <!-- Hack: show ASCII printable character(s) for each 8 bits
+               USE JAVASCRIPT function decimal to ASCII
+                look below ASCII for more ideas of where to make changes -->  }
 
   // algorithm to convert decimal to base using division and remainder
   function decimal_2_base(decimal, base) {
@@ -117,7 +120,7 @@
         <th>Octal</th>
         <th>Hexadecimal</th>
         <th>Decimal</th>
-        <!-- Hack: display label for printable character(s)  -->
+        <!-- Hack: display ASCII label for printable character(s)  -->
         <th>Minus</th>
       </tr>
       <tr>
@@ -126,8 +129,9 @@
         <td id="octal">0</td>
         <td id="hexadecimal">0</td>
         <td id="decimal">0</td>
-        <!-- Hack: display printable character(s)  -->
+        <!-- Hack: display ASCII printable character(s)  -->
         <td><button type="button" id="sub1" onclick="add(-1)">-1</button></td>
+
       </tr>
       </table>
     </div>
