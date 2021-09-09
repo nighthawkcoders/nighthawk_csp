@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 {% extends "layout.html" %}
 
-<!-- Hack: Drive bit updates via HTML Input Frontend on top of Page and Python route -->
+<!-- Search for all the Hack: below for hack-a-thon and mini-lab requirements -->
+
+<!-- Hack: Build form to drive bit size dynamic updates
+           use HTML Input Form in Frontend, ie toward top of Page
+           send initial value and updated values to form via Python render_template -->
 <!-- Hack: use 8 as default -->
 {% set BITS = 8 %}
 {% set MAX = ((2 ** BITS) - 1) %}
 
-<!-- Hack: Set bulbs and pass as variables via Python route, add PNGs to project -->
+<!-- Hack: Set bulbs and pass as variables via Python render_template
+           add new images (ie PNGs) to project -->
 <!-- use your PNGs as default -->
 {% set imgBulbOn = "/static/assets/bulb_on.gif" %}
 {% set imgBulbOff = "/static/assets/bulb_off.png" %}
