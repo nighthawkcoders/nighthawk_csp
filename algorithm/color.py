@@ -19,6 +19,7 @@ def color_data(path="static/img/", color_dict=None):  # path of blueprint run is
         file = path + color['file']
         image_reference = Image.open(file)
         image_data = image_reference.getdata()
+        color['path'] = '/' + path
         color['format'] = image_reference.format
         color['mode'] = image_reference.mode
         color['size'] = image_reference.size

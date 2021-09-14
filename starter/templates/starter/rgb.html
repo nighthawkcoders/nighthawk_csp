@@ -21,14 +21,15 @@
                 {% for color in colors %}
                     <tr>
                         <td>
+                            <div>{{color.file}}</div>
                             <div>{{color.format}}</div>
                             <div>{{color.size}}</div>
                             <div>{{color.label}}</div>
                             <div>{{color.source}}</div>
                         </td>
                         <td>
-                            {% set img = '/static/img/' + color.file %}
-                            <img class="img-responsive py-3" src="{{img}}" alt="" width="256" height="Auto">
+                            {% set img_src = color.path + color.file %}
+                            <img class="img-responsive py-3" src="{{img_src}}" alt="" width="256" height="Auto">
                         </td>
                         <td>
                             <div class="overflow-auto" style="height: 256px">
