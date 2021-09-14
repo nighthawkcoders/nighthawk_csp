@@ -1,0 +1,22 @@
+:root{
+    --yellow: #f1d483;
+    --green: #9daf9b;
+    --purple: #a59aaf;
+    --lblue: #6084a3;
+    --dblue: #2b425b;
+    --gray: #363d47;
+    --white: whitesmoke;
+    --black: black;
+    --grey: grey;
+}
+
+html, body{
+    margin: 0;
+    height: 100%;
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+    background-color: var(--dblue);
+    color: var(--black);
+}
