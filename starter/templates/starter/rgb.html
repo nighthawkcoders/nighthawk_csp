@@ -27,7 +27,8 @@
                             <div>{{color.source}}</div>
                         </td>
                         <td>
-                            <img class="img-responsive py-3" src="{{url_for('.static', filename=color.file)}}" alt="" width="256" height="Auto">
+                            {% set img = '/static/img/' + color.file %}
+                            <img class="img-responsive py-3" src="{{img}}" alt="" width="256" height="Auto">
                         </td>
                         <td>
                             <div class="overflow-auto" style="height: 256px">

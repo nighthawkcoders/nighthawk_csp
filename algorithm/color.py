@@ -2,7 +2,7 @@ from PIL import Image, ImageDraw
 import numpy
 
 
-def color_data(path="algorithm/static/img/", color_dict=None):  # path of blueprint run is default
+def color_data(path="static/img/", color_dict=None):  # path of blueprint run is default
     # prefill with label and file
     if color_dict is None:
         color_dict = [
@@ -35,7 +35,7 @@ def color_data(path="algorithm/static/img/", color_dict=None):  # path of bluepr
 
 
 if __name__ == "__main__":
-    local_path = "static/img/"
+    local_path = "../static/img/"
     color_test = [
         {'source': "Peter Carolin", 'label': "Lassen Volcano", 'file': "lassen-volcano-256.jpg"},
         {'source': "Peter Carolin", 'label': "Lassen Volcano", 'file': "lassen-volcano-original.jpg"},
