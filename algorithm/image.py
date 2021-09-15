@@ -30,22 +30,27 @@ def image_data(path="static/img/", color_dict=None):  # path of static images is
         ]
     # gather analysis data and meta data for each image, adding attributes to each row in table
     for color in color_dict:
-        file = path + color['file']
+        color['path'] = '/' + path  # path for HTML access (frontend)
+        file = path + color['file']  # file with path for local access (backend)
+        # Python Image Library operations
         img_reference = Image.open(file)
         img_data = img_reference.getdata()
-        color['path'] = '/' + path
         color['format'] = img_reference.format
         color['mode'] = img_reference.mode
         color['size'] = img_reference.size
-        color['data'] = numpy.array(img_data)
+        # Conversion of original Image to Base64, a string format that serves HTML nicely
         color['base64'] = image_formatter(img_reference, color['format'])
+        # Numpy is used to allow easy access to data of image, python list
+        color['data'] = numpy.array(img_data)
         color['hex_array'] = []
         color['binary_array'] = []
-        # conversions of RGB data into hex and binary
+        # Data list of RGB data traversed and hex and binary lists are created and formated
         for code in color['data']:
+            # hexadecimal conversions
             hex_value = hex(code[0])[-2:] + hex(code[1])[-2:] + hex(code[2])[-2:]
             hex_value = hex_value.replace("x", "0")
             color['hex_array'].append("#" + hex_value)
+            # binary conversions
             bin_value = bin(code[0])[2:].zfill(8) + " " + bin(code[1])[2:].zfill(8) + " " + bin(code[2])[2:].zfill(8)
             color['binary_array'].append(bin_value)
     return color_dict  # dictionary is returned with all the attributes of these images
