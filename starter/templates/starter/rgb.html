@@ -2,6 +2,13 @@
 {% extends "layout.html" %}
 
 {% block meta %}
+<script>
+    function setImg(img, base64) {
+        // add button and rotate image from original to gray and back (toggle)
+        // document.getElementById(img). = base64;  //change img src to inner html on <p> tag
+    }
+</script>
+
     <title>RGB starter</title>
 {% endblock %}
 
@@ -28,7 +35,9 @@
                             <div>{{image.source}}</div>
                         </td>
                         <td>
-                            <img class="img-responsive py-3" src="{{image.base64}}" alt="" width="256" height="Auto">
+                            <img class="img-responsive py-3" id=img{{loop.index}} alt="" width="256" height="Auto" src="{{image.base64}}" >
+                            <p hidden id="img_orig{{loop.index}}">{{image.base64}}</p>
+                            <p hidden id="img_gray{{loop.index}}">{{image.base64_GRAY}}</p>
                         </td>
                         <td>
                             <div class="overflow-auto" style="height: 256px">
