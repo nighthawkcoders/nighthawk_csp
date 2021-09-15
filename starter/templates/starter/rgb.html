@@ -45,14 +45,13 @@
                                     {% for row in image.data[:256+1] %}
                                     <tr>
                                         <td>{{loop.index}}</td>
-                                        {% if loop.index > 256 %}
-                                        <td>truncated</td>
-                                        {% else %}
                                         <td>{{row}}</td>
                                         <td>{{image.hex_array[loop.index - 1]}}</td>
                                         <td>{{image.binary_array[loop.index - 1]}}
-                                        {% endif %}
                                     </tr>
+                                    {% if loop.index > 256 %}
+                                    <tr><td>...</td><td>truncated</td><td>...</td><td>...</td></tr>
+                                    {% endif %}
                                     {% endfor %}
                                     </tbody>
                                 </table>
