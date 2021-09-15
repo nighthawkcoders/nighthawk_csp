@@ -18,18 +18,17 @@
                 </tr>
                 </thead>
                 <tbody>
-                {% for color in colors %}
+                {% for image in images %}
                     <tr>
                         <td>
-                            <div>{{color.file}}</div>
-                            <div>{{color.format}}</div>
-                            <div>{{color.size}}</div>
-                            <div>{{color.label}}</div>
-                            <div>{{color.source}}</div>
+                            <div>{{image.file}}</div>
+                            <div>{{image.format}}</div>
+                            <div>{{image.size}}</div>
+                            <div>{{image.label}}</div>
+                            <div>{{image.source}}</div>
                         </td>
                         <td>
-                            {% set img_src = color.path + color.file %}
-                            <img class="img-responsive py-3" src="{{img_src}}" alt="" width="256" height="Auto">
+                            <img class="img-responsive py-3" src="{{image.base64}}" alt="" width="256" height="Auto">
                         </td>
                         <td>
                             <div class="overflow-auto" style="height: 256px">
@@ -37,21 +36,21 @@
                                     <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>{{color.mode}}</th>
+                                        <th>{{image.mode}}</th>
                                         <th>Hex Code</th>
                                         <th>Binary</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {% for row in color.data[:256+1] %}
+                                    {% for row in image.data[:256+1] %}
                                     <tr>
                                         <td>{{loop.index}}</td>
                                         {% if loop.index > 256 %}
                                         <td>truncated</td>
                                         {% else %}
                                         <td>{{row}}</td>
-                                        <td>{{color.hex_array[loop.index - 1]}}</td>
-                                        <td>{{color.binary_array[loop.index - 1]}}
+                                        <td>{{image.hex_array[loop.index - 1]}}</td>
+                                        <td>{{image.binary_array[loop.index - 1]}}
                                         {% endif %}
                                     </tr>
                                     {% endfor %}
