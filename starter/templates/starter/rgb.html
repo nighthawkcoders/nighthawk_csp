@@ -27,11 +27,11 @@
                 {% for image in images %}
                     <tr>
                         <td>
+                            <div>{{image.label}}</div>
+                            <div>{{image.source}}</div>
                             <div>{{image.file}}</div>
                             <div>{{image.format}}</div>
                             <div>{{image.size}}</div>
-                            <div>{{image.label}}</div>
-                            <div>{{image.source}}</div>
                         </td>
                         <td>
                             <img class="img-responsive py-3" id=img{{loop.index}} alt="" width="256" height="Auto" src="{{image.base64}}" >
