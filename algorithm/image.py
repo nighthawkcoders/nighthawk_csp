@@ -32,6 +32,7 @@ def image_data(path=Path("static/img/"), img_list=None):  # path of static image
     for img_dict in img_list:
         # File to open
         file = path / img_dict['file']  # file with path for local access (backend)
+        print(file)
         # Python Image Library operations
         img_reference = Image.open(file)  # PIL
         img_data = img_reference.getdata()  # Reference https://www.geeksforgeeks.org/python-pil-image-getdata/
@@ -56,7 +57,7 @@ def image_data(path=Path("static/img/"), img_list=None):  # path of static image
         # create gray scale of image, ref: https://www.geeksforgeeks.org/convert-a-numpy-array-to-an-image/
         img_dict['gray_data'] = []
         for pixel in img_dict['data']:
-            average = (int(pixel[0]) + pixel[1] + pixel[2]) // 3
+            average = (int(pixel[0]) + pixel[1] + pixel[2]) // 3  # integer division
             if len(pixel) > 3:
                 img_dict['gray_data'].append((average, average, average, pixel[3]))
             else:
@@ -68,7 +69,7 @@ def image_data(path=Path("static/img/"), img_list=None):  # path of static image
 
 # run this as standalone tester to see data printed in terminal
 if __name__ == "__main__":
-    local_path = Path("../static/img/")
+    local_path = Path("../starter/static/img/")
     img_test = [
         {'source': "Peter Carolin", 'label': "Lassen Volcano", 'file': "lassen-volcano-256.jpg"},
     ]
