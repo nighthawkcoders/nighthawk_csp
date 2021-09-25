@@ -1,2 +1,5 @@
-.idea/*
-nighthawk-csp.iml
+### Exclude IntelliJ IDEA from GitHub ###
+.idea
+*.iws
+*.iml
+*.ipr
