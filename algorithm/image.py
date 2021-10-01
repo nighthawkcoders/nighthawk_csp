@@ -37,13 +37,14 @@ def image_data(path=Path("static/img/"), images=None):  # path of static images 
         image['mode'] = img_object.mode
         image['size'] = img_object.size
 
-        # Hacks are best added here!!!
+        # Hacks here for images https://www.tutorialspoint.com/python_pillow/index.htm
+        # use open img_object!!!
 
         # Conversion of original Image to Base64, a string format that serves HTML nicely
         image['base64'] = image_formatter(img_object, image['format'])
-        img_data = img_object.getdata()  # Reference https://www.geeksforgeeks.org/python-pil-image-getdata/
 
-    # Numpy is used to allow easy access to data of image, python list
+        # Get data, use Numpy is used to access to data
+        img_data = img_object.getdata()  # Reference https://www.geeksforgeeks.org/python-pil-image-getdata/
         image['data'] = numpy.array(img_data)
         image['hex_array'] = []
         image['binary_array'] = []
@@ -108,6 +109,7 @@ if __name__ == "__main__":
         img_object = img_object.filter(ImageFilter.GaussianBlur)
         draw = ImageDraw.Draw(img_object)
         draw.text((0, 0), "Size is {0} X {1}".format(*image['size']))  # draw in image
+
         # open on desktop
         img_object.show()
 
