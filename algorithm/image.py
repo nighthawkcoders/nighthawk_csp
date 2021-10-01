@@ -1,4 +1,4 @@
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFilter
 import numpy
 import base64
 from io import BytesIO
@@ -18,87 +18,97 @@ def image_formatter(img, img_type):
 
 
 # color_data prepares a series of images for data analysis
-def image_data(path=Path("static/img/"), img_list=None):  # path of static images is defaulted
-    if img_list is None:  # color_dict is defined with defaults
-        img_list = [
+def image_data(path=Path("static/img/"), images=None):  # path of static images is defaulted
+    if images is None:  # color_dict is defined with defaults
+        images = [
             {'source': "Peter Carolin", 'label': "Lassen Volcano", 'file': "lassen-volcano-256.jpg"},
-            {'source': "iconsdb.com", 'label': "Black square", 'file': "black-square-16.png"},
-            {'source': "iconsdb.com", 'label': "Red square", 'file': "red-square-16.png"},
-            {'source': "iconsdb.com", 'label': "Green square", 'file': "green-square-16.png"},
-            {'source': "iconsdb.com", 'label': "Blue square", 'file': "blue-square-16.jpg"},
-            {'source': "iconsdb.com", 'label': "White square", 'file': "white-square-16.png"},
+            {'source': "Peter Carolin", 'label': "Clouds Impression", 'file': "clouds-impression.png"}
         ]
     # gather analysis data and meta data for each image, adding attributes to each row in table
-    for img_dict in img_list:
+    for image in images:
         # File to open
-        file = path / img_dict['file']  # file with path for local access (backend)
-        print(file)
+        filename = path / image['file']  # file with path
+
+        # Image open return PIL image object
+        img_object = Image.open(filename)
+
         # Python Image Library operations
-        img_reference = Image.open(file)  # PIL
-        img_data = img_reference.getdata()  # Reference https://www.geeksforgeeks.org/python-pil-image-getdata/
-        img_dict['format'] = img_reference.format
-        img_dict['mode'] = img_reference.mode
-        img_dict['size'] = img_reference.size
+        image['format'] = img_object.format
+        image['mode'] = img_object.mode
+        image['size'] = img_object.size
+
+        # Hacks are best added here!!!
+
         # Conversion of original Image to Base64, a string format that serves HTML nicely
-        img_dict['base64'] = image_formatter(img_reference, img_dict['format'])
-        # Numpy is used to allow easy access to data of image, python list
-        img_dict['data'] = numpy.array(img_data)
-        img_dict['hex_array'] = []
-        img_dict['binary_array'] = []
+        image['base64'] = image_formatter(img_object, image['format'])
+        img_data = img_object.getdata()  # Reference https://www.geeksforgeeks.org/python-pil-image-getdata/
+
+    # Numpy is used to allow easy access to data of image, python list
+        image['data'] = numpy.array(img_data)
+        image['hex_array'] = []
+        image['binary_array'] = []
+        image['gray_data'] = []
+
         # 'data' is a list of RGB data, the list is traversed and hex and binary lists are calculated and formatted
-        for pixel in img_dict['data']:
+        for pixel in image['data']:
             # hexadecimal conversions
             hex_value = hex(pixel[0])[-2:] + hex(pixel[1])[-2:] + hex(pixel[2])[-2:]
             hex_value = hex_value.replace("x", "0")
-            img_dict['hex_array'].append("#" + hex_value)
+            image['hex_array'].append("#" + hex_value)
             # binary conversions
             bin_value = bin(pixel[0])[2:].zfill(8) + " " + bin(pixel[1])[2:].zfill(8) + " " + bin(pixel[2])[2:].zfill(8)
-            img_dict['binary_array'].append(bin_value)
-        # create gray scale of image, ref: https://www.geeksforgeeks.org/convert-a-numpy-array-to-an-image/
-        img_dict['gray_data'] = []
-        for pixel in img_dict['data']:
-            average = (int(pixel[0]) + pixel[1] + pixel[2]) // 3  # integer division
+            image['binary_array'].append(bin_value)
+            # create gray scale of image, ref: https://www.geeksforgeeks.org/convert-a-numpy-array-to-an-image/
+            average = (pixel[0] + pixel[1] + pixel[2]) // 3  # integer division
             if len(pixel) > 3:
-                img_dict['gray_data'].append((average, average, average, pixel[3]))
+                image['gray_data'].append((average, average, average, pixel[3]))
             else:
-                img_dict['gray_data'].append((average, average, average))
-        img_reference.putdata(img_dict['gray_data'])
-        img_dict['base64_GRAY'] = image_formatter(img_reference, img_dict['format'])
-    return img_list  # list is returned with all the attributes for each image dictionary
+                image['gray_data'].append((average, average, average))
+        # end for loop for pixels
+
+        # Conversion of modified Image to Base64
+        img_object.putdata(image['gray_data'])
+        image['base64_GRAY'] = image_formatter(img_object, image['format'])
+
+    # end for loop for images
+    return images  # list is returned with all the attributes for each image in a dictionary
 
 
-# run this as standalone tester to see data printed in terminal
+# run this as standalone tester to see sample data printed in terminal
 if __name__ == "__main__":
     local_path = Path("../starter/static/img/")
-    img_test = [
-        {'source': "Peter Carolin", 'label': "Lassen Volcano", 'file': "lassen-volcano-256.jpg"},
-    ]
-    items = image_data(local_path, img_test)  # path of local run
-    for row in items:
+    images = image_data(local_path)  # path of local run
+    for image in images:
         # print some details about the image so you can validate that it looks like it is working
         # meta data
         print("---- meta data -----")
-        print(row['label'])
-        print(row['format'])
-        print(row['mode'])
-        print(row['size'])
+        print(image['label'])
+        print(image['format'])
+        print(image['mode'])
+        print(image['size'])
         # data
         print("----  data  -----")
-        print(row['data'])
+        print(image['data'])
         print("----  gray data  -----")
-        print(row['gray_data'])
+        print(image['gray_data'])
         print("----  hex of data  -----")
-        print(row['hex_array'])
+        print(image['hex_array'])
         print("----  bin of data  -----")
-        print(row['binary_array'])
+        print(image['binary_array'])
         # base65
         print("----  base64  -----")
-        print(row['base64'])
-        # display image
-        print("----  render and write in image  -----")
-        filename = local_path / row['file']
-        image_ref = Image.open(filename)
-        draw = ImageDraw.Draw(image_ref)
-        draw.text((0, 0), "Size is {0} X {1}".format(*row['size']))  # draw in image
-        image_ref.show()
-print()
+        print(image['base64'])
+
+        # do so things to image that are not in image_info
+        filename = local_path / image['file']
+        img_object = Image.open(filename)
+
+        # mess with the image
+        img_object = img_object.transpose(Image.FLIP_TOP_BOTTOM)
+        img_object = img_object.filter(ImageFilter.GaussianBlur)
+        draw = ImageDraw.Draw(img_object)
+        draw.text((0, 0), "Size is {0} X {1}".format(*image['size']))  # draw in image
+        # open on desktop
+        img_object.show()
+
+    print()
