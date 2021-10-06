@@ -38,7 +38,8 @@ def image_data(path=Path("static/img/"), images=None):  # path of static images 
         image['size'] = img_object.size
 
         # Hacks here for images https://www.tutorialspoint.com/python_pillow/index.htm
-        # use open img_object!!!
+        # use the open img_object!!!
+        img_object = img_object.filter(ImageFilter.GaussianBlur)
 
         # Conversion of original Image to Base64, a string format that serves HTML nicely
         image['base64'] = image_formatter(img_object, image['format'])
@@ -59,6 +60,7 @@ def image_data(path=Path("static/img/"), images=None):  # path of static images 
             # binary conversions
             bin_value = bin(pixel[0])[2:].zfill(8) + " " + bin(pixel[1])[2:].zfill(8) + " " + bin(pixel[2])[2:].zfill(8)
             image['binary_array'].append(bin_value)
+
             # create gray scale of image, ref: https://www.geeksforgeeks.org/convert-a-numpy-array-to-an-image/
             average = (pixel[0] + pixel[1] + pixel[2]) // 3  # integer division
             if len(pixel) > 3:
@@ -106,7 +108,7 @@ if __name__ == "__main__":
 
         # mess with the image
         img_object = img_object.transpose(Image.FLIP_TOP_BOTTOM)
-        img_object = img_object.filter(ImageFilter.GaussianBlur)
+        img_object = img_object.filter(ImageFilter.RankFilter)
         draw = ImageDraw.Draw(img_object)
         draw.text((0, 0), "Size is {0} X {1}".format(*image['size']))  # draw in image
 

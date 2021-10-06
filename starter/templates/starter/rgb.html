@@ -7,6 +7,17 @@
     //  document.getElementById("img<n>").src
     //  document.getElementID("img_gray<n>").innerHTML
     //  help: https://www.geeksforgeeks.org/how-to-change-the-src-attribute-of-an-img-element-in-javascript-jquery/
+    function imgToggle(ndx) {
+        // add button and rotate image from original to gray and back (toggle)
+        // document.getElementById(img). = base64;  //change img src to inner html on <p> tag
+        if (document.getElementById("btn" + ndx).value == "Gray Scale") {
+            document.getElementById("img" + ndx).src = document.getElementById("img_gray" + ndx).innerHTML;
+            document.getElementById("btn" + ndx).value = "Original";
+        } else {
+            document.getElementById("img" + ndx).src = document.getElementById("img_orig" + ndx).innerHTML;
+            document.getElementById("btn" + ndx).value = "Gray Scale";
+        }
+    }
     </script>
     <title>RGB starter</title>
 {% endblock %}
@@ -40,6 +51,7 @@
                                {{image.base64}}  original image
                                {{image.base64_GRAY}}  gray scale image
                             -->
+                            <input type="button" value="Gray Scale" id=btn{{loop.index}} onclick="imgToggle('{{loop.index}}')">
                             <p hidden id="img_orig{{loop.index}}">{{image.base64}}</p>
                             <p hidden id="img_gray{{loop.index}}">{{image.base64_GRAY}}</p>
                         </td>
