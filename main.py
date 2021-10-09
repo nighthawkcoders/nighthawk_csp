@@ -2,9 +2,8 @@ from flask import render_template, request
 from __init__ import app
 
 from algorithm.algorithm import algorithm_bp
+from api.restapi import api_bp
 from crud.crud import model_bp
-from recipe.recipe import recipe_bp
-from restapi.restapi import restapi_bp
 from starter.starter import app_starter
 from y2022 import y2022_bp
 
@@ -37,9 +36,8 @@ def page_not_found(e):
 
 
 app.register_blueprint(algorithm_bp)
+app.register_blueprint(api_bp)
 app.register_blueprint(model_bp)
-app.register_blueprint(recipe_bp)
-app.register_blueprint(restapi_bp)
 app.register_blueprint(app_starter)
 app.register_blueprint(y2022_bp)
 

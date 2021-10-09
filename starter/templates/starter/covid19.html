@@ -2,14 +2,14 @@
 {% extends "layout.html" %}
 
 {% block content %}
-{% set world = world %}
-{% set countries = countries %}
+{% set world = stats.world_total %}
+{% set countries = stats.countries_stat %}
 
 <div class="center-block" style="margin: 2% 5% 5%; font-family: gilroy,serif;">
     <!-- Title -->
     <div class="col-12" style="text-align: center;">
         <h1><strong>COVID-19 RESTapi from rapidapi.com</strong></h1>
-        <form action={{url_for('restapi.covid19')}}>
+        <form action={{url_for('starter.covid19')}}>
             <button>Refresh!</button>
         </form>
     </div>
@@ -21,7 +21,7 @@
                 <th>Time</th>
             </tr>
             <tr>
-                <td> {{world["statistic_taken_at"]}} </td>
+                <td> {{world.statistic_taken_at}} </td>
             </tr>
         </table>
         <table style="margin: 2%">
@@ -33,19 +33,19 @@
             </tr>
             <tr>
                 <td>World</td>
-                <td> {{world["total_cases"]}} </td>
-                <td> {{world["total_deaths"]}} </td>
-                <td> {{world["active_cases"]}} </td>
+                <td> {{world.total_cases}} </td>
+                <td> {{world.total_deaths}} </td>
+                <td> {{world.active_cases}} </td>
             </tr>
             {% for country in countries %}
             <tr>
-                {% set name = country["country_name"] %}
+                {% set name = country.country_name %}
                 <td>{{name}}</td>
-                {% set cases = country["cases"] %}
+                {% set cases = country.cases %}
                 <td>{{cases}}</td>
-                {% set deaths = country["deaths"] %}
+                {% set deaths = country.deaths %}
                 <td>{{deaths}}</td>
-                {% set active_cases = country["active_cases"] %}
+                {% set active_cases = country.active_cases %}
                 <td>{{active_cases}}</td>
             </tr>
             {% endfor %}

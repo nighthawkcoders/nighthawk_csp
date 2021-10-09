@@ -1,10 +1,11 @@
-from flask import Blueprint, render_template, jsonify
-import requests
+import random
 
-restapi_bp = Blueprint('restapi', __name__,
-                       url_prefix='/restapi',
-                       template_folder='templates',
-                       static_folder='static', static_url_path='assets')
+from flask import Blueprint, jsonify
+
+api_bp = Blueprint('api', __name__,
+                   url_prefix='/api',
+                   template_folder='templates',
+                   static_folder='static', static_url_path='static/api')
 
 jokes = []
 joke_list = [
@@ -13,12 +14,12 @@ joke_list = [
     "Q: Why did I divide sin by tan? A: Just cos.",
     "UNIX is basically a simple operating system... but you have to be a genius to understand the simplicity.",
     "Enter any 11-digit prime number to continue.",
-    "If at first you don,t succeed; call it version 1.0.",
+    "If at first you don't succeed; call it version 1.0.",
     "Java programmers are some of the most materialistic people I know, very object-oriented",
     "The oldest computer can be traced back to Adam and Eve. It was an apple but with extremely limited memory. Just "
     "1 byte. And then everything crashed.",
     "Q: Why did Wi-Fi and the computer get married? A: Because they had a connection",
-    "Bill Gates teaches a kindergarten class to count to ten. “1, 2, 3, 3.1, 95, 98, ME, 2000, XP, Vista, 7, 8, 10.",
+    "Bill Gates teaches a kindergarten class to count to ten. 1, 2, 3, 3.1, 95, 98, ME, 2000, XP, Vista, 7, 8, 10.",
     "Q: What’s a aliens favorite computer key? A: the space bar!",
     "There are 10 types of people in the world: those who understand binary, and those who don’t.",
     "If it wasn't for C, we’d all be programming in BASI and OBOL.",
@@ -38,32 +39,23 @@ def _find_next_id():
 def _init_jokes():
     id = 1
     for joke in joke_list:
-        jokes.append({"id": id, "joke": joke})
+        jokes.append({"id": id, "joke": joke, "haha": 0, "boohoo": 0})
         id += 1
 
 
-@restapi_bp.route('/jokes')
+@api_bp.route('/joke')
+def get_joke():
+    if len(jokes) == 0:
+        _init_jokes()
+    return jsonify(random.choice(jokes))
+
+
+@api_bp.route('/jokes')
 def get_jokes():
     if len(jokes) == 0:
         _init_jokes()
     return jsonify(jokes)
 
 
-@restapi_bp.route('/covid19', methods=['GET', 'POST'])
-def covid19():
-    url = "https://corona-virus-world-and-india-data.p.rapidapi.com/api"
-    headers = {
-        'x-rapidapi-key': "dec069b877msh0d9d0827664078cp1a18fajsn2afac35ae063",
-        'x-rapidapi-host': "corona-virus-world-and-india-data.p.rapidapi.com"
-    }
-
-    response = requests.request("GET", url, headers=headers)
-    world = response.json().get('world_total')
-    countries = response.json().get('countries_stat')
-    """
-    print(world['total_cases'])
-    for country in countries:
-        print(country["country_name"])
-    #return countries
-    """
-    return render_template("restapi/covid19.html", world=world, countries=countries)
+if __name__ == "__main__":
+    print(random.choice(joke_list))

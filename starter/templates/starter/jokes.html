@@ -3,25 +3,27 @@
 
 {% block content %}
 <div class="container">
-
     <div class="center-block" style="margin: 2% 5% 5%; font-family: gilroy,serif;">
         <div class="col-12" style="text-align: center;">
-            <h1><strong>Random Joke</strong></h1>
-            <form action={{url_for('restapi.joke')}}>
-                <button>Refresh!</button>
-            </form>
+            <h1><strong>All Jokes</strong></h1>
         </div>
 
-
-        <!-- Input and Content -->
         <div class="jumbotron text-left row">
             <div class="col-md">
-                <p class="setup">Setup:<strong>{{setup}}</strong></p>
-                <p class="punchline">Punchline:<strong>{{punchline}}</strong></p>
+                {% for joke in jokes %}
+                    <p class="setup"><strong>{{joke.id}}. {{joke.joke}}</strong></p>
+                {% endfor %}
             </div>
         </div>
 
     </div>
+    <table style="margin: 2%">
+        <tr>
+            <th>JSON Data</th>
+        </tr>
+        <tr>
+            <td>{{jokes}}</td>
+        </tr>
+    </table>
 </div>
-
 {% endblock %}
