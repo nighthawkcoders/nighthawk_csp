@@ -2,7 +2,7 @@ from flask import render_template, request
 from __init__ import app
 
 from algorithm.algorithm import algorithm_bp
-from api.restapi import api_bp
+from api.webapi import api_bp
 from crud.crud import model_bp
 from starter.starter import app_starter
 from y2022 import y2022_bp
