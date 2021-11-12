@@ -22,7 +22,8 @@ pi@raspberrypi:~ $  ```git clone https://github.com/nighthawkcoders/flask-idea-h
 
 pi@raspberrypi:~ $  ```cd ~/flask-idea-homesite```
 
-#### Activate virual environment prior to updating packages...
+#### Activate virtual environment prior to updating packages...
+
 ```diff
 - The homesite name should be a name that corresponds with project for easy recall 
 + REPLACE homesite with your virtualenv preferred name
