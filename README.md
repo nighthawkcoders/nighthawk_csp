@@ -30,6 +30,7 @@ pi@raspberrypi:~ $  ```cd ~/flask-idea-homesite```
 ```
 
 pi@raspberrypi:~/flask-idea-homesite $  ```virtualenv -p /usr/bin/python3 homesite```
+
 pi@raspberrypi:~/flask-idea-homesite $  ```source homesite/bin/activate```
 
 
