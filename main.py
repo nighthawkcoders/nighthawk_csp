@@ -1,11 +1,17 @@
 from flask import render_template, request
 from __init__ import app
 
+from starter.starter import app_starter
 from algorithm.algorithm import algorithm_bp
 from api.webapi import api_bp
 from crud.crud import model_bp
-from starter.starter import app_starter
 from y2022 import y2022_bp
+
+app.register_blueprint(app_starter)
+app.register_blueprint(algorithm_bp)
+app.register_blueprint(api_bp)
+app.register_blueprint(model_bp)
+app.register_blueprint(y2022_bp)
 
 
 @app.route('/')
@@ -34,12 +40,6 @@ def page_not_found(e):
     # note that we set the 404 status explicitly
     return render_template('404.html'), 404
 
-
-app.register_blueprint(algorithm_bp)
-app.register_blueprint(api_bp)
-app.register_blueprint(model_bp)
-app.register_blueprint(app_starter)
-app.register_blueprint(y2022_bp)
 
 if __name__ == "__main__":
     # runs the application on the repl development server

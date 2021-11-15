@@ -10,6 +10,10 @@ y2022_bp = Blueprint('y2022', __name__,
 def repos():
     return render_template("course/repos.html")
 
-@y2022_bp.route('/padlet')
-def padlet():
+@y2022_bp.route('/tri1')
+def tri1():
     return render_template("course/timelines.html", padlet="https://padlet.com/jmortensen7/csp2022tri1")
+
+@y2022_bp.route('/tri2')
+def tri2():
+    return render_template("course/timelines.html", padlet="https://padlet.com/jmortensen7/csp2022tri2")

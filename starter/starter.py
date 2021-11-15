@@ -55,6 +55,7 @@ def covid19():
     }
 
     response = requests.request("GET", url, headers=headers)
+    stats = response.json()
 
     """
     # uncomment this code to test from terminal
@@ -64,5 +65,4 @@ def covid19():
     for country in countries:
         print(country["country_name"])
     """
-
-    return render_template("starter/covid19.html", stats=response.json())
+    return render_template("starter/covid19.html", stats=stats)
