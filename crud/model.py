@@ -6,33 +6,43 @@ from flask_restful import Resource, Api
 
 from __init__ import app
 
+# Tutorial: https://www.sqlalchemy.org/library.html#tutorials, try to get into Python shell and follow along
+
+# Define variable to define type of database (sqlite), and name and location of myDB.db
 dbURI = 'sqlite:///model/myDB.db'
+# Setup properties for the database
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = dbURI
 app.config['SECRET_KEY'] = 'SECRET_KEY'
+# Create SQLAlchemy engine to support SQLite dialect (sqlite:)
 db = SQLAlchemy(app)
-
 Migrate(app, db)
 api = Api(app)
+# prefix for RESTful crud operations below, should change to api
 url_prefix = "/crud"
 
 
-# declare the users database model
+# Define the Users table within the model
+# -- Object Relational Mapping (ORM) is the key concept of SQLAlchemy
+# -- a.) db.Model is like an inner layer of the onion in ORM
+# -- b.) Users represents data we want to store, something that is built on db.Model
+# -- c.) SQLAlchemy ORM is layer on top of SQLAlchemy Core, then SQLAlchemy engine, SQL
 class Users(db.Model):
+    # define the Users schema
     userID = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), unique=False, nullable=False)
     email = db.Column(db.String(255), unique=True, nullable=False)
     password = db.Column(db.String(255), unique=False, nullable=False)
     phone = db.Column(db.String(255), unique=False, nullable=False)
 
-    # self variables
+    # constructor of a User object, initializes of instance variables within object
     def __init__(self, name, email, password, phone):
         self.name = name
         self.email = email
         self.password = password
         self.phone = phone
 
-    # json/dictionary converter
+    # return json/dictionary, self variables converter
     def json(self):
         return {
             "userID": self.userID,
@@ -81,16 +91,18 @@ class Users(db.Model):
 def model_create(name, email, password, phone):
     """prepare data for primary table extracting from form"""
     try:
+        # creates a person object from Users(db.Model) class, passes initializers
         person = Users(
             name=name,
             email=email,
             password=password,
             phone=phone
         )
-        db.session.add(person)
-        db.session.commit()
+        db.session.add(person)  # add prepares to persist person object to Users table
+        db.session.commit()     # SqlAlchemy "unit of work pattern" requires a manual commit
         return person
-    except:
+    except IntegrityError:
+        db.session.remove()
         return None
 
 
