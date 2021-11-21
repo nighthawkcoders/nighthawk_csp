@@ -1,50 +1,75 @@
-<ul class="navbar-nav mr-auto">
-  <!--root menu -->
-  <li class="nav-item active">
-    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-  </li>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarStarters" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Starters
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="http://nighthawkcodingsociety.com/">
+        <img src="/static/assets/ncs_logo.png" width="50" height="50" class="d-inline-block align-center" alt="">
+        Nighthawk Coders
     </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <a class="dropdown-item" href="/greet">Flask Greetings</a>
-      <a class="dropdown-item" href="/starter/binary">Binary Math</a>
-      <a class="dropdown-item" href="/starter/rgb">RGB Intro</a>
-      <a class="dropdown-item" href="/starter/joke">Joke API</a>
-      <a class="dropdown-item" href="/starter/jokes">Jokes API</a>
-      <a class="dropdown-item" href="/starter/covid19">Covid19 RapidAPI</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Bootstrap menus -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <!--root menu -->
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarStarters" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Starters
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href={{ url_for('greet') }}>Flask Greetings</a>
+              <a class="dropdown-item" href={{ url_for('starter.binary') }}>Binary Math</a>
+              <a class="dropdown-item" href={{ url_for('starter.rgb') }}>RGB Intro</a>
+              <a class="dropdown-item" href={{ url_for('starter.joke') }}>Joke API</a>
+              <a class="dropdown-item" href={{ url_for('starter.jokes') }}>Jokes API</a>
+              <a class="dropdown-item" href={{ url_for('starter.covid19') }}>Covid19 RapidAPI</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarModel" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Data
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href={{ url_for('api.joke') }}>Joke RESTapi</a>
+              <a class="dropdown-item" href={{ url_for('api.jokes') }}>Jokes RESTapi</a>
+              <a class="dropdown-item" href="/crud/">SQL CRUD</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarLabs" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Algorithms
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href={{ url_for('algorithm.fibonacci') }}>Fibonacci</a>
+              <a class="dropdown-item" href={{ url_for('algorithm.palindrome') }}>Palindrome</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarMaterials" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Course-materials
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href={{ url_for('y2022.repos') }}>Repos</a>
+              <a class="dropdown-item" href={{ url_for('deploy') }}>Deployment</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href={{ url_for('y2022.tri1') }}>Trimester 1</a>
+              <a class="dropdown-item" href={{ url_for('y2022.tri2') }}>Trimester 2</a>
+            </div>
+          </li>
+        </ul>
+        <!-- Clock display -->
+        <div class="px-3">
+            <span id="clock"></span>
+        </div>
+        <!-- Dark mode action -->
+        <div class="custom-control custom-switch">
+            <input type="checkbox" onclick="darkFunction()" class="custom-control-input" id="darkSwitch">
+            <label class="custom-control-label" for="darkSwitch"></label>
+        </div>
+        {% block navbar_script %}
+            <!-- Navigation bar JavaScript support -->
+            <script src="/static/javascript/navbar.js"></script>
+        {% endblock %}
     </div>
-  </li>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarModel" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Data
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <a class="dropdown-item" href="/api/joke">Joke RESTapi</a>
-      <a class="dropdown-item" href="/api/jokes">Jokes RESTapi</a>
-      <a class="dropdown-item" href="/crud/">SQL CRUD</a>
-    </div>
-  </li>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarLabs" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Algorithms
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <a class="dropdown-item" href="/algorithm/fibonacci">Fibonacci</a>
-      <a class="dropdown-item" href="/algorithm/palindrome">Palindrome</a>
-    </div>
-  </li>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarMaterials" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Course-materials
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <a class="dropdown-item" href="/y2022/repos">Repos</a>
-      <a class="dropdown-item" href="/deploy">Deployment</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="/y2022/tri1">Trimester 1</a>
-      <a class="dropdown-item" href="/y2022/tri2">Trimester 2</a>
-    </div>
-  </li>
-</ul>
+</nav>

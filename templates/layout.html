@@ -27,64 +27,15 @@
 
 </head>
 
-
 <body style="font-family: gilroyLIGHT,serif; color: var(--gray);" >
     <!-- Bootstrap Navigation Code -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="http://nighthawkcodingsociety.com/">
-            <img src="/static/assets/ncs_logo.png" width="50" height="50" class="d-inline-block align-center" alt="">
-
-            Nighthawk Coders
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Bootstrap menus -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            {% include "fragments/navbar.html" %}
-            <!-- Clock display -->
-            <div class="px-3">
-                <span id="clock"></span>
-            </div>
-            <!-- Dark mode action -->
-            <div class="custom-control custom-switch">
-                <input type="checkbox" onclick="darkFunction()" class="custom-control-input" id="darkSwitch">
-                <label class="custom-control-label" for="darkSwitch"></label>
-            </div>
-            <!-- Navigation bar JavaScript support -->
-            <script>
-                // Dark Mode Toggle
-                function darkFunction() {
-                    let element = document.body;
-                    element.classList.toggle("dark-mode");
-                }
-                // Clock controller
-                let clockElement = document.getElementById('clock');
-                function clock() {
-                    let date = new Date();
-                    clockElement.textContent = date.toLocaleString();
-                }
-                // Clock refresh frequency
-                setInterval(clock, 1000);
-            </script>
-        </div>
-    </nav>
+    {% include "fragments/navbar.html" %}
 
     <!-- CONTENT Block, utilize this block for page specific content  -->
     {% block content %}
     {% endblock %}
 
-
-    <div class="contact" style="height: 35vh;">
-
-        <div class="row justify-content-center" style="margin-top: 2%;">
-            <h3 style="color: var(--black); margin-top: 3%; font-size: 2vw;">Contact Us</h3>
-        </div>
-
-        <div class="row justify-content-center">
-            <h4><a href="mailto: nighthawkcodingsociety@gmail">nighthawkcodingsociety@gmail</a></h4>
-        </div>
-
-    </div>
+    <!-- Footer Code -->
+    {% include "fragments/footer.html" %}
 </body>
 </html>
