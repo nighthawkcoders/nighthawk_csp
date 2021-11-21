@@ -7,7 +7,7 @@ api_bp = Blueprint('api', __name__,
                    template_folder='templates',
                    static_folder='static', static_url_path='static/api')
 
-jokes = []
+jokes_data = []
 joke_list = [
     "If you give someone a program... you will frustrate them for a day; if you teach them how to program... you will "
     "frustrate them for a lifetime.",
@@ -32,29 +32,25 @@ joke_list = [
 ]
 
 
-def _find_next_id():
-    return max(jokes["id"] for joke in jokes) + 1
-
-
 def _init_jokes():
-    id = 1
-    for joke in joke_list:
-        jokes.append({"id": id, "joke": joke, "haha": 0, "boohoo": 0})
-        id += 1
+    item_id = 1
+    for item in joke_list:
+        jokes_data.append({"id": item_id, "joke": item, "haha": 0, "boohoo": 0})
+        item_id += 1
 
 
 @api_bp.route('/joke')
-def get_joke():
-    if len(jokes) == 0:
+def joke():
+    if len(jokes_data) == 0:
         _init_jokes()
-    return jsonify(random.choice(jokes))
+    return jsonify(random.choice(jokes_data))
 
 
 @api_bp.route('/jokes')
-def get_jokes():
-    if len(jokes) == 0:
+def jokes():
+    if len(jokes_data) == 0:
         _init_jokes()
-    return jsonify(jokes)
+    return jsonify(jokes_data)
 
 
 if __name__ == "__main__":
