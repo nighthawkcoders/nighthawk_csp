@@ -2,62 +2,61 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="container">
+    <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                <img src="{{ url_for('algorithm.static', filename='Fibonacci_spiral.svg') }}" height="60px" class="d-inline-block align-center" alt="">
+                <span class="fs-4">Fibonacci Algorithm</span>
+            </a>
+        </header>
 
-    <div class="center-block" style="margin: 2% 5% 5%; font-family: gilroy,serif;">
-        <!-- Title -->
-        <div class="col-12" style="text-align: center;">
-            <h1><strong>Fibonacci series in Python</strong></h1>
+        <div class="row align-items-md-stretch">
+
+                <div class="p-5 mb-4 bg-light rounded-3">
+
+                    <h3>Type the nth number in the fibonacci sequence?</h3>
+                    <form id="fibForm" action="{{ url_for('algorithm.fibonacci') }}" method="POST" >
+                        <label for="series"></label>
+                        <input name="series" id="series" type="number" min="2" max="100" >
+                        <button>Go!</button>
+                    </form>
+
+                    <h3></h3>
+                    <!-- Number, List table -->
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Fibonacci: {{fibonacci.series}}</th>
+                            <th scope="col">Series: {{fibonacci.series}}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>{{fibonacci.number}}</td>
+                            <td>{{fibonacci.list}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="h-100 p-5 text-black bg-light rounded-3">
+                    <!-- Series -->
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Fibonacci {{fibonacci.series}} series build up to {{fibonacci.number}}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in range(fibonacci.series) %}
+                        <tr>
+                            <td>{{ fibonacci.get_sequence(i) }}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
         </div>
-
-        <!-- Input and Content -->
-        <div class="jumbotron text-center row">
-            <div class="col-md-6">
-                <h3>Type the nth number in the fibonacci sequence?</h3>
-                <img class="img-responsive py-3" src="{{url_for('.static', filename='Fibonacci_spiral.svg')}}" alt="" width="25%" height="Auto">
-                <form id="fibForm" action="/algorithm/fibonacci/" method="POST" >
-                    <input name="series" id="series" type="number" min="2" max="100" >
-                    <button>Go!</button>
-                </form>
-            </div>
-
-            <div class="col-md-6">
-                <h3>Fibonacci series for {{fibonacci.series}}</h3>
-                <!-- Number, List table -->
-                <table class="mx-auto">
-                    <tr>
-                        <th scope="col">Number</th>
-                        <th scope="col">List</th>
-                    </tr>
-                    <tr>
-                        <td>{{fibonacci.number}}</td>
-                        <td>{{fibonacci.list}}</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-        <!-- Sequence -->
-        <div class="col-12" style="text-align: left; ">
-            <!-- Series -->
-            <h3>Fibonacci build up for series: {{fibonacci.series}} number: {{fibonacci.number}}</h3>
-            <div class="overflow-auto" style="height: 200px">
-                {% for i in range(fibonacci.series) %}
-                    <h5>{{fibonacci.get_sequence(i)}}</h5>
-                {% endfor %}
-            </div>
-            <!-- Code -->
-            <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Falgorithm%2Ffibonacci.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>        </div>
-        </div>
-
     </div>
-</div>
-<style>
-    table, td, th {
-        border: 1px solid var(--dblue);
-    }
-    td, th {
-        text-align:left;
-    }
-</style>
 {% endblock %}
