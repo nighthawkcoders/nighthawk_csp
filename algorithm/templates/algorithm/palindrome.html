@@ -2,60 +2,61 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="container">
+    <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                <img src="{{ url_for('algorithm.static', filename='palindrome.jpeg') }}" height="60px" class="d-inline-block align-center" alt="">
+                <span class="fs-4">Palindrome Algorithm</span>
+            </a>
+        </header>
 
-  <div class="center-block" style="margin: 2% 5% 5%; font-family: gilroy,serif;">
-    <!-- Title -->
-    <div class="col-12" style="text-align: center;">
-      <h1><strong>Palindrome test using Python</strong></h1>
+        <div class="row align-items-md-stretch">
+
+            <div class="p-5 mb-4 bg-light rounded-3">
+
+                <h3>Type the nth number in the fibonacci sequence?</h3>
+                <form id="paliForm" action="{{ url_for('algorithm.palindrome') }}" method="POST" >
+                    <label for="candidate"></label>
+                    <input name="candidate" id="candidate" type="text" placeholder="{{palindrome.candidate}}">
+                    <button>Test!</button>
+                </form>
+
+                <h3></h3>
+                <!-- Number, List table -->
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Tests</th>
+                        <th scope="col">Result</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{palindrome.tests}}</td>
+                        <td>{{palindrome.isPalindrome}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="h-100 p-5 text-black bg-light rounded-3">
+                <!-- Series -->
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">The Palindrome testing series for: "{{palindrome.candidate}}".</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for test in palindrome.analysis %}
+                        <tr>
+                            <td>{Test#={{test.test}} Front={{test.front}} Back={{test.back}} Result={{test.result}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
     </div>
-
-    <!-- Input and Content -->
-    <div class="jumbotron text-center row">
-      <div class="col-md-6">
-        <h3>Type a candidate work or phrase?</h3>
-        <img class="img-responsive py-3" src="{{url_for('.static', filename='palindrome.jpeg')}}" alt="" width="75%" height="Auto">
-        <form id="fibForm" action="/algorithm/palindrome/" method="POST" >
-          <input name="candidate" id="candidate" type="text" placeholder="{{palindrome.candidate}}">
-          <button>Test!</button>
-        </form>
-      </div>
-
-      <div class="col-md-6">
-        <h3>"{{palindrome.candidate}}"</h3>
-        <!-- Number, List table -->
-        <table class="mx-auto">
-          <tr>
-            <th scope="col">Tests</th>
-            <th scope="col">Result</th>
-          </tr>
-          <tr>
-            <td>{{palindrome.tests}}</td>
-            <td>{{palindrome.isPalindrome}}</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <!-- Logging -->
-    <div class="col-12" style="text-align: left; ">
-      <!-- Sequence -->
-      <h3>Evaluation sequence:</h3>
-      <div class="overflow-auto" style="height: 200px">
-        {% for test in palindrome.analysis %}
-        <h5>Test#={{test.test}} Front={{test.front}} Back={{test.back}} Result={{test.result}}</h5>
-        {% endfor %}
-      </div>
-    </div>
-
-</div>
-</div>
-<style>
-  table, td, th {
-    border: 1px solid var(--dblue);
-  }
-  td, th {
-    text-align:left;
-  }
-</style>
 {% endblock %}
