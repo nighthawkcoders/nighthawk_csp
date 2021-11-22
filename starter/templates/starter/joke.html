@@ -2,33 +2,34 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="container">
+    <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                <span class="fs-4">Random Joke</span>
+            </a>
+        </header>
 
-    <div class="center-block" style="margin: 2% 5% 5%; font-family: gilroy,serif;">
-        <div class="col-12" style="text-align: center;">
-            <h1><strong>Random Joke</strong></h1>
-            <form action={{url_for('starter.joke')}}>
-                <button>Refresh!</button>
-            </form>
-        </div>
-
-
-        <!-- Input and Content -->
-        <div class="jumbotron text-left row">
-            <div class="col-md">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
                 <p class="setup"><strong>{{joke.joke}}</strong></p>
+                <form action={{url_for('starter.joke')}}>
+                    <button>Refresh!</button>
+                </form>
             </div>
         </div>
 
+        <table class="table">
+            <thead>
+            <tr>
+                <th>JSON Data</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{joke}}</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
-    <table style="margin: 2%">
-        <tr>
-            <th>JSON Data</th>
-        </tr>
-        <tr>
-            <td>{{joke}}</td>
-        </tr>
-    </table>
 
-</div>
 {% endblock %}

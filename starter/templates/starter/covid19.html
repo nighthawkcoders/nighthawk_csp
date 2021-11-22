@@ -2,80 +2,97 @@
 {% extends "layout.html" %}
 
 {% block content %}
-{% set world = stats.world_total %}
-{% set countries = stats.countries_stat %}
+    {% set world = stats.world_total %}
+    {% set countries = stats.countries_stat %}
 
-<div class="center-block" style="margin: 2% 5% 5%; font-family: gilroy,serif;">
-    <!-- Title -->
-    <div class="col-12" style="text-align: center;">
-        <h1><strong>COVID-19 RESTapi from rapidapi.com</strong></h1>
-        <form action={{url_for('starter.covid19')}}>
-            <button>Refresh!</button>
-        </form>
-    </div>
+    <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                <span class="fs-4">Covid19 RapidAPI</span>
+            </a>
+        </header>
 
-    <!-- Sequence -->
-    <div class="col-12" style="text-align: left; ">
-        <table style="margin: 2%">
-            <tr>
-                <th>Time</th>
-            </tr>
-            <tr>
-                <td> {{world.statistic_taken_at}} </td>
-            </tr>
-        </table>
-        <table style="margin: 2%">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Time of Covid19 RapidAPI Last Update</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td> {{world.statistic_taken_at}} </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="container-fluid py-5">
+                <form action={{url_for('starter.covid19')}}>
+                    <button>Refresh!</button>
+                </form>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
             <tr>
                 <th>Country</th>
-                <th>All-time Cases....</th>
-                <th>Total Deaths......</th>
-                <th>Active Cases......</th>
+                <th style="text-align:right">All-time Cases</th>
+                <th style="text-align:right">Total Recovered</th>
+                <th style="text-align:right">Total Deaths</th>
+                <th style="text-align:right">Active Cases</th>
+                <th style="text-align:right">New Cases</th>
+                <th style="text-align:right">Serious Critical</th>
             </tr>
+            </thead>
+            <tbody>
             <tr>
                 <td>World</td>
-                <td> {{world.total_cases}} </td>
-                <td> {{world.total_deaths}} </td>
-                <td> {{world.active_cases}} </td>
+                <td style="text-align:right"> {{world.total_cases}} </td>
+                <td style="text-align:right"> {{world.total_recovered}} </td>
+                <td style="text-align:right"> {{world.total_deaths}} </td>
+                <td style="text-align:right"> {{world.active_cases}} </td>
+                <td style="text-align:right"> {{world.new_cases}} </td>
+                <td style="text-align:right"> {{world.serious_critical}} </td>
             </tr>
             {% for country in countries %}
-            <tr>
-                {% set name = country.country_name %}
-                <td>{{name}}</td>
-                {% set cases = country.cases %}
-                <td>{{cases}}</td>
-                {% set deaths = country.deaths %}
-                <td>{{deaths}}</td>
-                {% set active_cases = country.active_cases %}
-                <td>{{active_cases}}</td>
-            </tr>
+                <tr>
+                    {% set name = country.country_name %}
+                    <td>{{name}}</td>
+                    <td style="text-align:right"> {{country.cases}} </td>
+                    <td style="text-align:right"> {{country.total_recovered}} </td>
+                    <td style="text-align:right"> {{country.deaths}} </td>
+                    <td style="text-align:right"> {{country.active_cases}} </td>
+                    <td style="text-align:right"> {{country.new_cases}} </td>
+                    <td style="text-align:right"> {{country.serious_critical}} </td>
+                </tr>
             {% endfor %}
+            </tbody>
         </table>
-        <table style="margin: 2%">
+
+        <table class="table">
+            <thead>
             <tr>
-                <th>World</th>
+                <th>World JSON</th>
             </tr>
+            </thead>
+            <tbody>
             <tr>
                 <td>{{world}}</td>
             </tr>
+            </tbody>
         </table>
-        <table style="margin: 2%">
+        <table class="table">
+            <thead>
             <tr>
-                <th>Countries</th>
+                <th>Countries JSON</th>
             </tr>
+            </thead>
+            <tbody>
             <tr>
                 <td>{{countries}}</td>
             </tr>
+            </tbody>
         </table>
-    </div>
 
-</div>
-<style>
-    table, td, th {
-        border: 1px solid var(--dblue);
-    }
-    td, th {
-        text-align:left;
-    }
-</style>
+    </div>
 
 {% endblock %}

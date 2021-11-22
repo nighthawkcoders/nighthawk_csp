@@ -2,52 +2,53 @@
 {% extends "layout.html" %}
 
 {% block style %}
-<link rel="stylesheet" type="text/css" href="/static/css/greet.css">
 {% endblock %}
 
 {% block content %}
-    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
+    <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                <span class="fs-4">Flask Greetings</span>
+            </a>
+        </header>
 
-        <div class="col-12">
-            <p>Hello, {{name}}!</p>
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <div>
+                    <p>Hello, {{name}}!</p>
+                </div>
+
+                <div>
+                    <form action="{{ url_for('greet') }}" id="greet" method="POST" >
+                        <label for="name">Type a greeting name?</label>
+                        <input name="name" id="name">
+                        <input type="submit" value="Greetings!">
+                    </form>
+                    <img src="/static/assets/PythonFlask.jpeg" alt="Flask Intro" style="height: 400px; width: auto" >
+                </div>
+            </div>
+
+            <div>
+                <p>Jinja2 pre-processor code.  This code shows a variable name within double curly/squiggly brackets, or the variable syntax of Jinja2.  The variable is replaced with the value before the HTML is given to the browser by Flask/Jinja2 (a pre-processor means a step before code is transferred to another tool or engine.</p>
+                <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Ftemplates%2Fgreet.html%23L8-L8&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+            </div>
+
+            <div>
+                <p>HTML input form.  A form action gathers input interacts between HTML and the backend server, POST via HTTP is the method of interaction.</p>
+                <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Ftemplates%2Fgreet.html%23L12-L16&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+            </div>
+
+            <div>
+                <p>Python backend <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/main.py#L17-L25">COPY CODE</a>.  This code, contained in a Python function, sets up the "name=" variable. The name variable is passed to the HTML (greet.html) via Flask.  This code contains "if statements",  these statements are referred to as selection statements by College Board.  Most developers refer to if statements as conditionals.  This code tests to see if input is entered from the HTML Form.  If input is set then Python variable "name" set the Jinja2 variable "name" (name=name) with the value from the HTML form.  The default/else condition (last statement in function), sets "name" to a constant value name="World". Conditional logic is fundamental to all programming languages. Observe this closely, make sure you understand it thoroughly.</p>
+                <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Fmain.py%23L17-L25&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+            </div>
+
+            <div>
+                <p>HTML block <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/templates/greet.html#L5-L23">COPY CODE</a>.  The HTML pre-processor and input form put together. Try view-source through browser to see what happens to pre-processor code.  Tech Talk mini-lab will be to add "greet" to your project.</p>
+                <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Ftemplates%2Fgreet.html%23L5-L23&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+            </div>
         </div>
 
-        <div class="col-12">
-            <form action="/greet" id="greet" method="POST" >
-                <label for="name">Type a greeting name?</label>
-                <input name="name" id="name">
-                <input type="submit" value="Greetings!">
-            </form>
-        </div>
-
-        <div class="col-12">
-            <img src="/static/assets/PythonFlask.jpeg" style="height: 400px" >
-        </div>
-
-    </div>
-
-    <!-- display code from GitHub -->
-    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
-
-        <div class="col-8">
-            <p>Jinja2 pre-processor code.  This code shows a variable name within double curly/squiggly brackets, or the variable syntax of Jinja2.  The variable is replaced with the value before the HTML is given to the browser by Flask/Jinja2 (a pre-processor means a step before code is transferred to another tool or engine.</p>
-            <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Ftemplates%2Fgreet.html%23L8-L8&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
-        </div>
-
-        <div class="col-8">
-            <p>HTML input form.  A form action gathers input interacts between HTML and the backend server, POST via HTTP is the method of interaction.</p>
-            <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Ftemplates%2Fgreet.html%23L12-L16&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
-        </div>
-
-        <div class="col-8">
-            <p>Python backend <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/main.py#L17-L25">COPY CODE</a>.  This code, contained in a Python function, sets up the "name=" variable. The name variable is passed to the HTML (greet.html) via Flask.  This code contains "if statements",  these statements are referred to as selection statements by College Board.  Most developers refer to if statements as conditionals.  This code tests to see if input is entered from the HTML Form.  If input is set then Python variable "name" set the Jinja2 variable "name" (name=name) with the value from the HTML form.  The default/else condition (last statement in function), sets "name" to a constant value name="World". Conditional logic is fundamental to all programming languages. Observe this closely, make sure you understand it thoroughly.</p>
-            <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Fmain.py%23L17-L25&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
-        </div>
-
-        <div class="col-8">
-            <p>HTML block <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/templates/greet.html#L5-L23">COPY CODE</a>.  The HTML pre-processor and input form put together. Try view-source through browser to see what happens to pre-processor code.  Tech Talk mini-lab will be to add "greet" to your project.</p>
-            <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Ftemplates%2Fgreet.html%23L5-L23&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
-        </div>
     </div>
 
 {% endblock %}

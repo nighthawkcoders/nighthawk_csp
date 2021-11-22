@@ -2,28 +2,35 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="container">
-    <div class="center-block" style="margin: 2% 5% 5%; font-family: gilroy,serif;">
-        <div class="col-12" style="text-align: center;">
-            <h1><strong>All Jokes</strong></h1>
-        </div>
+    <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                <span class="fs-4">All Jokes</span>
+            </a>
+        </header>
 
-        <div class="jumbotron text-left row">
-            <div class="col-md">
-                {% for joke in jokes %}
-                    <p class="setup"><strong>{{joke.id}}. {{joke.joke}}</strong></p>
-                {% endfor %}
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <div class="col-md">
+                    {% for joke in jokes %}
+                        <p class="setup"><strong>{{joke.id}}. {{joke.joke}}</strong></p>
+                    {% endfor %}
+                </div>
             </div>
         </div>
 
+        <table class="table">
+            <thead>
+            <tr>
+                <th>JSON Data</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{jokes}}</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
-    <table style="margin: 2%">
-        <tr>
-            <th>JSON Data</th>
-        </tr>
-        <tr>
-            <td>{{jokes}}</td>
-        </tr>
-    </table>
-</div>
+
 {% endblock %}
