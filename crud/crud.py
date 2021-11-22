@@ -1,20 +1,20 @@
 # flask imports
 from flask import Blueprint, render_template, request, url_for, redirect
 # model imports
-from crud.model import model_create, model_read, model_read_all, model_read_emails, \
+from .model import model_create, model_read, model_read_all, model_read_emails, \
     model_read_phones, model_update_name, model_delete
 
 # blueprint defaults
-model_bp = Blueprint('crud', __name__,
+app_crud = Blueprint('crud', __name__,
                      url_prefix='/crud',
-                     template_folder='templates/crud',
+                     template_folder='templates/crud/',
                      static_folder='static',
                      static_url_path='assets')
 
 
 # ##### Routes within this blueprint broker information between HTML and Model code
 # Default URL of blueprint and connecting to crud() function
-@model_bp.route('/')
+@app_crud.route('/')
 def crud():
     """extracts Users table from DB and returns in json format"""
     records = model_read_all()
@@ -22,7 +22,7 @@ def crud():
 
 
 # CRUD create/add a new record to the table
-@model_bp.route('/create/', methods=["POST"])
+@app_crud.route('/create/', methods=["POST"])
 def create():
     if request.form:
         """extract data from form and call model_create"""
@@ -36,7 +36,7 @@ def create():
 
 
 # CRUD read, which is filtering table based off of ID
-@model_bp.route('/read/', methods=["POST"])
+@app_crud.route('/read/', methods=["POST"])
 def read():
     record = []
     if request.form:
@@ -48,7 +48,7 @@ def read():
 
 
 # CRUD update
-@model_bp.route('/update/', methods=["POST"])
+@app_crud.route('/update/', methods=["POST"])
 def update():
     if request.form:
         user_dict = {
@@ -61,7 +61,7 @@ def update():
 
 
 # CRUD delete
-@model_bp.route('/delete/', methods=["POST"])
+@app_crud.route('/delete/', methods=["POST"])
 def delete():
     if request.form:
         """fetch userid"""
@@ -72,7 +72,7 @@ def delete():
 
 
 # if email url, show the email table only
-@model_bp.route('/emails/')
+@app_crud.route('/emails/')
 def emails():
     # fill the table with emails only
     records = model_read_emails()
@@ -80,7 +80,7 @@ def emails():
 
 
 # if phones url, show phones table only
-@model_bp.route('/phones/')
+@app_crud.route('/phones/')
 def phones():
     # fill the table with phone numbers only
     records = model_read_phones()

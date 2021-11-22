@@ -1,38 +1,22 @@
-from flask import render_template, request
+from flask import render_template
 from __init__ import app
 
 from starter.starter import app_starter
-from algorithm.algorithm import algorithm_bp
-from api.webapi import api_bp
-from crud.crud import model_bp
-from y2022 import y2022_bp
+from algorithm.algorithm import app_algorithm
+from api.webapi import app_api
+from crud.crud import app_crud
+from y2022 import app_y2022
 
 app.register_blueprint(app_starter)
-app.register_blueprint(algorithm_bp)
-app.register_blueprint(api_bp)
-app.register_blueprint(model_bp)
-app.register_blueprint(y2022_bp)
+app.register_blueprint(app_algorithm)
+app.register_blueprint(app_api)
+app.register_blueprint(app_crud)
+app.register_blueprint(app_y2022)
 
 
 @app.route('/')
 def index():
     return render_template("index.html")
-
-
-@app.route('/greet', methods=['GET', 'POST'])
-def greet():
-    # submit button has been pushed
-    if request.form:
-        name = request.form.get("name")
-        if len(name) != 0:  # input field has content
-            return render_template("greet.html", name=name)
-    # starting and empty input default
-    return render_template("greet.html", name="World")
-
-
-@app.route('/deploy')
-def deploy():
-    return render_template("course/deploy.html")
 
 
 @app.errorhandler(404)

@@ -1,5 +1,5 @@
 import requests
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from algorithm.image import image_data
 
 from pathlib import \
@@ -7,20 +7,31 @@ from pathlib import \
 
 app_starter = Blueprint('starter', __name__,
                         url_prefix='/starter',
-                        template_folder='templates',
+                        template_folder='templates/starter/',
                         static_folder='static',
                         static_url_path='assets')
 
 
+@app_starter.route('/greet', methods=['GET', 'POST'])
+def greet():
+    # submit button has been pushed
+    if request.form:
+        name = request.form.get("name")
+        if len(name) != 0:  # input field has content
+            return render_template("greet.html", name=name)
+    # starting and empty input default
+    return render_template("greet.html", name="World")
+
+
 @app_starter.route('/binary/')
 def binary():
-    return render_template("starter/binary.html")
+    return render_template("binary.html")
 
 
 @app_starter.route('/rgb/')
 def rgb():
     path = Path(app_starter.root_path) / "static" / "img"
-    return render_template('starter/rgb.html', images=image_data(path))
+    return render_template('rgb.html', images=image_data(path))
 
 
 @app_starter.route('/joke', methods=['GET', 'POST'])
@@ -31,7 +42,7 @@ def joke():
     """
     url = "https://csp.nighthawkcodingsociety.com/api/joke"
     response = requests.request("GET", url)
-    return render_template("starter/joke.html", joke=response.json())
+    return render_template("joke.html", joke=response.json())
 
 
 @app_starter.route('/jokes', methods=['GET', 'POST'])
@@ -43,7 +54,7 @@ def jokes():
     url = "https://csp.nighthawkcodingsociety.com/api/jokes"
 
     response = requests.request("GET", url)
-    return render_template("starter/jokes.html", jokes=response.json())
+    return render_template("jokes.html", jokes=response.json())
 
 
 @app_starter.route('/covid19', methods=['GET', 'POST'])
@@ -65,4 +76,4 @@ def covid19():
     for country in countries:
         print(country["country_name"])
     """
-    return render_template("starter/covid19.html", stats=stats)
+    return render_template("covid19.html", stats=stats)

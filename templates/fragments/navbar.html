@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <div class="btn-group">
-            <img src="/static/assets/ncs_logo.png" width="50" height="50" class="d-inline-block align-center" alt="">
-            <a class="navbar-brand" href="http://nighthawkcodingsociety.com/">Nighthawk Coders</a>
+            <img src="{{ url_for('static', filename='assets/ncs_logo.png') }}" width="50" height="50" class="d-inline-block align-center" alt="">
+            <a class="navbar-brand" href="https://nighthawkcodingsociety.com">Nighthawk Coders</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -14,7 +14,7 @@
                             Starters
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li><a class="dropdown-item" href={{ url_for('greet') }}>Flask Greetings</a></li>
+                            <li><a class="dropdown-item" href={{ url_for('starter.greet') }}>Flask Greetings</a></li>
                             <li><a class="dropdown-item" href={{ url_for('starter.binary') }}>Binary Math</a></li>
                             <li><a class="dropdown-item" href={{ url_for('starter.rgb') }}>RGB Intro</a></li>
                             <li><a class="dropdown-item" href={{ url_for('starter.joke') }}>Joke API</a></li>
@@ -34,7 +34,7 @@
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                             <li><a class="dropdown-item" href={{ url_for('api.joke') }}>Joke RESTapi</a></li>
                             <li><a class="dropdown-item" href={{ url_for('api.jokes') }}>Jokes RESTapi</a></li>
-                            <li><a class="dropdown-item" href="/crud/">SQL CRUD</a></li>
+                            <li><a class="dropdown-item" href={{ url_for('crud.crud') }}>SQL CRUD</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -62,7 +62,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                             <li><a class="dropdown-item" href={{ url_for('y2022.repos') }}>Repos</a></li>
-                            <li><a class="dropdown-item" href={{ url_for('deploy') }}>Deployment</a></li>
+                            <li><a class="dropdown-item" href={{ url_for('y2022.deploy') }}>Deployment</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href={{ url_for('y2022.tri1') }}>Trimester 1</a></li>
                             <li><a class="dropdown-item" href={{ url_for('y2022.tri2') }}>Trimester 2</a></li>

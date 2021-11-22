@@ -2,7 +2,7 @@ import random
 
 from flask import Blueprint, jsonify
 
-api_bp = Blueprint('api', __name__,
+app_api = Blueprint('api', __name__,
                    url_prefix='/api',
                    template_folder='templates',
                    static_folder='static', static_url_path='static/api')
@@ -39,14 +39,14 @@ def _init_jokes():
         item_id += 1
 
 
-@api_bp.route('/joke')
+@app_api.route('/joke')
 def joke():
     if len(jokes_data) == 0:
         _init_jokes()
     return jsonify(random.choice(jokes_data))
 
 
-@api_bp.route('/jokes')
+@app_api.route('/jokes')
 def jokes():
     if len(jokes_data) == 0:
         _init_jokes()
