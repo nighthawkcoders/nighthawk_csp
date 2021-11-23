@@ -8,16 +8,17 @@ from model import print_tester, url_prefix
 # play with api on localhost, server must be running
 def api_tester():
     # local host URL for model
-    url = 'http://127.0.0.1:5000/' + url_prefix
+    url = 'http://127.0.0.1:5222/' + url_prefix
 
     # test conditions
     API = 0
     METHOD = 1
     tests = [
-        ['/create/Wilma Flinstone/wilma@bedrock.org/123wifli/0001112222', "post"],
+        ['/create/Wilma Flintstone/wilma@bedrock.org/123wifli/0001112222', "post"],
         ['/read/', "get"],
         ['/update/jmort1021@gmail.com/John C Mortensen', "put"],
-        ['/delete/6', "delete"]
+        ['/delete/4', "delete"],
+        ['/delete/5', "delete"],
     ]
 
     # loop through each test condition and provide feedback

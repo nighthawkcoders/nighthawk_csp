@@ -6,24 +6,7 @@
 <!-- CONTENT (in <head>), content for this page -->
 {% block meta %}
 <title>CRUD page</title>
-<style>
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        margin-left: auto;
-        margin-right: auto;
-    }
 
-    td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    tr:nth-child(even) {
-        background-color: #dddddd;
-    }
-</style>
 <!-- Password verification and error message -->
 <script>
     //adding dom event listener to allow the verifyPassword funtion to be attached to the form. This is so we can keep our JS separate from our html and not have onsubmit in the form.
@@ -67,226 +50,206 @@
 </script>
 {% endblock %}
 
-
 <!-- CONTENT (in <body>), content for this page -->
 {% block content %}
-<!-- Links to code for Front End and Backend for this lesson  -->
-<div class="jumbotron jumbotron-fluid" style="height: 50%; ">
-    <div class="row justify-content-center">
-        <div class="col-10" style="text-align: center;">
-            <h1>Hello to Databases and Python</h1>
-            <table id="navigator">
-                <tr>
-                    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/tree/master/crud">Repo/Blueprint</a></td>
-                    <td><a href=#FE-HTML>HTML Code</a></td>
-                    <td><a href=#BE-ROUTE>Route Code</a></td>
-                    <td><a href=#BE-MODEL>SQL, RESTapi</a></td>
-                    <td><a href=#BE-REST>API Tests</a></td>
-                </tr>
-            </table>
-        </div>
-    </div>
-</div>
+    <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+            <div class="d-flex align-items-center text-dark text-decoration-none">
+                <span class="fs-4">SQL CRUD Page</span>
+            </div>
+        </header>
+        <header class="pb-3 mb-4 border-bottom">
+            <div class="row justify-content-center">
+                <table id="navigator">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/tree/master/crud">GitHub/Blueprint</a></td>
+                        <td><a href=#FE-HTML>HTML Code</a></td>
+                        <td><a href=#BE-ROUTE>Route Code</a></td>
+                        <td><a href=#BE-MODEL>SQL, RESTapi</a></td>
+                        <td><a href=#BE-REST>API Tests</a></td>
+                    </tr>
+                </table>
+            </div>
+        </header>
 
-<!-- Sample table rendering and filtering link -->
-<div class="jumbotron jumbotron-fluid" style="height: 50%; ">
+        <div class="container py-4">
+            <div class="p-5 mb-4 bg-light rounded-3">
 
-    <!-- title -->
-    <div class="row justify-content-center">
-        <div class="col-10" style="text-align: center;">
-            <h1>Sample Table</h1>
-        </div>
-    </div>
-
-    <!-- backend filtering actions -->
-    <div class="row courses-buttons justify-content-center">
-        <table id="main_table">
-        <tr>
-            <td><a href={{url_for('.crud')}}>Full Table </a></td>
-            <td><a href={{url_for('.emails')}}>E-Mails only</a></td>
-            <td><a href={{url_for('.phones')}}>Phones only</a></td>
-        </tr>
-        </table>
-    </div>
-
-    <!-- Table display,  "table" variable and rows with "dictionary elements" are expected -->
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Password</th>
-            <th>Phone</th>
-        </tr>
-        <!-- Loop through rows in table -->
-        {% for row in table %}
-            <!--
-            Prepare table for display
-                caution: phone number needs "~" format step to force type to string
-            -->
-            {% set pn = "" ~ row['phone'] %}
-            {% set pnf = "(" ~ pn[0:3] ~ ")" ~ pn[3:6] ~ "-" ~ pn[6:10] %}
-            <tr>
-                <td>{{ row['userID'] }}</td>
-                <td>{{ row['name'] }}</td>
-                <td>{{ row['email'] }}</td>
-                <td>{{ row['password'] }}</td>
-                <td>{{ pnf }}</td>
-            </tr>
-        {% endfor %}
-    </table>
-
-</div>
-
-<!-- Create action, input and "Add" a new row to table  -->
-<div class="jumbotron jumbotron-fluid" style="height: 50%; ">
-
-    <div class="row justify-content-center">
-        <div class="col-10" style="text-align: center;">
-            <h1>CRUD: Create</h1>
-        </div>
-    </div>
-
-    <div class="row courses-buttons justify-content-center">
-        <!-- onsubmit ="return verifyPassword()" -->
-        <form method="POST" ID="create" action={{url_for('.create')}} >
-            <table>
-                <tr>
-                    <th><label for="name">Name</label></th>
-                    <th><label for="email">Email</label></th>
-                    <th><label for="password">Password</label></th>
-                    <th><label for="phone">Phone</label></th>
-                </tr>
-                <tr>
-                    <td><input type="text" name="name" id="name" required></td>
-                    <td><input type="email" name="email" id="email" placeholder="abc@xyz.org" required></td>
-                    <td><input type="password" name="password" id="password" required></td>
-                    <td><input required type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="1234567890"></td>
-                    <td><input type="submit" value="Add"></td>
-                </tr>
-            </table>
-            <p id="pswError"></p>
-        </form>
-
-    </div>
-</div>
-
-<!-- Read action, filter table on page to single row -->
-<div class="jumbotron jumbotron-fluid" style="height: 50%; ">
-
-    <div class="row justify-content-center">
-        <div class="col-10" style="text-align: center;">
-            <h1>CRUD: Read</h1>
-        </div>
-    </div>
-
-    <div class="row courses-buttons justify-content-center">
-
-        <form method="POST" ID="read" action={{url_for('.read')}} >
-            <table id="read_table">
-                <tr><th><label for="ID">ID</label></th></tr>
-                <tr><td><select name="ID" id="ID">
-                    <optgroup label="userid">
-                        {% for row in table %}
-                            <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
-                        {% endfor %}
-                    </optgroup>
-                </select></td>
-                    <td><input type="submit" value="Filter"></td>
-                </tr>
-            </table>
-        </form>
-
-    </div>
-</div>
-
-<!-- Update action, change selected row  -->
-<div class="jumbotron jumbotron-fluid" style="height: 50%; ">
-
-    <div class="row justify-content-center">
-        <div class="col-10" style="text-align: center;">
-            <h1>CRUD: Update</h1>
-        </div>
-    </div>
-
-    <div class="row courses-buttons justify-content-center">
-
-        <form method="POST" ID="update" action={{url_for('.update')}} >
-            <table id="update_table">
-                <tr>
-                    <th><label for="update_userid">ID</label></th>
-                    <th><label for="update_name">Name</label></th>
-                </tr>
-                <tr>
-                    <td>
-                    <select name="userid" id="update_userid">
-                        <optgroup label="userid">
+                <div class="row align-items-md-stretch">
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <td><a href={{url_for('crud.crud')}}>Full Table </a></td>
+                            <td><a href={{url_for('crud.emails')}}>E-Mails only</a></td>
+                            <td><a href={{url_for('crud.phones')}}>Phones only</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row align-items-md-stretch">
+                    <div class="container-fluid py-5">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Password</th>
+                                <th>Phone</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!-- Loop through rows in table -->
                             {% for row in table %}
-                                <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                <!--
+                                Prepare table for display
+                                    caution: phone number needs "~" format step to force type to string
+                                -->
+                                {% set pn = "" ~ row['phone'] %}
+                                {% set pnf = "(" ~ pn[0:3] ~ ")" ~ pn[3:6] ~ "-" ~ pn[6:10] %}
+                                <tr>
+                                    <td>{{ row['userID'] }}</td>
+                                    <td>{{ row['name'] }}</td>
+                                    <td>{{ row['email'] }}</td>
+                                    <td>{{ row['password'] }}</td>
+                                    <td>{{ pnf }}</td>
+                                </tr>
                             {% endfor %}
-                        </optgroup>
-                    </select>
-                    </td>
-                    <td><input type="text" name="name" id="update_name" required></td>
-                    <td><input type="submit" value="Update"></td>
-                </tr>
-            </table>
-        </form>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
-    </div>
-</div>
+        </div>
 
-<!-- Delete action, delete selected row  -->
-<div class="jumbotron jumbotron-fluid" style="height: 50%; ">
-
-    <div class="row justify-content-center">
-        <div class="col-10" style="text-align: center;">
-            <h1>CRUD: Delete</h1>
+        <div class="row align-items-md-stretch">
+            <div class="col-md-9">
+                <div class="h-100 p-5 bg-light border rounded-3">
+                    <h2>Create a new record</h2>
+                    <form method="POST" ID="create" action={{url_for('crud.create')}} >
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th><label for="name">Name</label></th>
+                                <th><label for="email">Email</label></th>
+                                <th><label for="password">Password</label></th>
+                                <th><label for="phone">Phone</label></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input type="text" name="name" id="name" required></td>
+                                <td><input type="email" name="email" id="email" placeholder="abc@xyz.org" required></td>
+                                <td><input type="password" name="password" id="password" required></td>
+                                <td><input required type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="1234567890"></td>
+                                <td><input type="submit" value="Create"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <p id="pswError"></p>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="row courses-buttons justify-content-center">
+    <div class="container py-4">
 
-        <form method="POST" ID="delete" action={{url_for('.delete')}} >
-            <table id="delete_table">
-                <tr><th><label for="delete_ID">ID</label></th></tr>
-                <tr><td><select name="ID" id="delete_ID">
-                    <optgroup label="userid">
-                        {% for row in table %}
-                            <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
-                        {% endfor %}
-                    </optgroup>
-                </select>
-                </td><td><input type="submit" value="Delete"></td></tr>
-            </table>
-        </form>
+         <div class="row align-items-md-stretch">
+            <div class="col-md-3">
+                <div class="h-100 p-5 bg-light border rounded-3">
+                    <h2>Read a record</h2>
+                    <form method="POST" ID="read" action={{url_for('crud.read')}} >
+                        <table id="read_table">
+                            <tr><th><label for="ID">ID</label></th></tr>
+                            <tr><td><select name="ID" id="ID">
+                                <optgroup label="userid">
+                                    {% for row in table %}
+                                        <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                    {% endfor %}
+                                </optgroup>
+                            </select></td>
+                                <td><input type="submit" value="Read"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
 
+            <div class="col-md-6">
+                <div class="h-100 p-5 bg-light border rounded-3">
+                    <h2>Update a record</h2>
+                    <form method="POST" ID="update" action={{url_for('crud.update')}} >
+                        <table id="update_table">
+                            <tr>
+                                <th><label for="update_userid">ID</label></th>
+                                <th><label for="update_name">Name</label></th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select name="userid" id="update_userid">
+                                        <optgroup label="userid">
+                                            {% for row in table %}
+                                                <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                            {% endfor %}
+                                        </optgroup>
+                                    </select>
+                                </td>
+                                <td><input type="text" name="name" id="update_name" required></td>
+                                <td><input type="submit" value="Update"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="h-100 p-5 bg-light border rounded-3">
+                    <h2>Delete a record</h2>
+                    <form method="POST" ID="read" action={{url_for('crud.delete')}} >
+                        <table id="read_table">
+                            <tr><th><label for="ID">ID</label></th></tr>
+                            <tr><td><select name="ID" id="ID">
+                                <optgroup label="userid">
+                                    {% for row in table %}
+                                        <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                    {% endfor %}
+                                </optgroup>
+                            </select></td>
+                                <td><input type="submit" value="Delete"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
-<!-- Display CRUD code to support Tech Talks -->
+    <!-- Front End HTML, shows this file -->
+    <div class="container py-4">
+        <h1 id="FE-HTML">Front End HTML Code</h1>
+        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Fcrud%2Ftemplates%2Fcrud%2Fcrud.html&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+    </div>
 
-<!-- Front End HTML, shows this file -->
-<div align="center" >
-    <h1 id="FE-HTML">Front End HTML Code</h1>
-    <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Fcrud%2Ftemplates%2Fcrud%2Fcrud.html&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script></div>
+    <!-- Back Route code -->
+    <div class="container py-4">
+        <h1 id="BE-ROUTE">Back End Route Code</h1>
+        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fflask-idea-homesite%2Fblob%2Fmaster%2Fviews%2Fpythondb%2Fview.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+    </div>
 
-<!-- Back Route code -->
-<div align="center" >
-    <h1 id="BE-ROUTE">Back End Route Code</h1>
-    <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fflask-idea-homesite%2Fblob%2Fmaster%2Fviews%2Fpythondb%2Fview.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
-</div>
+    <!-- Back end SQL data definition code (SQLalchemy) -->
+    <div class="container py-4">
+        <h1 id="BE-MODEL">Back End RESTapi Definition Code</h1>
+        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Fcrud%2Fmodel.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+    </div>
 
-<!-- Back end SQL data definition code (SQLalchemy) -->
-<div align="center" >
-    <h1 id="BE-MODEL">Back End SQL and RESTapi Definition Code</h1>
-    <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Fcrud%2Fmodel.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
-</div>
-
-<!-- Back end SQL CRUD supporting code -->
-<div align="center" >
-    <h1 id="BE-REST">Back End RESTapi Test</h1>
-    <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Fcrud%2Frest_test.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
-</div>
+    <!-- Back end SQL CRUD supporting code -->
+    <div class="container py-4">
+        <h1 id="BE-REST">Back End RESTapi Test</h1>
+        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Fcrud%2Frest_test.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+    </div>
 
 {% endblock %}
