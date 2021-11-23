@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
         <div class="btn-group">
             <img src="{{ url_for('static', filename='assets/ncs_logo.png') }}" width="50" height="50" class="d-inline-block align-center" alt="">
@@ -79,15 +79,15 @@
                 <span id="clock"></span>
             </div>
             <!-- Dark mode action -->
-            <div class="custom-control custom-switch">
-                <input type="checkbox" onclick="darkFunction()" class="custom-control-input" id="darkSwitch">
-                <label class="custom-control-label" for="darkSwitch"></label>
+            <div class="form-check form-switch">
+                <input type="checkbox" onclick="darkFunction()" class="form-check-input" id="darkSwitch">
+                <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
             </div>
         </div>
 
         {% block navbar_script %}
             <!-- Navigation bar JavaScript support -->
-            <script src="/static/javascript/navbar.js"></script>
+            <script src={{  url_for("static", filename="javascript/navbar.js", version='125') }}></script>
         {% endblock %}
 
     </div>
