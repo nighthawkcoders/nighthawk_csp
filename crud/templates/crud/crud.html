@@ -76,11 +76,13 @@
 
         <div class="container py-4">
             <div class="p-5 mb-4 bg-light rounded-3">
-
+                <h2>SQL Table</h2>
                 <div class="row align-items-md-stretch">
                     <table class="table">
                         <tbody>
                         <tr>
+                            <td></td>
+                            <td></td>
                             <td><a href={{url_for('crud.crud')}}>Full Table </a></td>
                             <td><a href={{url_for('crud.emails')}}>E-Mails only</a></td>
                             <td><a href={{url_for('crud.phones')}}>Phones only</a></td>
@@ -208,7 +210,7 @@
 
             <div class="col-md-3">
                 <div class="h-100 p-5 bg-light border rounded-3">
-                    <h2>Delete a record</h2>
+                    <h2>Delete record</h2>
                     <form method="POST" ID="read" action={{url_for('crud.delete')}} >
                         <table id="read_table">
                             <tr><th><label for="ID">ID</label></th></tr>
