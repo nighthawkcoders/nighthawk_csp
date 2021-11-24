@@ -1,35 +1,33 @@
-@import "../../node_modules/bootstrap/scss/functions";
-@import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/mixins";
-
+/* redefine colors */
+$secondary: #5B9D82;
 $body-bg: #cfd8dc;
 
-//background colors
+/* redefine body background */
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
 html, body {
   background-image: var(--bs-gradient);
   background-color: var(--bs-body-bg);
 }
 
-@import "../../node_modules/bootstrap/scss/bootstrap";
 
 //dark mode logic
 .dark-mode {
 
   $enable-gradients: true;
 
-  /* redefine theme and background colors */
-  $primary: $purple;
-  $success: $green-600;
+  /* redefine body background */
   $body-bg: #455a64;
+  /* set background values */
+  --#{$variable-prefix}body-bg: #{$body-bg};
+
+  /* redefine theme colors */
+  $primary: $purple;
+  $secondary: $green-600;
 
   $theme-colors: (
           "primary": $primary,
-          "secondary": $secondary,
-          "success": $success,
-          "danger": $danger,
-          "info": $indigo,
-          "dark": $dark,
-          "light": $light,
+          "secondary": $secondary
   );
   /* redefine theme color variables */
   @each $color, $value in $theme-colors {
@@ -40,9 +38,6 @@ html, body {
   @each $color, $value in $theme-colors-rgb {
     --#{$variable-prefix}#{$color}-rgb: #{$value};
   }
-
-  /* set background values */
-  --#{$variable-prefix}body-bg: #{$body-bg};
 
   @import "../../node_modules/bootstrap/scss/bootstrap";
 }
