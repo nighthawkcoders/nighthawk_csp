@@ -21,10 +21,8 @@ function darkFunction() {
     element.classList.toggle("dark-mode");
 
     if(darkSwitch.checked){
-        document.body.setAttribute("data-theme","dark");
         localStorage.setItem("darkSwitch","dark")
     }else{
-        document.body.removeAttribute("data-theme");
         localStorage.removeItem("darkSwitch")
     }
 }
