@@ -52,7 +52,7 @@ html, body {
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
-  --bs-body-bg-rgb: 176, 190, 197;
+  --bs-body-bg-rgb: 207, 216, 220;
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
@@ -61,7 +61,7 @@ html, body {
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
-  --bs-body-bg: #b0bec5;
+  --bs-body-bg: #cfd8dc;
 }
 
 *,
@@ -11135,24 +11135,25 @@ textarea.form-control-lg {
   }
 }
 .dark-mode {
-  /* redefine theme colors for dark theme */
+  /* redefine theme and background colors */
   /* redefine theme color variables */
   --bs-primary: #6f42c1;
   --bs-secondary: #6c757d;
-  --bs-success: #094327;
+  --bs-success: #146c43;
   --bs-danger: #dc3545;
   --bs-info: #6610f2;
   --bs-dark: #212529;
   --bs-light: #f8f9fa;
+  /* redefine theme theme-colors-rgb variables */
   --bs-primary-rgb: 111, 66, 193;
   --bs-secondary-rgb: 108, 117, 125;
-  --bs-success-rgb: 9, 67, 39;
+  --bs-success-rgb: 20, 108, 67;
   --bs-danger-rgb: 220, 53, 69;
   --bs-info-rgb: 102, 16, 242;
   --bs-dark-rgb: 33, 37, 41;
   --bs-light-rgb: 248, 249, 250;
-  --bs-body-color: #eeeeee;
-  --bs-body-bg: #263C5C;
+  /* set background values */
+  --bs-body-bg: #455a64;
   /*!
    * Bootstrap v5.1.3 (https://getbootstrap.com/)
    * Copyright 2011-2021 The Bootstrap Authors
@@ -11205,22 +11206,22 @@ textarea.form-control-lg {
   --bs-gray-900: #212529;
   --bs-primary: #6f42c1;
   --bs-secondary: #6c757d;
-  --bs-success: #094327;
+  --bs-success: #146c43;
   --bs-danger: #dc3545;
   --bs-info: #6610f2;
   --bs-dark: #212529;
   --bs-light: #f8f9fa;
   --bs-primary-rgb: 111, 66, 193;
   --bs-secondary-rgb: 108, 117, 125;
-  --bs-success-rgb: 9, 67, 39;
+  --bs-success-rgb: 20, 108, 67;
   --bs-danger-rgb: 220, 53, 69;
   --bs-info-rgb: 102, 16, 242;
   --bs-dark-rgb: 33, 37, 41;
   --bs-light-rgb: 248, 249, 250;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-  --bs-body-color-rgb: 238, 238, 238;
-  --bs-body-bg-rgb: 38, 60, 92;
+  --bs-body-color-rgb: 33, 37, 41;
+  --bs-body-bg-rgb: 69, 90, 100;
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
@@ -11228,8 +11229,8 @@ textarea.form-control-lg {
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: #eeeeee;
-  --bs-body-bg: #263C5C;
+  --bs-body-color: #212529;
+  --bs-body-bg: #455a64;
 }
 .dark-mode *,
 .dark-mode *::before,
@@ -13654,7 +13655,7 @@ a > .dark-mode code {
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
-  color: #eeeeee;
+  color: #212529;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -13673,7 +13674,7 @@ a > .dark-mode code {
   }
 }
 .dark-mode .btn:hover {
-  color: #eeeeee;
+  color: #212529;
 }
 .btn-check:focus + .dark-mode .btn, .dark-mode .btn:focus {
   outline: 0;
@@ -13753,37 +13754,37 @@ a > .dark-mode code {
 }
 .dark-mode .btn-success {
   color: #fff;
-  background-color: #094327;
+  background-color: #146c43;
   background-image: var(--bs-gradient);
-  border-color: #094327;
+  border-color: #146c43;
 }
 .dark-mode .btn-success:hover {
   color: #fff;
-  background-color: #083921;
+  background-color: #115c39;
   background-image: var(--bs-gradient);
-  border-color: #07361f;
+  border-color: #105636;
 }
 .btn-check:focus + .dark-mode .btn-success, .dark-mode .btn-success:focus {
   color: #fff;
-  background-color: #083921;
+  background-color: #115c39;
   background-image: var(--bs-gradient);
-  border-color: #07361f;
-  box-shadow: 0 0 0 0.25rem rgba(46, 95, 71, 0.5);
+  border-color: #105636;
+  box-shadow: 0 0 0 0.25rem rgba(55, 130, 95, 0.5);
 }
 .btn-check:checked + .dark-mode .btn-success, .btn-check:active + .dark-mode .btn-success, .dark-mode .btn-success:active, .dark-mode .btn-success.active, .show > .dark-mode .btn-success.dropdown-toggle {
   color: #fff;
-  background-color: #07361f;
+  background-color: #105636;
   background-image: none;
-  border-color: #07321d;
+  border-color: #0f5132;
 }
 .btn-check:checked + .dark-mode .btn-success:focus, .btn-check:active + .dark-mode .btn-success:focus, .dark-mode .btn-success:active:focus, .dark-mode .btn-success.active:focus, .show > .dark-mode .btn-success.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem rgba(46, 95, 71, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(55, 130, 95, 0.5);
 }
 .dark-mode .btn-success:disabled, .dark-mode .btn-success.disabled {
   color: #fff;
-  background-color: #094327;
+  background-color: #146c43;
   background-image: none;
-  border-color: #094327;
+  border-color: #146c43;
 }
 .dark-mode .btn-danger {
   color: #fff;
@@ -13970,27 +13971,27 @@ a > .dark-mode code {
   background-color: transparent;
 }
 .dark-mode .btn-outline-success {
-  color: #094327;
-  border-color: #094327;
+  color: #146c43;
+  border-color: #146c43;
 }
 .dark-mode .btn-outline-success:hover {
   color: #fff;
-  background-color: #094327;
-  border-color: #094327;
+  background-color: #146c43;
+  border-color: #146c43;
 }
 .btn-check:focus + .dark-mode .btn-outline-success, .dark-mode .btn-outline-success:focus {
-  box-shadow: 0 0 0 0.25rem rgba(9, 67, 39, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(20, 108, 67, 0.5);
 }
 .btn-check:checked + .dark-mode .btn-outline-success, .btn-check:active + .dark-mode .btn-outline-success, .dark-mode .btn-outline-success:active, .dark-mode .btn-outline-success.active, .dark-mode .btn-outline-success.dropdown-toggle.show {
   color: #fff;
-  background-color: #094327;
-  border-color: #094327;
+  background-color: #146c43;
+  border-color: #146c43;
 }
 .btn-check:checked + .dark-mode .btn-outline-success:focus, .btn-check:active + .dark-mode .btn-outline-success:focus, .dark-mode .btn-outline-success:active:focus, .dark-mode .btn-outline-success.active:focus, .dark-mode .btn-outline-success.dropdown-toggle.show:focus {
-  box-shadow: 0 0 0 0.25rem rgba(9, 67, 39, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(20, 108, 67, 0.5);
 }
 .dark-mode .btn-outline-success:disabled, .dark-mode .btn-outline-success.disabled {
-  color: #094327;
+  color: #146c43;
   background-color: transparent;
 }
 .dark-mode .btn-outline-danger {
@@ -15496,13 +15497,13 @@ a > .dark-mode code {
   color: #34383c;
 }
 .dark-mode .alert-success {
-  color: #052817;
-  background-color: #ced9d4;
+  color: #0c4128;
+  background-color: #d0e2d9;
   background-image: var(--bs-gradient);
-  border-color: #b5c7be;
+  border-color: #b9d3c7;
 }
 .dark-mode .alert-success .alert-link {
-  color: #042012;
+  color: #0a3420;
 }
 .dark-mode .alert-danger {
   color: #842029;
@@ -15824,17 +15825,17 @@ a > .dark-mode code {
   border-color: #41464b;
 }
 .dark-mode .list-group-item-success {
-  color: #052817;
-  background-color: #ced9d4;
+  color: #0c4128;
+  background-color: #d0e2d9;
 }
 .dark-mode .list-group-item-success.list-group-item-action:hover, .dark-mode .list-group-item-success.list-group-item-action:focus {
-  color: #052817;
-  background-color: #b9c3bf;
+  color: #0c4128;
+  background-color: #bbcbc3;
 }
 .dark-mode .list-group-item-success.list-group-item-action.active {
   color: #fff;
-  background-color: #052817;
-  border-color: #052817;
+  background-color: #0c4128;
+  border-color: #0c4128;
 }
 .dark-mode .list-group-item-danger {
   color: #842029;
@@ -16821,10 +16822,10 @@ a > .dark-mode code {
   color: #565e64;
 }
 .dark-mode .link-success {
-  color: #094327;
+  color: #146c43;
 }
 .dark-mode .link-success:hover, .dark-mode .link-success:focus {
-  color: #07361f;
+  color: #105636;
 }
 .dark-mode .link-danger {
   color: #dc3545;
