@@ -1,14 +1,8 @@
 // Dark Mode Toggle
 
 const darkSwitch=document.getElementById("darkSwitch");
-window.addEventListener("load",(function(){
-    if(darkSwitch){
-        initDarkSwitch();
-        darkSwitch.addEventListener("change",(function(){
-            resetDarkSwitch();
-        }))
-    }
-}));
+if(darkSwitch)
+    initDarkSwitch();
 
 function initDarkSwitch(){
     const darkSwitchSelected=localStorage.getItem("darkSwitch") !==null
@@ -22,7 +16,10 @@ function initDarkSwitch(){
     }
 }
 
-function resetDarkSwitch(){
+function darkFunction() {
+    let element = document.body;
+    element.classList.toggle("dark-mode");
+
     if(darkSwitch.checked){
         document.body.setAttribute("data-theme","dark");
         localStorage.setItem("darkSwitch","dark")
@@ -30,11 +27,6 @@ function resetDarkSwitch(){
         document.body.removeAttribute("data-theme");
         localStorage.removeItem("darkSwitch")
     }
-}
-
-function darkFunction() {
-    let element = document.body;
-    element.classList.toggle("dark-mode");
 }
 
 // Clock controller
