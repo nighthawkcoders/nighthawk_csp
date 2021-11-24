@@ -20,11 +20,9 @@ function darkFunction() {
     let element = document.body;
     element.classList.toggle("dark-mode");
 
-    if(darkSwitch.checked){
-        localStorage.setItem("darkSwitch","dark")
-    }else{
-        localStorage.removeItem("darkSwitch")
-    }
+    darkSwitch.checked
+        ? localStorage.setItem("darkSwitch","dark")
+        : localStorage.removeItem("darkSwitch");
 }
 
 // Clock controller
