@@ -7,6 +7,14 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <div class="collapse navbar-collapse" id="navbarHome">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="{{ url_for('index') }}">Home <span class="sr-only"></span></a>
+                    </li>
+                </ul>
+            </div>
+
             <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
@@ -75,7 +83,7 @@
 
         <div class="btn-group">
             <!-- Clock display -->
-            <div class="px-3">
+            <div class="px-3 text-dark">
                 <span id="clock"></span>
             </div>
             <!-- Dark mode action -->

@@ -2,11 +2,14 @@
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";
 
+$body-bg: #b0bec5;
+
 //background colors
 html, body {
   background-image: var(--bs-gradient);
-  background-color: var(--bs-secondary);
+  background-color: var(--bs-body-bg);
 }
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 //dark mode logic
 .dark-mode {
@@ -14,20 +17,17 @@ html, body {
   $enable-gradients: true;
 
   /* redefine theme colors for dark theme */
-  $primary: #011122;
-  $secondary: #111111;
+  $primary: $purple;
   $success: #094327;
-  $dark: #000;
-  $body-bg: #eeeeee;
 
   $theme-colors: (
-          "primary": $purple,
+          "primary": $primary,
           "secondary": $secondary,
           "success": $success,
           "danger": $danger,
           "info": $indigo,
           "dark": $dark,
-          "light": #aaa,
+          "light": $light,
   );
 
   /* redefine theme color variables */
