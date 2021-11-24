@@ -2,9 +2,10 @@
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";
 
-//add default green background
-html, body{
-  background-color: var(--bs-green);
+//background colors
+html, body {
+  background-image: var(--bs-gradient);
+  background-color: var(--bs-secondary);
 }
 
 //dark mode logic
@@ -13,9 +14,9 @@ html, body{
   $enable-gradients: true;
 
   /* redefine theme colors for dark theme */
-  $primary: #012345;
+  $primary: #011122;
   $secondary: #111111;
-  $success: #222222;
+  $success: #094327;
   $dark: #000;
   $body-bg: #eeeeee;
 

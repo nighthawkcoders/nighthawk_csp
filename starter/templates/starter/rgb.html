@@ -23,10 +23,14 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="text-center">RGB values within an Image</h1>
     <div class="container">
+        <header class="pb-3 mb-4 border-bottom">
+            <a href="#" class="d-flex align-items-center text-light text-decoration-none">
+                <span class="fs-4">RGB values within an Image</span>
+            </a>
+        </header>
         <div class="row justify-content-md-center">
-            <table class="table">
+            <table class="table text-light">
                 <thead>
                 <tr>
                     <th>Meta Data</th>
@@ -57,7 +61,7 @@
                         </td>
                         <td>
                             <div class="overflow-auto" style="height: 256px">
-                                <table class="table">
+                                <table class="table text-light">
                                     <thead>
                                     <tr>
                                         <th>#</th>
@@ -67,7 +71,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {% for row in image.data[:256+1] %}
+                                    {% for row in image.data[:256 + 1] %}
                                     <tr>
                                         <td>{{loop.index}}</td>
                                         <td>{{row}}</td>

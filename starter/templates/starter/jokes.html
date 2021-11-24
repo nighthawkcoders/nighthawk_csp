@@ -2,20 +2,18 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class="container py-4">
+    <div class="container py-4 text-light bg-primary">
         <header class="pb-3 mb-4 border-bottom">
-            <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+            <a href="#" class="d-flex align-items-center text-dark text-decoration-none">
                 <span class="fs-4">All Jokes</span>
             </a>
         </header>
 
-        <div class="p-5 mb-4 bg-light rounded-3">
-            <div class="container-fluid py-5">
-                <div class="col-md">
-                    {% for joke in jokes %}
-                        <p class="setup"><strong>{{joke.id}}. {{joke.joke}}</strong></p>
-                    {% endfor %}
-                </div>
+        <div class="p-5 mb-4 text-dark bg-light rounded-3">
+            <div class="col-md">
+                {% for joke in jokes %}
+                    <p class="setup"><strong>{{joke.id}}. {{joke.joke}}</strong></p>
+                {% endfor %}
             </div>
         </div>
 

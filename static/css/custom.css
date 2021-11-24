@@ -1,6 +1,7 @@
 @charset "UTF-8";
 html, body {
-    background-color: var(--bs-green);
+    background-image: var(--bs-gradient);
+    background-color: var(--bs-secondary);
 }
 
 .dark-mode {
@@ -8,14 +9,14 @@ html, body {
     /* redefine theme color variables */
     --bs-primary: #6f42c1;
     --bs-secondary: #111111;
-    --bs-success: #222222;
+    --bs-success: #094327;
     --bs-danger: #dc3545;
     --bs-info: #6610f2;
     --bs-dark: #000;
     --bs-light: #aaa;
     --bs-primary-rgb: 111, 66, 193;
     --bs-secondary-rgb: 17, 17, 17;
-    --bs-success-rgb: 34, 34, 34;
+    --bs-success-rgb: 9, 67, 39;
     --bs-danger-rgb: 220, 53, 69;
     --bs-info-rgb: 102, 16, 242;
     --bs-dark-rgb: 0, 0, 0;
@@ -74,14 +75,14 @@ html, body {
     --bs-gray-900: #212529;
     --bs-primary: #6f42c1;
     --bs-secondary: #111111;
-    --bs-success: #222222;
+    --bs-success: #094327;
     --bs-danger: #dc3545;
     --bs-info: #6610f2;
     --bs-dark: #000;
     --bs-light: #aaa;
     --bs-primary-rgb: 111, 66, 193;
     --bs-secondary-rgb: 17, 17, 17;
-    --bs-success-rgb: 34, 34, 34;
+    --bs-success-rgb: 9, 67, 39;
     --bs-danger-rgb: 220, 53, 69;
     --bs-info-rgb: 102, 16, 242;
     --bs-dark-rgb: 0, 0, 0;
@@ -2622,37 +2623,37 @@ a > .dark-mode code {
 }
 .dark-mode .btn-success {
     color: #fff;
-    background-color: #222222;
+    background-color: #094327;
     background-image: var(--bs-gradient);
-    border-color: #222222;
+    border-color: #094327;
 }
 .dark-mode .btn-success:hover {
     color: #fff;
-    background-color: #1d1d1d;
+    background-color: #083921;
     background-image: var(--bs-gradient);
-    border-color: #1b1b1b;
+    border-color: #07361f;
 }
 .btn-check:focus + .dark-mode .btn-success, .dark-mode .btn-success:focus {
     color: #fff;
-    background-color: #1d1d1d;
+    background-color: #083921;
     background-image: var(--bs-gradient);
-    border-color: #1b1b1b;
-    box-shadow: 0 0 0 0.25rem rgba(67, 67, 67, 0.5);
+    border-color: #07361f;
+    box-shadow: 0 0 0 0.25rem rgba(46, 95, 71, 0.5);
 }
 .btn-check:checked + .dark-mode .btn-success, .btn-check:active + .dark-mode .btn-success, .dark-mode .btn-success:active, .dark-mode .btn-success.active, .show > .dark-mode .btn-success.dropdown-toggle {
     color: #fff;
-    background-color: #1b1b1b;
+    background-color: #07361f;
     background-image: none;
-    border-color: #1a1a1a;
+    border-color: #07321d;
 }
 .btn-check:checked + .dark-mode .btn-success:focus, .btn-check:active + .dark-mode .btn-success:focus, .dark-mode .btn-success:active:focus, .dark-mode .btn-success.active:focus, .show > .dark-mode .btn-success.dropdown-toggle:focus {
-    box-shadow: 0 0 0 0.25rem rgba(67, 67, 67, 0.5);
+    box-shadow: 0 0 0 0.25rem rgba(46, 95, 71, 0.5);
 }
 .dark-mode .btn-success:disabled, .dark-mode .btn-success.disabled {
     color: #fff;
-    background-color: #222222;
+    background-color: #094327;
     background-image: none;
-    border-color: #222222;
+    border-color: #094327;
 }
 .dark-mode .btn-danger {
     color: #fff;
@@ -2839,27 +2840,27 @@ a > .dark-mode code {
     background-color: transparent;
 }
 .dark-mode .btn-outline-success {
-    color: #222222;
-    border-color: #222222;
+    color: #094327;
+    border-color: #094327;
 }
 .dark-mode .btn-outline-success:hover {
     color: #fff;
-    background-color: #222222;
-    border-color: #222222;
+    background-color: #094327;
+    border-color: #094327;
 }
 .btn-check:focus + .dark-mode .btn-outline-success, .dark-mode .btn-outline-success:focus {
-    box-shadow: 0 0 0 0.25rem rgba(34, 34, 34, 0.5);
+    box-shadow: 0 0 0 0.25rem rgba(9, 67, 39, 0.5);
 }
 .btn-check:checked + .dark-mode .btn-outline-success, .btn-check:active + .dark-mode .btn-outline-success, .dark-mode .btn-outline-success:active, .dark-mode .btn-outline-success.active, .dark-mode .btn-outline-success.dropdown-toggle.show {
     color: #fff;
-    background-color: #222222;
-    border-color: #222222;
+    background-color: #094327;
+    border-color: #094327;
 }
 .btn-check:checked + .dark-mode .btn-outline-success:focus, .btn-check:active + .dark-mode .btn-outline-success:focus, .dark-mode .btn-outline-success:active:focus, .dark-mode .btn-outline-success.active:focus, .dark-mode .btn-outline-success.dropdown-toggle.show:focus {
-    box-shadow: 0 0 0 0.25rem rgba(34, 34, 34, 0.5);
+    box-shadow: 0 0 0 0.25rem rgba(9, 67, 39, 0.5);
 }
 .dark-mode .btn-outline-success:disabled, .dark-mode .btn-outline-success.disabled {
-    color: #222222;
+    color: #094327;
     background-color: transparent;
 }
 .dark-mode .btn-outline-danger {
@@ -4365,13 +4366,13 @@ a > .dark-mode code {
     color: #080808;
 }
 .dark-mode .alert-success {
-    color: #141414;
-    background-color: lightgray;
+    color: #052817;
+    background-color: #ced9d4;
     background-image: var(--bs-gradient);
-    border-color: #bdbdbd;
+    border-color: #b5c7be;
 }
 .dark-mode .alert-success .alert-link {
-    color: #101010;
+    color: #042012;
 }
 .dark-mode .alert-danger {
     color: #842029;
@@ -4693,17 +4694,17 @@ a > .dark-mode code {
     border-color: #0a0a0a;
 }
 .dark-mode .list-group-item-success {
-    color: #141414;
-    background-color: lightgray;
+    color: #052817;
+    background-color: #ced9d4;
 }
 .dark-mode .list-group-item-success.list-group-item-action:hover, .dark-mode .list-group-item-success.list-group-item-action:focus {
-    color: #141414;
-    background-color: #bebebe;
+    color: #052817;
+    background-color: #b9c3bf;
 }
 .dark-mode .list-group-item-success.list-group-item-action.active {
     color: #fff;
-    background-color: #141414;
-    border-color: #141414;
+    background-color: #052817;
+    border-color: #052817;
 }
 .dark-mode .list-group-item-danger {
     color: #842029;
@@ -5690,10 +5691,10 @@ a > .dark-mode code {
     color: #0e0e0e;
 }
 .dark-mode .link-success {
-    color: #222222;
+    color: #094327;
 }
 .dark-mode .link-success:hover, .dark-mode .link-success:focus {
-    color: #1b1b1b;
+    color: #07361f;
 }
 .dark-mode .link-danger {
     color: #dc3545;
@@ -6040,7 +6041,7 @@ a > .dark-mode code {
     border-color: #111111 !important;
 }
 .dark-mode .border-success {
-    border-color: #222222 !important;
+    border-color: #094327 !important;
 }
 .dark-mode .border-danger {
     border-color: #dc3545 !important;

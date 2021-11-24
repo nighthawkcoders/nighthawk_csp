@@ -52,32 +52,16 @@
 
 <!-- CONTENT (in <body>), content for this page -->
 {% block content %}
-    <div class="container py-4">
+    <div class="container py-4 text-light bg-success">
         <header class="pb-3 mb-4 border-bottom">
-            <div class="d-flex align-items-center text-dark text-decoration-none">
+            <div class="d-flex align-items-center text-light text-decoration-none">
                 <span class="fs-4">SQL CRUD Admin Page</span>
-            </div>
-        </header>
-        <header class="pb-3 mb-4 border-bottom">
-            <div class="row justify-content-center">
-                <table id="navigator">
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/tree/master/crud">GitHub/Blueprint</a></td>
-                        <td><a href=#FE-HTML>HTML Code</a></td>
-                        <td><a href=#BE-MODEL>SQL, RESTapi</a></td>
-                        <td><a href=#BE-REST>API Tests</a></td>
-                        <td><a href=#BE-AUTH>Backend Auth Code</a></td>
-
-                    </tr>
-                </table>
             </div>
         </header>
 
         <div class="container py-4">
-            <div class="p-5 mb-4 bg-light rounded-3">
-                <h2>SQL Table</h2>
+            <div class="p-5 mb-4 bg-light text-dark rounded-3">
+                <h2>Table Viewer</h2>
                 <div class="row align-items-md-stretch">
                     <table class="table">
                         <tbody>
@@ -87,6 +71,7 @@
                             <td><a href={{url_for('crud.crud')}}>Full Table </a></td>
                             <td><a href={{url_for('crud.emails')}}>E-Mails only</a></td>
                             <td><a href={{url_for('crud.phones')}}>Phones only</a></td>
+                            <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/tree/master/crud">GitHub Source</a></td>
                         </tr>
                         </tbody>
                     </table>
@@ -130,7 +115,7 @@
 
         <div class="row align-items-md-stretch">
             <div class="col-md-9">
-                <div class="h-100 p-5 bg-light border rounded-3">
+                <div class="h-100 p-5 bg-light text-dark border rounded-3">
                     <h2>Create a new record</h2>
                     <form method="POST" ID="create" action={{url_for('crud.create')}} >
                         <table class="table">
