@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block meta %}
+<title>CRUD search</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container py-4 bg-primary">
+        <header class="pb-3 mb-4 border-bottom">
+            <a href="#" class="d-flex align-items-center text-light text-decoration-none">
+                <span class="fs-4">Search Database</span>
+            </a>
+        </header>
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="term" placeholder="enter search term">
+                            <label></label> <!-- used for spacer -->
+                        </div>
+                        <button class="btn btn-primary bg-secondary" onclick="search_entry();">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function search_entry() {
+            const term = document.getElementById("term");
+            const body = {
+                term: term.value
+            };
+            fetch('/crud/search/term/', {
+                method: "POST",
+                credentials: "include",
+                body: JSON.stringify(body),
+                cache: "no-cache",
+                headers: new Headers({
+                    "content-type": "application/json"
+                })
+            })
+            .then(function (response) {
+                if (response.status !== 200) {
+                    console.log('Response error code: ${response}');
+                    return;
+                }
+                response.json().then(function(data){
+                    console.log(data);
+                })
+            })
+        }
+    </script>
+{% endblock %}
