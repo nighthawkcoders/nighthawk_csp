@@ -96,5 +96,8 @@ def search():
 def search_term():
     # term = {"term": "abc"}
     req = request.get_json()
-    response = make_response(jsonify(req), 200)
+
+    query = model_read_all()
+    response = make_response(jsonify(query), 200)
+
     return response

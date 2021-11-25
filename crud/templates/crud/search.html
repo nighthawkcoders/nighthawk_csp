@@ -27,6 +27,12 @@
             </div>
         </div>
     </div>
+
+    <div class="container">
+        <div class="row" id="data">
+        </div>
+    </div>
+
     <script>
         function search_entry() {
             const term = document.getElementById("term");
@@ -48,7 +54,12 @@
                     return;
                 }
                 response.json().then(function(data){
-                    console.log(data);
+                    const mainContainer = document.getElementById("data");
+                    for (let i = 0; i < data.length; i++) {
+                        const div = document.createElement("div");
+                        div.innerHTML = data[i].name + ' ' + data[i].email;
+                        mainContainer.appendChild(div);
+                    }
                 })
             })
         }
