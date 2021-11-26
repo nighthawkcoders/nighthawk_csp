@@ -2,7 +2,7 @@
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
 # model imports
 from .model import model_create, model_read, model_read_all, model_read_emails, \
-    model_read_phones, model_update_name, model_delete
+    model_read_phones, model_update_name, model_delete, model_read_by_filter
 
 # blueprint defaults
 app_crud = Blueprint('crud', __name__,
@@ -94,10 +94,9 @@ def search():
 
 @app_crud.route('/search/term/', methods=["POST"])
 def search_term():
-    # term = {"term": "abc"}
     req = request.get_json()
-
-    query = model_read_all()
+    term = req['term']
+    query = model_read_by_filter(term)
     response = make_response(jsonify(query), 200)
 
     return response

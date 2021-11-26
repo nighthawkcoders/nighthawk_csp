@@ -99,7 +99,7 @@ def model_create(name, email, password, phone):
             phone=phone
         )
         db.session.add(person)  # add prepares to persist person object to Users table
-        db.session.commit()     # SqlAlchemy "unit of work pattern" requires a manual commit
+        db.session.commit()  # SqlAlchemy "unit of work pattern" requires a manual commit
         return person
     except IntegrityError:
         db.session.remove()
@@ -152,6 +152,16 @@ def model_delete(userid):
 def model_read_all():
     """convert Users table into a list of dictionary rows"""
     people = Users.query.all()
+    return [peep.json() for peep in people]
+
+
+# CRUD read: query by filter provided in term
+def model_read_by_filter(term):
+    # term structured in anywhere form
+    term = "%{}%".format(term)
+    # "ilike" is case insensitive partial match
+    people = Users.query.filter((Users.name.ilike(term)) | (Users.email.ilike(term)))
+    # return filtered Users table into a list of dictionary rows
     return [peep.json() for peep in people]
 
 

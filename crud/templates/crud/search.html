@@ -1,18 +1,22 @@
 <!DOCTYPE html>
+<!-- Preparing search using asynchronous "fetch" (no page reload, no wait)
+inspiration from https://www.youtube.com/watch?v=QKcVjdLEX_s
+-->
 {% extends "layout.html" %}
 
 {% block meta %}
-<title>CRUD search</title>
+<title>SQL search</title>
 {% endblock %}
 
 {% block content %}
     <div class="container py-4 bg-primary">
+        <!-- heading -->
         <header class="pb-3 mb-4 border-bottom">
             <a href="#" class="d-flex align-items-center text-light text-decoration-none">
                 <span class="fs-4">Search Database</span>
             </a>
         </header>
-
+        <!-- search box -->
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -21,24 +25,27 @@
                             <input type="text" class="form-control" id="term" placeholder="enter search term">
                             <label></label> <!-- used for spacer -->
                         </div>
-                        <button class="btn btn-primary bg-secondary" onclick="search_entry();">Search</button>
+                        <button class="btn btn-primary bg-secondary" onclick="search_data();">Search</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <!-- result of search -->
     <div class="container">
-        <div class="row" id="data">
+        <div class="row" id="result">
         </div>
     </div>
 
     <script>
-        function search_entry() {
+        function search_data() {
+            // fetch standard requires data set to a name-value pair
             const term = document.getElementById("term");
             const body = {
                 term: term.value
             };
+
+            // fetch call with header options
             fetch('/crud/search/term/', {
                 method: "POST",
                 credentials: "include",
@@ -48,17 +55,30 @@
                     "content-type": "application/json"
                 })
             })
+            // async then replies with response header
             .then(function (response) {
+                // prepare HTML search result container for new output
+                const resultContainer = document.getElementById("result");
+                // clean up from previous search
+                while (resultContainer.firstChild) {
+                    resultContainer.removeChild(resultContainer.firstChild);
+                }
+                // trap error response from Web API
                 if (response.status !== 200) {
-                    console.log('Response error code: ${response}');
+                    const errorMsg = 'Database response error: ' + response.status;
+                    console.log(errorMsg);
+                    const div = document.createElement("div");
+                    div.innerHTML = errorMsg;
+                    resultContainer.appendChild(div);
                     return;
                 }
-                response.json().then(function(data){
-                    const mainContainer = document.getElementById("data");
+                // response contains valid result
+                response.json().then(function(data) {
+                    // loop through JSON and build HTML output
                     for (let i = 0; i < data.length; i++) {
                         const div = document.createElement("div");
                         div.innerHTML = data[i].name + ' ' + data[i].email;
-                        mainContainer.appendChild(div);
+                        resultContainer.appendChild(div);
                     }
                 })
             })
