@@ -211,13 +211,25 @@ def model_tester():
 # simple listing of table
 def print_tester():
     print("------------")
-    print("Table: users")
+    print("Table: users with SQLAlchemy")
     print("------------")
     result = model_read_all()
     for row in result:
         print(row)
 
+def print_tester2():
+    print("------------")
+    print("Table: users with SQL query")
+    print("------------")
+    result = db.session.execute('select * from users')
+    print(result.keys())
+    for row in result:
+        print(row)
 
 if __name__ == "__main__":
     model_tester()  # builds model of Users
     print_tester()
+    print_tester2()
+
+
+
