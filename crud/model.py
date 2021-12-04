@@ -67,7 +67,7 @@ class Users(db.Model):
 
     # CRUD update: updates users name
     # returns self
-    def update(self, name, password, phone):
+    def update(self, name, password="", phone=""):
         """fetch userid"""
         if len(name) > 0:
             self.name = name
@@ -102,7 +102,7 @@ class UsersAPI:
             po = Users.query.filter_by(email=email).first()
             if po is None:
                 return {'message': f"{email} is not found"}, 210
-            po.update(name, "", "")
+            po.update(name)
             return po.read()
 
     class UpdateAll(Resource):

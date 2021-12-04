@@ -1,5 +1,4 @@
 # flask imports
-import requests
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
 # model imports
 from .model import Users, model_read, model_read_all, model_read_emails, \
@@ -57,7 +56,7 @@ def update():
         name = request.form.get("name")
         po = Users.query.filter_by(userID=userid).first()
         if po is not None:
-            po.update_name(name)
+            po.update(name)
     return redirect(url_for('crud.crud'))
 
 
