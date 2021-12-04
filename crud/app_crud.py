@@ -1,8 +1,8 @@
 # flask imports
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
 # model imports
-from .model import Users, model_read, model_read_all, model_read_emails, \
-    model_read_phones, model_read_by_filter
+from .model import Users, model_read, model_read_all, \
+    model_read_by_filter
 
 # blueprint defaults
 app_crud = Blueprint('crud', __name__,
@@ -68,22 +68,6 @@ def delete():
         if po is not None:
             po.delete()
     return redirect(url_for('crud.crud'))
-
-
-# if email url, show the email table only
-@app_crud.route('/emails/')
-def emails():
-    # fill the table with emails only
-    records = model_read_emails()
-    return render_template("crud.html", table=records)
-
-
-# if phones url, show phones table only
-@app_crud.route('/phones/')
-def phones():
-    # fill the table with phone numbers only
-    records = model_read_phones()
-    return render_template("crud.html", table=records)
 
 
 @app_crud.route('/search/')
