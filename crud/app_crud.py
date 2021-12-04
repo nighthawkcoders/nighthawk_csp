@@ -1,8 +1,9 @@
 # flask imports
+import requests
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
 # model imports
-from .model import model_create, model_read, model_read_all, model_read_emails, \
-    model_read_phones, model_update_name, model_delete, model_read_by_filter
+from .model import Users, model_read, model_read_all, model_read_emails, \
+    model_read_phones, model_delete, model_read_by_filter
 
 # blueprint defaults
 app_crud = Blueprint('crud', __name__,
@@ -26,12 +27,13 @@ def crud():
 def create():
     if request.form:
         """extract data from form and call model_create"""
-        model_create(
+        po = Users(
             request.form.get("name"),
             request.form.get("email"),
             request.form.get("password"),
             request.form.get("phone")
         )
+        po.create()
     return redirect(url_for('.crud'))
 
 
@@ -51,13 +53,12 @@ def read():
 @app_crud.route('/update/', methods=["POST"])
 def update():
     if request.form:
-        user_dict = {
-            'userid': request.form.get("userid"),
-            'name': request.form.get("name")
-        }
-        # model_update expects userid and name in a dictionary
-        model_update_name(user_dict)
-    return redirect(url_for('.crud'))
+        userid =  request.form.get("userid")
+        name = request.form.get("name")
+        po = Users.query.filter_by(userID=userid).first()
+        if po is not None:
+            po.update_name(name)
+    return redirect(url_for('crud.crud'))
 
 
 # CRUD delete

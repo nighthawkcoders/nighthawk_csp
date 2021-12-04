@@ -35,6 +35,9 @@ class Users(db.Model):
     password = db.Column(db.String(255), unique=False, nullable=False)
     phone = db.Column(db.String(255), unique=False, nullable=False)
 
+    def get_email(self):
+        return self.email
+
     # constructor of a User object, initializes of instance variables within object
     def __init__(self, name, email, password, phone):
         self.name = name
@@ -67,12 +70,13 @@ class Users(db.Model):
 
     # CRUD update: updates users name
     # requires userid, returns json/dictionary
-    def update_name(self, userid, name):
+    def update_name(self, name):
         """fetch userid"""
-        db.session.query(Users).filter_by(userID=userid).update({Users.name: name})
+        db.session.query(Users).filter_by(userID=self.userID).update({Users.name: name})
         """commit changes to database"""
         db.session.commit()
         return self
+
 
 class UsersAPI():
     # class for create/post
@@ -82,7 +86,7 @@ class UsersAPI():
             person = po.create()
             if person:
                 return person.json()
-            return {'email': None}, 404  # need to have better message on errors
+            return {'message': f'Processed {name}, either a format error or {email} is duplicate'}, 210
 
     # class for read/get
     class Read(Resource):
@@ -92,11 +96,20 @@ class UsersAPI():
     # class for update/put
     class Update(Resource):
         def put(self, email, name):
-            user = model_read_email(email)
-            if user is None:
-                return None
-            model_update_name({'userid': user['userID'], 'name': name})
-            return None  # needs error handling
+            po = Users.query.filter_by(email=email).first()
+            if po is None:
+                return {'message': f"{email} is not found"}, 210
+            po.update_name(name)
+            return po.json()
+
+    # class for update/put
+    class Update2(Resource):
+        def put(self, userid, name):
+            po = Users.query.filter_by(userID=userid).first()
+            if po is None:
+                return {'message': f"{userid} is not found"}, 210
+            po.update_name(name)
+            return po.json()
 
     # class for delete
     class Delete(Resource):
@@ -110,55 +123,11 @@ class UsersAPI():
     api.add_resource(Delete, url_prefix + '/delete/<int:userid>')
 
 
-# CRUD create/add a new record to the table
-# user_dict{} expects name, email, password, phone; returns person object on success
-def model_create(name, email, password, phone):
-    """prepare data for primary table extracting from form"""
-    try:
-        # creates a person object from Users(db.Model) class, passes initializers
-        person = Users(
-            name=name,
-            email=email,
-            password=password,
-            phone=phone
-        )
-        db.session.add(person)  # add prepares to persist person object to Users table
-        db.session.commit()  # SqlAlchemy "unit of work pattern" requires a manual commit
-        return person
-    except IntegrityError:
-        db.session.remove()
-        return None
-
-
 # CRUD read: filter single record in table based off of userid
 # userid required, returns json/dictionary
 def model_read(userid):
     """filter users by userid"""
     user = Users.query.filter_by(userID=userid).first()
-    return user.json()
-
-
-# CRUD read: filter single record in table based off of email
-# userid required, returns json/dictionary
-def model_read_email(email):
-    """filter users by userid"""
-    user = Users.query.filter_by(email=email).first()
-    if user is None:
-        return None
-    return user.json()
-
-
-# CRUD update: updates users name
-# requires userid, returns json/dictionary
-def model_update_name(user_dict):
-    """fetch userid"""
-    userid = user_dict["userid"]
-    user = Users.query.filter_by(userID=userid).first()
-    if user is None:
-        return None
-    db.session.query(Users).filter_by(userID=userid).update({Users.name: user_dict['name']})
-    """commit changes to database"""
-    db.session.commit()
     return user.json()
 
 
@@ -227,7 +196,7 @@ def model_tester():
         except IntegrityError:
             db.session.remove()
             print(f"Records exist, duplicate email, or error: {row.email}")
-    record = model_read_email('jmort1021@yahoo.com')
+    record = model_read(1)
     print()
     print("New Email Method", record['userID'], record['email'], record['name'])
 
@@ -241,6 +210,7 @@ def print_tester():
     for row in result:
         print(row)
 
+
 def print_tester2():
     print("------------")
     print("Table: users with SQL query")
@@ -250,10 +220,8 @@ def print_tester2():
     for row in result:
         print(row)
 
+
 if __name__ == "__main__":
     model_tester()  # builds model of Users
     print_tester()
     print_tester2()
-
-
-
