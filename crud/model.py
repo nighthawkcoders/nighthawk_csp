@@ -56,7 +56,7 @@ class Users(db.Model):
         }
 
     # CRUD create/add a new record to the table
-    # user_dict{} expects name, email, password, phone; returns person object on success
+    # returns self
     def create(self):
         """prepare data for primary table extracting from form"""
         try:
@@ -69,16 +69,16 @@ class Users(db.Model):
             return None
 
     # CRUD update: updates users name
-    # requires userid, returns json/dictionary
+    # returns self
     def update_name(self, name):
         """fetch userid"""
-        db.session.query(Users).filter_by(userID=self.userID).update({Users.name: name})
+        self.name = name
         """commit changes to database"""
         db.session.commit()
         return self
 
 
-class UsersAPI():
+class UsersAPI:
     # class for create/post
     class Create(Resource):
         def post(self, name, email, password, phone):
@@ -99,15 +99,6 @@ class UsersAPI():
             po = Users.query.filter_by(email=email).first()
             if po is None:
                 return {'message': f"{email} is not found"}, 210
-            po.update_name(name)
-            return po.json()
-
-    # class for update/put
-    class Update2(Resource):
-        def put(self, userid, name):
-            po = Users.query.filter_by(userID=userid).first()
-            if po is None:
-                return {'message': f"{userid} is not found"}, 210
             po.update_name(name)
             return po.json()
 
