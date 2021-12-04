@@ -111,115 +111,119 @@
 
         </div>
 
-        <div class="row align-items-md-stretch">
-            <div class="col-md-9">
-                <div class="h-100 p-5 bg-light text-dark border rounded-3">
-                    <h2>Create a new record</h2>
-                    <form method="POST" ID="create" action={{url_for('crud.create')}} >
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th><label for="name">Name</label></th>
-                                <th><label for="email">Email</label></th>
-                                <th><label for="password">Password</label></th>
-                                <th><label for="phone">Phone</label></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td><input type="text" name="name" id="name" required></td>
-                                <td><input type="email" name="email" id="email" placeholder="abc@xyz.org" required></td>
-                                <td><input type="password" name="password" id="password" required></td>
-                                <td><input required type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="1234567890"></td>
-                                <td><input type="submit" value="Create"></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <p id="pswError"></p>
-                    </form>
-                </div>
+
+        <div class="container py-4">
+            <div class="p-5 mb-4 bg-light text-dark rounded-3">
+                <h2>Create a new record</h2>
+                <form method="POST" ID="create" action={{url_for('crud.create')}} >
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th><label for="name">Name</label></th>
+                            <th><label for="email">Email</label></th>
+                            <th><label for="password">Password</label></th>
+                            <th><label for="phone">Phone</label></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><input type="text" name="name" id="name" required></td>
+                            <td><input type="email" name="email" id="email" placeholder="abc@xyz.org" required></td>
+                            <td><input type="password" name="password" id="password" required></td>
+                            <td><input required type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="1234567890"></td>
+                            <td><input type="submit" value="Create"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <p id="pswError"></p>
+                </form>
             </div>
+
         </div>
-    </div>
 
-    <div class="container py-4">
+        <div class="container py-4">
 
-         <div class="row align-items-md-stretch">
-            <div class="col-md-3">
-                <div class="h-100 p-5 bg-light border rounded-3">
-                    <h2>Read a record</h2>
-                    <form method="POST" ID="read" action={{url_for('crud.read')}} >
-                        <table id="read_table">
-                            <tr><th><label for="read_userid">ID</label></th></tr>
-                            <tr>
-                                <td>
-                                    <select name="userid" id="read_userid">
-                                        <optgroup label="userid">
-                                            {% for row in table %}
-                                                <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
-                                            {% endfor %}
-                                        </optgroup>
-                                </select>
-                                </td>
-                                <td>
-                                    <input type="submit" value="Read">
-                                </td>
-                            </tr>
-                        </table>
-                    </form>
-                </div>
-            </div>
+            <div class="row mb-4 bg-light text-dark rounded-3">
 
-            <div class="col-md-6">
-                <div class="h-100 p-5 bg-light border rounded-3">
-                    <h2>Update a record</h2>
-                    <form method="POST" ID="update" action={{url_for('crud.update')}} >
-                        <table id="update_table">
-                            <tr>
-                                <th><label for="update_userid">ID</label></th>
-                                <th><label for="update_name">Name</label></th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <select name="userid" id="update_userid">
-                                        <optgroup label="userid">
-                                            {% for row in table %}
-                                                <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
-                                            {% endfor %}
-                                        </optgroup>
+                <div class="col-md-3">
+                    <div class="p-5 mb-4 bg-light text-dark rounded-3">
+                        <h2>Read</h2>
+                        <form method="POST" ID="read" action={{url_for('crud.read')}} >
+                            <table id="read_table">
+                                <tr><th><label for="read_userid">ID</label></th></tr>
+                                <tr>
+                                    <td>
+                                        <select name="userid" id="read_userid">
+                                            <optgroup label="userid">
+                                                {% for row in table %}
+                                                    <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                {% endfor %}
+                                            </optgroup>
                                     </select>
-                                </td>
-                                <td><input type="text" name="name" id="update_name" required></td>
-                                <td><input type="submit" value="Update"></td>
-                            </tr>
-                        </table>
-                    </form>
+                                    </td>
+                                    <td>
+                                        <input type="submit" value="Read">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
                 </div>
+
+                <div class="col-md-6">
+                    <div class="p-5 mb-4 bg-light text-dark rounded-3">
+                        <h2>Update</h2>
+                        <form method="POST" ID="update" action={{url_for('crud.update')}} >
+                            <table id="update_table">
+                                <tr>
+                                    <th><label for="update_userid">ID</label></th>
+                                    <th><label for="update_name">Name</label></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select name="userid" id="update_userid">
+                                            <optgroup label="userid">
+                                                {% for row in table %}
+                                                    <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                {% endfor %}
+                                            </optgroup>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" name="name" id="update_name" required></td>
+                                    <td><input type="submit" value="Update"></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="p-5 mb-4 bg-light text-dark rounded-3">
+                        <h2>Delete</h2>
+                        <form method="POST" ID="read" action={{url_for('crud.delete')}} >
+                            <table id="read_table">
+                                <tr><th><label for="delete_userid">ID</label></th></tr>
+                                <tr>
+                                    <td>
+                                        <select name="userid" id="delete_userid">
+                                            <optgroup label="userid">
+                                                {% for row in table %}
+                                                    <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                {% endfor %}
+                                            </optgroup>
+                                        </select>
+                                    </td>
+                                    <td><input type="submit" value="Delete"></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="col-md-3">
-                <div class="h-100 p-5 bg-light border rounded-3">
-                    <h2>Delete record</h2>
-                    <form method="POST" ID="read" action={{url_for('crud.delete')}} >
-                        <table id="read_table">
-                            <tr><th><label for="delete_userid">ID</label></th></tr>
-                            <tr>
-                                <td>
-                                    <select name="userid" id="delete_userid">
-                                        <optgroup label="userid">
-                                            {% for row in table %}
-                                                <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
-                                            {% endfor %}
-                                        </optgroup>
-                                    </select>
-                                </td>
-                                <td><input type="submit" value="Delete"></td>
-                            </tr>
-                        </table>
-                    </form>
-                </div>
-            </div>
         </div>
+
     </div>
 
     <!-- Front End HTML, shows this file -->
