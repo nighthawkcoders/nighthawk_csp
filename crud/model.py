@@ -35,25 +35,12 @@ class Users(db.Model):
     password = db.Column(db.String(255), unique=False, nullable=False)
     phone = db.Column(db.String(255), unique=False, nullable=False)
 
-    def get_email(self):
-        return self.email
-
     # constructor of a User object, initializes of instance variables within object
     def __init__(self, name, email, password, phone):
         self.name = name
         self.email = email
         self.password = password
         self.phone = phone
-
-    # return json/dictionary, self variables converter
-    def json(self):
-        return {
-            "userID": self.userID,
-            "name": self.name,
-            "email": self.email,
-            "password": self.password,
-            "phone": self.phone
-        }
 
     # CRUD create/add a new record to the table
     # returns self
@@ -67,6 +54,16 @@ class Users(db.Model):
         except IntegrityError:
             db.session.remove()
             return None
+
+    # return json/dictionary, self variables converter
+    def read(self):
+        return {
+            "userID": self.userID,
+            "name": self.name,
+            "email": self.email,
+            "password": self.password,
+            "phone": self.phone
+        }
 
     # CRUD update: updates users name
     # returns self
@@ -85,7 +82,7 @@ class UsersAPI:
             po = Users(name, email, password, phone)
             person = po.create()
             if person:
-                return person.json()
+                return person.read()
             return {'message': f'Processed {name}, either a format error or {email} is duplicate'}, 210
 
     # class for read/get
@@ -100,7 +97,7 @@ class UsersAPI:
             if po is None:
                 return {'message': f"{email} is not found"}, 210
             po.update_name(name)
-            return po.json()
+            return po.read()
 
     # class for delete
     class Delete(Resource):
@@ -119,7 +116,7 @@ class UsersAPI:
 def model_read(userid):
     """filter users by userid"""
     user = Users.query.filter_by(userID=userid).first()
-    return user.json()
+    return user.read()
 
 
 # CRUD delete: removes record from table
@@ -136,7 +133,7 @@ def model_delete(userid):
 def model_read_all():
     """convert Users table into a list of dictionary rows"""
     people = Users.query.all()
-    return [peep.json() for peep in people]
+    return [peep.read() for peep in people]
 
 
 # CRUD read: query by filter provided in term
@@ -146,7 +143,7 @@ def model_read_by_filter(term):
     # "ilike" is case insensitive partial match
     people = Users.query.filter((Users.name.ilike(term)) | (Users.email.ilike(term)))
     # return filtered Users table into a list of dictionary rows
-    return [peep.json() for peep in people]
+    return [peep.read() for peep in people]
 
 
 # CRUD read: query emails

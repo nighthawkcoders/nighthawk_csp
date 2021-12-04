@@ -17,7 +17,7 @@ def api_tester():
         ['/create/Wilma Flintstone/wilma@bedrock.org/123wifli/0001112222', "post"],
         ['/create/Fred Flintstone/fred@bedrock.org/123wifli/0001112222', "post"],
         ['/read/', "get"],
-        ['/update/wilma@bedrock.org/Wilma F Flintstone', "put"],
+        ['/update/wilma@bedrock.org/Wilma Slaghoople Flintstone', "put"],
         ['/delete/4', "delete"],
         ['/delete/5', "delete"],
     ]
