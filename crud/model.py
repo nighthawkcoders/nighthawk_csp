@@ -6,8 +6,8 @@ from flask_restful import Resource, Api
 
 from __init__ import app
 
-# Tutorial: https://www.sqlalchemy.org/library.html#tutorials, try to get into Python shell and follow along
 
+# Tutorial: https://www.sqlalchemy.org/library.html#tutorials, try to get into Python shell and follow along
 # Define variable to define type of database (sqlite), and name and location of myDB.db
 dbURI = 'sqlite:///model/myDB.db'
 # Setup properties for the database
@@ -67,9 +67,15 @@ class Users(db.Model):
 
     # CRUD update: updates users name
     # returns self
-    def update_name(self, name):
+    def update(self, name, password, phone):
         """fetch userid"""
-        self.name = name
+        if len(name) > 0:
+            self.name = name
+        if len(password) > 0:
+            self.password = password
+        if len(phone) > 0:
+            self.phone = phone
+
         """commit changes to database"""
         db.session.commit()
         return self
@@ -96,7 +102,15 @@ class UsersAPI:
             po = Users.query.filter_by(email=email).first()
             if po is None:
                 return {'message': f"{email} is not found"}, 210
-            po.update_name(name)
+            po.update(name, "", "")
+            return po.read()
+
+    class UpdateAll(Resource):
+        def put(self, email, name, password, phone):
+            po = Users.query.filter_by(email=email).first()
+            if po is None:
+                return {'message': f"{email} is not found"}, 210
+            po.update(name, password, phone)
             return po.read()
 
     # class for delete
@@ -108,6 +122,7 @@ class UsersAPI:
     api.add_resource(Create, url_prefix + '/create/<string:name>/<string:email>/<string:password>/<string:phone>')
     api.add_resource(Read, url_prefix + '/read/')
     api.add_resource(Update, url_prefix + '/update/<string:email>/<string:name>')
+    api.add_resource(UpdateAll, url_prefix + '/update/<string:email>/<string:name>/<string:password>/<string:phone>')
     api.add_resource(Delete, url_prefix + '/delete/<int:userid>')
 
 
