@@ -65,7 +65,7 @@ class Users(db.Model):
             "phone": self.phone
         }
 
-    # CRUD update: updates users name
+    # CRUD update: updates users name, password, phone
     # returns self
     def update(self, name, password="", phone=""):
         """fetch userid"""
@@ -79,6 +79,13 @@ class Users(db.Model):
         """commit changes to database"""
         db.session.commit()
         return self
+
+    # CRUD delete: remove self
+    # None
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+        return None
 
 
 class UsersAPI:
@@ -116,7 +123,12 @@ class UsersAPI:
     # class for delete
     class Delete(Resource):
         def delete(self, userid):
-            model_delete(userid)
+            po = Users.query.filter_by(userID=userid).first()
+            if po is None:
+                return {'message': f"{userid} is not found"}, 210
+            data = po.read()
+            po.delete()
+            return data
 
     # building RESTapi resource
     api.add_resource(Create, url_prefix + '/create/<string:name>/<string:email>/<string:password>/<string:phone>')
@@ -132,16 +144,6 @@ def model_read(userid):
     """filter users by userid"""
     user = Users.query.filter_by(userID=userid).first()
     return user.read()
-
-
-# CRUD delete: removes record from table
-# userid required
-def model_delete(userid):
-    """fetch userid"""
-    userid = userid
-    db.session.query(Users).filter(Users.userID == userid).delete()
-    """commit changes to database"""
-    db.session.commit()
 
 
 # CRUD read: query all tables and records in the table

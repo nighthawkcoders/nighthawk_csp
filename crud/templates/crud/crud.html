@@ -150,15 +150,20 @@
                     <h2>Read a record</h2>
                     <form method="POST" ID="read" action={{url_for('crud.read')}} >
                         <table id="read_table">
-                            <tr><th><label for="ID">ID</label></th></tr>
-                            <tr><td><select name="ID" id="ID">
-                                <optgroup label="userid">
-                                    {% for row in table %}
-                                        <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
-                                    {% endfor %}
-                                </optgroup>
-                            </select></td>
-                                <td><input type="submit" value="Read"></td>
+                            <tr><th><label for="read_userid">ID</label></th></tr>
+                            <tr>
+                                <td>
+                                    <select name="userid" id="read_userid">
+                                        <optgroup label="userid">
+                                            {% for row in table %}
+                                                <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                            {% endfor %}
+                                        </optgroup>
+                                </select>
+                                </td>
+                                <td>
+                                    <input type="submit" value="Read">
+                                </td>
                             </tr>
                         </table>
                     </form>
@@ -197,14 +202,17 @@
                     <h2>Delete record</h2>
                     <form method="POST" ID="read" action={{url_for('crud.delete')}} >
                         <table id="read_table">
-                            <tr><th><label for="ID">ID</label></th></tr>
-                            <tr><td><select name="ID" id="ID">
-                                <optgroup label="userid">
-                                    {% for row in table %}
-                                        <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
-                                    {% endfor %}
-                                </optgroup>
-                            </select></td>
+                            <tr><th><label for="delete_userid">ID</label></th></tr>
+                            <tr>
+                                <td>
+                                    <select name="userid" id="delete_userid">
+                                        <optgroup label="userid">
+                                            {% for row in table %}
+                                                <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                            {% endfor %}
+                                        </optgroup>
+                                    </select>
+                                </td>
                                 <td><input type="submit" value="Delete"></td>
                             </tr>
                         </table>

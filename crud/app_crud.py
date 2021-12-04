@@ -2,7 +2,7 @@
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
 # model imports
 from .model import Users, model_read, model_read_all, model_read_emails, \
-    model_read_phones, model_delete, model_read_by_filter
+    model_read_phones, model_read_by_filter
 
 # blueprint defaults
 app_crud = Blueprint('crud', __name__,
@@ -41,10 +41,9 @@ def create():
 def read():
     record = []
     if request.form:
-        userid = request.form.get("ID")
-        # model_read expects userid and returns a dictionary of user data: username, password, email, phone
+        userid = request.form.get("userid")
         user_dict = model_read(userid)
-        record = [user_dict]  # placed in list for easy use within HTML
+        record = [user_dict]  # placed in list for easier/consistent use within HTML
     return render_template("crud.html", table=record)
 
 
@@ -64,11 +63,11 @@ def update():
 @app_crud.route('/delete/', methods=["POST"])
 def delete():
     if request.form:
-        """fetch userid"""
-        userid = request.form.get("ID")
-        # model_delete expects a userid
-        model_delete(userid)
-    return redirect(url_for('.crud'))
+        userid = request.form.get("userid")
+        po = Users.query.filter_by(userID=userid).first()
+        if po is not None:
+            po.delete()
+    return redirect(url_for('crud.crud'))
 
 
 # if email url, show the email table only
