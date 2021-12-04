@@ -43,9 +43,8 @@ class Users(db.Model):
         self.phone = phone
 
     # CRUD create/add a new record to the table
-    # returns self
+    # returns self or None on error
     def create(self):
-        """prepare data for primary table extracting from form"""
         try:
             # creates a person object from Users(db.Model) class, passes initializers
             db.session.add(self)  # add prepares to persist person object to Users table
@@ -55,7 +54,8 @@ class Users(db.Model):
             db.session.remove()
             return None
 
-    # return json/dictionary, self variables converter
+    # CRUD read converts self to dictionary
+    # returns dictionary
     def read(self):
         return {
             "userID": self.userID,
@@ -68,15 +68,13 @@ class Users(db.Model):
     # CRUD update: updates users name, password, phone
     # returns self
     def update(self, name, password="", phone=""):
-        """fetch userid"""
+        """only updates values with length"""
         if len(name) > 0:
             self.name = name
         if len(password) > 0:
             self.password = password
         if len(phone) > 0:
             self.phone = phone
-
-        """commit changes to database"""
         db.session.commit()
         return self
 
@@ -138,14 +136,6 @@ class UsersAPI:
     api.add_resource(Delete, url_prefix + '/delete/<int:userid>')
 
 
-# CRUD read: filter single record in table based off of userid
-# userid required, returns json/dictionary
-def model_read(userid):
-    """filter users by userid"""
-    user = Users.query.filter_by(userID=userid).first()
-    return user.read()
-
-
 # CRUD read: query all tables and records in the table
 def model_read_all():
     """convert Users table into a list of dictionary rows"""
@@ -201,9 +191,6 @@ def model_tester():
         except IntegrityError:
             db.session.remove()
             print(f"Records exist, duplicate email, or error: {row.email}")
-    record = model_read(1)
-    print()
-    print("New Email Method", record['userID'], record['email'], record['name'])
 
 
 # simple listing of table

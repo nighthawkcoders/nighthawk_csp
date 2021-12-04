@@ -1,8 +1,7 @@
 # flask imports
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
 # model imports
-from .model import Users, model_read, model_read_all, \
-    model_read_by_filter
+from crud.model import Users, model_read_all, model_read_by_filter
 
 # blueprint defaults
 app_crud = Blueprint('crud', __name__,
@@ -39,12 +38,13 @@ def create():
 # CRUD read, which is filtering table based off of ID
 @app_crud.route('/read/', methods=["POST"])
 def read():
-    record = []
+    table = []
     if request.form:
         userid = request.form.get("userid")
-        user_dict = model_read(userid)
-        record = [user_dict]  # placed in list for easier/consistent use within HTML
-    return render_template("crud.html", table=record)
+        po = Users.query.filter_by(userID=userid).first()
+        if po is not None:
+            table = [po.read()]  # placed in list for easier/consistent use within HTML
+    return render_template("crud.html", table=table)
 
 
 # CRUD update
