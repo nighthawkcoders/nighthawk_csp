@@ -14,7 +14,8 @@ def api_tester():
     API = 0
     METHOD = 1
     tests = [
-        ['/create/Fred Flintstone/wilma@bedrock.org/123wifli/0001112222', "post"],
+        ['/create/Wilma Flintstone/wilma@bedrock.org/123wifli/0001112222', "post"],
+        ['/create/Fred Flintstone/fred@bedrock.org/123wifli/0001112222', "post"],
         ['/read/', "get"],
         ['/update/jmort1021@gmail.com/John C Mortensen', "put"],
         ['/delete/4', "delete"],

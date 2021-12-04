@@ -52,10 +52,34 @@ class Users(db.Model):
             "phone": self.phone
         }
 
+    # CRUD create/add a new record to the table
+    # user_dict{} expects name, email, password, phone; returns person object on success
+    def create(self):
+        """prepare data for primary table extracting from form"""
+        try:
+            # creates a person object from Users(db.Model) class, passes initializers
+            db.session.add(self)  # add prepares to persist person object to Users table
+            db.session.commit()  # SqlAlchemy "unit of work pattern" requires a manual commit
+            return self
+        except IntegrityError:
+            db.session.remove()
+            return None
+
+    # CRUD update: updates users name
+    # requires userid, returns json/dictionary
+    def update_name(self, userid, name):
+        """fetch userid"""
+        db.session.query(Users).filter_by(userID=userid).update({Users.name: name})
+        """commit changes to database"""
+        db.session.commit()
+        return self
+
+class UsersAPI():
     # class for create/post
     class Create(Resource):
         def post(self, name, email, password, phone):
-            person = model_create(name, email, password, phone)
+            po = Users(name, email, password, phone)
+            person = po.create()
             if person:
                 return person.json()
             return {'email': None}, 404  # need to have better message on errors
