@@ -1,8 +1,9 @@
+"""control dependencies to support CRUD app routes and APIs"""
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
 from flask_restful import Api, Resource
 import requests
 
-from crud.model import Users, print_tester
+from crud.model import Users
 
 # blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
 app_crud = Blueprint('crud', __name__,
@@ -233,6 +234,14 @@ def api_tester():
             print("unknown error")
 
 
+def api_printer():
+    print()
+    print("Users table")
+    for user in users():
+        print(user)
+
+
+"""validating api's requires server to be running"""
 if __name__ == "__main__":
-    api_tester()  # validates api's requires server to be running
-    print_tester()
+    api_tester()
+    api_printer()

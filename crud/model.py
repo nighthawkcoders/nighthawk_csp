@@ -81,16 +81,6 @@ class Users(db.Model):
         return None
 
 
-# CRUD read: query by filter provided in term
-def model_read_by_filter(term):
-    # term structured in anywhere form
-    term = "%{}%".format(term)
-    # "ilike" is case insensitive partial match
-    people = Users.query.filter((Users.name.ilike(term)) | (Users.email.ilike(term)))
-    # return filtered Users table into a list of dictionary rows
-    return [peep.read() for peep in people]
-
-
 """Database Creation and Testing section"""
 
 
@@ -118,7 +108,7 @@ def model_tester():
             print(f"Records exist, duplicate email, or error: {row.email}")
 
 
-def print_tester():
+def model_printer():
     print("------------")
     print("Table: users with SQL query")
     print("------------")
@@ -130,4 +120,4 @@ def print_tester():
 
 if __name__ == "__main__":
     model_tester()  # builds model of Users
-    print_tester()
+    model_printer()
