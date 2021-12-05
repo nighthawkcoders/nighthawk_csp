@@ -2,13 +2,13 @@
 import requests
 
 # borrow these definitions from model
-from model import print_tester, url_prefix
+from model import print_tester
 
 
 # play with api on localhost, server must be running
 def api_tester():
     # local host URL for model
-    url = 'http://127.0.0.1:5222/' + url_prefix
+    url = 'http://127.0.0.1:5222/crud'
 
     # test conditions
     API = 0
@@ -26,7 +26,7 @@ def api_tester():
     # loop through each test condition and provide feedback
     for test in tests:
         print()
-        print(f"({test[METHOD]}, {test[API]})")
+        print(f"({test[METHOD]}, {url + test[API]})")
         email = test[API].split("/")
         if test[METHOD] == 'get':
             response = requests.get(url + test[API])

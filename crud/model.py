@@ -1,11 +1,9 @@
-""" database setup to support db examples """
+""" database dependencies to support Users db examples """
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError
 from flask_migrate import Migrate
-from flask_restful import Resource, Api
 
 from __init__ import app
-
 
 # Tutorial: https://www.sqlalchemy.org/library.html#tutorials, try to get into Python shell and follow along
 # Define variable to define type of database (sqlite), and name and location of myDB.db
@@ -17,9 +15,6 @@ app.config['SECRET_KEY'] = 'SECRET_KEY'
 # Create SQLAlchemy engine to support SQLite dialect (sqlite:)
 db = SQLAlchemy(app)
 Migrate(app, db)
-api = Api(app)
-# prefix for RESTful crud operations below, should change to api
-url_prefix = "/crud"
 
 
 # Define the Users table within the model
@@ -86,63 +81,6 @@ class Users(db.Model):
         return None
 
 
-class UsersAPI:
-    # class for create/post
-    class Create(Resource):
-        def post(self, name, email, password, phone):
-            po = Users(name, email, password, phone)
-            person = po.create()
-            if person:
-                return person.read()
-            return {'message': f'Processed {name}, either a format error or {email} is duplicate'}, 210
-
-    # class for read/get
-    class Read(Resource):
-        def get(self):
-            return model_read_all()
-
-    # class for update/put
-    class Update(Resource):
-        def put(self, email, name):
-            po = Users.query.filter_by(email=email).first()
-            if po is None:
-                return {'message': f"{email} is not found"}, 210
-            po.update(name)
-            return po.read()
-
-    class UpdateAll(Resource):
-        def put(self, email, name, password, phone):
-            po = Users.query.filter_by(email=email).first()
-            if po is None:
-                return {'message': f"{email} is not found"}, 210
-            po.update(name, password, phone)
-            return po.read()
-
-    # class for delete
-    class Delete(Resource):
-        def delete(self, userid):
-            po = Users.query.filter_by(userID=userid).first()
-            if po is None:
-                return {'message': f"{userid} is not found"}, 210
-            data = po.read()
-            po.delete()
-            return data
-
-    # building RESTapi resource
-    api.add_resource(Create, url_prefix + '/create/<string:name>/<string:email>/<string:password>/<string:phone>')
-    api.add_resource(Read, url_prefix + '/read/')
-    api.add_resource(Update, url_prefix + '/update/<string:email>/<string:name>')
-    api.add_resource(UpdateAll, url_prefix + '/update/<string:email>/<string:name>/<string:password>/<string:phone>')
-    api.add_resource(Delete, url_prefix + '/delete/<int:userid>')
-
-
-# CRUD read: query all tables and records in the table
-def model_read_all():
-    """convert Users table into a list of dictionary rows"""
-    people = Users.query.all()
-    return [peep.read() for peep in people]
-
-
 # CRUD read: query by filter provided in term
 def model_read_by_filter(term):
     # term structured in anywhere form
@@ -153,22 +91,9 @@ def model_read_by_filter(term):
     return [peep.read() for peep in people]
 
 
-# CRUD read: query emails
-def model_read_emails():
-    # fill the table with emails only
-    people = Users.query.all()
-    return [{'userID': peep.userID, 'email': peep.email} for peep in people]
+"""Database Creation and Testing section"""
 
 
-# CRUD read: query phones
-def model_read_phones():
-    # fill the table with phone numbers only
-    people = Users.query.all()
-    return [{'userID': peep.userID, 'phone': peep.phone} for peep in people]
-
-
-#### testing section
-# create database from scratch
 def model_tester():
     print("--------------------------")
     print("Seed Data for Table: users")
@@ -193,17 +118,7 @@ def model_tester():
             print(f"Records exist, duplicate email, or error: {row.email}")
 
 
-# simple listing of table
 def print_tester():
-    print("------------")
-    print("Table: users with SQLAlchemy")
-    print("------------")
-    result = model_read_all()
-    for row in result:
-        print(row)
-
-
-def print_tester2():
     print("------------")
     print("Table: users with SQL query")
     print("------------")
@@ -216,4 +131,3 @@ def print_tester2():
 if __name__ == "__main__":
     model_tester()  # builds model of Users
     print_tester()
-    print_tester2()
