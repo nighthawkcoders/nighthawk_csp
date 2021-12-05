@@ -1,4 +1,3 @@
-# flask imports
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
 from flask_restful import Api, Resource
 import requests
@@ -15,21 +14,56 @@ app_crud = Blueprint('crud', __name__,
 # API generator https://flask-restful.readthedocs.io/en/latest/api.html#id1
 api = Api(app_crud)
 
+""" Application control for CRUD is main focus of this File, key features:
+    1.) User table queries
+    2.) app routes (Blueprint)
+    3.) API routes
+    4.) API testing
+"""
 
-# ##### Routes within this blueprint broker information between HTML and Model code
-# Default URL of blueprint and connecting to crud() function
+""" Users table queries"""
+
+
+# Users extraction from SQL
+def users():
+    """converts Users table into JSON list """
+    return [peep.read() for peep in Users.query.all()]
+
+
+def users_ilike(term):
+    """filter Users table by term into JSON list """
+    term = "%{}%".format(term)  # "ilike" is case insensitive and requires wrapped  %term%
+    table = Users.query.filter((Users.name.ilike(term)) | (Users.email.ilike(term)))
+    return [peep.read() for peep in table]
+
+
+# User extraction from SQL
+def user(userid):
+    """finds User in table matching userid """
+    return Users.query.filter_by(userID=userid).first()
+
+
+# User extraction from SQL
+def user_by_email(email):
+    """finds User in table matching email """
+    return Users.query.filter_by(email=email).first()
+
+
+""" app route section """
+
+
+# Default URL
 @app_crud.route('/')
 def crud():
-    """extracts Users table from DB and returns in json format"""
-    users = Users.query.all()
-    return render_template("crud.html", table=[peep.read() for peep in users])
+    """obtains all Users from table and loads Admin Form"""
+    return render_template("crud.html", table=users())
 
 
-# CRUD create/add a new record to the table
+# CRUD create/add
 @app_crud.route('/create/', methods=["POST"])
 def create():
+    """gets data from form and add it to Users table"""
     if request.form:
-        """extract data from form and call model_create"""
         po = Users(
             request.form.get("name"),
             request.form.get("email"),
@@ -37,16 +71,17 @@ def create():
             request.form.get("phone")
         )
         po.create()
-    return redirect(url_for('.crud'))
+    return redirect(url_for('crud.crud'))
 
 
-# CRUD read, which is filtering table based off of ID
+# CRUD read
 @app_crud.route('/read/', methods=["POST"])
 def read():
+    """gets userid from form and obtains corresponding data from Users table"""
     table = []
     if request.form:
         userid = request.form.get("userid")
-        po = Users.query.filter_by(userID=userid).first()
+        po = user(userid)
         if po is not None:
             table = [po.read()]  # placed in list for easier/consistent use within HTML
     return render_template("crud.html", table=table)
@@ -55,10 +90,11 @@ def read():
 # CRUD update
 @app_crud.route('/update/', methods=["POST"])
 def update():
+    """gets userid and name from form and filters and then data in  Users table"""
     if request.form:
         userid = request.form.get("userid")
         name = request.form.get("name")
-        po = Users.query.filter_by(userID=userid).first()
+        po = user(userid)
         if po is not None:
             po.update(name)
     return redirect(url_for('crud.crud'))
@@ -67,32 +103,33 @@ def update():
 # CRUD delete
 @app_crud.route('/delete/', methods=["POST"])
 def delete():
+    """gets userid from form delete corresponding record from Users table"""
     if request.form:
         userid = request.form.get("userid")
-        po = Users.query.filter_by(userID=userid).first()
+        po = user(userid)
         if po is not None:
             po.delete()
     return redirect(url_for('crud.crud'))
 
 
+# Search Form
 @app_crud.route('/search/')
 def search():
+    """loads form to search Users data"""
     return render_template("search.html")
 
 
+# Search request and response
 @app_crud.route('/search/term/', methods=["POST"])
 def search_term():
+    """ obtain term/search request """
     req = request.get_json()
     term = req['term']
-    # term structured in anywhere form
-    term = "%{}%".format(term)
-    # "ilike" is case insensitive partial match
-    people = Users.query.filter((Users.name.ilike(term)) | (Users.email.ilike(term)))
-    # return filtered Users table into a list of dictionary rows
-    query = [peep.read() for peep in people]
-    response = make_response(jsonify(query), 200)
-
+    response = make_response(jsonify(users_ilike(term)), 200)
     return response
+
+
+""" API routes section """
 
 
 class UsersAPI:
@@ -108,13 +145,17 @@ class UsersAPI:
     # class for read/get
     class _Read(Resource):
         def get(self):
-            users = Users.query.all()
-            return [peep.read() for peep in users]
+            return users()
+
+    # class for read/get
+    class _ReadILike(Resource):
+        def get(self, term):
+            return users_ilike(term)
 
     # class for update/put
     class _Update(Resource):
         def put(self, email, name):
-            po = Users.query.filter_by(email=email).first()
+            po = user_by_email(email)
             if po is None:
                 return {'message': f"{email} is not found"}, 210
             po.update(name)
@@ -122,7 +163,7 @@ class UsersAPI:
 
     class _UpdateAll(Resource):
         def put(self, email, name, password, phone):
-            po = Users.query.filter_by(email=email).first()
+            po = user_by_email(email)
             if po is None:
                 return {'message': f"{email} is not found"}, 210
             po.update(name, password, phone)
@@ -131,7 +172,7 @@ class UsersAPI:
     # class for delete
     class _Delete(Resource):
         def delete(self, userid):
-            po = Users.query.filter_by(userID=userid).first()
+            po = user(userid)
             if po is None:
                 return {'message': f"{userid} is not found"}, 210
             data = po.read()
@@ -141,12 +182,15 @@ class UsersAPI:
     # building RESTapi resource
     api.add_resource(_Create, '/create/<string:name>/<string:email>/<string:password>/<string:phone>')
     api.add_resource(_Read, '/read/')
+    api.add_resource(_ReadILike, '/read/ilike/<string:term>')
     api.add_resource(_Update, '/update/<string:email>/<string:name>')
     api.add_resource(_UpdateAll, '/update/<string:email>/<string:name>/<string:password>/<string:phone>')
     api.add_resource(_Delete, '/delete/<int:userid>')
 
 
-# play with api on localhost, server must be running
+""" API testing section """
+
+
 def api_tester():
     # local host URL for model
     url = 'http://127.0.0.1:5222/crud'
@@ -158,6 +202,8 @@ def api_tester():
         ['/create/Wilma Flintstone/wilma@bedrock.org/123wifli/0001112222', "post"],
         ['/create/Fred Flintstone/fred@bedrock.org/123wifli/0001112222', "post"],
         ['/read/', "get"],
+        ['/read/ilike/John', "get"],
+        ['/read/ilike/com', "get"],
         ['/update/wilma@bedrock.org/Wilma S Flintstone/123wsfli/0001112229', "put"],
         ['/update/wilma@bedrock.org/Wilma Slaghoople Flintstone', "put"],
         ['/delete/4', "delete"],
