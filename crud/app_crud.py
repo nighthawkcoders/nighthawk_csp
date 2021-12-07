@@ -25,8 +25,8 @@ api = Api(app_crud)
 """ Users table queries"""
 
 
-# Users extraction from SQL
-def users():
+# User/Users extraction from SQL
+def users_all():
     """converts Users table into JSON list """
     return [peep.read() for peep in Users.query.all()]
 
@@ -39,7 +39,7 @@ def users_ilike(term):
 
 
 # User extraction from SQL
-def user(userid):
+def user_by_id(userid):
     """finds User in table matching userid """
     return Users.query.filter_by(userID=userid).first()
 
@@ -57,7 +57,7 @@ def user_by_email(email):
 @app_crud.route('/')
 def crud():
     """obtains all Users from table and loads Admin Form"""
-    return render_template("crud.html", table=users())
+    return render_template("crud.html", table=users_all())
 
 
 # CRUD create/add
@@ -82,7 +82,7 @@ def read():
     table = []
     if request.form:
         userid = request.form.get("userid")
-        po = user(userid)
+        po = user_by_id(userid)
         if po is not None:
             table = [po.read()]  # placed in list for easier/consistent use within HTML
     return render_template("crud.html", table=table)
@@ -95,7 +95,7 @@ def update():
     if request.form:
         userid = request.form.get("userid")
         name = request.form.get("name")
-        po = user(userid)
+        po = user_by_id(userid)
         if po is not None:
             po.update(name)
     return redirect(url_for('crud.crud'))
@@ -107,7 +107,7 @@ def delete():
     """gets userid from form delete corresponding record from Users table"""
     if request.form:
         userid = request.form.get("userid")
-        po = user(userid)
+        po = user_by_id(userid)
         if po is not None:
             po.delete()
     return redirect(url_for('crud.crud'))
@@ -146,7 +146,7 @@ class UsersAPI:
     # class for read/get
     class _Read(Resource):
         def get(self):
-            return users()
+            return users_all()
 
     # class for read/get
     class _ReadILike(Resource):
@@ -173,7 +173,7 @@ class UsersAPI:
     # class for delete
     class _Delete(Resource):
         def delete(self, userid):
-            po = user(userid)
+            po = user_by_id(userid)
             if po is None:
                 return {'message': f"{userid} is not found"}, 210
             data = po.read()
@@ -194,7 +194,7 @@ class UsersAPI:
 
 def api_tester():
     # local host URL for model
-    url = 'http://127.0.0.1:5222/crud'
+    url = 'http://localhost:5222/crud'
 
     # test conditions
     API = 0
@@ -237,7 +237,7 @@ def api_tester():
 def api_printer():
     print()
     print("Users table")
-    for user in users():
+    for user in users_all():
         print(user)
 
 
