@@ -6,10 +6,13 @@ app_y2022 = Blueprint('y2022', __name__,
                       static_folder='static', static_url_path='/static/assets')
 
 
-@app_y2022.route('/repos')
-def repos():
-    return render_template("course/repos.html")
+@app_y2022.route('/github')
+def github():
+    return render_template("course/github.html")
 
+@app_y2022.route('/replit')
+def replit():
+    return render_template("course/replit.html")
 
 @app_y2022.route('/deploy')
 def deploy():
