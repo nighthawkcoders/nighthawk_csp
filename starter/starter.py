@@ -9,7 +9,7 @@ app_starter = Blueprint('starter', __name__,
                         url_prefix='/starter',
                         template_folder='templates/starter/',
                         static_folder='static',
-                        static_url_path='assets')
+                        static_url_path='static/assets')
 
 
 @app_starter.route('/greet', methods=['GET', 'POST'])

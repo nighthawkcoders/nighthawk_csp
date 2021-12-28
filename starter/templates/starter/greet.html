@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 {% extends "layout.html" %}
 
+{% block meta %}
+    <title>Flask Greeting</title>
+{% endblock %}
+
 {% block content %}
     <div class="container py-4">
         <header class="pb-3 mb-4 border-bottom border-primary text-dark">
@@ -23,15 +27,15 @@
 
         <div class="row mx-3">
             <div class="py-3">
-                <img src="{{ url_for('.static', filename='PythonFlask.jpeg') }}" alt="Flask Intro" style="height: 400px; width: auto" >
+                <img src="{{ url_for('starter.static', filename='assets/PythonFlask.jpeg') }}" alt="Flask Intro" style="height: 400px; width: auto" >
             </div>
 
             <div class="py-2">
-                <p>Python backend loader <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/starter/starter.py#L15-L23">VIEW CODE</a>!  This code, contained in a Python function, sets up the "name=" variable. The name variable is passed to the HTML (greet.html) via Flask.  This code contains "if statements",  these statements are referred to as selection statements by College Board.  Most developers refer to if statements as conditionals.  This code tests to see if input is entered from the HTML Form.  If input is set then Python variable "name" set the Jinja2 variable "name" (name=name) with the value from the HTML form.  The default/else condition (last statement in function), sets "name" to a constant value name="World". Conditional logic is fundamental to all programming languages. Observe this closely, make sure you understand it thoroughly.</p>
+                <p>Python backend <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/starter/starter.py#L15-L23">VIEW CODE</a>!  This code, contained in a Python function, sets up the "name=" variable. The name variable is passed to the HTML (greet.html) via Flask.  This code contains "if statements",  these statements are referred to as selection statements by College Board.  Most developers refer to if statements as conditionals.  This code tests to see if input is entered from the HTML Form.  If input is set then Python variable "name" set the Jinja2 variable "name" (name=name) with the value from the HTML form.  The default/else condition (last statement in function), sets "name" to a constant value name="World". Conditional logic is fundamental to all programming languages. Observe this closely, make sure you understand it thoroughly.</p>
             </div>
 
             <div class="py-2">
-                <p>HTML input form <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/starter/templates/starter/greet.html">VIEW CODE</a>! The greet.html is the display code we see in the browser.  This file inherits another file called "layout.html", this contains general style, navigation, and other definition that are common to the entire web site.  The greet.html itself contains a greeting display, a form for input, and an action that calls back to python with the user input.  The HTML pre-processor and input form put together. The source we work on and the source that is used by Browser are different, examine "view-source" through browser and code link to see difference.  Jinja2 is our Flask framework engine, this puts code together between greet.html, layout.html, and values passed from Python.  Flask and Jinja2 allow the capability to build actions in code.</p>
+                <p>HTML frontend <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/starter/templates/starter/greet.html">VIEW CODE</a>! The greet.html is the display code we see in the browser.  This file inherits another file called "layout.html", this contains general style, navigation, and other definition that are common to the entire web site.  The greet.html itself contains a greeting display, a form for input, and an action that calls back to python with the user input.  The HTML pre-processor and input form put together. The source we work on and the source that is used by Browser are different, examine "view-source" through browser and code link to see difference.  Jinja2 is our Flask framework engine, this puts code together between greet.html, layout.html, and values passed from Python.  Flask and Jinja2 allow the capability to build actions in code.</p>
             </div>
         </div>
 
