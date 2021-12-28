@@ -4,69 +4,67 @@
 {% block content %}
     {% set world = stats.world_total %}
     {% set countries = stats.countries_stat %}
-
-    <div class="container py-4 bg-success">
-        <header class="pb-3 mb-4 border-bottom">
-            <a href="#" class="d-flex align-items-center text-light text-decoration-none">
-                <span class="fs-4">Covid19 RapidAPI</span>
-            </a>
+    <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+            <span class="fs-4">Covid19 RapidAPI</span>
         </header>
 
-        <div class="p-5 mb-4 text-dark bg-light rounded-3">
+        <div class="row mx-3 bg-primary text-light rounded-3">
             <table class="table">
                 <thead>
                 <tr>
-                    <th>Time of Covid19 RapidAPI Last Update</th>
+                    <th>Time of API Update: {{world.statistic_taken_at}}</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td> {{world.statistic_taken_at}} </td>
+                    <td>
+                        <form action={{url_for('starter.covid19')}}>
+                            <button>Refresh!</button>
+                        </form>
+                    </td>
                 </tr>
                 </tbody>
             </table>
-            <div class="container-fluid py-5">
-                <form action={{url_for('starter.covid19')}}>
-                    <button>Refresh!</button>
-                </form>
-            </div>
-        </div>
-        <table class="table text-light">
-            <thead>
-            <tr>
-                <th>Country</th>
-                <th style="text-align:right">All-time Cases</th>
-                <th style="text-align:right">Total Recovered</th>
-                <th style="text-align:right">Total Deaths</th>
-                <th style="text-align:right">Active Cases</th>
-                <th style="text-align:right">New Cases</th>
-                <th style="text-align:right">Serious Critical</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>World</td>
-                <td style="text-align:right"> {{world.total_cases}} </td>
-                <td style="text-align:right"> {{world.total_recovered}} </td>
-                <td style="text-align:right"> {{world.total_deaths}} </td>
-                <td style="text-align:right"> {{world.active_cases}} </td>
-                <td style="text-align:right"> {{world.new_cases}} </td>
-                <td style="text-align:right"> {{world.serious_critical}} </td>
-            </tr>
-            {% for country in countries %}
+
+            <table class="table text-light">
+                <thead>
                 <tr>
-                    {% set name = country.country_name %}
-                    <td>{{name}}</td>
-                    <td style="text-align:right"> {{country.cases}} </td>
-                    <td style="text-align:right"> {{country.total_recovered}} </td>
-                    <td style="text-align:right"> {{country.deaths}} </td>
-                    <td style="text-align:right"> {{country.active_cases}} </td>
-                    <td style="text-align:right"> {{country.new_cases}} </td>
-                    <td style="text-align:right"> {{country.serious_critical}} </td>
+                    <th>Country</th>
+                    <th style="text-align:right">All-time Cases</th>
+                    <th style="text-align:right">Total Recovered</th>
+                    <th style="text-align:right">Total Deaths</th>
+                    <th style="text-align:right">Active Cases</th>
+                    <th style="text-align:right">New Cases</th>
+                    <th style="text-align:right">Serious Critical</th>
                 </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>World</td>
+                    <td style="text-align:right"> {{world.total_cases}} </td>
+                    <td style="text-align:right"> {{world.total_recovered}} </td>
+                    <td style="text-align:right"> {{world.total_deaths}} </td>
+                    <td style="text-align:right"> {{world.active_cases}} </td>
+                    <td style="text-align:right"> {{world.new_cases}} </td>
+                    <td style="text-align:right"> {{world.serious_critical}} </td>
+                </tr>
+                {% for country in countries %}
+                    <tr>
+                        {% set name = country.country_name %}
+                        <td>{{name}}</td>
+                        <td style="text-align:right"> {{country.cases}} </td>
+                        <td style="text-align:right"> {{country.total_recovered}} </td>
+                        <td style="text-align:right"> {{country.deaths}} </td>
+                        <td style="text-align:right"> {{country.active_cases}} </td>
+                        <td style="text-align:right"> {{country.new_cases}} </td>
+                        <td style="text-align:right"> {{country.serious_critical}} </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
 
         <table class="table">
             <thead>

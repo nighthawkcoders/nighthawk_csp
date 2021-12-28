@@ -2,15 +2,13 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class="container py-4 text-light bg-primary">
-        <header class="pb-3 mb-4 border-bottom">
-            <a href="#" class="d-flex align-items-center text-dark text-decoration-none">
-                <span class="fs-4">All Jokes</span>
-            </a>
+    <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+            <span class="fs-4">All Jokes</span>
         </header>
 
-        <div class="p-5 mb-4 text-dark bg-light rounded-3">
-            <div class="col-md">
+        <div class="row mx-3 bg-primary text-light rounded-3">
+            <div class="col-md mx-3 py-5">
                 {% for joke in jokes %}
                     <p class="setup"><strong>{{joke.id}}. {{joke.joke}}</strong></p>
                 {% endfor %}
