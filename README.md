@@ -1,6 +1,6 @@
 <img src="static/assets/ncs_logo.png" width="200" height="200">
 
-# Deployment Guide
+# ![Deployment Guide](https://github.com/nighthawkcoders/nighthawk_csp/wiki)
 
 ## Setup Virtual environment and clone code from GitHub
 #### In console/terminal (first time only: setup environment)...
