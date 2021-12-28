@@ -42,7 +42,8 @@ $theme-colors: (
 */
 
 // redefine colors
-$secondary: #5B9D82;
+$primary: #5B9D82;
+$secondary: #a1a9bd;
 $body-bg: #cfd8dc;
 
 // redefine body background
@@ -58,14 +59,12 @@ html, body {
 .dark-mode {
   $enable-gradients: true;
 
-  /* redefine body background */
+  /* redefine theme colors */
+  $primary: $green-600;
+  $secondary: #5c7ba8;
   $body-bg: #455a64;
   /* set background values */
   --#{$variable-prefix}body-bg: #{$body-bg};
-
-  /* redefine theme colors */
-  $primary: $purple;
-  $secondary: $green-600;
 
   $theme-colors: (
           "primary": $primary,
