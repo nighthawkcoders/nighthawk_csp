@@ -4,7 +4,7 @@
 ### [Object Oriented Programming - Python Classes and Objects](https://www.w3schools.com/python/python_classes.asp)
 ### [Python Functions](https://www.w3schools.com/python/python_functions.asp)
 ### [JavaScript Functions](https://www.w3schools.com/js/js_functions.asp)
-##  [Python Databases](https://www.sqlalchemy.org/)
+### [Python Databases](https://www.sqlalchemy.org/)
 
 
 ## Topics and Purpose
