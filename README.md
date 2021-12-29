@@ -4,10 +4,7 @@
 
 # <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki" target="_blank">Wiki of Procedures, including Deployment</a>
 
-<details>
-  <summary>Tech Talk 4</summary>
-In progress
-</details>
+{% include TT4.md %}
 
 <details>
   <summary>Tech Talk 5</summary>
