@@ -5,23 +5,6 @@
 # <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki" target="_blank">Wiki of Procedures, including Deployment</a>
 
 
-<details>
-  <summary>Tech Talk 5</summary>
-In progress
-</details>
-
-<details>
-  <summary>Tech Talk 6</summary>
-In progress
-</details>
-
-<details>
-  <summary>Tech Talk 7</summary>
-In progress
-</details>
-
-
-
 # Activity
 ### <a href="https://github.com/nighthawkcoders/nighthawk_csp/graphs/contributors" target="_blank">CSP Repo Insights</a>
 
