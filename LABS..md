@@ -1,31 +1,28 @@
 # Tech Talks
 
-## Tech Talk 4
 <details>
-  <summary>Click for details!</summary>
+  <summary>Tech Talk 4</summary>
 
-### Python Development
+### Python, JavaScript Development
 <OL> 
 <li> Class </li>
-<li> Procedure/Function/Method  </li>
+<li> Procedure/Function(JS)/Def(Pyton) </li>
 <li> SQLAlchemy Developing Procedure  </li>
-<li> SQLAlchemy Calling Procedures </li>
-<li> SQL Ordering (sort) </li>
+<li> SQL Ordering </li>
 </OL> 
 Notes:
-<table>
-  <tr>
-    <th>Search and JavaScript</th>
-    <th>Profile</th>
-    <th>Issues</th>
-    <th>Commits</th>
-  </tr>
-  <tr>
-    <td>John Mortensen</td>
-    <td><a href="https://github.com/jm1021">Profile</a></td>
-    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/issues?q=assignee%3Ajm1021" target="_blank">Issues</a></td>
-    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/commits?author=jm1021" target="_blank">Commits</a></td>
-  </tr>
-</table>
-  
+  <table>
+    <tr>
+      <th>TT4 Code</th>
+      <th>Model</th>
+      <th>View</th>
+      <th>Control</th>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/tree/master/crud" target="_blank">Blueprint</a></td>
+      <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/crud/model.py" target="_blank">Definition</a></td>
+      <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/crud/templates/crud/search.html" target="_blank">Search</a></td>
+      <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/crud/app_crud.py" target="_blank">Calling</a></td>
+    </tr>
+  </table>
 </details>
