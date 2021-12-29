@@ -3,10 +3,10 @@
 <details>
   <summary>Tech Talk 4</summary>
 
-### Python, JavaScript Development
+Python and JavaScript Development
 <ol> 
     <li> Class </li>
-    <li> Procedure/Function(JS)/Def(Pyton) </li>
+    <li> Procedure/function/def </li>
     <li> SQLAlchemy Developing Procedure  </li>
     <li> SQL Ordering </li>
 </ol> 
