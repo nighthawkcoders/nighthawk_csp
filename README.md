@@ -4,6 +4,7 @@
 
 
 {% include_relative LABS.md %}
+&nbsp;
 
 
 # Individual Activity
