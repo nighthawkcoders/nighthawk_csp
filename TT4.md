@@ -8,7 +8,7 @@
 
 
 ## Topics and Purpose
-To fully understand binary search and procedures, this Tech Talk will be focused on Database CRUD and Search.
+To assist in understand search and procedures, this Tech Talk will be focused on Database CRUD and Search as used in this CSP course project.
 <ol> 
     <li> Python Class, Procedures (aka def) and Objects will be illustrated in Database definition, queries, and search </li>
     <li> JavaScript Procedures (aka function) will enable pass user input to search, also JavaScript will present return values (JSON) as a result  </li>
@@ -18,7 +18,7 @@ To fully understand binary search and procedures, this Tech Talk will be focused
 
 
 ## Code Table
-The CRUD (Create, Read, Update, Deleted) Blueprint is a collection of Python and HTML files.  These files are a collection to support Frontend (HTML, JavaScript) and Backend (Python, SQLALchemy)
+The CRUD Blueprint is a collection of Python and HTML files.  These files are a used to support Frontend (HTML, JavaScript) and Backend (Python, SQLALchemy).  Together these files allow user to store and retrieve data.
   <table>
     <tr>
       <th>CRUD</th>
