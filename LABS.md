@@ -1,15 +1,15 @@
 # Tech Talks
 
 <details>
-  <summary><a href="#tt4">Tech Talk 4</summary>
+  <summary>Tech Talk 4</summary>
 
 ### Python, JavaScript Development <a name="tt4"></a>
-<OL> 
-<li> Class </li>
-<li> Procedure/Function(JS)/Def(Pyton) </li>
-<li> SQLAlchemy Developing Procedure  </li>
-<li> SQL Ordering </li>
-</OL> 
+<ol> 
+    <li> Class </li>
+    <li> Procedure/Function(JS)/Def(Pyton) </li>
+    <li> SQLAlchemy Developing Procedure  </li>
+    <li> SQL Ordering </li>
+</ol> 
 Notes:
   <table>
     <tr>
