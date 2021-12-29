@@ -1,13 +1,31 @@
 <img src="static/assets/ncs_logo.png" width="200" height="200" alt="">
 
-# <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki" target="_blank">Wiki of Procedures (aka Deployment)</a>
+# <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki" target="_blank">Wiki of Procedures, including Deployment</a>
+
+<details>
+  <summary>Tech Talk 4</summary>
+    {% include TT4.md %}
+</details>
+
+<details>
+  <summary>Tech Talk 5</summary>
+In progress
+</details>
+
+<details>
+  <summary>Tech Talk 6</summary>
+In progress
+</details>
+
+<details>
+  <summary>Tech Talk 7</summary>
+In progress
+</details>
 
 
-{% include_relative LABS.md %}
-&nbsp;
+# Activity
+### <a href="https://github.com/nighthawkcoders/nighthawk_csp/graphs/contributors" target="_blank">CSP Repo Insights</a>
 
-
-# Individual Activity
 <table>
   <tr>
     <th>Name</th>
@@ -24,5 +42,4 @@
 </table>
 
 
-### <a href="https://github.com/nighthawkcoders/nighthawk_csp/graphs/contributors" target="_blank">CSP Repo Insights</a>
 
