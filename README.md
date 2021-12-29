@@ -4,7 +4,7 @@
 
 <details>
   <summary>Tech Talk 4</summary>
-    {% include TT4.md %}
+In progress
 </details>
 
 <details>
