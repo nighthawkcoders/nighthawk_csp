@@ -2,8 +2,7 @@
 
 # <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki" target="_blank">Wiki of Procedures (aka Deployment)</a>
 
-# <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/LABS.md">Lab Outlines</a>
-
+{% include_relative LABS.md %}
 
 # Individual Activity
 <table>
