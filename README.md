@@ -1,3 +1,5 @@
+{% include header.html %}
+
 <img src="static/assets/ncs_logo.png" width="200" height="200" alt="">
 
 # <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki" target="_blank">Wiki of Procedures (aka Deployment)</a>
