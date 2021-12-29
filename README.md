@@ -1,6 +1,8 @@
-<img src="static/assets/ncs_logo.png" width="200" height="200">
+<img src="static/assets/ncs_logo.png" width="200" height="200" alt="">
 
 # <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki" target="_blank">Wiki of Procedures (aka Deployment)</a>
+
+# <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/LABS.md">Lab Outlines</a>
 
 
 # Individual Activity
