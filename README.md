@@ -2,7 +2,9 @@
 
 # <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki" target="_blank">Wiki of Procedures (aka Deployment)</a>
 
+
 # <a href="https://github.com/nighthawkcoders/nighthawk_csp/graphs/contributors" target="_blank">CSP Repo Insights</a>
+
 
 # Individual Activity
 <table>
@@ -19,4 +21,3 @@
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/commits?author=jm1021" target="_blank">Commits</a></td>
   </tr>
 </table>
-
