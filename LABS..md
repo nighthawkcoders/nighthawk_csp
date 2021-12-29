@@ -1,9 +1,9 @@
 # Tech Talks
 
 <details>
-  <summary>[Tech Talk 4](#tt4)</summary>
+  <summary><a href="#tt4">Tech Talk 4</summary>
 
-### Python, JavaScript Development
+### Python, JavaScript Development <a name="tt4"></a>
 <OL> 
 <li> Class </li>
 <li> Procedure/Function(JS)/Def(Pyton) </li>
