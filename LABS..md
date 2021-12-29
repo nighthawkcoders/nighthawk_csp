@@ -1,7 +1,7 @@
 # Tech Talks
 
 <details>
-  <summary>Tech Talk 4</summary>
+  <summary>[Tech Talk 4](#tt4)</summary>
 
 ### Python, JavaScript Development
 <OL> 
