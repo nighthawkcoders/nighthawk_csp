@@ -1,7 +1,7 @@
 # Tech Talks
 
 <details>
-  <summary><a id="tt4">Tech Talk 4</a></summary>
+  <summary>Tech Talk 4</summary>
 
 ### Python, JavaScript Development
 <ol> 
@@ -25,4 +25,19 @@ Notes:
       <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/crud/app_crud.py" target="_blank">Calling</a></td>
     </tr>
   </table>
+</details>
+
+<details>
+  <summary>Tech Talk 5</summary>
+In progress
+</details>
+
+<details>
+  <summary>Tech Talk 6</summary>
+In progress
+</details>
+
+<details>
+  <summary>Tech Talk 7</summary>
+In progress
 </details>
