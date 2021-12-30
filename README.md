@@ -86,11 +86,10 @@ Stick with default.  Your instance will be launched with 8gb of storage.
 <img src="https://github.com/nighthawkcoders/flask-idea-homesite/blob/master/assets/ec2ipv4.png">
 </details>
 
-## Start a terminal session on you host.
+## Start a console/terminal session on you host (RPi or EC2).
 <details>
-  <summary>Click for Flask Web server setup!</summary>
+  <summary>Click to Setup Virtual environment and clone code from GitHub!</summary>
   
-## Setup Virtual environment and clone code from GitHub
 #### In console/terminal (first time only: setup environment)...
 
 pi@raspberrypi:~ $  ``` sudo apt update; sudo apt upgrade```
@@ -167,8 +166,11 @@ http://localhost:5000/
 (homesite) pi@raspberrypi:~/flask-idea-homesite $ ``` deactivate```
 
 pi@raspberrypi:~/flask-idea-homesite $  ``` cd```
-
-## Creating System Files to run your Web Application as a Service
+  
+</details>
+  
+<details>
+  <summary>Click to Create System Files to run your Web Application as a Service!</summary>
 
 ### Build Gunicorn configuration file.
 
@@ -216,7 +218,11 @@ pi@raspberrypi:~ $  ``` sudo nano /etc/nginx/sites-available/homesite```
         }
     }
 
-## Validate Gunicorn configuration file and enable service permanently
+</details>
+  
+<details>
+  <summary>Click to Validate Gunicorn configuration file and enable service permanently!</summary>
+  
 #### In console/terminal start Gunicorn
 
 ```diff
@@ -228,11 +234,13 @@ pi@raspberrypi:~ $ ```sudo systemctl start homesite.service```
 
 pi@raspberrypi:~ $ ```sudo systemctl enable homesite.service```
  
-check the status, if all OK enable service permanentley...
-
 pi@raspberrypi:~ $ ```sudo systemctl status homesite.service```
-
+  
 stop status by typing q in terminal
+  
+if status OK enable service permanentley, else review your configuration file...
+  
+pi@raspberrypi:~ $ ```sudo systemctl enable homesite.service```
 
 
 ## Validate Nginx configuration file and enable service permanently
@@ -250,9 +258,9 @@ start the web server...
 
 pi@raspberrypi:~ $ ```sudo systemctl restart nginx```
 
-check nginx status...
-
 pi@raspberrypi:~ $ ```sudo systemctl status nginx```
+  
+if nginx status OK continue on, else review your configuration file...
 
 stop status by typing q in terminal
 
@@ -265,7 +273,3 @@ in address bar of browser on another device in LAN type IP address of this Nginx
 http://192.168.1.245/
   
 </details>
-
-
-
-
