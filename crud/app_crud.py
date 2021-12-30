@@ -148,6 +148,15 @@ class UsersAPI:
         def get(self):
             return users_all()
 
+    # class for delete
+    class _ReadID(Resource):
+        def get(self, userid):
+            po = user_by_id(userid)
+            if po is None:
+                return {'message': f"{userid} is not found"}, 210
+            data = po.read()
+            return data
+
     # class for read/get
     class _ReadILike(Resource):
         def get(self, term):
@@ -183,6 +192,7 @@ class UsersAPI:
     # building RESTapi resource
     api.add_resource(_Create, '/create/<string:name>/<string:email>/<string:password>/<string:phone>')
     api.add_resource(_Read, '/read/')
+    api.add_resource(_ReadID, '/read/<int:userid>')
     api.add_resource(_ReadILike, '/read/ilike/<string:term>')
     api.add_resource(_Update, '/update/<string:email>/<string:name>')
     api.add_resource(_UpdateAll, '/update/<string:email>/<string:name>/<string:password>/<string:phone>')
@@ -203,6 +213,8 @@ def api_tester():
         ['/create/Wilma Flintstone/wilma@bedrock.org/123wifli/0001112222', "post"],
         ['/create/Fred Flintstone/fred@bedrock.org/123wifli/0001112222', "post"],
         ['/read/', "get"],
+        ['/read/1', "get"],
+        ['/read/4', "get"],
         ['/read/ilike/John', "get"],
         ['/read/ilike/com', "get"],
         ['/update/wilma@bedrock.org/Wilma S Flintstone/123wsfli/0001112229', "put"],
