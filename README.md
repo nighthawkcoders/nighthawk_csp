@@ -84,10 +84,9 @@ Stick with default.  Your instance will be launched with 8gb of storage.
 ## Before you leave your ADMIN session on AWS go to EC2 running instances and find your IPV4 address.
 #### Find IPv4 address and IPv4 DNS
 <img src="https://github.com/nighthawkcoders/flask-idea-homesite/blob/master/assets/ec2ipv4.png">
+</details>
 
-# Start a terminal session on you localhost.
-</details
-  
+## Start a terminal session on you host.
 <details>
   <summary>Click for Flask Web server setup!</summary>
   
