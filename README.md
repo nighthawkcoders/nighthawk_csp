@@ -24,7 +24,7 @@
 ### General: <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki">Wiki</a>, <a href="https://padlet.com/jmortensen7/csp2022tri2">Padlet</a>, <a href="https://twitter.com/NighthawkCoding">Twitter</a>
 ### Deployment: <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Deployment-Hardware-and-Setup">Hardware</a>, <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Deployment-Procedures">Procedures</a>, <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Deployment-Procedures">DNS, Subdomain, Certbot</a>
 
-# Weekly Outline
+# Time Box
 <table>
   <tr>
     <th>Week</th>
@@ -35,7 +35,7 @@
   </tr>
   <tr>
     <td>4</td>
-    <td><a href="https://carpentries-incubator.github.io/jekyll-pages-novice/aio/index.html">Mingle and Jekyll</a></td>
+    <td><a href="https://carpentries-incubator.github.io/jekyll-pages-novice/aio/index.html">Resolute and Jekyll</a></td>
     <td><a href="https://apclassroom.collegeboard.org/103/home?unit=3">3.11,3.12.3.13</a></td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri2-TT4-Binary-Search,-Calling-Procedures,-and-Developing-Procedures">TT4</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1956804">Resolute</a></td>
