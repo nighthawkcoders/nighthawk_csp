@@ -78,21 +78,26 @@
                 while (resultContainer.firstChild) {
                     resultContainer.removeChild(resultContainer.firstChild);
                 }
-                //return response.json();
                 // trap error response from Web API
                 if (response.status !== 200) {
                     const errorMsg = 'Database response error: ' + response.status;
                     console.log(errorMsg);
-                    const div = document.createElement("div");
-                    div.innerHTML = errorMsg;
-                    resultContainer.appendChild(div);
+                    const tr = document.createElement("tr");
+                    const td = document.createElement("td");
+                    td.innerHTML = errorMsg;
+                    tr.appendChild(td);
+                    resultContainer.appendChild(tr);
                     return;
                 }
                 response.json().then(function(data) {
                 console.log(data);
-                const div = document.createElement("div");
-                div.innerHTML = data.userID + ' ' + data.name + ' ' + data.email+ ' ' + data.password+ '  ' + data.phone;
-                resultContainer.appendChild(div);
+                    const tr = document.createElement("tr");
+                    for (let key in data) {
+                        const td = document.createElement("td");
+                        td.innerHTML = data[key];
+                        tr.appendChild(td);
+                    }
+                    resultContainer.appendChild(tr);
                 })
             })
         }

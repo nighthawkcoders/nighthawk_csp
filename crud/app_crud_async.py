@@ -47,8 +47,7 @@ class UsersAPI:
             if po is None:
                 return {'message': f"{userid} is not found"}, 210
             data = po.read()
-            response = make_response(jsonify(data), 200)
-            return response
+            return data
 
     # class for update/put
     class _UpdateName(Resource):
