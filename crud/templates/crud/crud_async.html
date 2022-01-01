@@ -14,26 +14,30 @@
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
             const phone = document.getElementById("phone").value;
-            const user = {
-                name: name.value,
-                email: email.value,
-                password: password.value,
-                phone: phone.value
+            const request = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer my-token',
+                },
             };
             const url='/crud_api/create/' + name + '/' + email+ '/' + password + '/' + phone;
-            fetch(url, {method:"POST"}).then(response => {
-                return response.json();
-            })
+            fetch(url, request)
+                .then(response => response.json())
                 .then(data => {
-                console.log(data);
-                alert(data.name + " Sunny");
-            });
+                    console.log(data);
+                    alert(data.name);
+                });
         }
+
         function read_User(){
             const get_userid = document.getElementById("read_userid");
             const userID = get_userid.value;
             const url='/crud_api/read/' + userID;
-            fetch(url).then(function (response) {
+            const requestOptions = {
+                method: 'GET',
+            };
+            fetch(url, requestOptions).then(response => {
                 // prepare HTML search result container for new output
                 const resultContainer = document.getElementById("result");
                 // clean up from previous search
@@ -51,7 +55,7 @@
                     resultContainer.appendChild(tr);
                     return;
                 }
-                response.json().then(function(data) {
+                response.json().then(data => {
                     console.log(data);
                     const tr = document.createElement("tr");
                     for (let key in data) {
@@ -63,39 +67,26 @@
                 })
             })
         }
+
         function update_User() {
             const username = document.getElementById("update_name").value;
             const userid = document.getElementById("update_userid").value;
-            const body = {
-                userid: userid,
-                username: username
-            };
             const url = '/crud_api/update/' + userid + '/' + username;
-            fetch(url,{method: "PUT"})
-                .then(response => {
-                return response.json();
-            })
+            const request = {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer my-token',
+                },
+            };
+            fetch(url, request)
+                .then(response => response.json())
                 .then(data => {
-                console.log(data);
-                alert(data.name);
+                    console.log(data);
+                    alert(data.name);
             });
         }
 
-        function delete_User(){
-            const userid = document.getElementById("delete_userid").value;
-            const body = {
-                userid: userid,
-            };
-            const url='/crud_api/delete/' + userid  ;
-            fetch(url, {method:"DELETE"})
-                .then(response => {
-                return response.json();
-            })
-                .then(data => {
-                console.log(data);
-                alert(data.userid);
-            });
-        }
     </script>
 {% endblock %}
 
