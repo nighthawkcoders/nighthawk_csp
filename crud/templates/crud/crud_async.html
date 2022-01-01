@@ -33,8 +33,7 @@
             const get_userid = document.getElementById("read_userid");
             const userID = get_userid.value;
             const url='/crud_api/read/' + userID;
-            fetch(url)
-                .then(function (response) {
+            fetch(url).then(function (response) {
                 // prepare HTML search result container for new output
                 const resultContainer = document.getElementById("result");
                 // clean up from previous search
@@ -53,7 +52,7 @@
                     return;
                 }
                 response.json().then(function(data) {
-                console.log(data);
+                    console.log(data);
                     const tr = document.createElement("tr");
                     for (let key in data) {
                         const td = document.createElement("td");
