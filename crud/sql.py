@@ -1,16 +1,21 @@
+from __init__ import db
 from crud.model import Users
 
 
-# User/Users extraction from SQL
 def users_all():
-    """converts Users table into JSON list """
-    return [peep.read() for peep in Users.query.all()]
+    table = Users.query
+    return [peep.read() for peep in table]
+
+
+def users_all_sql():
+    table = db.session.execute('select * from users')
+    return table
 
 
 def users_ilike(term):
-    """filter Users table by term into JSON list """
+    """filter Users table by term into JSON list (ordered by User.name)"""
     term = "%{}%".format(term)  # "ilike" is case insensitive and requires wrapped  %term%
-    table = Users.query.filter((Users.name.ilike(term)) | (Users.email.ilike(term)))
+    table = Users.query.order_by(Users.name).filter((Users.name.ilike(term)) | (Users.email.ilike(term)))
     return [peep.read() for peep in table]
 
 
