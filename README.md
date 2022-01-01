@@ -1,8 +1,7 @@
 {% include navigation.html %}
 
-# <img src="static/assets/ncs_logo.png" height="60" alt=""> 
+# <img src="static/assets/ncs_logo.png" height="60" alt=""> GitHub Activity
 
-GitHub Activity
 ### <a href="https://github.com/nighthawkcoders/nighthawk_csp/graphs/contributors" target="_blank">CSP Repo Insights</a>
 
 <table>
@@ -22,10 +21,10 @@ GitHub Activity
 
 
 # Information Hub
-## General: <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki">Wiki</a></td>, <a href="https://padlet.com/jmortensen7/csp2022tri2">Padlet</a>, <a href="https://twitter.com/NighthawkCoding">Twitter</a>
-## Deployment: <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Deployment-Hardware-and-Setup">Hardware</a>, <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Deployment-Procedures">Procedures</a>, <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Deployment-Procedures">DNS, Subdomain, Certbot</a>
+### General: <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki">Wiki</a>, <a href="https://padlet.com/jmortensen7/csp2022tri2">Padlet</a>, <a href="https://twitter.com/NighthawkCoding">Twitter</a>
+### Deployment: <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Deployment-Hardware-and-Setup">Hardware</a>, <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Deployment-Procedures">Procedures</a>, <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Deployment-Procedures">DNS, Subdomain, Certbot</a>
 
-# Week Highlights
+# Weekly Outline
 <table>
   <tr>
     <th>Week</th>
