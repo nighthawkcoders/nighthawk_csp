@@ -45,7 +45,8 @@ class Users(db.Model):
             "name": self.name,
             "email": self.email,
             "password": self.password,
-            "phone": self.phone
+            "phone": self.phone,
+            "query": "by_alc"  # This is for fun, a little watermark
         }
 
     # CRUD update: updates users name, password, phone
