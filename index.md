@@ -5,7 +5,8 @@ layout: default
 
 {% include_relative README.md %}
 
-# Contacts
-Nighthawk Coding Society [ {{ site.email }} ](mailto:{{ site.email }})
+# Nighthawk Coding Society Contacts
+WebSite [ {{ site.webserver }} ]({{ site.webserver }})
+Email [ {{ site.email }} ](mailto:{{ site.email }})
 
 
