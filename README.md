@@ -1,9 +1,8 @@
-{% include navigation.html %}
-<nav>
-    <h4>Table of Contents</h4>
-    * this unordered seed list will be replaced by toc as unordered list
-    {:toc}
-</nav>
+---
+layout: page
+---
+{% include toc.html %}
+
 # <img src="static/assets/ncs_logo.png" height="60" alt=""> GitHub Activity
 
 ### <a href="https://github.com/nighthawkcoders/nighthawk_csp/graphs/contributors" target="_blank">CSP Repo Insights</a>
