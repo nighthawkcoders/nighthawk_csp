@@ -14,7 +14,7 @@
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
             const phone = document.getElementById("phone").value;
-            const request = {
+            const requestOptions = {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -22,12 +22,31 @@
                 },
             };
             const url='/crud_api/create/' + name + '/' + email+ '/' + password + '/' + phone;
-            fetch(url, request)
-                .then(response => response.json())
-                .then(data => {
+            fetch(url, requestOptions).then(response => {
+                // prepare HTML search result container for new output
+                const resultContainer = document.getElementById("result");
+                // trap error response from Web API
+                if (response.status !== 200) {
+                    const errorMsg = 'Database response error: ' + response.status;
+                    console.log(errorMsg);
+                    const tr = document.createElement("tr");
+                    const td = document.createElement("td");
+                    td.innerHTML = errorMsg;
+                    tr.appendChild(td);
+                    resultContainer.appendChild(tr);
+                    return;
+                }
+                response.json().then(data => {
                     console.log(data);
-                    alert(data.name);
-                });
+                    const tr = document.createElement("tr");
+                    for (let key in data) {
+                        const td = document.createElement("td");
+                        td.innerHTML = data[key];
+                        tr.appendChild(td);
+                    }
+                    resultContainer.appendChild(tr);
+                })
+            })
         }
 
         function read_User(){
@@ -72,21 +91,45 @@
             const username = document.getElementById("update_name").value;
             const userid = document.getElementById("update_userid").value;
             const url = '/crud_api/update/' + userid + '/' + username;
-            const request = {
+            const requestOptions = {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer my-token',
                 },
             };
-            fetch(url, request)
-                .then(response => response.json())
-                .then(data => {
+            fetch(url, requestOptions).then(response => {
+                // prepare HTML search result container for new output
+                const table = document.getElementById("result");
+                response.json().then(data => {
                     console.log(data);
-                    alert(data.name);
-            });
+                    const updateRow = $("#result td:contains("+userid+")").closest("tr").find("td");
+                    updateRow[1].innerHTML = username;
+                    console.log(updateRow);
+
+                })
+            })
         }
 
+        function delete_User(){
+            const userid = document.getElementById("delete_userid").value;
+            const url = '/crud_api/delete/' + userid;
+            const requestOptions = {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer my-token',
+                },
+            };
+            fetch(url, requestOptions).then(response => {
+                // prepare HTML search result container for new output
+
+                response.json().then(data => {
+                    console.log(data);
+                    $("#"+"result").find("td:contains('"+userid+"')").closest('tr').remove();
+                    })
+            })
+        }
     </script>
 {% endblock %}
 
@@ -152,7 +195,7 @@
         <div class="container py-4">
             <div class="p-5 mb-4 bg-light text-dark rounded-3">
                 <h2>Create a new record</h2>
-                <form method="POST" ID="create"  >
+
                     <table class="table">
                         <thead>
                         <tr>
@@ -169,11 +212,11 @@
                             <td><input type="password" name="password" id="password" required></td>
                             <td><input type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="1234567890" required></td>
                             <td><button onclick="create_User()">Create</button></td>
+
                         </tr>
                         </tbody>
                     </table>
                     <p id="pswError"></p>
-                </form>
             </div>
         </div>
         <div class="container py-4">
@@ -187,7 +230,7 @@
                                 <tr>
                                     <td>
                                         <select name="userid" id="read_userid">
-                                            <optgroup label="userid">
+                                            <optgroup label="userid" id="oguserid">
                                                 {% for row in table %}
                                                     <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
                                                 {% endfor %}
@@ -213,7 +256,7 @@
                                 <tr>
                                     <td>
                                         <select name="userid" id="update_userid">
-                                            <optgroup label="userid">
+                                            <optgroup label="userid" id="oguserid">
                                                 {% for row in table %}
                                                     <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
                                                 {% endfor %}
@@ -236,7 +279,7 @@
                                 <tr>
                                     <td>
                                         <select name="userid" id="delete_userid">
-                                            <optgroup label="userid">
+                                            <optgroup label="userid" id="oguserid">
                                                 {% for row in table %}
                                                     <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
                                                 {% endfor %}
