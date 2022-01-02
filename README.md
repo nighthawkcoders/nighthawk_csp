@@ -1,4 +1,5 @@
 {% include navigation.html %}
+{% include toc.html %}
 
 # <img src="static/assets/ncs_logo.png" height="60" alt=""> GitHub Activity
 
