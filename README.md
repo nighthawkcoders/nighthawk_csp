@@ -1,10 +1,9 @@
 # GitHub Activity
-
 ### <a href="https://github.com/nighthawkcoders/nighthawk_csp/graphs/contributors" target="_blank">CSP Repo Insights</a>
 
 <table>
   <tr>
-    <th>Name</th>
+    <th>User Activity</th>
     <th>Profile</th>
     <th>Issues</th>
     <th>Commits</th>
