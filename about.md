@@ -1,6 +1,6 @@
 {% include navigation.html %}
 
-# Nighthawk Coding Society Contacts
+# About Page
 WebSite [ {{ site.webserver }} ]({{ site.webserver }})
 Email [ {{ site.email }} ](mailto:{{ site.email }})
 Twitter [ {{ site.twitter }} ]({{ site.twitter }})
