@@ -46,16 +46,16 @@ def user_by_email(email):
     return Users.query.filter_by(email=email).first()
 
 
-# Convert results of an SQL Query to a JSON ready format in Python
+# ALGORITHM to convert the results of an SQL Query to a JSON ready format in Python
 def sqlquery_2_list(rows):
     out_list = []
     keys = rows.keys()  # "Keys" are the columns of the sql query
     for values in rows:  # "Values" are rows within the SQL database
         row_dictionary = {}
-        for i in range(len(keys)):  # This loop lines up K, V pairs in JSON like style
+        for i in range(len(keys)):  # This loop lines up K, V pairs, same as JSON style
             row_dictionary[keys[i]] = values[i]
         row_dictionary["query"] = "by_sql"  # This is for fun a little watermark
-        out_list.append(row_dictionary)
+        out_list.append(row_dictionary)  # Finally we have a out_list row
     return out_list
 
 
