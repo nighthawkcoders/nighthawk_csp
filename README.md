@@ -30,7 +30,7 @@
   </tr>
   <tr>
     <td>1</td>
-    <td>Layout, Async</td>
+    <td>SCCS, Async</td>
     <td><a href="https://apclassroom.collegeboard.org/103/home?unit=1">1.3,1.4</a></td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-Tech-Talk-1.1---Organizing--Bootstrap-Files,-Templates-layouts,-and-Sassy">TT1.1, </a><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-Tech-Talk-1.2---Accessing-data-Asynchronously">TT1.2</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1943423">Project Approval</a></td>
