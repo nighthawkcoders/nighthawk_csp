@@ -14,27 +14,24 @@
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri2-TT4-Binary-Search,-Calling-Procedures,-and-Developing-Procedures">TT4</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1956804">Resolute</a></td>
   </tr>
-  </tr>
-    <tr>
+  <tr>
     <td>3</td>
-    <td><a href=""></a></td>
-    <td><a href=""></a></td>
+    <td>Practice Exam</td>
+    <td><a href="https://apclassroom.collegeboard.org/103/assignments?quizId=4323650&status=assigned">MCQ Test</a></td>
     <td><a href=""></a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1943626">WIP Project Review</a></td>
   </tr>
-  </tr>
-    <tr>
+  <tr>
     <td>2</td>
-    <td><a href=""></a></td>
-    <td><a href=""></a></td>
+    <td>BOF Meetings</td>
+    <td><a href="https://apclassroom.collegeboard.org/103/home?unit=2">2.3,2.4</a></td>
     <td><a href=""></a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1943619">Home Pages</a></td>
   </tr>
-  </tr>
-    <tr>
+  <tr>
     <td>1</td>
-    <td><a href=""></a></td>
-    <td><a href=""></a></td>
+    <td>Project Approval</td>
+    <td><a href="https://apclassroom.collegeboard.org/103/home?unit=1">1.3,1.4</a></td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-Tech-Talk-1.1---Organizing--Bootstrap-Files,-Templates-layouts,-and-Sassy">TT1.1</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1943423">Project Approval</a></td>
   </tr>
