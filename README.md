@@ -9,28 +9,28 @@
    </tr>
    <tr>
     <td>4</td>
-    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/GitHub-Pages-and-Jekyll">Pages and Jekyll</a></td>
+    <td>Resolute, <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/GitHub-Pages-and-Jekyll">Jekyll</a></td>
     <td><a href="https://apclassroom.collegeboard.org/103/home?unit=3">3.11,3.12.3.13</a></td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri2-TT4-Binary-Search,-Calling-Procedures,-and-Developing-Procedures">TT4</a></td>
-    <td><a href="https://poway.instructure.com/courses/112435/assignments/1956804">Resolute</a></td>
+    <td><a href="https://poway.instructure.com/courses/112435/assignments/1956804">3, 4, 5</a></td>
   </tr>
   <tr>
     <td>3</td>
     <td>Practice Exam</td>
     <td><a href="https://apclassroom.collegeboard.org/103/assignments?quizId=4323650&status=assigned">MCQ Test</a></td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-Tech-Talk-3---Deployment---Subdomains-and-Certbot">TT3</a></td>
-    <td><a href="https://poway.instructure.com/courses/112435/assignments/1943626">WIP Project Review</a></td>
+    <td><a href="https://poway.instructure.com/courses/112435/assignments/1943626">WIP Review</a></td>
   </tr>
   <tr>
     <td>2</td>
-    <td>BOF Meetings</td>
+    <td>BOF, Databases</td>
     <td><a href="https://apclassroom.collegeboard.org/103/home?unit=2">2.3,2.4</a></td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-Tech-Talk-2-SQLite-Database-Intro">TT2</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1943619">Home Pages</a></td>
   </tr>
   <tr>
     <td>1</td>
-    <td>Project Approval</td>
+    <td>Layout, Async</td>
     <td><a href="https://apclassroom.collegeboard.org/103/home?unit=1">1.3,1.4</a></td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-Tech-Talk-1.1---Organizing--Bootstrap-Files,-Templates-layouts,-and-Sassy">TT1.1, </a><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-Tech-Talk-1.2---Accessing-data-Asynchronously">TT1.2</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1943423">Project Approval</a></td>
