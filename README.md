@@ -20,7 +20,7 @@
     <td><a href=""></a></td>
     <td><a href=""></a></td>
     <td><a href=""></a></td>
-    <td><a href=""></a></td>
+    <td><a href="https://poway.instructure.com/courses/112435/assignments/1943626">WIP Project Review</a></td>
   </tr>
   </tr>
     <tr>
@@ -28,7 +28,7 @@
     <td><a href=""></a></td>
     <td><a href=""></a></td>
     <td><a href=""></a></td>
-    <td><a href=""></a></td>
+    <td><a href="https://poway.instructure.com/courses/112435/assignments/1943619">Home Pages</a></td>
   </tr>
   </tr>
     <tr>
@@ -36,7 +36,7 @@
     <td><a href=""></a></td>
     <td><a href=""></a></td>
     <td><a href=""></a></td>
-    <td><a href=""></a></td>
+    <td><a href="https://poway.instructure.com/courses/112435/assignments/1943423">Project Approval</a></td>
   </tr>
 </table>
 
