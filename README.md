@@ -25,7 +25,7 @@
     <td>2</td>
     <td>BOF Meetings</td>
     <td><a href="https://apclassroom.collegeboard.org/103/home?unit=2">2.3,2.4</a></td>
-    <td><a href=""></a></td>
+    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-Tech-Talk-2-SQLite-Database-Intro">TT2</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1943619">Home Pages</a></td>
   </tr>
   <tr>
