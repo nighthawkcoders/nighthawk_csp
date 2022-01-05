@@ -9,7 +9,7 @@
    </tr>
    <tr>
     <td>4</td>
-    <td>Resolute, <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/GitHub-Pages-and-Jekyll">Jekyll</a></td>
+    <td>Procedures, <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/GitHub-Pages-and-Jekyll">Jekyll</a></td>
     <td><a href="https://apclassroom.collegeboard.org/103/home?unit=3">3.11,3.12.3.13</a></td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri2-TT4-Binary-Search,-Calling-Procedures,-and-Developing-Procedures">TT4</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1956804">3, 4, 5</a></td>
@@ -23,7 +23,7 @@
   </tr>
   <tr>
     <td>2</td>
-    <td>BOF, Databases</td>
+    <td>Databases</td>
     <td><a href="https://apclassroom.collegeboard.org/103/home?unit=2">2.3,2.4</a></td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-Tech-Talk-2-SQLite-Database-Intro">TT2</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1943619">Home Pages</a></td>
