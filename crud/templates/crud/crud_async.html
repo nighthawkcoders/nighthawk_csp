@@ -10,6 +10,7 @@
 
     <script>
         function create_User(){
+            verifyPassword("click");
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
@@ -29,22 +30,39 @@
                 if (response.status !== 200) {
                     const errorMsg = 'Database response error: ' + response.status;
                     console.log(errorMsg);
-                    const tr = document.createElement("tr");
-                    const td = document.createElement("td");
-                    td.innerHTML = errorMsg;
-                    tr.appendChild(td);
-                    resultContainer.appendChild(tr);
+                    document.getElementById("pswError").innerHTML =
+                        "Email already exists in table";
                     return;
                 }
                 response.json().then(data => {
                     console.log(data);
                     const tr = document.createElement("tr");
                     for (let key in data) {
-                        const td = document.createElement("td");
-                        td.innerHTML = data[key];
-                        tr.appendChild(td);
+                        if (key !== 'query') {
+                            const td = document.createElement("td");
+                            td.innerHTML = data[key];
+                            tr.appendChild(td);
+                        }
                     }
                     resultContainer.appendChild(tr);
+                    //Update the Userid drop downs with the new/created userid
+                    let optGrp = document.getElementById("ogr_userid");
+                    let option = document.createElement("option");
+                    option.innerText = data['userID'];
+                    optGrp.appendChild(option);
+                    optGrp = document.getElementById("ogu_userid");
+                    option = document.createElement("option");
+                    option.innerText = data['userID'];
+                    optGrp.appendChild(option);
+                    optGrp = document.getElementById("ogd_userid");
+                    option = document.createElement("option");
+                    option.innerText = data['userID'];
+                    optGrp.appendChild(option);
+                    document.getElementById("pswError").innerHTML ="";
+                    document.getElementById("name").value="";
+                    document.getElementById("email").value="";
+                    document.getElementById("password").value="";
+                    document.getElementById("phone").value="";
                 })
             })
         }
@@ -78,9 +96,11 @@
                     console.log(data);
                     const tr = document.createElement("tr");
                     for (let key in data) {
-                        const td = document.createElement("td");
-                        td.innerHTML = data[key];
-                        tr.appendChild(td);
+                        if (key !== 'query') {
+                            const td = document.createElement("td");
+                            td.innerHTML = data[key];
+                            tr.appendChild(td);
+                        }
                     }
                     resultContainer.appendChild(tr);
                 })
@@ -100,15 +120,23 @@
             };
             fetch(url, requestOptions).then(response => {
                 // prepare HTML search result container for new output
-                const table = document.getElementById("result");
                 response.json().then(data => {
                     console.log(data);
-                    const updateRow = $("#result td:contains("+userid+")").closest("tr").find("td");
-                    updateRow[1].innerHTML = username;
-                    console.log(updateRow);
+                    //const updateRow = $("#result td:contains("+userid+")").closest("tr").find("td");
+                    //updateRow[1].innerHTML = username;
+                        let table = document.getElementById('data');
+                        let rows = table.querySelectorAll('tbody tr');
+                        for(let i = 0; i < rows.length; ++i) {
+                            if (parseInt(rows[i].cells[0].innerHTML) == parseInt(userid)) {
+                                rows[i].cells[1].innerHTML = username;
+                            }
+                        }
+                        document.getElementById("update_name").value="";
+
+                    })
 
                 })
-            })
+
         }
 
         function delete_User(){
@@ -126,8 +154,19 @@
 
                 response.json().then(data => {
                     console.log(data);
-                    $("#"+"result").find("td:contains('"+userid+"')").closest('tr').remove();
-                    })
+                  //  $("#"+"result").find("td:contains('"+userid+"')").closest('tr').remove();
+                    let table = document.getElementById('data');
+                    let rows = table.querySelectorAll('tbody tr');
+                    for(let i = 0; i < rows.length; ++i) {
+                        if (parseInt(rows[i].cells[0].innerHTML) == parseInt(userid)) {
+                            document.getElementById("data").deleteRow(i+1);
+                            document.getElementById("delete_userid").options[i].style.display = "none";
+                            document.getElementById("read_userid").options[i].style.display = "none";
+                            document.getElementById("update_userid").options[i].style.display = "none";
+                        }
+                    }
+
+                })
             })
         }
     </script>
@@ -159,7 +198,7 @@
                 </div>
                 <div class="row align-items-md-stretch">
                     <div class="container-fluid py-5">
-                        <table class="table">
+                        <table class="table" id="data">
                             <thead>
                             <tr>
                                 <th>ID</th>
@@ -211,7 +250,7 @@
                             <td><input type="email" name="email" id="email" placeholder="abc@xyz.org" required></td>
                             <td><input type="password" name="password" id="password" required></td>
                             <td><input type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="1234567890" required></td>
-                            <td><button onclick="create_User()">Create</button></td>
+                            <td ><button id="create" onclick="create_User()">Create</button></td>
 
                         </tr>
                         </tbody>
@@ -230,9 +269,9 @@
                                 <tr>
                                     <td>
                                         <select name="userid" id="read_userid">
-                                            <optgroup label="userid" id="oguserid">
+                                            <optgroup id="ogr_userid" label="userid" >
                                                 {% for row in table %}
-                                                    <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                    <option id="option" label="{{ row['userID'] }}">{{ row['userID'] }}</option>
                                                 {% endfor %}
                                             </optgroup>
                                         </select>
@@ -256,7 +295,7 @@
                                 <tr>
                                     <td>
                                         <select name="userid" id="update_userid">
-                                            <optgroup label="userid" id="oguserid">
+                                            <optgroup id="ogu_userid" label="userid" >
                                                 {% for row in table %}
                                                     <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
                                                 {% endfor %}
@@ -279,7 +318,7 @@
                                 <tr>
                                     <td>
                                         <select name="userid" id="delete_userid">
-                                            <optgroup label="userid" id="oguserid">
+                                            <optgroup id="ogd_userid" label="userid">
                                                 {% for row in table %}
                                                     <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
                                                 {% endfor %}
