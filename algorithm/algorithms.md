@@ -15,12 +15,12 @@
         * Resulting fibonacci number is calculated: 34
         * Series is displayed in 'List' form: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
         * Build up series from 0 to 10 is shown
-<img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/algorithm/static/fibonacci.png" height="400" alt="">
+    <img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/algorithm/static/fibonacci.png" height="400" alt="">
 
 * The [palindrome.py](https://github.com/nighthawkcoders/nighthawk_csp/blob/master/algorithm/palindrome.py) follows OOP method as well.  This "Class" contains the candidate string and the algorithms determines if the string is a palindromes.   All the steps that lead to determining palindrome status are preserved in the object.  This does not contain a 'main'.
-** Review of visual presentation of Palindrome Algorithm
-*** String is taken as input (word or phrase): "A man a plan a canal panama"
-*** Algorithm takes 10 steps to determine result is "True", meaning string is a palindrome
-*** Spaces, capitals, and some special characters are ignored in comparison
-*** Each test from left most character to right most character are represented in 'testing series'
-<img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/algorithm/static/palindrome.png" height="400" alt="">
+    * Review of visual presentation of Palindrome Algorithm
+        * String is taken as input (word or phrase): "A man a plan a canal panama"
+        * Algorithm takes 10 steps to determine result is "True", meaning string is a palindrome
+        * Spaces, capitals, and some special characters are ignored in comparison
+        * Each test from left most character to right most character are represented in 'testing series'
+    <img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/algorithm/static/palindrome.png" height="400" alt="">
