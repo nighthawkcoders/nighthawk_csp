@@ -9,7 +9,7 @@
    </tr>
    <tr>
     <td>5</td>
-    <td>Algorithms, <a href="https://csp.nighthawkcodingsociety.com/algorithm/fibonacci/">Fibo</a></td>, <a href="https://csp.nighthawkcodingsociety.com/algorithm/palindrome/">Pali</a></td>
+    <td>Algorithms, <a href="https://csp.nighthawkcodingsociety.com/algorithm/fibonacci/">Fibo</a>, <a href="https://csp.nighthawkcodingsociety.com/algorithm/palindrome/">Pali</a></td>
     <td><a href="https://apclassroom.collegeboard.org/103/home?unit=3">3.14,3.15</a></td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TT5---Algorithms">TT4</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1967730">PBL Showing</a></td>
