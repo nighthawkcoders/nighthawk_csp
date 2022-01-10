@@ -10,6 +10,7 @@
 
     <script>
         function create_User(){
+            //Validate Password (must be 6-20 characters in len)
             verifyPassword("click");
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
@@ -22,7 +23,9 @@
                     'Authorization': 'Bearer my-token',
                 },
             };
+            //url for Create API
             const url='/crud_api/create/' + name + '/' + email+ '/' + password + '/' + phone;
+            //Asynch fetch API call to the database to create a new user
             fetch(url, requestOptions).then(response => {
                 // prepare HTML search result container for new output
                 const resultContainer = document.getElementById("result");
@@ -30,25 +33,32 @@
                 if (response.status !== 200) {
                     const errorMsg = 'Database response error: ' + response.status;
                     console.log(errorMsg);
+                    // Email must be unique, no duplicates allowed
                     document.getElementById("pswError").innerHTML =
-                        "Email already exists in table";
+                        "Email already exists in the table";
                     return;
                 }
+                // response contains valid result
                 response.json().then(data => {
                     console.log(data);
+                    //add a table row for the new/created userid
                     const tr = document.createElement("tr");
                     for (let key in data) {
                         if (key !== 'query') {
+                            //create a DOM element for the data(cells) in table rows
                             const td = document.createElement("td");
                             td.innerHTML = data[key];
+                            //append the DOM data element to the table
                             tr.appendChild(td);
                         }
                     }
                     resultContainer.appendChild(tr);
                     //Update the Userid drop downs with the new/created userid
                     let optGrp = document.getElementById("ogr_userid");
+                    //create a DOM element for the option(new userid) in the option group(dropdown)
                     let option = document.createElement("option");
                     option.innerText = data['userID'];
+                    //add the new userid to the dropdown
                     optGrp.appendChild(option);
                     optGrp = document.getElementById("ogu_userid");
                     option = document.createElement("option");
@@ -66,14 +76,16 @@
                 })
             })
         }
-
+        // fetch the record from the database for a chosen userid
         function read_User(){
             const get_userid = document.getElementById("read_userid");
             const userID = get_userid.value;
+            //url for Read API
             const url='/crud_api/read/' + userID;
             const requestOptions = {
                 method: 'GET',
             };
+            //Async fetch API call to the database
             fetch(url, requestOptions).then(response => {
                 // prepare HTML search result container for new output
                 const resultContainer = document.getElementById("result");
@@ -92,16 +104,21 @@
                     resultContainer.appendChild(tr);
                     return;
                 }
+                // response contains valid result
                 response.json().then(data => {
                     console.log(data);
+                    //create a table row for the new user
                     const tr = document.createElement("tr");
                     for (let key in data) {
                         if (key !== 'query') {
+                            //create a cell for each key
                             const td = document.createElement("td");
                             td.innerHTML = data[key];
+                            //add each cell to the table row
                             tr.appendChild(td);
                         }
                     }
+                    // append the row to the table
                     resultContainer.appendChild(tr);
                 })
             })
@@ -110,6 +127,7 @@
         function update_User() {
             const username = document.getElementById("update_name").value;
             const userid = document.getElementById("update_userid").value;
+            //url for Update API
             const url = '/crud_api/update/' + userid + '/' + username;
             const requestOptions = {
                 method: 'PUT',
@@ -119,18 +137,31 @@
                 },
             };
             fetch(url, requestOptions).then(response => {
-                // prepare HTML search result container for new output
+                // trap error response from Web API
+                if (response.status !== 200) {
+                    const errorMsg = 'Database response error: ' + response.status;
+                    console.log(errorMsg);
+                    document.getElementById("pswError").innerHTML = errorMsg;
+                    return;
+                }
+                // response contains valid result
                 response.json().then(data => {
                     console.log(data);
-                    //const updateRow = $("#result td:contains("+userid+")").closest("tr").find("td");
-                    //updateRow[1].innerHTML = username;
-                        let table = document.getElementById('data');
+
+                    //search for the required userid in the table row
+                        let table = document.getElementById('users');
                         let rows = table.querySelectorAll('tbody tr');
                         for(let i = 0; i < rows.length; ++i) {
+                            //search for the required userid starting at row 0, column 0
                             if (parseInt(rows[i].cells[0].innerHTML) == parseInt(userid)) {
+                                //for the selected userid, update the username in column 1
                                 rows[i].cells[1].innerHTML = username;
                             }
                         }
+                    //Another way of doing it is with jquery, in the table, find closest tr containing data and get td text
+                    //const updateRow = $("#result td:contains("+userid+")").closest("tr").find("td");
+                    //updateRow[1].innerHTML = username;
+                        //clear the input box after update
                         document.getElementById("update_name").value="";
 
                     })
@@ -141,6 +172,7 @@
 
         function delete_User(){
             const userid = document.getElementById("delete_userid").value;
+            //url for Delete API
             const url = '/crud_api/delete/' + userid;
             const requestOptions = {
                 method: 'DELETE',
@@ -150,21 +182,33 @@
                 },
             };
             fetch(url, requestOptions).then(response => {
-                // prepare HTML search result container for new output
-
+                // trap error response from Web API
+                if (response.status !== 200) {
+                    const errorMsg = 'Database response error: ' + response.status;
+                    console.log(errorMsg);
+                    document.getElementById("pswError").innerHTML = errorMsg;
+                    return;
+                }
+                // response contains valid result
                 response.json().then(data => {
                     console.log(data);
-                  //  $("#"+"result").find("td:contains('"+userid+"')").closest('tr').remove();
-                    let table = document.getElementById('data');
+
+                    let table = document.getElementById('users');
                     let rows = table.querySelectorAll('tbody tr');
+                    //search for the required userid in the HTML table
                     for(let i = 0; i < rows.length; ++i) {
+                        //search for the userid starting at row 0, column 0
                         if (parseInt(rows[i].cells[0].innerHTML) == parseInt(userid)) {
-                            document.getElementById("data").deleteRow(i+1);
+                            //delete the table row for the matched userid
+                            document.getElementById("users").deleteRow(i+1);
+                            //remove the deleted userid from the dropdowns
                             document.getElementById("delete_userid").options[i].style.display = "none";
                             document.getElementById("read_userid").options[i].style.display = "none";
                             document.getElementById("update_userid").options[i].style.display = "none";
                         }
                     }
+                    //Another way of doing it is with jquery, in the table, find closest tr containing data and delete it
+                    //$("#"+"result").find("td:contains('"+userid+"')").closest('tr').remove();
 
                 })
             })
@@ -198,7 +242,7 @@
                 </div>
                 <div class="row align-items-md-stretch">
                     <div class="container-fluid py-5">
-                        <table class="table" id="data">
+                        <table class="table" id="users">
                             <thead>
                             <tr>
                                 <th>ID</th>
@@ -250,7 +294,7 @@
                             <td><input type="email" name="email" id="email" placeholder="abc@xyz.org" required></td>
                             <td><input type="password" name="password" id="password" required></td>
                             <td><input type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="1234567890" required></td>
-                            <td ><button id="create" onclick="create_User()">Create</button></td>
+                            <td ><button onclick="create_User()">Create</button></td>
 
                         </tr>
                         </tbody>
