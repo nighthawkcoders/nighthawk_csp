@@ -7,6 +7,7 @@
 {% block meta %}
     <title>CRUD page</title>
     <script src={{  url_for("crud.static", filename="javascript/validation.js", version='101') }}></script>
+    <script src={{  url_for("crud.static", filename="javascript/reload_page.js", version='101') }}></script>
 {% endblock %}
 
 <!-- CONTENT (in <body>), content for this page -->
@@ -118,7 +119,7 @@
                                                     <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
                                                 {% endfor %}
                                             </optgroup>
-                                    </select>
+                                        </select>
                                     </td>
                                     <td>
                                         <input type="submit" value="Read">
