@@ -53,5 +53,8 @@ def method2():
 
 # bitwise evaluation vs truth table
 if __name__ == "__main__":
+    print("***** Method 1 *****")
+    method1()
+    print("***** Method 2 *****")
     method2()
 
