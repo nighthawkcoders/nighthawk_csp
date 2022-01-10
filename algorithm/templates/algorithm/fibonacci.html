@@ -13,7 +13,7 @@
             <h3>Type the nth number in the fibonacci sequence?</h3>
             <form id="fibForm" action="{{ url_for('algorithm.fibonacci') }}" method="POST" >
                 <label for="series"></label>
-                <input name="series" id="series" type="number" min="2" max="100" >
+                <input name="series" id="series" type="number" value="2" min="2" max="100" >
                 <button>Go!</button>
             </form>
 

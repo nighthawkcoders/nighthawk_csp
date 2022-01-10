@@ -7,10 +7,8 @@
             <img src="{{ url_for('algorithm.static', filename='palindrome.jpeg') }}" height="60px" class="d-inline-block align-center" alt="">
             <span class="fs-4">Palindrome Algorithm</span>
         </header>
-
-
         <div class="row mx-3 mb-4 bg-primary rounded-3 align-items-md-stretch">
-            <h3>Type the nth number in the fibonacci sequence?</h3>
+            <h3>Enter a string:</h3>
             <form id="paliForm" action="{{ url_for('algorithm.palindrome') }}" method="POST" >
                 <label for="candidate"></label>
                 <input name="candidate" id="candidate" type="text" placeholder="{{palindrome.candidate}}">
