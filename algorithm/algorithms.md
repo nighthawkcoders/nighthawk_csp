@@ -10,7 +10,7 @@
 #### The [palindrome.py](https://github.com/nighthawkcoders/nighthawk_csp/blob/master/algorithm/palindrome.py) follows OOP method as well.  This "Class" contains the candidate string and the algorithms determines if the string is a palindromes.   All the steps that lead to determining palindrome status are preserved in the object.  This does not contain a 'main'.
 
 ### MVC review of Fibonacci
-<img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/algorithm/static/fibonacci.png" height="200" alt="">
+<img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/algorithm/static/fibonacci.png" height="400" alt="">
 
 ### MVC review of Palindrome
-<img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/algorithm/static/fibonacci.png" height="200" alt="">
+<img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/algorithm/static/fibonacci.png" height="400" alt="">
