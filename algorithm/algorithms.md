@@ -13,4 +13,4 @@
 <img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/algorithm/static/fibonacci.png" height="400" alt="">
 
 ### MVC review of Palindrome
-<img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/algorithm/static/fibonacci.png" height="400" alt="">
+<img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/algorithm/static/palindrome.png" height="400" alt="">
