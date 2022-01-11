@@ -77,3 +77,7 @@ def covid19():
         print(country["country_name"])
     """
     return render_template("covid19.html", stats=stats)
+
+@app_starter.route('/life')
+def greet():
+    return render_template("life.html")
