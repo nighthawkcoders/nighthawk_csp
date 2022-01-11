@@ -79,5 +79,5 @@ def covid19():
     return render_template("covid19.html", stats=stats)
 
 @app_starter.route('/life')
-def greet():
+def life():
     return render_template("life.html")
