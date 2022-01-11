@@ -39,8 +39,8 @@
       </tr>
        <tr>
         <td>4 Naid</td>
-        <td>Natalie</td>        
-        <td>Reem</td>
+        <td>Riya</td>        
+        <td>Natalie</td>
         <td>Arushi</td>
         <td>Yolanda</td>
        </tr>
