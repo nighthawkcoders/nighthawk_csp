@@ -10,7 +10,7 @@
 </tr>
 
 <tr>
-<td>5</td>
+<td>6</td>
 <td>
 3.16 Simulations 3.17 Algorithm Efficiency 3.18 Undecidable Problems
 </td>
