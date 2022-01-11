@@ -8,6 +8,52 @@
 <th>Topic</th>
 <th>Assigned</th>
 </tr>
+
+<tr>
+<td>5</td>
+<td>
+3.16 Simulations 3.17 Algorithm Efficiency 3.18 Undecidable Problems
+</td>
+<td>
+    <table>
+       <tr>
+        <th>Period</th>
+        <th>001</th>
+        <th>TO</th>
+        <th>002</th>
+        <th>003</th>
+       </tr>
+       <tr>
+        <td>3</td>
+        <td>Anthony</td>
+        <td>Val</td>
+        <td>Avinh</td>
+        <td>Sophie</td>
+       </tr>
+       <tr>
+        <td>4 Mort</td>
+        <td>Aadya</td>
+        <td>Kevin</td>
+        <td>Raiden</td>
+        <td>Katie</td>
+      </tr>
+       <tr>
+        <td>4 Naid</td>
+        <td>Natalie</td>        
+        <td>Reem</td>
+        <td>Arushi</td>
+        <td>Yolanda</td>
+       </tr>
+       <tr>
+        <td>5</td>
+        <td>Soren</td>
+        <td>Neha</td>
+        <td>Allison</td>
+        <td>Christina</td>
+       </tr>
+    </table>
+</td>
+</tr>  
     
 <tr>
 <td>5</td>
