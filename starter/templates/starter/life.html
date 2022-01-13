@@ -20,7 +20,7 @@
     let CELL_SIZE = "15px"; 
     let container = document.getElementById("container");
 
-    // Add CSS to container to make it a frid
+    // Add CSS to container to make it a grid
     container.style["grid-template-columns"] = `repeat(${BASE}, ${CELL_SIZE})`;
     // Add squares to grid
     for(let i=0; i<BASE*BASE; i++) {
@@ -81,7 +81,7 @@
     }
 
 
-    // will be called whenver a cell is clicked
+    // will be called whenever a cell is clicked
     function clicked() {
         const id = parseInt(this.id.substring(5), 10); // the id of a cell is "cell-XX" where XX is the index
         toggleCell(id); // if a cell is clicked we will toggle it
@@ -111,7 +111,7 @@
         const u = y-1;
         const d = y+1;
 
-        const neighbors = 0 + 
+        const neighbors = 0 +
             safeGet(l, y) +
             safeGet(r, y) +
             safeGet(x, u) +
