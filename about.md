@@ -10,7 +10,7 @@
 </tr>
 
 <tr>
-<td>6</td>
+<td>7</td>
 <td>
 3.16 Simulations 3.17 Algorithm Efficiency 3.18 Undecidable Problems
 </td>
@@ -25,35 +25,76 @@
        </tr>
        <tr>
         <td>3</td>
-        <td>Anthony</td>
+        <td>Avinh</td>
         <td>Val</td>
+        <td>Sophie</td>
+        <td>Anthony</td>
+       </tr>
+       <tr>
+        <td>4 Mort</td>
+        <td>Raiden</td>
+        <td>Kevin</td>
+        <td>Katie</td>
+        <td>Aadya</td>
+      </tr>
+       <tr>
+        <td>4 Naid</td>
+        <td>Arushi</td>
+        <td>Natalie</td>
+        <td>Yolanda</td>
+        <td>Riya</td>        
+       </tr>
+       <tr>
+        <td>5</td>
+        <td>Allison</td>
+        <td>Neha</td>
+        <td>Christina</td>
+        <td>Soren</td>
+       </tr>
+    </table>
+</td>
+</tr>  
+
+<tr>
+<td>6</td>
+<td>
+<a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TT6-Vocab-Competency">Vocab Competency</a>
+</td>
+<td>
+    <table>
+       <tr>
+        <th>Period</th>
+        <th>001</th>
+        <th>002</th>
+        <th>003</th>
+       </tr>
+       <tr>
+        <td>3</td>
+        <td>Anthony</td>
         <td>Avinh</td>
         <td>Sophie</td>
        </tr>
        <tr>
         <td>4 Mort</td>
         <td>Aadya</td>
-        <td>Kevin</td>
         <td>Raiden</td>
         <td>Katie</td>
       </tr>
        <tr>
         <td>4 Naid</td>
         <td>Riya</td>        
-        <td>Natalie</td>
         <td>Arushi</td>
         <td>Yolanda</td>
        </tr>
        <tr>
         <td>5</td>
         <td>Soren</td>
-        <td>Neha</td>
         <td>Allison</td>
         <td>Christina</td>
        </tr>
     </table>
 </td>
-</tr>  
+</tr>      
     
 <tr>
 <td>5</td>
