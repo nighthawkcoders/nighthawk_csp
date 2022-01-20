@@ -80,4 +80,4 @@ def covid19():
 
 @app_starter.route('/life')
 def life():
-    return render_template("life.html")
+    return render_template("../frontend/templates/frontend/life.html")

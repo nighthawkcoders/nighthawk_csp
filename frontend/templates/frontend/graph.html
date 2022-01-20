@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block meta %}
+    <title>Graph</title>
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center">JavaScript - Draw on Canvas</h1>
+    <div class="container py-4 bg-primary" style="text-align:center;">
+        <canvas id="canvas" width="512" height="384" ></canvas>
+    </div>
+
+    <script>
+        // https://www.w3schools.com/graphics/canvas_intro.asp
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const width = canvas.width;
+        const height = canvas.height;
+        const unit = 16;   // unit block size
+
+
+        // grid based off of width, height
+        function grid(){
+            // color and pen width
+            ctx.strokeStyle = 'white';
+            ctx.lineWidth = 1;
+            // make graph paper look
+            for (let col = 0; col < width; col += unit) {
+                for (let row = 0; row < height; row += unit) {
+                    ctx.strokeRect(col, row, unit, unit);
+                }
+            }
+        }
+
+        // axis lines
+        function axis() {
+            // color and pen width
+            ctx.strokeStyle = 'red';
+            ctx.lineWidth = 3;
+
+            // x & y zero midpoints of grid
+            const x0 = width*.5;
+            const y0 = height*.5;
+            // x-axis
+            ctx.moveTo(0, y0);
+            ctx.lineTo(width, y0);
+            ctx.stroke();
+            // y-axis
+            ctx.moveTo(x0, 0);
+            ctx.lineTo(x0, height);
+            ctx.stroke();
+        }
+
+        // square using lines
+        function square() {
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 5;
+
+            // starting coordinates
+            const x = unit;
+            const y = unit;
+            // length of sides is 4 units
+            const l = unit*4;
+
+            // draw a square
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x, y+l);
+            ctx.lineTo(x+l, y+l);
+            ctx.lineTo(x+l, y);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+        }
+        // three actions
+        grid();
+        axis();
+        // hack 1: make square according to grid positioning
+        square();
+        // hack 2: plot line or square on grid from user input according
+    </script>
+{% endblock %}
+
+</html>
