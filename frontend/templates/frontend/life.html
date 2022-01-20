@@ -16,14 +16,19 @@
 {% endblock %}
 
 {% block content %}
-    <!-- This is where we will dynamically add boxes to the grid -->
-    <div id="container">
+    <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+            <span class="fs-4">JavaScript - Remix of Game of Life</span>
+        </header>
+
+        <!-- Buttons that link to functions in javascript -->
+        <button onclick="start()" id="start-btn">start</button>
+        <button onclick="step()">step</button>
+
+        <div id="container" class="container py-4 bg-primary" style="text-align:center;">
+        </div>
 
     </div>
-
-    <!-- Buttons that link to functions in javascript -->
-   <button onclick="start()" id="start-btn">start</button>
-   <button onclick="step()">step</button>
 
     <script>
         // Conway's Game of Life https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
@@ -75,7 +80,7 @@
         function toggleCell(n) {
             let row = Math.floor(n/BASE);
             let col = n%BASE;
-            CELLS[row][col] = CELLS[row][col] == 0 ? 1 : 0;
+            CELLS[row][col] = CELLS[row][col] === 0 ? 1 : 0;
         }
 
 
@@ -124,8 +129,7 @@
             const u = y-1;
             const d = y+1;
 
-            const neighbors =
-                safeGet(l, y) +
+            return safeGet(l, y) +
                 safeGet(r, y) +
                 safeGet(x, u) +
                 safeGet(x, d) +
@@ -133,8 +137,6 @@
                 safeGet(r, u) +
                 safeGet(l, d) +
                 safeGet(r, d);
-
-            return neighbors;
         }
 
         function step() {

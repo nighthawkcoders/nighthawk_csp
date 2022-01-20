@@ -4,7 +4,7 @@
 {% block meta %}
     <!-- Page specific head additions -->
     <title>Snake Game</title>
-    <style type="text/css">
+    <style>
 
         ::selection {color:#FFFFFF; background:transparent;}
         ::-moz-selection {color:#FFFFFF; background:transparent;}
@@ -27,24 +27,6 @@
         }
         canvas:focus{
             outline: none;
-        }
-
-        /* Top Styles */
-        h1{
-            display: inline-block;
-            width: 100px;
-            font-size: 32px;
-            color: #FFFFFF;
-        }
-        .score{
-            display: inline-block;
-            width: 240px;
-            font-size: 20px;
-            color: #FFFFFF;
-            text-align: right;
-        }
-        .score_value{
-            font-size: inherit;
         }
 
         /* All screens style */
@@ -149,57 +131,62 @@
             color: #000;
         }
     </style>
-</div>
 {% endblock %}
 
 
 <<!-- <body> -->
 {% block content %}
-    <!-- Page specific body additions -->
-    <header class="wrap">
-        <h1>Snake</h1>
-        <p class="score">Score: <span id="score_value">0</span></p>
-    </header>
-    <canvas class="wrap" id="snake" width="320" height="320" tabindex="1"></canvas>
+    <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+            <span class="fs-4">JavaScript - Snake</span>
+        </header>
 
-    <!-- Game Over Screen -->
-    <div id="gameover">
-        <h2>Game Over</h2>
-        <p>press <span style="background-color: #FFFFFF; color: #000000">space</span> to begin a</p>
-        <a id="newgame_gameover">new game</a>
-        <a id="setting_gameover">settings</a>
-    </div>
+        <!-- Main Menu -->
+        <p class="fs-4">Score: <span id="score_value">0</span></p>
 
-    <!-- Setting screen -->
-    <div id="setting">
-        <h2>Settings</h2>
+        <!-- Play Border -->
+        <div class="container py-4 bg-primary" style="text-align:center;">
 
-        <a id="newgame_setting">new game</a>
+            <!-- Main Menu -->
+            <div id="menu">
+                <h2>Snake</h2>
+                <a id="newgame_menu">new game</a>
+                <a id="setting_menu">settings</a>
+            </div>
 
-        <p>Speed:
-            <input id="speed1" type="radio" name="speed" value="120" checked/>
-            <label for="speed1">Slow</label>
-            <input id="speed2" type="radio" name="speed" value="75"/>
-            <label for="speed2">Normal</label>
-            <input id="speed3" type="radio" name="speed" value="35"/>
-            <label for="speed3">Fast</label>
-        </p>
+            <!-- Play Screen -->
+            <canvas id="snake" class="wrap" width="320" height="320" tabindex="1"></canvas>
 
-        <p>Wall:
-            <input id="wallon" type="radio" name="wall" value="1" checked/>
-            <label for="wallon">On</label>
-            <input id="walloff" type="radio" name="wall" value="0"/>
-            <label for="walloff">Off</label>
-        </p>
+            <!-- Game Over -->
+            <div id="gameover">
+                <h2>Game Over</h2>
+                <p>press <span style="background-color: #FFFFFF; color: #000000">space</span> to begin a</p>
+                <a id="newgame_gameover">new game</a>
+                <a id="setting_gameover">settings</a>
+            </div>
 
-    </div>
+            <!-- Settings Screen -->
+            <div id="setting">
+                <h2>Settings</h2>
+                <a id="newgame_setting">new game</a>
+                <p>Speed:
+                    <input id="speed1" type="radio" name="speed" value="120" checked/>
+                    <label for="speed1">Slow</label>
+                    <input id="speed2" type="radio" name="speed" value="75"/>
+                    <label for="speed2">Normal</label>
+                    <input id="speed3" type="radio" name="speed" value="35"/>
+                    <label for="speed3">Fast</label>
+                </p>
+                <p>Wall:
+                    <input id="wallon" type="radio" name="wall" value="1" checked/>
+                    <label for="wallon">On</label>
+                    <input id="walloff" type="radio" name="wall" value="0"/>
+                    <label for="walloff">Off</label>
+                </p>
+            </div>
 
-    <!-- Main Menu Screen -->
-    <div id="menu">
-        <h2>Snake</h2>
+        </div>
 
-        <a id="newgame_menu">new game</a>
-        <a id="setting_menu">settings</a>
     </div>
 
     <script type="text/javascript">
@@ -336,7 +323,7 @@
                         if(snake[i].y < 0){
                             snake[i].y = snake[i].y + (canvas.height / 10);
                         }
-                        if(snake[i].y == canvas.height / 10){
+                        if(snake[i].y === canvas.height / 10){
                             snake[i].y = snake[i].y - (canvas.height / 10);
                         }
                     }
@@ -346,7 +333,7 @@
 
                 // Autophagy death
                 for(let i = 1; i < snake.length; i++){
-                    if (snake[0].x == snake[i].x && snake[0].y == snake[i].y){
+                    if (snake[0].x === snake[i].x && snake[0].y === snake[i].y){
                         showScreen(3);
                         return;
                     }
@@ -425,8 +412,8 @@
             /////////////////////////////////////////////////////////////
             let setWall = function(wall_value){
                 wall = wall_value;
-                if(wall == 0){screen_snake.style.borderColor = "#606060";}
-                if(wall == 1){screen_snake.style.borderColor = "#FFFFFF";}
+                if(wall === 0){screen_snake.style.borderColor = "#606060";}
+                if(wall === 1){screen_snake.style.borderColor = "#FFFFFF";}
             }
 
             /////////////////////////////////////////////////////////////
@@ -572,5 +559,4 @@
         window._taboola = window._taboola || [];
         _taboola.push({flush: true});
     </script>
-    <noscript><link data-avlabs-exclude-css="1"  rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT%20Sans%7CLato%3A400%2C700%2C400italic%2C700italic%7COswald%3A400%2C700&display=swap" /><link data-avlabs-exclude-css="1"  rel="stylesheet" href="https://www.html5canvastutorials.com/wp-content/cache/min/1/0fcb0cf7a8f93d4902209ce81d92cdff.css" media="all" data-minify="1" /><link data-avlabs-exclude-css="1"  rel="stylesheet" href="/libraries/codeMirror/lib/codemirror.css"></noscript>
 {% endblock %}

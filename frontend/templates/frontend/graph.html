@@ -6,9 +6,14 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="text-center">JavaScript - Draw on Canvas</h1>
-    <div class="container py-4 bg-primary" style="text-align:center;">
-        <canvas id="canvas" width="512" height="384" ></canvas>
+    <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+            <span class="fs-4">JavaScript - Draw on Canvas</span>
+        </header>
+
+        <div class="container py-4 bg-primary" style="text-align:center;">
+            <canvas id="canvas" width="512" height="384" ></canvas>
+        </div>
     </div>
 
     <script>
@@ -80,5 +85,3 @@
         // hack 2: plot line or square on grid from user input according
     </script>
 {% endblock %}
-
-</html>
