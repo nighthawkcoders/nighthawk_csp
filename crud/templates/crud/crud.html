@@ -12,14 +12,14 @@
 
 <!-- CONTENT (in <body>), content for this page -->
 {% block content %}
-    <div class="container py-4 text-light bg-success">
-        <header class="pb-3 mb-4 border-bottom">
-            <div class="d-flex align-items-center text-light text-decoration-none">
-                <span class="fs-4">SQL CRUD Admin Page</span>
-            </div>
+    <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+            <span class="fs-4">SQL CRUD Admin Page</span>
         </header>
+    </div>
+    <div class="container py-4 text-light bg-success">
 
-        <div class="container py-4">
+        <div class="container bg-secondary py-4">
             <div class="p-5 mb-4 bg-light text-dark rounded-3">
                 <h2>Table Viewer</h2>
                 <div class="row align-items-md-stretch">
@@ -72,7 +72,7 @@
         </div>
 
 
-        <div class="container py-4">
+        <div class="container bg-secondary py-4">
             <div class="p-5 mb-4 bg-light text-dark rounded-3">
                 <h2>Create a new record</h2>
                 <form method="POST" ID="create" action={{url_for('crud.create')}} >
@@ -101,7 +101,7 @@
 
         </div>
 
-        <div class="container py-4">
+        <div class="container bg-secondary py-4">
 
             <div class="row mb-4 bg-light text-dark rounded-3">
 
