@@ -141,10 +141,8 @@
             <span class="fs-4">JavaScript - Snake</span>
         </header>
 
-        <!-- Main Menu -->
         <p class="fs-4">Score: <span id="score_value">0</span></p>
 
-        <!-- Play Border -->
         <div class="container py-4 bg-primary" style="text-align:center;">
 
             <!-- Main Menu -->
@@ -300,11 +298,7 @@
                 snake.pop();
                 snake.unshift({x: _x, y: _y});
 
-
-                // --------------------
-
                 // Wall
-
                 if(wall === 1){
                     // On
                     if (snake[0].x < 0 || snake[0].x === canvas.width / 10 || snake[0].y < 0 || snake[0].y === canvas.height / 10){
@@ -329,9 +323,7 @@
                     }
                 }
 
-                // --------------------
-
-                // Autophagy death
+                // crash into self death
                 for(let i = 1; i < snake.length; i++){
                     if (snake[0].x === snake[i].x && snake[0].y === snake[i].y){
                         showScreen(3);
@@ -339,36 +331,31 @@
                     }
                 }
 
-                // --------------------
-
-                // Eat Food
+                // Eat Food and make updates
                 if(checkBlock(snake[0].x, snake[0].y, food.x, food.y)){
                     snake[snake.length] = {x: snake[0].x, y: snake[0].y};
-                    score += 1;
-                    altScore(score);
+                    altScore(++score);
                     addFood();
                     activeDot(food.x, food.y);
                 }
 
-                // --------------------
-
+                // repaint canvas
                 ctx.beginPath();
-                ctx.fillStyle = "#000000";
+                ctx.fillStyle = "royalblue";
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-                // --------------------
-
+                // paint snake
                 for(let i = 0; i < snake.length; i++){
                     activeDot(snake[i].x, snake[i].y);
                 }
 
-                // --------------------
-
+                // paint food
                 activeDot(food.x, food.y);
 
                 // Debug
                 //document.getElementById("debug").innerHTML = snake_dir + " " + snake_next_dir + " " + snake[0].x + " " + snake[0].y;
 
+                // recursive call after speed delay
                 setTimeout(mainLoop, snake_speed);
             }
 
@@ -458,7 +445,7 @@
                 canvas = document.getElementById("snake");
                 ctx = canvas.getContext("2d");
 
-                // Screens
+                // Game Screens
                 screen_snake = document.getElementById("snake");
                 screen_menu = document.getElementById("menu");
                 screen_gameover = document.getElementById("gameover");
@@ -466,31 +453,24 @@
 
                 // Buttons
                 button_newgame_menu = document.getElementById("newgame_menu");
-                button_newgame_setting = document.getElementById("newgame_setting");
                 button_newgame_gameover = document.getElementById("newgame_gameover");
+                button_newgame_setting = document.getElementById("newgame_setting");
                 button_setting_menu = document.getElementById("setting_menu");
                 button_setting_gameover = document.getElementById("setting_gameover");
-
-                // etc
-                ele_score = document.getElementById("score_value");
-                speed_setting = document.getElementsByName("speed");
-                wall_setting = document.getElementsByName("wall");
-
-                // --------------------
-
+                // Actions to Buttons
                 button_newgame_menu.onclick = function(){newGame();};
                 button_newgame_gameover.onclick = function(){newGame();};
                 button_newgame_setting.onclick = function(){newGame();};
                 button_setting_menu.onclick = function(){showScreen(2);};
-                button_setting_gameover.onclick = function(){showScreen(2)};
+                button_setting_gameover.onclick = function(){showScreen(2);};
+                // Other Labels
+                ele_score = document.getElementById("score_value");
+                speed_setting = document.getElementsByName("speed");
+                wall_setting = document.getElementsByName("wall");
 
+                // Default settings
                 setSnakeSpeed(150);
                 setWall(1);
-
-                showScreen("menu");
-
-                // --------------------
-                // Settings
 
                 // speed
                 for(let i = 0; i < speed_setting.length; i++){
