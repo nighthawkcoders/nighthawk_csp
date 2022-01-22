@@ -46,19 +46,9 @@
         /* Menu Screen Style */
         #menu{
             display: block;
-            width: 340px;
-            padding-top: 95px;
-            padding-bottom: 95px;
-            font-size: 40px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-            color: #FFF;
         }
 
         #menu h2{
-            -webkit-animation: logo-ani 1000ms linear infinite;
-            animation: logo-ani 1000ms linear infinite;
             margin-bottom: 30px;
 
         }
@@ -67,55 +57,19 @@
             font-size: 30px;
         }
 
-        @-webkit-keyframes logo-ani{
-            50%{-webkit-transform: scale(1.3,1.3);}
-            100%{-webkit-transform: scale(1.0,1.0);}
-        }
-
-        @keyframes logo-ani{
-            50%{transform: scale(1.3,1.3);}
-            100%{transform: scale(1.0,1.0);}
-        }
-
 
         /* Game Over Screen Style */
 
         #gameover{
             display: none;
-            width: 340px;
-            padding-top: 95px;
-            padding-bottom: 95px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
             font-size: 30px;
-            color: #FFF;
         }
 
-        #gameover p{
-            margin-top: 25px;
-            font-size: 20px;
-        }
 
         /* Settings Screen Style */
         #setting{
             display: none;
-            width: 340px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-top: 85px;
-            padding-bottom: 85px;
             font-size: 30px;
-            color: #FFF;
-            text-align: center;
-        }
-
-        #setting h2{
-            margin-bottom: 15px;
-        }
-
-        #setting p{
-            margin-top: 10px;
         }
 
         #setting input{
@@ -146,25 +100,27 @@
         <div class="container py-4 bg-primary" style="text-align:center;">
 
             <!-- Main Menu -->
-            <div id="menu">
+            <div id="menu" class="py-4 text-light">
                 <h2>Snake</h2>
-                <a id="newgame_menu">new game</a>
-                <a id="setting_menu">settings</a>
+                <a id="game_menu" class="link-alert">new game</a>
+                <a id="setting_menu" class="link-alert">settings</a>
             </div>
-
 
             <!-- Game Over -->
-            <div id="gameover">
+            <div id="gameover" class="py-4 text-light">
                 <h2>Game Over</h2>
                 <p>press <span style="background-color: #FFFFFF; color: #000000">space</span> to begin a</p>
-                <a id="newgame_gameover">new game</a>
-                <a id="setting_gameover">settings</a>
+                <a id="game_over" class="link-alert">new game</a>
+                <a id="setting_gameover" class="link-alert">settings</a>
             </div>
 
+            <!-- Play Screen -->
+            <canvas id="snake" class="wrap" width="320" height="320" tabindex="1"></canvas>
+
             <!-- Settings Screen -->
-            <div id="setting">
+            <div id="setting" class="py-4 text-light">
                 <h2>Settings</h2>
-                <a id="newgame_setting">new game</a>
+                <a id="game_setting">new game</a>
                 <p>Speed:
                     <input id="speed1" type="radio" name="speed" value="120" checked/>
                     <label for="speed1">Slow</label>
@@ -180,10 +136,6 @@
                     <label for="walloff">Off</label>
                 </p>
             </div>
-
-            <!-- Play Screen -->
-            <canvas id="snake" class="wrap" width="320" height="320" tabindex="1"></canvas>
-
 
         </div>
 
@@ -217,10 +169,10 @@
             let screen_snake;
             let screen_menu;
             let screen_setting;
-            let screen_gameover;
-            let button_newgame_menu;
-            let button_newgame_setting;
-            let button_newgame_gameover;
+            let screen_game_over;
+            let button_game_menu;
+            let button_game_setting;
+            let button_game_over;
             let button_setting_menu;
             let button_setting_gameover;
             let ele_score;
@@ -418,28 +370,28 @@
                         screen_snake.style.display = "block";
                         screen_menu.style.display = "none";
                         screen_setting.style.display = "none";
-                        screen_gameover.style.display = "none";
+                        screen_game_over.style.display = "none";
                         break;
 
                     case 1:
                         screen_snake.style.display = "none";
                         screen_menu.style.display = "block";
                         screen_setting.style.display = "none";
-                        screen_gameover.style.display = "none";
+                        screen_game_over.style.display = "none";
                         break;
 
                     case 2:
                         screen_snake.style.display = "none";
                         screen_menu.style.display = "none";
                         screen_setting.style.display = "block";
-                        screen_gameover.style.display = "none";
+                        screen_game_over.style.display = "none";
                         break;
 
                     case 3:
                         screen_snake.style.display = "block";
                         screen_menu.style.display = "none";
                         screen_setting.style.display = "none";
-                        screen_gameover.style.display = "block";
+                        screen_game_over.style.display = "block";
                         break;
                 }
             }
@@ -454,19 +406,20 @@
                 // Game Screens
                 screen_snake = document.getElementById("snake");
                 screen_menu = document.getElementById("menu");
-                screen_gameover = document.getElementById("gameover");
+                screen_game_over = document.getElementById("gameover");
                 screen_setting = document.getElementById("setting");
 
                 // Buttons
-                button_newgame_menu = document.getElementById("newgame_menu");
-                button_newgame_gameover = document.getElementById("newgame_gameover");
-                button_newgame_setting = document.getElementById("newgame_setting");
+                button_game_menu = document.getElementById("game_menu");
+                button_game_over = document.getElementById("game_over");
+                button_game_setting = document.getElementById("game_setting");
                 button_setting_menu = document.getElementById("setting_menu");
                 button_setting_gameover = document.getElementById("setting_gameover");
+
                 // Actions to Buttons
-                button_newgame_menu.onclick = function(){newGame();};
-                button_newgame_gameover.onclick = function(){newGame();};
-                button_newgame_setting.onclick = function(){newGame();};
+                button_game_menu.onclick = function(){newGame();};
+                button_game_over.onclick = function(){newGame();};
+                button_game_setting.onclick = function(){newGame();};
                 button_setting_menu.onclick = function(){showScreen(2);};
                 button_setting_gameover.onclick = function(){showScreen(2);};
                 // Other Labels
@@ -501,7 +454,7 @@
                 }
 
                 document.onkeydown = function(evt){
-                    if(screen_gameover.style.display === "block"){
+                    if(screen_game_over.style.display === "block"){
                         evt = evt || window.event;
                         if(evt.keyCode === 32){
                             newGame();
