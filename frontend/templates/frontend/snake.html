@@ -111,7 +111,7 @@
                 <h2>Game Over</h2>
                 <p>press <span style="background-color: #FFFFFF; color: #000000">space</span> to begin a</p>
                 <a id="game_over" class="link-alert">new game</a>
-                <a id="setting_gameover" class="link-alert">settings</a>
+                <a id="setting_menu2" class="link-alert">settings</a>
             </div>
 
             <!-- Play Screen -->
@@ -174,7 +174,7 @@
             let button_game_setting;
             let button_game_over;
             let button_setting_menu;
-            let button_setting_gameover;
+            let button_setting_menu2;
             let ele_score;
             let speed_setting;
             let wall_setting;
@@ -414,14 +414,14 @@
                 button_game_over = document.getElementById("game_over");
                 button_game_setting = document.getElementById("game_setting");
                 button_setting_menu = document.getElementById("setting_menu");
-                button_setting_gameover = document.getElementById("setting_gameover");
+                button_setting_menu2 = document.getElementById("setting_menu2");
 
                 // Actions to Buttons
                 button_game_menu.onclick = function(){newGame();};
                 button_game_over.onclick = function(){newGame();};
                 button_game_setting.onclick = function(){newGame();};
                 button_setting_menu.onclick = function(){showScreen(2);};
-                button_setting_gameover.onclick = function(){showScreen(2);};
+                button_setting_menu2.onclick = function(){showScreen(2);};
                 // Other Labels
                 ele_score = document.getElementById("score_value");
                 speed_setting = document.getElementsByName("speed");
