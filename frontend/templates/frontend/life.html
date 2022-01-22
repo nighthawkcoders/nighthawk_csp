@@ -34,14 +34,14 @@
         // Conway's Game of Life https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 
         // Constants
-        let BASE = 40;
+        let GRID_SIZE = 40;
         let CELL_SIZE = "15px";
         let container = document.getElementById("container");
 
         // Add CSS to container to make it a grid
-        container.style["grid-template-columns"] = `repeat(${BASE}, ${CELL_SIZE})`;
+        container.style["grid-template-columns"] = `repeat(${GRID_SIZE}, ${CELL_SIZE})`;
         // Add squares to grid
-        for(let i=0; i<BASE*BASE; i++) {
+        for(let i=0; i<GRID_SIZE*GRID_SIZE; i++) {
             let di = document.createElement('div');
             di.style['width'] = CELL_SIZE;
             di.style['height'] = CELL_SIZE;
@@ -54,8 +54,8 @@
         }
 
 
-        const CELLS = Array(BASE).fill().map(() => Array(BASE).fill(0)); // create 2D array filled with '0'
-        const safeindex = (x, y) => !(x < 0 || x >= BASE || y<0 || y >= BASE); // Anonymous function to check bounds of index
+        const CELLS = Array(GRID_SIZE).fill().map(() => Array(GRID_SIZE).fill(0)); // create 2D array filled with '0'
+        const safeindex = (x, y) => !(x < 0 || x >= GRID_SIZE || y<0 || y >= GRID_SIZE); // Anonymous function to check bounds of index
         // safeindex(0,0) = true
         // safeindex(-1,-1) = false, because -1 falls out of bounds
 
@@ -71,15 +71,15 @@
 
         // helper function to set a square on the grid
         function setCell(n, v) {
-            let row = Math.floor(n/BASE);
-            let col = n%BASE;
+            let row = Math.floor(n/GRID_SIZE);
+            let col = n%GRID_SIZE;
             CELLS[row][col] = v;
         }
 
         // Helper function to toggle a cell by it's index
         function toggleCell(n) {
-            let row = Math.floor(n/BASE);
-            let col = n%BASE;
+            let row = Math.floor(n/GRID_SIZE);
+            let col = n%GRID_SIZE;
             CELLS[row][col] = CELLS[row][col] === 0 ? 1 : 0;
         }
 
@@ -88,7 +88,7 @@
         function updateContainer() {
             CELLS.forEach((arr, r) => {
                 arr.forEach((val, c) => {
-                    let n = r*BASE + c;
+                    let n = r*GRID_SIZE + c;
                     if(val === 1) {
                         document.getElementById("cell-"+n).style['background-color'] = 'yellow';
                     }else {
@@ -115,7 +115,7 @@
 
         // Randomly setting cells to 1 in the grid
         function randomInit(n) {
-            let max = BASE*BASE;
+            let max = GRID_SIZE*GRID_SIZE;
             for(let i=0; i<n; i++) {
                 setCell(Math.floor(Math.random()*max), 1)
             }
@@ -140,8 +140,8 @@
         }
 
         function step() {
-            for(let y=0; y<BASE; y++) {
-                for(let x=0; x<BASE; x++) { // for every square in the grid...
+            for(let y=0; y<GRID_SIZE; y++) {
+                for(let x=0; x<GRID_SIZE; x++) { // for every square in the grid...
 
                     const n = getNeighbors(x, y); // find how many alive neighbors it has
                     const val = safeGet(x, y); // Get the value of the cell
@@ -160,8 +160,8 @@
             }
 
             // Run through every modified cell and convert it to either alive or dead
-            for(let y=0; y<BASE; y++) {
-                for(let x=0; x<BASE; x++) {
+            for(let y=0; y<GRID_SIZE; y++) {
+                for(let x=0; x<GRID_SIZE; x++) {
                     CELLS[y][x] = Math.floor(CELLS[y][x]/2);
                 }}
 
