@@ -5,20 +5,14 @@
     <!-- Page specific head additions -->
     <title>Snake Game</title>
     <style>
-
-        ::selection {color:#FFFFFF; background:transparent;}
-        ::-moz-selection {color:#FFFFFF; background:transparent;}
-
+        /* canvas style */
         body{
         }
         .wrap{
             margin-left: auto;
             margin-right: auto;
         }
-        header{
-            width: 340px;
-            font-size: 0;
-        }
+
         canvas{
             display: none;
             border-style: solid;
@@ -29,55 +23,41 @@
             outline: none;
         }
 
-        /* All screens style */
-        #gameover a, #setting a, #menu a{
-            display: block;
+        /* Selection Style  */
+        #game_over, #setting, #menu {
+            font-size: 30px;
         }
 
-        #gameover a, #setting a:hover, #menu a:hover{
+        #game_over a, #setting a, #menu a{
+            display: block;
+            font-size: 30px;
+        }
+
+        #game_over a:hover, #setting a:hover, #menu a:hover{
             cursor: pointer;
         }
 
-        #gameover a:hover::before, #setting a:hover::before, #menu a:hover::before{
+        #game_over a:hover::before, #setting a:hover::before, #menu a:hover::before{
             content: ">";
             margin-right: 10px;
         }
 
-        /* Menu Screen Style */
+        /* Selection Control */
         #menu{
             display: block;
         }
 
-        #menu h2{
-            margin-bottom: 30px;
-
-        }
-
-        #menu a{
-            font-size: 30px;
-        }
-
-
-        /* Game Over Screen Style */
-
-        #gameover{
+        #game_over{
             display: none;
-            font-size: 30px;
         }
 
-
-        /* Settings Screen Style */
         #setting{
             display: none;
-            font-size: 30px;
         }
 
+        /* Setting Style */
         #setting input{
-            display:none;
-        }
-
-        #setting label{
-            cursor: pointer;
+            display: none;
         }
 
         #setting input:checked + label{
@@ -97,7 +77,7 @@
 
         <p class="fs-4">Score: <span id="score_value">0</span></p>
 
-        <div class="container py-4 bg-primary" style="text-align:center;">
+        <div class="container py-4 bg-secondary" style="text-align:center;">
 
             <!-- Main Menu -->
             <div id="menu" class="py-4 text-light">
@@ -107,11 +87,11 @@
             </div>
 
             <!-- Game Over -->
-            <div id="gameover" class="py-4 text-light">
+            <div id="game_over" class="py-4 text-light">
                 <h2>Game Over</h2>
                 <p>press <span style="background-color: #FFFFFF; color: #000000">space</span> to begin a</p>
                 <a id="game_over" class="link-alert">new game</a>
-                <a id="setting_gameover" class="link-alert">settings</a>
+                <a id="setting_game_over" class="link-alert">settings</a>
             </div>
 
             <!-- Play Screen -->
@@ -174,7 +154,7 @@
             let button_game_setting;
             let button_game_over;
             let button_setting_menu;
-            let button_setting_gameover;
+            let button_setting_game_over;
             let ele_score;
             let speed_setting;
             let wall_setting;
@@ -406,7 +386,7 @@
                 // Game Screens
                 screen_snake = document.getElementById("snake");
                 screen_menu = document.getElementById("menu");
-                screen_game_over = document.getElementById("gameover");
+                screen_game_over = document.getElementById("game_over");
                 screen_setting = document.getElementById("setting");
 
                 // Buttons
@@ -414,14 +394,14 @@
                 button_game_over = document.getElementById("game_over");
                 button_game_setting = document.getElementById("game_setting");
                 button_setting_menu = document.getElementById("setting_menu");
-                button_setting_gameover = document.getElementById("setting_gameover");
+                button_setting_game_over = document.getElementById("setting_game_over");
 
                 // Actions to Buttons
                 button_game_menu.onclick = function(){newGame();};
                 button_game_over.onclick = function(){newGame();};
                 button_game_setting.onclick = function(){newGame();};
                 button_setting_menu.onclick = function(){showScreen(2);};
-                button_setting_gameover.onclick = function(){showScreen(2);};
+                button_setting_game_over.onclick = function(){showScreen(2);};
                 // Other Labels
                 ele_score = document.getElementById("score_value");
                 speed_setting = document.getElementsByName("speed");
