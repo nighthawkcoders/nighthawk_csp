@@ -75,25 +75,36 @@
             ctx.stroke();
         }
 
-        function randomPlusMinus(high) {
-            let seed =  (Math.random() - 0.5) * 2; // from -1 to 1
-            return Math.floor(seed * high);
+        // randomly find
+        function randomPlusMinus(range) {
+            let pluMinusSeed =  (Math.random() - 0.499) * 2; // from -.998 to .998
+            return Math.round(pluMinusSeed * range);  // convert to rounded integer
         }
 
+        // randomly draw squares
         function randomDraw(i) {
+            // recursion base case
             if ( i <= 0) {
                 return;
             }
+            // obtain x, y coordinates on canvas
             let x = randomPlusMinus(canvas.width/unit/2);
             let y = randomPlusMinus(canvas.height/unit/2);
+            // obtain random length between 1 and 5
             let l = Math.floor((Math.random()) * 5) + 1;
+            // draw square
             square(x, y, l);
+            // timeout allows user to enjoy drawing effect
+            // this function calls itself, but decrements counter before call
             setTimeout(() => { randomDraw(--i); }, 150);
         }
+
+        // three basic operations, grid -- axis -- square
         grid();
         axis();
         square(-2, -2, 4);
 
+        // randomly draw 50 squares for fun
         randomDraw(50);
 
     </script>
