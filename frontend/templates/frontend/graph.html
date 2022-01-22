@@ -58,30 +58,43 @@
         }
 
         // square using lines
-        function square() {
+        function square(x0, y0, len) {
             ctx.strokeStyle = 'black';
             ctx.lineWidth = 5;
 
-            // starting coordinates
-            const x = unit;
-            const y = unit;
-            // length of sides is 4 units
-            const l = unit*4;
-
+            let x = x0*unit + (canvas.width/2);
+            let y = -y0*unit + (canvas.height/2);
+            let l = len*unit;
             // draw a square
             ctx.beginPath();
             ctx.moveTo(x, y);
-            ctx.lineTo(x, y+l);
-            ctx.lineTo(x+l, y+l);
             ctx.lineTo(x+l, y);
+            ctx.lineTo(x+l, y-l);
+            ctx.lineTo(x, y-l);   // positive y is negative orientation in grid
             ctx.lineTo(x, y);
             ctx.stroke();
         }
-        // three actions
+
+        function randomPlusMinus(high) {
+            let seed =  (Math.random() - 0.5) * 2; // from -1 to 1
+            return Math.floor(seed * high);
+        }
+
+        function randomDraw(i) {
+            if ( i <= 0) {
+                return;
+            }
+            let x = randomPlusMinus(canvas.width/unit/2);
+            let y = randomPlusMinus(canvas.height/unit/2);
+            let l = Math.floor((Math.random()) * 5) + 1;
+            square(x, y, l);
+            setTimeout(() => { randomDraw(--i); }, 150);
+        }
         grid();
         axis();
-        // hack 1: make square according to grid positioning
-        square();
-        // hack 2: plot line or square on grid from user input according
+        square(-2, -2, 4);
+
+        randomDraw(50);
+
     </script>
 {% endblock %}
