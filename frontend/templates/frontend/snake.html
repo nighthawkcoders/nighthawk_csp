@@ -143,13 +143,13 @@
 
     <script type="text/javascript">
 
-
         (function(){
 
             /* Global Variables */
             /////////////////////////////////////////////////////////////
 
             // Canvas & Context
+            const BLOCK = 10;
             let canvas;
             let ctx;
 
@@ -281,15 +281,13 @@
                     });
                 }
 
-                // spacebar
-                document.onkeydown = function(evt){
-                    if(screen_game_over.style.display === "block"){
-                        evt = evt || window.event;
-                        if(evt.keyCode === 32){
-                            newGame();
-                        }
-                    }
-                }
+                // activate window events
+                window.addEventListener("keydown", function(evt) {
+                    // spacebar detected
+                    if(evt.code === "Space")
+                        newGame();
+                }, true);
+
             }
 
 
@@ -315,7 +313,7 @@
                 // Wall
                 if(wall === 1){
                     // Wall on, Game over test
-                    if (snake[0].x < 0 || snake[0].x === canvas.width / 10 || snake[0].y < 0 || snake[0].y === canvas.height / 10){
+                    if (snake[0].x < 0 || snake[0].x === canvas.width / BLOCK || snake[0].y < 0 || snake[0].y === canvas.height / BLOCK){
                         showScreen(3);
                         return;
                     }
@@ -323,16 +321,16 @@
                     // Wall Off, Circle around
                     for(let i = 0, x = snake.length; i < x; i++){
                         if(snake[i].x < 0){
-                            snake[i].x = snake[i].x + (canvas.width / 10);
+                            snake[i].x = snake[i].x + (canvas.width / BLOCK);
                         }
-                        if(snake[i].x === canvas.width / 10){
-                            snake[i].x = snake[i].x - (canvas.width / 10);
+                        if(snake[i].x === canvas.width / BLOCK){
+                            snake[i].x = snake[i].x - (canvas.width / BLOCK);
                         }
                         if(snake[i].y < 0){
-                            snake[i].y = snake[i].y + (canvas.height / 10);
+                            snake[i].y = snake[i].y + (canvas.height / BLOCK);
                         }
-                        if(snake[i].y === canvas.height / 10){
-                            snake[i].y = snake[i].y - (canvas.height / 10);
+                        if(snake[i].y === canvas.height / BLOCK){
+                            snake[i].y = snake[i].y - (canvas.height / BLOCK);
                         }
                     }
                 }
@@ -378,27 +376,29 @@
             /* New Game setup */
             /////////////////////////////////////////////////////////////
             let newGame = function(){
-
+                // snake game screen
                 showScreen(0);
                 screen_snake.focus();
 
-                snake = [];
-                for(let i = 4; i >= 0; i--){
-                    snake.push({x: i, y: 15});
-                }
 
-                snake_next_dir = 1;
-
+                // game score to zero
                 score = 0;
                 altScore(score);
+
+                // initial snake
+                snake = [];
+                snake.push({x: 0, y: 15});
+                snake_next_dir = 1;
+
+                // food on canvas
                 addFood();
 
+                // activate canvas event
                 canvas.onkeydown = function(evt) {
-                    evt = evt || window.event;
                     changeDir(evt.keyCode);
                 }
-                mainLoop();
 
+                mainLoop();
             }
 
 
@@ -434,15 +434,15 @@
             /////////////////////////////////////////////////////////////
             let activeDot = function(x, y){
                 ctx.fillStyle = "#FFFFFF";
-                ctx.fillRect(x * 10, y * 10, 10, 10);
+                ctx.fillRect(x * BLOCK, y * BLOCK, BLOCK, BLOCK);
             }
 
 
             /* Random food placement */
             /////////////////////////////////////////////////////////////
             let addFood = function(){
-                food.x = Math.floor(Math.random() * ((canvas.width / 10) - 1));
-                food.y = Math.floor(Math.random() * ((canvas.height / 10) - 1));
+                food.x = Math.floor(Math.random() * ((canvas.width / BLOCK) - 1));
+                food.y = Math.floor(Math.random() * ((canvas.height / BLOCK) - 1));
                 for(let i = 0; i < snake.length; i++){
                     if(checkBlock(food.x, food.y, snake[i].x, snake[i].y)){
                         addFood();
