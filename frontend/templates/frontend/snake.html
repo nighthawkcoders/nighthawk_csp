@@ -6,19 +6,13 @@
     <title>Snake Game</title>
     <style>
 
-        ::selection {color:#FFFFFF; background:transparent;}
-        ::-moz-selection {color:#FFFFFF; background:transparent;}
-
         body{
         }
         .wrap{
             margin-left: auto;
             margin-right: auto;
         }
-        header{
-            width: 340px;
-            font-size: 0;
-        }
+
         canvas{
             display: none;
             border-style: solid;
@@ -30,11 +24,16 @@
         }
 
         /* All screens style */
+        #gameover p, #setting p, #menu p{
+            font-size: 20px;
+        }
+
         #gameover a, #setting a, #menu a{
+            font-size: 30px;
             display: block;
         }
 
-        #gameover a, #setting a:hover, #menu a:hover{
+        #gameover a:hover, #setting a:hover, #menu a:hover{
             cursor: pointer;
         }
 
@@ -43,33 +42,16 @@
             margin-right: 10px;
         }
 
-        /* Menu Screen Style */
         #menu{
             display: block;
         }
 
-        #menu h2{
-            margin-bottom: 30px;
-
-        }
-
-        #menu a{
-            font-size: 30px;
-        }
-
-
-        /* Game Over Screen Style */
-
         #gameover{
             display: none;
-            font-size: 30px;
         }
 
-
-        /* Settings Screen Style */
         #setting{
             display: none;
-            font-size: 30px;
         }
 
         #setting input{
@@ -102,6 +84,7 @@
             <!-- Main Menu -->
             <div id="menu" class="py-4 text-light">
                 <h2>Snake</h2>
+                <p>press <span style="background-color: #FFFFFF; color: #000000">space</span> to begin</p>
                 <a id="game_menu" class="link-alert">new game</a>
                 <a id="setting_menu" class="link-alert">settings</a>
             </div>
@@ -109,7 +92,7 @@
             <!-- Game Over -->
             <div id="gameover" class="py-4 text-light">
                 <h2>Game Over</h2>
-                <p>press <span style="background-color: #FFFFFF; color: #000000">space</span> to begin a</p>
+                <p>press <span style="background-color: #FFFFFF; color: #000000">space</span> to begin</p>
                 <a id="game_over" class="link-alert">new game</a>
                 <a id="setting_menu2" class="link-alert">settings</a>
             </div>
@@ -120,7 +103,9 @@
             <!-- Settings Screen -->
             <div id="setting" class="py-4 text-light">
                 <h2>Settings</h2>
-                <a id="game_setting">new game</a>
+                <p>press <span style="background-color: #FFFFFF; color: #000000">space</span> to begin</p>
+                <a id="game_setting" class="link-alert">new game</a>
+                <br>
                 <p>Speed:
                     <input id="speed1" type="radio" name="speed" value="120" checked/>
                     <label for="speed1">Slow</label>
@@ -145,43 +130,43 @@
 
         (function(){
 
-            /* Global Variables */
+            /* Attributes of Game */
             /////////////////////////////////////////////////////////////
 
             // Canvas & Context
-            const BLOCK = 10;
-            let canvas;
-            let ctx;
+            const canvas = document.getElementById("snake");
+            const ctx = canvas.getContext("2d");
 
-            // Snake
+            // HTML Game IDs
+            const SCREEN_SNAKE = 0;
+            const screen_snake = document.getElementById("snake");
+            const ele_score = document.getElementById("score_value");
+            const speed_setting = document.getElementsByName("speed");
+            const wall_setting = document.getElementsByName("wall");
+
+            // HTML Screen IDs (div)
+            const SCREEN_MENU = -1, SCREEN_GAME_OVER=1, SCREEN_SETTING=2;
+            const screen_menu = document.getElementById("menu");
+            const screen_game_over = document.getElementById("gameover");
+            const screen_setting = document.getElementById("setting");
+
+            // HTML Event IDs (a tags)
+            const button_game_menu = document.getElementById("game_menu");
+            const button_game_over = document.getElementById("game_over");
+            const button_game_setting = document.getElementById("game_setting");
+            const button_setting_menu = document.getElementById("setting_menu");
+            const button_setting_menu2 = document.getElementById("setting_menu2");
+
+            // Game Control
+            const BLOCK = 10;   // size of block rendering
+            let SCREEN = SCREEN_MENU;
             let snake;
             let snake_dir;
             let snake_next_dir;
             let snake_speed;
-
-            // Food
             let food = {x: 0, y: 0};
-
-            // Score
             let score;
-
-            // Wall
             let wall;
-
-            // HTML Elements
-            let screen_snake;
-            let screen_menu;
-            let screen_setting;
-            let screen_game_over;
-            let button_game_menu;
-            let button_game_setting;
-            let button_game_over;
-            let button_setting_menu;
-            let button_setting_menu2;
-            let ele_score;
-            let speed_setting;
-            let wall_setting;
-
 
             /* Display Control */
             /////////////////////////////////////////////////////////////
@@ -190,34 +175,28 @@
             // 2 for the settings screen
             // 3 for the game over screen
             let showScreen = function(screen_opt){
-                switch(screen_opt){
+                SCREEN = screen_opt;
 
-                    case 0:
+                switch(screen_opt){
+                    case SCREEN_SNAKE:
                         screen_snake.style.display = "block";
                         screen_menu.style.display = "none";
                         screen_setting.style.display = "none";
                         screen_game_over.style.display = "none";
                         break;
 
-                    case 1:
-                        screen_snake.style.display = "none";
-                        screen_menu.style.display = "block";
-                        screen_setting.style.display = "none";
-                        screen_game_over.style.display = "none";
-                        break;
-
-                    case 2:
-                        screen_snake.style.display = "none";
-                        screen_menu.style.display = "none";
-                        screen_setting.style.display = "block";
-                        screen_game_over.style.display = "none";
-                        break;
-
-                    case 3:
+                    case SCREEN_GAME_OVER:
                         screen_snake.style.display = "block";
                         screen_menu.style.display = "none";
                         screen_setting.style.display = "none";
                         screen_game_over.style.display = "block";
+                        break;
+
+                    case SCREEN_SETTING:
+                        screen_snake.style.display = "none";
+                        screen_menu.style.display = "none";
+                        screen_setting.style.display = "block";
+                        screen_game_over.style.display = "none";
                         break;
                 }
             }
@@ -226,40 +205,15 @@
             /* Settings Up Actions, Events  */
             /////////////////////////////////////////////////////////////
             window.onload = function(){
-
-                canvas = document.getElementById("snake");
-                ctx = canvas.getContext("2d");
-
-                // Game Screens
-                screen_snake = document.getElementById("snake");
-                screen_menu = document.getElementById("menu");
-                screen_game_over = document.getElementById("gameover");
-                screen_setting = document.getElementById("setting");
-
-                // Buttons
-                button_game_menu = document.getElementById("game_menu");
-                button_game_over = document.getElementById("game_over");
-                button_game_setting = document.getElementById("game_setting");
-                button_setting_menu = document.getElementById("setting_menu");
-                button_setting_menu2 = document.getElementById("setting_menu2");
-
-                // Actions to Buttons
+                // HTML Events to Functions
                 button_game_menu.onclick = function(){newGame();};
                 button_game_over.onclick = function(){newGame();};
                 button_game_setting.onclick = function(){newGame();};
-                button_setting_menu.onclick = function(){showScreen(2);};
-                button_setting_menu2.onclick = function(){showScreen(2);};
-
-                // Other Labels
-                ele_score = document.getElementById("score_value");
-                speed_setting = document.getElementsByName("speed");
-                wall_setting = document.getElementsByName("wall");
-
-                // Default settings
-                setSnakeSpeed(150);
-                setWall(1);
+                button_setting_menu.onclick = function(){showScreen(SCREEN_SETTING);};
+                button_setting_menu2.onclick = function(){showScreen(SCREEN_SETTING);};
 
                 // speed
+                setSnakeSpeed(150);
                 for(let i = 0; i < speed_setting.length; i++){
                     speed_setting[i].addEventListener("click", function(){
                         for(let i = 0; i < speed_setting.length; i++){
@@ -270,7 +224,8 @@
                     });
                 }
 
-                // wall
+                // wall setting
+                setWall(1);
                 for(let i = 0; i < wall_setting.length; i++){
                     wall_setting[i].addEventListener("click", function(){
                         for(let i = 0; i < wall_setting.length; i++){
@@ -284,14 +239,14 @@
                 // activate window events
                 window.addEventListener("keydown", function(evt) {
                     // spacebar detected
-                    if(evt.code === "Space")
+                    if(evt.code === "Space" && SCREEN !== SCREEN_SNAKE)
                         newGame();
                 }, true);
 
             }
 
 
-            /* Snake on the Go (Driver)  */
+            /* Snake is on the Go (Driver Function)  */
             /////////////////////////////////////////////////////////////
             let mainLoop = function(){
 
@@ -314,7 +269,7 @@
                 if(wall === 1){
                     // Wall on, Game over test
                     if (snake[0].x < 0 || snake[0].x === canvas.width / BLOCK || snake[0].y < 0 || snake[0].y === canvas.height / BLOCK){
-                        showScreen(3);
+                        showScreen(SCREEN_GAME_OVER);
                         return;
                     }
                 }else{
@@ -339,7 +294,7 @@
                 for(let i = 1; i < snake.length; i++){
                     // Game over test
                     if (snake[0].x === snake[i].x && snake[0].y === snake[i].y){
-                        showScreen(3);
+                        showScreen(SCREEN_GAME_OVER);
                         return;
                     }
                 }
@@ -377,9 +332,8 @@
             /////////////////////////////////////////////////////////////
             let newGame = function(){
                 // snake game screen
-                showScreen(0);
+                showScreen(SCREEN_SNAKE);
                 screen_snake.focus();
-
 
                 // game score to zero
                 score = 0;
