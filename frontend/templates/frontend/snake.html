@@ -405,22 +405,28 @@
             /* Key Inputs and Actions */
             /////////////////////////////////////////////////////////////
             let changeDir = function(key){
+                // test key and switch direction
+                switch(key) {
+                    case 37:    // left arrow
+                        if (snake_dir !== 1)    // not right
+                            snake_next_dir = 3; // then switch left
+                        break;
 
-                if(key === 38 && snake_dir !== 2){
-                    snake_next_dir = 0;
-                }else{
+                    case 38:    // up arrow
+                        if (snake_dir !== 2)    // not down
+                            snake_next_dir = 0; // then switch up
+                        break;
 
-                    if (key === 39 && snake_dir !== 3){
-                        snake_next_dir = 1;
-                    }else{
+                    case 39:    // right arrow
+                        if (snake_dir !== 3)    // not left
+                            snake_next_dir = 1; // then switch right
+                        break;
 
-                        if (key === 40 && snake_dir !== 0){
-                            snake_next_dir = 2;
-                        }else{
-
-                            if(key === 37 && snake_dir !== 1){
-                                snake_next_dir = 3;
-                            } } } }
+                    case 40:    // down arrow
+                        if (snake_dir !== 0)    // not up
+                            snake_next_dir = 2; // then switch down
+                        break;
+                }
 
             }
 
