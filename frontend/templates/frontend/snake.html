@@ -85,7 +85,7 @@
             <div id="menu" class="py-4 text-light">
                 <h2>Snake</h2>
                 <p>press <span style="background-color: #FFFFFF; color: #000000">space</span> to begin</p>
-                <a id="game_menu" class="link-alert">new game</a>
+                <a id="new_game" class="link-alert">new game</a>
                 <a id="setting_menu" class="link-alert">settings</a>
             </div>
 
@@ -93,8 +93,8 @@
             <div id="gameover" class="py-4 text-light">
                 <h2>Game Over</h2>
                 <p>press <span style="background-color: #FFFFFF; color: #000000">space</span> to begin</p>
-                <a id="game_over" class="link-alert">new game</a>
-                <a id="setting_menu2" class="link-alert">settings</a>
+                <a id="new_game1" class="link-alert">new game</a>
+                <a id="setting_menu1" class="link-alert">settings</a>
             </div>
 
             <!-- Play Screen -->
@@ -104,7 +104,7 @@
             <div id="setting" class="py-4 text-light">
                 <h2>Settings</h2>
                 <p>press <span style="background-color: #FFFFFF; color: #000000">space</span> to begin</p>
-                <a id="game_setting" class="link-alert">new game</a>
+                <a id="new_game2" class="link-alert">new game</a>
                 <br>
                 <p>Speed:
                     <input id="speed1" type="radio" name="speed" value="120" checked/>
@@ -151,11 +151,11 @@
             const screen_setting = document.getElementById("setting");
 
             // HTML Event IDs (a tags)
-            const button_game_menu = document.getElementById("game_menu");
-            const button_game_over = document.getElementById("game_over");
-            const button_game_setting = document.getElementById("game_setting");
+            const button_new_game = document.getElementById("new_game");
+            const button_new_game1 = document.getElementById("new_game1");
+            const button_new_game2 = document.getElementById("new_game2");
             const button_setting_menu = document.getElementById("setting_menu");
-            const button_setting_menu2 = document.getElementById("setting_menu2");
+            const button_setting_menu1 = document.getElementById("setting_menu1");
 
             // Game Control
             const BLOCK = 10;   // size of block rendering
@@ -202,15 +202,15 @@
             }
 
 
-            /* Settings Up Actions, Events  */
+            /* Actions and Events  */
             /////////////////////////////////////////////////////////////
             window.onload = function(){
                 // HTML Events to Functions
-                button_game_menu.onclick = function(){newGame();};
-                button_game_over.onclick = function(){newGame();};
-                button_game_setting.onclick = function(){newGame();};
+                button_new_game.onclick = function(){newGame();};
+                button_new_game1.onclick = function(){newGame();};
+                button_new_game2.onclick = function(){newGame();};
                 button_setting_menu.onclick = function(){showScreen(SCREEN_SETTING);};
-                button_setting_menu2.onclick = function(){showScreen(SCREEN_SETTING);};
+                button_setting_menu1.onclick = function(){showScreen(SCREEN_SETTING);};
 
                 // speed
                 setSnakeSpeed(150);
@@ -252,9 +252,9 @@
 
                 let _x = snake[0].x;
                 let _y = snake[0].y;
-                snake_dir = snake_next_dir;
+                snake_dir = snake_next_dir;   // read async event key
 
-                // 0 - Up, 1 - Right, 2 - Down, 3 - Left
+                // Direction 0 - Up, 1 - Right, 2 - Down, 3 - Left
                 switch(snake_dir){
                     case 0: _y--; break;
                     case 1: _x++; break;
@@ -262,10 +262,10 @@
                     case 3: _x--; break;
                 }
 
-                snake.pop();
-                snake.unshift({x: _x, y: _y});
+                snake.pop(); // tail is removed
+                snake.unshift({x: _x, y: _y}); // head is new in new position/orientation
 
-                // Wall
+                // Wall Checker
                 if(wall === 1){
                     // Wall on, Game over test
                     if (snake[0].x < 0 || snake[0].x === canvas.width / BLOCK || snake[0].y < 0 || snake[0].y === canvas.height / BLOCK){
@@ -290,7 +290,7 @@
                     }
                 }
 
-                // Snake bumps itself
+                // Snake vs Snake checker
                 for(let i = 1; i < snake.length; i++){
                     // Game over test
                     if (snake[0].x === snake[i].x && snake[0].y === snake[i].y){
@@ -299,7 +299,7 @@
                     }
                 }
 
-                // Snake eats food
+                // Snake eats food checker
                 if(checkBlock(snake[0].x, snake[0].y, food.x, food.y)){
                     snake[snake.length] = {x: snake[0].x, y: snake[0].y};
                     altScore(++score);
@@ -323,7 +323,7 @@
                 // Debug
                 //document.getElementById("debug").innerHTML = snake_dir + " " + snake_next_dir + " " + snake[0].x + " " + snake[0].y;
 
-                // Recursive call after speed delay
+                // Recursive call after speed delay, déjà vu
                 setTimeout(mainLoop, snake_speed);
             }
 
@@ -384,7 +384,7 @@
 
             }
 
-            /* Dot for Food and Snake part */
+            /* Dot for Food or Snake part */
             /////////////////////////////////////////////////////////////
             let activeDot = function(x, y){
                 ctx.fillStyle = "#FFFFFF";
