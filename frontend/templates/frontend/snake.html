@@ -152,8 +152,6 @@
                 <a id="setting_menu">settings</a>
             </div>
 
-            <!-- Play Screen -->
-            <canvas id="snake" class="wrap" width="320" height="320" tabindex="1"></canvas>
 
             <!-- Game Over -->
             <div id="gameover">
@@ -182,6 +180,10 @@
                     <label for="walloff">Off</label>
                 </p>
             </div>
+
+            <!-- Play Screen -->
+            <canvas id="snake" class="wrap" width="320" height="320" tabindex="1"></canvas>
+
 
         </div>
 
@@ -412,25 +414,29 @@
             let showScreen = function(screen_opt){
                 switch(screen_opt){
 
-                    case 0:  screen_snake.style.display = "block";
+                    case 0:
+                        screen_snake.style.display = "block";
                         screen_menu.style.display = "none";
                         screen_setting.style.display = "none";
                         screen_gameover.style.display = "none";
                         break;
 
-                    case 1:  screen_snake.style.display = "none";
+                    case 1:
+                        screen_snake.style.display = "none";
                         screen_menu.style.display = "block";
                         screen_setting.style.display = "none";
                         screen_gameover.style.display = "none";
                         break;
 
-                    case 2:  screen_snake.style.display = "none";
+                    case 2:
+                        screen_snake.style.display = "none";
                         screen_menu.style.display = "none";
                         screen_setting.style.display = "block";
                         screen_gameover.style.display = "none";
                         break;
 
-                    case 3: screen_snake.style.display = "none";
+                    case 3:
+                        screen_snake.style.display = "block";
                         screen_menu.style.display = "none";
                         screen_setting.style.display = "none";
                         screen_gameover.style.display = "block";
