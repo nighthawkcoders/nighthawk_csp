@@ -12,7 +12,7 @@
     <td>8</td>
     <td>Google Search</td>
     <td>nothing new</td>
-    <td><a href="">TT8</a></td>
+    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-Tech-Talk-8-Google-Search">TT8</a></td>
     <td><a href="">Crossover Coding</a></td>
    </tr>
    
