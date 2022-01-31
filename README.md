@@ -7,6 +7,14 @@
     <th>Tech Talk</th>
     <th>Canvas</th>
    </tr>
+
+   <tr>
+    <td>8</td>
+    <td>Google Search</td>
+    <td>nothing new</td>
+    <td><a href="">TT8</a></td>
+    <td><a href="">Crossover Coding</a></td>
+   </tr>
    
    <tr>
     <td>7</td>
@@ -15,7 +23,6 @@
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TT7-Graphing,-Simulations,-Snake">TT7</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1967730">PBL Showing Take 2</a></td>
    </tr>
-   <tr>
       
    <tr>
     <td>6</td>
@@ -25,13 +32,12 @@
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1995361">Mid Term Vocab Competency</a></td>
    </tr>
    <tr>
-      
     <td>5</td>
     <td>Algorithms, <a href="https://csp.nighthawkcodingsociety.com/algorithm/fibonacci/">Fibo</a>, <a href="https://csp.nighthawkcodingsociety.com/algorithm/palindrome/">Pali</a></td>
     <td><a href="https://apclassroom.collegeboard.org/103/home?unit=3">3.14,3.15</a></td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TT5---Algorithms">TT5</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1967730">PBL Showing</a></td>
-  </tr>
+   </tr>
    <tr>
     <td>4</td>
     <td>Procedures, Blueprint, <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/GitHub-Pages-and-Jekyll">Jekyll</a></td>
