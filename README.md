@@ -43,7 +43,7 @@
    <tr>
     <td>7</td>
     <td>Graphing, Simulation, Snake</td>
-    <td><a href="https://apclassroom.collegeboard.org/103/home?unit=3">3.16,3.17.3.18</a></td>
+    <td><a href="https://apclassroom.collegeboard.org/103/home?unit=3">3.16,3.17,3.18</a></td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TT7-Graphing,-Simulations,-Snake">TT7</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1967730">PBL Showing Take 2</a></td>
    </tr>
@@ -65,7 +65,7 @@
    <tr>
     <td>4</td>
     <td>Procedures, Blueprint, <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/GitHub-Pages-and-Jekyll">Jekyll</a></td>
-    <td><a href="https://apclassroom.collegeboard.org/103/home?unit=3">3.11,3.12.3.13</a></td>
+    <td><a href="https://apclassroom.collegeboard.org/103/home?unit=3">3.11,3.12,3.13</a></td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TT4-Binary-Search,-Calling-Procedures,-and-Developing-Procedures">TT4</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1956804">3, 4, 5</a></td>
   </tr>
