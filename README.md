@@ -51,7 +51,7 @@
    <tr>
     <td>6</td>
     <td>Mid Term and Ketchup</td>
-    <td>nothing new</td>
+    <td>none</td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TT6-Vocab-Competency">TT6</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1995361">Mid Term Vocab Competency</a></td>
    </tr>
