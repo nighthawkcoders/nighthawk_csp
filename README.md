@@ -28,7 +28,7 @@
     <td>9</td>
     <td>PBL 1, Teacher TPT, Student TT</td>
     <td><a href="https://apclassroom.collegeboard.org/103/home?unit=4">4.1, 4.2, 4.3</a></td>
-    <td><a href="">TT9</a></td>
+    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2-TPT-8---Computing-Systems-and-Networks">TPT9</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/2017405">Create Task Check</a></td>
    </tr>
    
