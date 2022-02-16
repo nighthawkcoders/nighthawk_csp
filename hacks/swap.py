@@ -21,7 +21,9 @@ if __name__ == "__main__":
     # call function order1, no change
     age1, age2 = order1(16, 10)
     print("No Change", age1, age2)
+
     print()
+
     print("Classic swap")
     # call function order2, expect swap
     age1, age2 = order2(20, 16)
