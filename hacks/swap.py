@@ -1,33 +1,50 @@
-# define a function with two parameters
-def order1(a, b):
+# define swap function with two parameters
+def swap1(a, b):
     if a > b:
         b, a = a, b  # swap values
-    return a, b  # 2 return values
+    return a, b  # return 2 values
 
 
-def order2(a, b):
+# define order messaging function with two parameters
+def swap1_helper(a, b):
+    print("Python swap")
+    print("Original: ", a, b)
+    a, b = swap1(a, b)
+    print("After: ", a, b)
+    print()
+    # no return value
+
+
+def swap2(a, b):
     if a > b:
-        swap = a
+        swap = a  # classic swap technique
         a = b
         b = swap
     return a, b
 
 
-if __name__ == "__main__":
-    print("Python swap")
-    # call function order1, expect swap
-    age1, age2 = order1(10, 16)     # call with parameters and return values
-    print("Swap", age1, age2)
-    # call function order1, no change
-    age1, age2 = order1(16, 10)
-    print("No Change", age1, age2)
-
-    print()
-
+def swap2_helper(a, b):
     print("Classic swap")
-    # call function order2, expect swap
-    age1, age2 = order2(20, 16)
-    print("Swap", age1, age2)
-    # call function order2, no swap
-    age1, age2 = order2(16, 20)
-    print("No Change", age1, age2)
+    print("Original: ", a, b)
+    a, b = swap2(a, b)
+    print("After: ", a, b)
+    print()
+    # no return value
+
+
+if __name__ == "__main__":
+    # call function order1
+    swap1_helper(16, 10)  # send 2 parameters, expect swap
+    swap1_helper(10, 16)  # no swap
+    swap1_helper(10.1, 10)  # expect swap
+    swap1_helper("def", "abc")  # expect swap
+    swap1_helper("abc", "def")  # no swap
+
+
+# call function order2
+    swap2_helper(20, 16)
+    swap2_helper(16, 20)
+    swap1_helper(10.1, 10)
+    swap2_helper("def", "abc")
+    swap1_helper("abc", "def")
+
