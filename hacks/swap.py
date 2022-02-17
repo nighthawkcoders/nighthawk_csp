@@ -39,14 +39,12 @@ if __name__ == "__main__":
     swap1_helper(10.1, 10)  # expect swap
     swap1_helper("def", "abc")  # expect swap
     swap1_helper("abc", "def")  # no swap
-    swap1_helper("ddd", "dd") # swap
+    swap1_helper("ddd", "dd")  # swap
 
-
-# call function order2
+    # call function order2
     swap2_helper(20, 16)
     swap2_helper(16, 20)
     swap2_helper(10.1, 10)
     swap2_helper("def", "abc")
     swap2_helper("abc", "def")
     swap2_helper("ddd", "dd")
-
