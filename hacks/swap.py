@@ -38,7 +38,7 @@ def swap2_helper(a, b):
     # no return value
 
 
-if __name__ == "__main__":
+def test_swappers():
     # call function order1
     swap1_helper(16, 10)  # send 2 parameters, expect swap
     swap1_helper(10, 16)  # no swap
@@ -54,3 +54,7 @@ if __name__ == "__main__":
     swap2_helper("def", "abc")
     swap2_helper("abc", "def")
     swap2_helper("ddd", "dd")
+
+
+if __name__ == "__main__":
+    test_swappers()
