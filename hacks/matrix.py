@@ -29,8 +29,7 @@ def print_matrix3(matrix):
         print(*row)  # pythons has (*) that is one line expansion of row into columns
 
 
-# tester section
-if __name__ == "__main__":
+def test_matrices():
     # setup some text matrices
     keypad = [[1, 2, 3],
               [4, 5, 6],
@@ -56,3 +55,8 @@ if __name__ == "__main__":
         print_matrix2(matrix)
         print_matrix3(matrix)
         print()
+
+
+# tester section
+if __name__ == "__main__":
+    test_matrices()
