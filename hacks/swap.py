@@ -1,3 +1,9 @@
+"""
+Data Structures Introduction
+Writing a function to conditionally Swap data
+"""
+
+
 # define swap function with two parameters
 def swap1(a, b):
     if a > b:
