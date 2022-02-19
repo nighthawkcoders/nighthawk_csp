@@ -51,7 +51,7 @@
     <td>AP Exams Week 2</td>
     <td>CSP Exam May 9th</td>
     <td>none</td>
-    <td></td>
+    <td>AP Study Week</td>
    </tr>
    
    <tr>
@@ -60,22 +60,22 @@
     <td>AP Exams Week 1</td>
     <td>none</td>
     <td>none</td>
-    <td></td>
+    <td>AP Study Week</td>
    </tr>
    
    <tr>
     <td>6</td>
     <td>April 25 - 29</td>
-    <td>CSP Performance Task Due May 2nd</td>
+    <td>CSP Performance Task Final</td>
     <td>none</td>
     <td>none</td>
-    <td></td>
+    <td>Due May 2nd</td>
    </tr>
    
    <tr>
     <td>5</td>
     <td>April 18 - 22</td>
-    <td>none</td>
+    <td>CSP Performance Task Work Week</td>
     <td>none</td>
     <td>none</td>
     <td></td>
