@@ -24,7 +24,7 @@
     <td>PBL Sponsored Project Due</td>
     <td>none</td>
     <td>none</td>
-    <td></td>
+    <td>PBL Final Review</td>
    </tr>
    
    <tr>
@@ -33,7 +33,7 @@
     <td>none</td>
     <td>none</td>
     <td>none</td>
-    <td></td>
+    <td>PBL Deployment Review</td>
    </tr>
    
    <tr>
@@ -42,7 +42,7 @@
     <td>none</td>
     <td>none</td>
     <td>PBL, Database, Async</td>
-    <td></td>
+    <td>PBL Key Feature Review</td>
    </tr>
    
    <tr>
@@ -69,7 +69,7 @@
     <td>College Board Create Task Work Week 2</td>
     <td>Proctored MCQ 2</td>
     <td>none</td>
-    <td>Video and Materials</td>
+    <td>Live Video and Material review</td>
    </tr>
    
    <tr>
@@ -87,7 +87,7 @@
     <td>none</td>
     <td>none</td>
     <td>none</td>
-    <td></td>
+    <td>none</td>
    </tr>
    
    <tr>
@@ -96,7 +96,7 @@
     <td>PBL Algorithmic Project Due</td>
     <td>Performance Task resource and videos</td>
     <td>MCQ most missed</td>
-    <td></td>
+    <td>Individual Algorithmic Final</td>
    </tr>
    
    <tr>
@@ -105,7 +105,7 @@
     <td>Algorithim Ketchup</td>
     <td>none</td>
     <td>Hackathon</td>
-    <td></td>
+    <td>Algorithmic Cross Over</td>
    </tr>
 
    <tr>
@@ -114,7 +114,7 @@
     <td>Python Console Programming and Animations</td>
     <td>TPT 5.5-5.6</td>
     <td>TT2 Console Programming</td>
-    <td></td>
+    <td>Individual 3 Mini Labs</td>
    </tr>
    
    <tr>
@@ -123,7 +123,7 @@
     <td>Python Lists, Dictionaries, Iteration</td>
     <td>TPT 5.3-5.4</td>
     <td>TT1 Data Structures</td>
-    <td></td>
+    <td>Individual Algorithmic Menu</td>
    </tr>
    
    <tr>
@@ -132,7 +132,7 @@
     <td>Innovation Week: College Board Create Task, PBL Algorithmic Project, PBL Sponsored Project</td>
     <td>TPT 5.1-5.2</td>
     <td>TT0 Python Menu, Replit, GitHub</td>
-    <td></td>
+    <td>Plans, Team, Jobs</td>
    </tr>
 </table>
 
