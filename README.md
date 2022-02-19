@@ -59,14 +59,14 @@
     <td>May 2 - 6</td>
     <td>AP Exams Week 1</td>
     <td></td>
-    <td>none</td>
+    <td>Create Task Due</td>
     <td>AP Study Week</td>
    </tr>
    
    <tr>
     <td>6</td>
     <td>April 25 - 29</td>
-    <td>College Board Create Task Due</td>
+    <td>College Board Create Task Work Week 2</td>
     <td>Proctored MCQ 2</td>
     <td>none</td>
     <td></td>
@@ -75,7 +75,7 @@
    <tr>
     <td>5</td>
     <td>April 18 - 22</td>
-    <td>CSP College Board Create Task Work Week</td>
+    <td>CSP College Board Create Task Work Week 1</td>
     <td>Proctored MCQ 1</td>
     <td>none</td>
     <td></td>
@@ -102,27 +102,27 @@
    <tr>
     <td>3</td>
     <td>March 28 - April 1</td>
+    <td>Algorithim Ketchup</td>
     <td>none</td>
-    <td>none</td>
-    <td>TT3 </td>
-    <td>Ketchup</td>
+    <td>Hackathon</td>
+    <td></td>
    </tr>
 
    <tr>
     <td>2</td>
     <td>March 21 - 25</td>
-    <td>none</td>
+    <td>Python Console Programming and Animations</td>
     <td>TPT 5.5-5.6</td>
-    <td>TT2 Python Console Programming and Animations</td>
+    <td>TT2 Console Programming</td>
     <td></td>
    </tr>
    
    <tr>
     <td>1</td>
     <td>March 14 - 18</td>
-    <td>none</td>
+    <td>Python Lists, Dictionaries, Iteration</td>
     <td>TPT 5.3-5.4</td>
-    <td>TT1 Python Lists, Dictionaries, Iteration</td>
+    <td>TT1 Data Structures</td>
     <td></td>
    </tr>
    
