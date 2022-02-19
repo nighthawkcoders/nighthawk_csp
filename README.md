@@ -12,7 +12,7 @@
    <tr>
     <td>Finals</td>
     <td>June 6 - 9</td>
-    <td>none</td>
+    <td>N@tM Week</td>
     <td>none</td>
     <td>none</td>
     <td></td>
@@ -66,7 +66,7 @@
    <tr>
     <td>6</td>
     <td>April 25 - 29</td>
-    <td>Performance Task Due</td>
+    <td>College Board Create Task Due</td>
     <td>Proctored MCQ 2</td>
     <td>none</td>
     <td></td>
@@ -75,7 +75,7 @@
    <tr>
     <td>5</td>
     <td>April 18 - 22</td>
-    <td>CSP Performance Task Work Week</td>
+    <td>CSP College Board Create Task Work Week</td>
     <td>Proctored MCQ 1</td>
     <td>none</td>
     <td></td>
@@ -93,7 +93,7 @@
    <tr>
     <td>4</td>
     <td>April 4 - 8</td>
-    <td>PBL Algorithm Due</td>
+    <td>PBL Algorithmic Project Due</td>
     <td>Review Performance Task</td>
     <td>none</td>
     <td></td>
