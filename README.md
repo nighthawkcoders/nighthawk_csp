@@ -37,7 +37,7 @@
     <td>May 23 - 27</td>
     <td>none</td>
     <td>none</td>
-    <td>PBL, sharing data with Crossover Team</td>
+    <td>PBL, sharing data via API's with Crossover Team</td>
     <td>Customer Project Deployment Review</td>
    </tr>
    
