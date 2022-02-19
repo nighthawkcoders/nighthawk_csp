@@ -1,4 +1,9 @@
 # Time Box Tri 3
+## Primary deliverables for trimester:
+* Individual/Pair Algorithmic Project - every individual will manage their own Python project.  Replit and GitHub deliverables are required.  Requirements for this project will be provided via Tech Talks.
+* College Board Create Task - this project will be managed as individual or pair.  Each individual must work on and submit code that they developed according to College Board.
+* PBL Sponsored Project - teams of four will work on a project throughout the trimester.  Recommendation is that you build or add to a project that was started in Trimester 1 or 2, or that you extend and idea from CSP 2021 students.   Additionally, it is highly advised that you incorporate algorithmic ideas and college board ideas into your final project.  Teams that assign jobs to individual early, leverage work, and plan throughout the trimester will receive higher grades.
+
 <table>
    <tr>
     <th>Week</th>
@@ -129,7 +134,7 @@
    <tr>
     <td>0</td>
     <td>March 7 - 11</td>
-    <td>Innovation Week: College Board Create Task, PBL Algorithmic Project, PBL Sponsored Project</td>
+    <td>Innovation Week: College Board Create Task, Individual/Pair Algorithmic Project, PBL Sponsored Project</td>
     <td>TPT 5.1-5.2</td>
     <td>TT0 Python Menu, Replit, GitHub</td>
     <td>Plans, Team, Jobs</td>
