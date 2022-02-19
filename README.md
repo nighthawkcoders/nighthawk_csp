@@ -1,8 +1,8 @@
 # Time Box Tri 3
 ## Primary deliverables for trimester:
-* Individual/Pair Algorithmic Project - every individual will manage their own Python project.  Replit and GitHub deliverables are required.  Requirements for this project will be provided via Tech Talks.
-* College Board Create Task - this project will be managed as individual or pair.  Each individual must work on and submit code that they developed according to College Board.
-* PBL Sponsored Project - teams of four will work on a project throughout the trimester.  Recommendation is that you build or add to a project that was started in Trimester 1 or 2, or that you extend and idea from CSP 2021 students.   Additionally, it is highly advised that you incorporate algorithmic ideas and college board ideas into your final project.  Teams that assign jobs to individual early, leverage work, and plan throughout the trimester will receive higher grades.
+* Individual/Pair Algorithmic Project - every individual will manage their own Python project.  Replit deliverables with integrated GitHub version control are required.  Those who commit frequently and regularly will receive higher grades.  Requirements for this project will be provided via Tech Talks.
+* College Board Create Task - this project will be managed as individual or pair.  Each individual must work on and submit code according to College Board.  Idea must be by Individual or Individual/Pair.
+* PBL Sponsored Project - teams of four will work on a project throughout the trimester, this should be focus in all planning.  Recommendation is that you build or add to a project that was started in Trimester 1 or 2, or that you fork/extend an idea from CSP 2021 students.   It is highly advised that plan to incorporate algorithmic ideas and college board ideas into your final project.  Such planning will lead to leveraged and strategic implementation.  Teams that assign jobs, leverage work, and plan throughout the trimester will undoubltable receive higher grades.
 
 <table>
    <tr>
@@ -29,7 +29,7 @@
     <td>PBL Sponsored Project Due</td>
     <td>none</td>
     <td>none</td>
-    <td>PBL Final Review</td>
+    <td>Sponsored Project Final Review</td>
    </tr>
    
    <tr>
@@ -38,7 +38,7 @@
     <td>none</td>
     <td>none</td>
     <td>none</td>
-    <td>PBL Deployment Review</td>
+    <td>Sponsored Project Deployment Review</td>
    </tr>
    
    <tr>
@@ -47,7 +47,7 @@
     <td>none</td>
     <td>none</td>
     <td>PBL, Database, Async</td>
-    <td>PBL Key Feature Review</td>
+    <td>Sponsored Project Feature Acceptance</td>
    </tr>
    
    <tr>
@@ -56,7 +56,7 @@
     <td>AP Exams Week 2</td>
     <td>CSP Exam May 9th</td>
     <td>none</td>
-    <td>AP Study Week</td>
+    <td>AP Study Week/Sponsored Project Coding</td>
    </tr>
    
    <tr>
@@ -65,7 +65,7 @@
     <td>AP Exams Week 1</td>
     <td>Create Task Due May 2nd</td>
     <td>none</td>
-    <td>AP Study Week</td>
+    <td>AP Study Week/Sponsored Project Coding</td>
    </tr>
    
    <tr>
@@ -74,7 +74,7 @@
     <td>College Board Create Task Work Week 2</td>
     <td>Proctored MCQ 2</td>
     <td>none</td>
-    <td>Live Video and Material review</td>
+    <td>CB Live review</td>
    </tr>
    
    <tr>
@@ -83,7 +83,7 @@
     <td>CSP College Board Create Task Work Week 1</td>
     <td>Proctored MCQ 1</td>
     <td>none</td>
-    <td>Video Take 1</td>
+    <td>CB Video Take 1 Review</td>
    </tr>
    
    <tr>
