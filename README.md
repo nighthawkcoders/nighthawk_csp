@@ -41,7 +41,7 @@
     <td>May 16 - 20</td>
     <td>none</td>
     <td>none</td>
-    <td>none</td>
+    <td>PBL, Database, Async</td>
     <td></td>
    </tr>
    
@@ -104,16 +104,16 @@
     <td>March 28 - April 1</td>
     <td>none</td>
     <td>none</td>
-    <td>none</td>
-    <td></td>
+    <td>TT3 </td>
+    <td>Ketchup</td>
    </tr>
 
    <tr>
     <td>2</td>
     <td>March 21 - 25</td>
     <td>none</td>
-    <td>none</td>
-    <td>none</td>
+    <td>TPT 5.5-5.6</td>
+    <td>TT2 Python Console Programming and Animations</td>
     <td></td>
    </tr>
    
@@ -121,8 +121,8 @@
     <td>1</td>
     <td>March 14 - 18</td>
     <td>none</td>
-    <td>none</td>
-    <td>none</td>
+    <td>TPT 5.3-5.4</td>
+    <td>TT1 Python Lists, Dictionaries, Iteration</td>
     <td></td>
    </tr>
    
@@ -130,8 +130,8 @@
     <td>0</td>
     <td>March 7 - 11</td>
     <td>Innovation Week: College Board Create Task, PBL Algorithmic Project, PBL Sponsored Project</td>
-    <td>none</td>
-    <td>none</td>
+    <td>TPT 5.1-5.2</td>
+    <td>TT0 Python Menu, Replit, GitHub</td>
     <td></td>
    </tr>
 </table>
