@@ -21,7 +21,7 @@
    <tr>
     <td>11</td>
     <td>May 30 - June 3</td>
-    <td>none</td>
+    <td>PBL Sponsored Project Due</td>
     <td>none</td>
     <td>none</td>
     <td></td>
@@ -129,7 +129,7 @@
    <tr>
     <td>0</td>
     <td>March 7 - 11</td>
-    <td>none</td>
+    <td>Innovation Week: PBL Sponsored Project</td>
     <td>none</td>
     <td>none</td>
     <td></td>
