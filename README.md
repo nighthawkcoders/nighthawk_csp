@@ -58,7 +58,7 @@
     <td>7</td>
     <td>May 2 - 6</td>
     <td>AP Exams Week 1</td>
-    <td>none</td>
+    <td></td>
     <td>none</td>
     <td>AP Study Week</td>
    </tr>
@@ -66,17 +66,17 @@
    <tr>
     <td>6</td>
     <td>April 25 - 29</td>
-    <td>CSP Performance Task Final</td>
+    <td>Performance Task Due</td>
+    <td>Proctored MCQ 2</td>
     <td>none</td>
-    <td>none</td>
-    <td>Due May 2nd</td>
+    <td></td>
    </tr>
    
    <tr>
     <td>5</td>
     <td>April 18 - 22</td>
     <td>CSP Performance Task Work Week</td>
-    <td>none</td>
+    <td>Proctored MCQ 1</td>
     <td>none</td>
     <td></td>
    </tr>
@@ -93,8 +93,8 @@
    <tr>
     <td>4</td>
     <td>April 4 - 8</td>
-    <td>none</td>
-    <td>none</td>
+    <td>PBL Algorithm Due</td>
+    <td>Review Performance Task</td>
     <td>none</td>
     <td></td>
    </tr>
