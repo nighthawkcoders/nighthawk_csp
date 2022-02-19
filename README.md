@@ -129,7 +129,7 @@
    <tr>
     <td>0</td>
     <td>March 7 - 11</td>
-    <td>Innovation Week: PBL Sponsored Project</td>
+    <td>Innovation Week: College Board Create Task, PBL Algorithmic Project, PBL Sponsored Project</td>
     <td>none</td>
     <td>none</td>
     <td></td>
