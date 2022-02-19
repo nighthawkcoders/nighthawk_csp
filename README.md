@@ -2,6 +2,7 @@
 <table>
    <tr>
     <th>Week</th>
+    <th>Dates</th>
     <th>Stand Up Theme</th>
     <th>Test Prep</th>
     <th>Tech Talk</th>
@@ -9,8 +10,9 @@
    </tr>
    
    <tr>
-    <td>Final</td>
+    <td>Finals</td>
     <td>June 6 - 9</td>
+    <td>none</td>
     <td>none</td>
     <td>none</td>
     <td></td>
@@ -21,12 +23,14 @@
     <td>May 30 - June 3</td>
     <td>none</td>
     <td>none</td>
+    <td>none</td>
     <td></td>
    </tr>
    
    <tr>
     <td>10</td>
     <td>May 23 - 27</td>
+    <td>none</td>
     <td>none</td>
     <td>none</td>
     <td></td>
@@ -37,12 +41,14 @@
     <td>May 16 - 20</td>
     <td>none</td>
     <td>none</td>
+    <td>none</td>
     <td></td>
    </tr>
    
    <tr>
     <td>8</td>
     <td>May 9 - 13</td>
+    <td>none</td>
     <td>none</td>
     <td>none</td>
     <td></td>
@@ -53,12 +59,14 @@
     <td>May 2 - 6</td>
     <td>none</td>
     <td>none</td>
+    <td>none</td>
     <td></td>
    </tr>
    
    <tr>
     <td>6</td>
     <td>April 25 - 29</td>
+    <td>none</td>
     <td>none</td>
     <td>none</td>
     <td></td>
@@ -69,12 +77,14 @@
     <td>April 18 - 22</td>
     <td>none</td>
     <td>none</td>
+    <td>none</td>
     <td></td>
    </tr>
    
    <tr>
     <td>Spring Break</td>
     <td>April 11 - 15</td>
+    <td>none</td>
     <td>none</td>
     <td>none</td>
     <td></td>
@@ -85,7 +95,8 @@
     <td>April 4 - 8</td>
     <td>none</td>
     <td>none</td>
-    <td><</td>
+    <td>none</td>
+    <td></td>
    </tr>
    
    <tr>
@@ -93,7 +104,8 @@
     <td>March 28 - April 1</td>
     <td>none</td>
     <td>none</td>
-    <td><</td>
+    <td>none</td>
+    <td></td>
    </tr>
 
    <tr>
@@ -101,7 +113,8 @@
     <td>March 21 - 25</td>
     <td>none</td>
     <td>none</td>
-    <td><</td>
+    <td>none</td>
+    <td></td>
    </tr>
    
    <tr>
@@ -109,7 +122,8 @@
     <td>March 14 - 18</td>
     <td>none</td>
     <td>none</td>
-    <td><</td>
+    <td>none</td>
+    <td></td>
    </tr>
    
    <tr>
@@ -117,7 +131,8 @@
     <td>March 7 - 11</td>
     <td>none</td>
     <td>none</td>
-    <td><</td>
+    <td>none</td>
+    <td></td>
    </tr>
 </table>
 
