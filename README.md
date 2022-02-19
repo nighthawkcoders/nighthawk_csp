@@ -73,8 +73,8 @@
    </tr>
    
    <tr>
-    <td>none</td>
     <td>Spring Break</td>
+    <td>April 11 - 15</td>
     <td>none</td>
     <td>none</td>
     <td></td>
