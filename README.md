@@ -2,7 +2,7 @@
 ## Primary deliverables for trimester:
 * Individual/Pair Algorithmic Project - every individual will manage their own Python project.  Replit deliverables with integrated GitHub version control are required.  Those who commit frequently and regularly will receive higher grades.  Requirements for this project will be provided via Tech Talks.
 * College Board Create Task - this project will be managed as individual or pair.  Each individual must work on and submit code according to College Board.  Ideas must be created by Individual or Individual/Pair collaboration.
-* PBL Sponsored Project - teams of four will work on a project throughout the trimester, this should be focus in all planning.  Recommendation is that you build or add to a project that was started in Trimester 1 or 2, or that you fork/extend an idea from CSP 2021 students.   It is highly advised to plan to incorporate algorithmic ideas and college board ideas into your final project.  Such planning will lead to leveraged and strategic implementation.  Teams that assign jobs, leverage work, and plan throughout the trimester will undoubltable receive higher grades.  Requirements need to be approved by a sponsor.
+* PBL Customer Project - teams of four will work on a project throughout the trimester, this should be focus in all planning.  Recommendation is that you build or add to a project that was started in Trimester 1 or 2, or that you fork/extend an idea from CSP 2021 students.   It is highly advised to plan to incorporate algorithmic ideas and college board ideas into your final project.  Such planning will lead to leveraged and strategic implementation.  Teams that assign jobs, leverage work, and plan throughout the trimester will undoubltable receive higher grades.  Requirements need to be approved by Project Owner, this job represents needs of Customer and must be someone outside of project team.
 
 <table>
    <tr>
@@ -26,10 +26,10 @@
    <tr>
     <td>11</td>
     <td>May 30 - June 3</td>
-    <td>PBL Sponsored Project Due</td>
+    <td>PBL Customer Project Due</td>
     <td>none</td>
     <td>none</td>
-    <td>Sponsored Project Final Review</td>
+    <td>Customer Project Final Review</td>
    </tr>
    
    <tr>
@@ -37,8 +37,8 @@
     <td>May 23 - 27</td>
     <td>none</td>
     <td>none</td>
-    <td>none</td>
-    <td>Sponsored Project Deployment Review</td>
+    <td>PBL, sharing data with Crossover Team</td>
+    <td>Customer Project Deployment Review</td>
    </tr>
    
    <tr>
@@ -46,8 +46,8 @@
     <td>May 16 - 20</td>
     <td>none</td>
     <td>none</td>
-    <td>PBL, Database, Async</td>
-    <td>Sponsored Project Feature Acceptance</td>
+    <td>PBL, CRUD operations and Async</td>
+    <td>Customer Project Feature Acceptance</td>
    </tr>
    
    <tr>
@@ -56,7 +56,7 @@
     <td>AP Exams Week 2</td>
     <td>CSP Exam May 9th</td>
     <td>none</td>
-    <td>AP Study Week/Sponsored Project Coding</td>
+    <td>AP Study Week/Customer Project Coding</td>
    </tr>
    
    <tr>
@@ -65,7 +65,7 @@
     <td>AP Exams Week 1</td>
     <td>Create Task Due May 2nd</td>
     <td>none</td>
-    <td>AP Study Week/Sponsored Project Coding</td>
+    <td>AP Study Week/Customer Project Coding</td>
    </tr>
    
    <tr>
@@ -134,7 +134,7 @@
    <tr>
     <td>0</td>
     <td>March 7 - 11</td>
-    <td>Innovation Week: College Board Create Task, Individual/Pair Algorithmic Project, PBL Sponsored Project</td>
+    <td>Innovation Week: College Board Create Task, Individual/Pair Algorithmic Project, PBL Customer Project</td>
     <td>TPT 5.1-5.2</td>
     <td>TT0 Python Menu, Replit, GitHub</td>
     <td>Plans, Team, Jobs</td>
