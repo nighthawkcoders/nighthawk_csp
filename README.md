@@ -58,8 +58,8 @@
     <td>7</td>
     <td>May 2 - 6</td>
     <td>AP Exams Week 1</td>
-    <td></td>
-    <td>Create Task Due</td>
+    <td>Create Task Due May 2nd</td>
+    <td>none</td>
     <td>AP Study Week</td>
    </tr>
    
@@ -69,7 +69,7 @@
     <td>College Board Create Task Work Week 2</td>
     <td>Proctored MCQ 2</td>
     <td>none</td>
-    <td></td>
+    <td>Video and Materials</td>
    </tr>
    
    <tr>
@@ -78,7 +78,7 @@
     <td>CSP College Board Create Task Work Week 1</td>
     <td>Proctored MCQ 1</td>
     <td>none</td>
-    <td></td>
+    <td>Video Take 1</td>
    </tr>
    
    <tr>
