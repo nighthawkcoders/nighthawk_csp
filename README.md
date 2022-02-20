@@ -109,7 +109,7 @@
     <td>March 28 - April 1</td>
     <td>Algorithim Ketchup</td>
     <td>none</td>
-    <td>TT2 Console Programming 2</td>
+    <td>TT3 Console Programming Part B</td>
     <td>Algorithmic Cross Over</td>
    </tr>
 
@@ -118,7 +118,7 @@
     <td>March 21 - 25</td>
     <td>Python Console Programming and Animations</td>
     <td>TPT 5.5-5.6</td>
-    <td>TT2 Console Programming 1</td>
+    <td>TT2 Console Programming Part A</td>
     <td>Individual 3 Mini Labs</td>
    </tr>
    
