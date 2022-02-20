@@ -73,7 +73,7 @@
     <td>April 25 - 29</td>
     <td>College Board Create Task Work Week 2</td>
     <td>MCQ Most Missed 2</td>
-    <td>Procotored MCQ 2</td>
+    <td>Proctored MCQ 2</td>
     <td>CB Live review</td>
    </tr>
    
