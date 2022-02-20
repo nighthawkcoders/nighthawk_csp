@@ -72,7 +72,7 @@
     <td>6</td>
     <td>April 25 - 29</td>
     <td>College Board Create Task Work Week 2</td>
-    <td>MCQ Most Missed 2</td>
+    <td>MCQ Most Missed Session B</td>
     <td>Proctored MCQ 2</td>
     <td>CB Live review</td>
    </tr>
@@ -81,7 +81,7 @@
     <td>5</td>
     <td>April 18 - 22</td>
     <td>CSP College Board Create Task Work Week 1</td>
-    <td>MCQ Most Missed</td>
+    <td>MCQ Most Missed Session A</td>
     <td>Proctored MCQ 1</td>
     <td>CB Video Take 1 Review</td>
    </tr>
