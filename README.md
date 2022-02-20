@@ -72,8 +72,8 @@
     <td>6</td>
     <td>April 25 - 29</td>
     <td>College Board Create Task Work Week 2</td>
-    <td>Proctored MCQ 2</td>
-    <td>none</td>
+    <td>MCQ Most Missed 2</td>
+    <td>Procotored MCQ 2</td>
     <td>CB Live review</td>
    </tr>
    
@@ -81,8 +81,8 @@
     <td>5</td>
     <td>April 18 - 22</td>
     <td>CSP College Board Create Task Work Week 1</td>
+    <td>MCQ Most Missed</td>
     <td>Proctored MCQ 1</td>
-    <td>none</td>
     <td>CB Video Take 1 Review</td>
    </tr>
    
@@ -100,7 +100,7 @@
     <td>April 4 - 8</td>
     <td>PBL Algorithmic Project Due</td>
     <td>Performance Task resource and videos</td>
-    <td>MCQ most missed</td>
+    <td>Hackathon</td>
     <td>Individual Algorithmic Final</td>
    </tr>
    
@@ -109,7 +109,7 @@
     <td>March 28 - April 1</td>
     <td>Algorithim Ketchup</td>
     <td>none</td>
-    <td>Hackathon</td>
+    <td>TT2 Console Programming 2</td>
     <td>Algorithmic Cross Over</td>
    </tr>
 
@@ -118,7 +118,7 @@
     <td>March 21 - 25</td>
     <td>Python Console Programming and Animations</td>
     <td>TPT 5.5-5.6</td>
-    <td>TT2 Console Programming</td>
+    <td>TT2 Console Programming 1</td>
     <td>Individual 3 Mini Labs</td>
    </tr>
    
