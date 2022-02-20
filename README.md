@@ -37,7 +37,7 @@
     <td>May 23 - 27</td>
     <td>none</td>
     <td>none</td>
-    <td>PBL, sharing data via API's with Crossover Team</td>
+    <td>PBL, Sharing database via API's with Crossover Team</td>
     <td>Customer Project Deployment Review</td>
    </tr>
    
@@ -45,7 +45,7 @@
     <td>9</td>
     <td>May 16 - 20</td>
     <td>none</td>
-    <td>none</td>
+    <td>PBL, Full Stack Algoritms - Sorting</td>
     <td>PBL, CRUD operations and Async</td>
     <td>Customer Project Feature Acceptance</td>
    </tr>
@@ -55,7 +55,7 @@
     <td>May 9 - 13</td>
     <td>AP Exams Week 2</td>
     <td>CSP Exam May 9th</td>
-    <td>none</td>
+    <td>PBL, Full Stack Algorithms - Using Classes</td>
     <td>AP Study Week/Customer Project Coding</td>
    </tr>
    
