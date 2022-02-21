@@ -135,7 +135,7 @@
     <td>0</td>
     <td>March 7 - 11</td>
     <td>Innovation Week: College Board Create Task, Individual/Pair Algorithmic Project, PBL Customer Project</td>
-    <td>TPT 5.1-5.2</td>
+    <td>TPT <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-0.1-Beneficial-and-Harmful-Effects-of-Computing">5.1</a>-5.2</td>
     <td>TT0 Python Menu, Replit, GitHub</td>
     <td>Plans, Team, Jobs</td>
    </tr>
