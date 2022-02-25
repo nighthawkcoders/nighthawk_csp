@@ -126,8 +126,7 @@
     <td>1</td>
     <td>March 14 - 18</td>
     <td>Python Lists, Dictionaries, Iteration</td>
-    <td>TPT 5.3-5.4</td>
-    <td>TT1 Data Structures</td>
+    <td>TPT <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-1.0-Computing-Bias-5.3">5.3</a>-<a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-1.1-Crowdsourcing--5.4">5.4</a></td>    <td>TT1 Data Structures</td>
     <td>Individual Algorithmic Menu</td>
    </tr>
    
