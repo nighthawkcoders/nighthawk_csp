@@ -34,7 +34,7 @@ sub_menu = [
 ]
 
 patterns_sub_menu = [
-    ["Patterns", "patterns1.py"],
+    ["Patterns", "patterns.py"],
     ["PreFuncy", "wipy/prefuncy.py"],
     ["Funcy", funcy.ship],
 ]
