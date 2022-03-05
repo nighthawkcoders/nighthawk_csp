@@ -19,7 +19,7 @@ InfoDb.append({
 })
 
 
-# reuse print style for all three loops
+# given and index this will print InfoDb content
 def print_data(n):
     print(InfoDb[n]["FirstName"], InfoDb[n]["LastName"])  # using comma puts space between values
     print("\t", "Cars: ", end="")  # \t is a tab indent, end="" make sure no return occurs
