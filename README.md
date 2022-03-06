@@ -136,7 +136,7 @@
     <td>Innovation Week: College Board Create Task, Individual/Pair Algorithmic Project, PBL Customer Project</td>
     <td>TPT <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-0.1-related-to-Beneficial-and-Harmful-Effects-of-Computing-Big-Idea-5.1">5.1</a>-<a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-0.2-related-to-Digital-Divide-Big-Idea-5.2">5.2</a></td>
     <td>TT0 Python Menu, Replit, GitHub</td>
-    <td>Plans, Team, Jobs</td>
+    <td><a href="https://poway.instructure.com/courses/112335/assignments/2043640">Plans, Team, Jobs</a></td>
    </tr>
 </table>
 
