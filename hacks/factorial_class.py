@@ -15,6 +15,5 @@ def tester():
     print("{0}".format(result), end=" ")
 
 
-
 if __name__ == "__main__":
     tester()
