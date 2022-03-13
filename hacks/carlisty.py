@@ -49,11 +49,16 @@ def recursive_loop(n):
     return
 
 
-# this is test driver or code that plays when executed directly, versus import which will not run these statements
-if __name__ == "__main__":
-    print("For loop")
+def driver():
+     print("For loop")
     for_loop()
     print("While loop")
     while_loop(0)  # requires initial index to start while
     print("Recursive loop")
     recursive_loop(0)  # requires initial index to start recursion
+    
+    
+
+# this is test driver or code that plays when executed directly, versus import which will not run these statements
+if __name__ == "__main__":
+   driver()
