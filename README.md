@@ -109,7 +109,7 @@
     <td>March 28 - April 1</td>
     <td>Algorithim Ketchup</td>
     <td>none</td>
-    <td>TT3 Console Programming Part B</td>
+    <td>TT3 Console Colors and Animation</td>
     <td>Algorithmic Cross Over</td>
    </tr>
 
