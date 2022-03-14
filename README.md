@@ -118,8 +118,8 @@
     <td>March 21 - 25</td>
     <td>Python Console Programming and Animations</td>
     <td>TPT <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-2.0-Legal-and-Ethical-Concerns-5.5">5.5</a>-<a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-2.0-Safe-Computing-5.6">5.6</a></td>
-    <td>TT2 Console Programming Part A</td>
-    <td>Individual 3 Mini Labs</td>
+    <td>TT2 Data Structures 2</td>
+    <td>Classy Lists and Adventure</td>
    </tr>
    
    <tr>
@@ -127,8 +127,8 @@
     <td>March 14 - 18</td>
     <td>Python Lists, Dictionaries, Iteration</td>
     <td>TPT <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-1.0-Computing-Bias-5.3">5.3</a>-<a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-1.1-Crowdsourcing--5.4">5.4</a></td>    
-    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TT1---Data-Structures">TT1 Data Structures</a></td>
-    <td><a href="https://poway.instructure.com/courses/112335/assignments/2057997">Individual Algorithmic Menu</a></td>
+    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TT1---Data-Structures">TT1 Data Structures 1</a></td>
+    <td><a href="https://poway.instructure.com/courses/112335/assignments/2057997">Lists and Loops</a></td>
    </tr>
    
    <tr>
