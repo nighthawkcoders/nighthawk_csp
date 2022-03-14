@@ -128,7 +128,7 @@
     <td>Python Lists, Dictionaries, Iteration</td>
     <td>TPT <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-1.0-Computing-Bias-5.3">5.3</a>-<a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-1.1-Crowdsourcing--5.4">5.4</a></td>    
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TT1---Data-Structures">TT1 Data Structures</a></td>
-    <td>Individual Algorithmic Menu</td>
+    <td><a href="https://poway.instructure.com/courses/112335/assignments/2057997">Individual Algorithmic Menu</a></td>
    </tr>
    
    <tr>
