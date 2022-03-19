@@ -88,25 +88,13 @@ def submenu():
     title = "Function Submenu" + banner
     menu(title, sub_menu)
 
-
-# def quiz quiz submenu
+# def quiz submenu
 # using sub menu list above:
 # quiz_sub_menu works similarly to menu()
 def quiz_submenu():
     title = "Function Submenu" + banner
-    menu(title, quiz_submenu)
-
-
-# def submenu
-# using sub menu list above:
-# sub_menu works similarly to menu()
-def quiz_submenu():
-    title = "Function Submenu" + banner
     menu(title, quiz_sub_menu)
-# def menu
-# using main_menu list:
-# 1. main menu and submenu reference are created [Prompts, Actions]
-# 2. menu_list is sent as parameter to menuy.menu function that has logic for menu control
+
 def driver():
     title = "Function Menu" + banner
     menu_list = main_menu.copy()
