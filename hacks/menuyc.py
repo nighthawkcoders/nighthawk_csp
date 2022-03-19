@@ -1,7 +1,10 @@
-# menuyc.py - class style menu
+# menuyc.py - function style menu
 # Imports typically listed at top
 # each import enables us to use logic that has been abstracted to other files and folders
-import matrix, swap, mathy, tree, advy, questy
+from src import matrix, swap, mathy, tree, advy, questy
+
+from src import carlist
+
 ##
 # Menu banner
 border = "=" * 25
@@ -14,6 +17,7 @@ main_menu = [
     ["Matrix", matrix.driver],
     ["Swap", swap.driver],
     ["Tree", tree.driver],
+    ["Car List", carlist.driver],
 ]
 
 # Submenu list of [Prompt, Action]
@@ -32,16 +36,15 @@ quiz_sub_menu = [
 ]
 
 
-
 banner = f"\n{border}\nPlease Select An Option\n{border}\n"
 banner += "You are on a treasure adventure... \nWhere do you want to start your journey?"
-
 
 # def menuc
 # using main_menu list:
 # 1. custom title is created for menu
 # 2  main menu and submenu references are created [Prompts, Actions]
-# 3. menu_list is sent as parameter to questy.Menus class that creates an object that will be used to support menu control
+# 3. menu_list is sent as parameter to questy.Menus class that creates an
+# object that will be used to support menu control
 # 4  object (m.) has method (menu()) that support menu control
 def menuc():
     title = "Class Menu" + banner
@@ -53,25 +56,20 @@ def menuc():
 
 
 # def submenuc
-# using main_menu list:
 # submenuc works similarly to menuc
 def submenuc():
     title = "Class Submenu" + banner
     m = questy.Menu(title, sub_menu)
     m.menu()
 
-# def submenuc
-# using main_menu list:
-# submenuc works similarly to menuc
+# def quiz_submenuc
+# quiz_submenuc works similarly to menuc
 def quiz_submenuc():
     title = "Class Submenu" + banner
     m = questy.Menu(title, quiz_sub_menu)
     m.menu()
 
-# def menu
-# using main_menu list:
-# 1. main menu and submenu reference are created [Prompts, Actions]
-# 2. menu_list is sent as parameter to menuy.menu function that has logic for menu control
+
 def driver():
     title = "Function Menu" + banner
     menu_list = main_menu.copy()
@@ -81,3 +79,4 @@ def driver():
 # this code is activated when file is executed directly
 if __name__ == "__main__":
     driver()
+
