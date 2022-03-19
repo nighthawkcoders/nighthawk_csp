@@ -6,10 +6,16 @@ def fibonacci_of(n):
 
 def driver():
     n = input("Enter number of terms for the fibonacci sequence: ")
+    # validate #terms and run
+    # execute selection
+    # convert to number
     try:
         n = int(n)
+        assert n > 0 # Test if it is positive
         print("Fibonacci sequence of {0} terms is: ".format(n))
         print([fibonacci_of(n) for n in range(n)])
+    except AssertionError :
+        print("Enter a positive number")
     except ValueError:
         # not a number error
         print(f"Not a number: {n}")
