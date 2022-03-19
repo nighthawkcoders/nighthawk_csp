@@ -2,7 +2,7 @@
 
 class Fibonacci:
     def __init__(self):
-        self.fiboseq = [0, 1]
+        self.fiboSeq = [0,1]
 
     #__call__ is a special function in Python that, when implemented inside a class,
     # gives its instances (objects) the ability to behave like a function.
@@ -14,13 +14,13 @@ class Fibonacci:
         # specified data type. isinstance(variable_to_check, data_type)
         if not (isinstance(n, int) and n >= 0):
                 raise ValueError
-        if n < len(self.fiboseq):
-            return self.fiboseq[n]
+        if n < len(self.fiboSeq):
+            return self.fiboSeq[n]
         else:
-            # Compute and cache the requested Fibonacci number
+            # Compute the requested Fibonacci number
             fib_number = self(n - 1) + self(n - 2)
-            self.fiboseq.append(fib_number)
-            return self.fiboseq[n]
+            self.fiboSeq.append(fib_number)
+        return self.fiboSeq[n]
 
 
 def tester():
@@ -32,7 +32,7 @@ def tester():
         if not (isinstance(n, int) and n >= 0):
             raise ValueError
         print("Fibonacci sequence of {0} terms is: ".format(n))
-        print([fibo_of(i) for i in range(0,n)]) # print n # of terms
+        print([fibo_of(i) for i in range(0,n)])
     except:
         print(f'Positive integer number expected, got "{n}"')
 
