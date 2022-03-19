@@ -9,11 +9,6 @@ class Fibonacci:
     # It means after implementing __call__ method inside the Python class,
     # we can invoke its instances like a function
     def __call__(self, n):
-        # Validate the value of n
-        #The isinstance() function in Python returns true or false if a variable matches a
-        # specified data type. isinstance(variable_to_check, data_type)
-        if not (isinstance(n, int) and n >= 0):
-                raise ValueError
         if n < len(self.fiboSeq):
             return self.fiboSeq[n]
         else:
@@ -29,8 +24,13 @@ def tester():
     n = input("Enter the number of terms: ")
     try:
         n = int(n)
+        # Validate the value of n
+        #The isinstance() function in Python returns true or false if a variable matches a
+        # specified data type. isinstance(variable_to_check, data_type)
         if not (isinstance(n, int) and n >= 0):
             raise ValueError
+        print("{0}th term  of Fibonacci sequence is: ".format(n))
+        print(fibo_of(n-1)) # print the nth term
         print("Fibonacci sequence of {0} terms is: ".format(n))
         print([fibo_of(i) for i in range(0,n)])
     except:
