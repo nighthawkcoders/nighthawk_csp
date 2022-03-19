@@ -32,7 +32,6 @@ def tester():
         if not (isinstance(n, int) and n >= 0):
             raise ValueError
         print("Fibonacci sequence of {0} terms is: ".format(n))
-        print(fibo_of(n)) # print the nth term
         print([fibo_of(i) for i in range(0,n)]) # print n # of terms
     except:
         print(f'Positive integer number expected, got "{n}"')
