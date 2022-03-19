@@ -1,7 +1,8 @@
 # menuy.py - function style menu
 # Imports typically listed at top
 # each import enables us to use logic that has been abstracted to other files and folders
-import matrix, swap, mathy, tree, advy
+import matrix, swap, mathy, tree, advy, carlist
+
 ##
 # Menu banner
 border = "=" * 25
@@ -14,6 +15,7 @@ main_menu = [
     ["Matrix", matrix.driver],
     ["Swap", swap.driver],
     ["Tree", tree.driver],
+    ["Car List", carlist.driver],
 ]
 
 # Submenu list of [Prompt, Action]
@@ -88,12 +90,14 @@ def submenu():
     title = "Function Submenu" + banner
     menu(title, sub_menu)
 
+
 # def quiz submenu
 # using sub menu list above:
-# quiz_sub_menu works similarly to menu()
+# sub_menu works similarly to menu()
 def quiz_submenu():
     title = "Function Submenu" + banner
     menu(title, quiz_sub_menu)
+
 
 def driver():
     title = "Function Menu" + banner
