@@ -1,7 +1,7 @@
 # menuyc.py - function style menu
 # Imports typically listed at top
 # each import enables us to use logic that has been abstracted to other files and folders
-from src import matrix, swap, mathy, tree, advy, questy
+from src import matrix, swap, mathy, tree, advyc, questy
 
 from src import carlist
 
@@ -18,6 +18,7 @@ main_menu = [
     ["Swap", swap.driver],
     ["Tree", tree.driver],
     ["Car List", carlist.driver],
+    ["Adventure", advyc.driver]
 ]
 
 # Submenu list of [Prompt, Action]
@@ -29,15 +30,10 @@ sub_menu = [
     ["Primes", mathy.primes],
 ]
 
-quiz_sub_menu = [
-    ["At the Beach?", advy.beach],
-    ["On top of the Mountains?", advy.mountain],
-    ["Navigating a lake?", advy.lake]
-]
+
 
 
 banner = f"\n{border}\nPlease Select An Option\n{border}\n"
-banner += "You are on a treasure adventure... \nWhere do you want to start your journey?"
 
 # def menuc
 # using main_menu list:
@@ -50,7 +46,6 @@ def menuc():
     title = "Class Menu" + banner
     menu_list = main_menu.copy()
     menu_list.append(["Math", submenuc])
-    menu_list.append(["Quiz", quiz_submenuc])
     m = questy.Menu(title, menu_list)
     m.menu()  # method and data reside in object
 
@@ -62,12 +57,6 @@ def submenuc():
     m = questy.Menu(title, sub_menu)
     m.menu()
 
-# def quiz_submenuc
-# quiz_submenuc works similarly to menuc
-def quiz_submenuc():
-    title = "Class Submenu" + banner
-    m = questy.Menu(title, quiz_sub_menu)
-    m.menu()
 
 
 def driver():
@@ -79,4 +68,3 @@ def driver():
 # this code is activated when file is executed directly
 if __name__ == "__main__":
     driver()
-
