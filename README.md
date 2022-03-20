@@ -118,8 +118,8 @@
     <td>March 21 - 25</td>
     <td>Python Console Programming and Animations</td>
     <td>TPT <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-2.0-Legal-and-Ethical-Concerns-5.5">5.5</a>-<a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-2.0-Safe-Computing-5.6">5.6</a></td>
-    <td>TT2 Data Structures 2</td>
-    <td>Classy Lists and Adventure</td>
+    <td>TT2 Data Structures 2 <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TT2-Python-Classes"></a></td>
+    <td>Classy Functions</td>
    </tr>
    
    <tr>
