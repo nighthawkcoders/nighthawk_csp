@@ -30,11 +30,6 @@ sub_menu = [
     ["Primes", mathy.primes],
 ]
 
-
-
-
-banner = f"\n{border}\nPlease Select An Option\n{border}\n"
-
 # def menuc
 # using main_menu list:
 # 1. custom title is created for menu
@@ -49,7 +44,6 @@ def menuc():
     m = questy.Menu(title, menu_list)
     m.menu()  # method and data reside in object
 
-
 # def submenuc
 # submenuc works similarly to menuc
 def submenuc():
@@ -57,13 +51,10 @@ def submenuc():
     m = questy.Menu(title, sub_menu)
     m.menu()
 
-
-
 def driver():
     title = "Function Menu" + banner
     menu_list = main_menu.copy()
     menuc()
-
 
 # this code is activated when file is executed directly
 if __name__ == "__main__":
