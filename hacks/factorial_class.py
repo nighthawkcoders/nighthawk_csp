@@ -3,6 +3,19 @@ class Factorial:
     def __init__(self):
         self.factorial = 1
 
+        
+'''
+
+The call function/method is a special to Python, when implemented inside a class, this gives its
+ object the ability to behave like a regular Python function.
+
+Definition of call. The call method is defined inside the Python class. The method allows the 
+construct object to invoke this method using a "object_name()" notation. The "def call(self, n):" 
+has keyword "self" in the parameter list, this means that the object itself is part of this 
+functions properties. The parameter "n" means it is expecting a value to be passed, 
+in Factorial case it is for the Factorial of n - (n!).
+
+'''        
     def __call__(self, n):
         if n == 1 or n == 0:
             return 1
