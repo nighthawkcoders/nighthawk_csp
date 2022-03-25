@@ -100,7 +100,7 @@
     <td>April 4 - 8</td>
     <td>PBL Algorithmic Project Due</td>
     <td>Performance Task resource and videos as part of Mid Term review</td>
-    <td>Hackathon</td>
+    <td>Hackathon or Test</td>
     <td>Midterm starts: Individual Algorithmic Final</td>
    </tr>
    
