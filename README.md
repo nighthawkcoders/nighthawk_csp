@@ -83,7 +83,7 @@
     <td>CSP College Board Create Task Work Week 1</td>
     <td>MCQ Most Missed Session A</td>
     <td>Proctored MCQ 1</td>
-    <td>CB Video Take 1 Review</td>
+    <td>Midterm continues: Individual Algorithmic Final</td>
    </tr>
    
    <tr>
