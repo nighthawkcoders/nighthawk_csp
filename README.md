@@ -101,7 +101,7 @@
     <td>PBL Algorithmic Project Due</td>
     <td>Performance Task resource and videos</td>
     <td>Hackathon</td>
-    <td>Individual Algorithmic Final</td>
+    <td>Midterm starts: Individual Algorithmic Final</td>
    </tr>
    
    <tr>
@@ -109,7 +109,7 @@
     <td>March 28 - April 1</td>
     <td>Algorithim Ketchup</td>
     <td>none</td>
-    <td>TT3 Console Colors and Animation</td>
+    <td>PBL accounts and login</td>
     <td>Algorithmic Cross Over</td>
    </tr>
 
