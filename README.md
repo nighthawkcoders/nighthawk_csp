@@ -55,8 +55,8 @@
     <td>May 9 - 13</td>
     <td>AP Exams Week 2</td>
     <td>CSP Exam May 9th</td>
-    <td>PBL, Full Stack Algorithms - Using Classes</td>
-    <td>AP Study Week/Customer Project Coding</td>
+    <td>PBL, Full Stack Algorithms - Classes</td>
+    <td>Sponsor Project Coding</td>
    </tr>
    
    <tr>
@@ -65,25 +65,25 @@
     <td>AP Exams Week 1</td>
     <td>Create Task Due May 2nd</td>
     <td>none</td>
-    <td>AP Study Week/Customer Project Coding</td>
+    <td>Sponsor Project Coding</td>
    </tr>
    
    <tr>
     <td>6</td>
     <td>April 25 - 29</td>
-    <td>College Board Create Task Work Week 2</td>
+    <td>Study Week 2</td>
     <td>MCQ Most Missed Session B</td>
     <td>Proctored MCQ 2</td>
-    <td>CB Live review</td>
+    <td>PBL or CB Create Task review</td>
    </tr>
    
    <tr>
     <td>5</td>
     <td>April 18 - 22</td>
-    <td>CSP College Board Create Task Work Week 1</td>
+    <td>Study Week 1</td>
     <td>MCQ Most Missed Session A</td>
     <td>Proctored MCQ 1</td>
-    <td>Midterm continues: Individual Algorithmic Final</td>
+    <td>PBL or Create Task live reviews</td>
    </tr>
    
    <tr>
@@ -98,25 +98,25 @@
    <tr>
     <td>4</td>
     <td>April 4 - 8</td>
-    <td>PBL Algorithmic Project Due</td>
-    <td>Performance Task resource and videos as part of Mid Term review</td>
-    <td>Hackathon or Test</td>
-    <td>Midterm starts: Individual Algorithmic Final</td>
+    <td>PBL or Create Task relaunch</td>
+    <td>none</td>
+    <td>PBL Accounts and Login</td>
+    <td>PBL or Create Task assignment</td>
    </tr>
    
    <tr>
     <td>3</td>
     <td>March 28 - April 1</td>
-    <td>Algorithim Ketchup</td>
+    <td>Crossover Week and Ketchup</td>
+    <td>OO Hackathon Friday</td>
     <td>none</td>
-    <td>PBL accounts and login</td>
-    <td>Algorithmic Cross Over</td>
+    <td>Algorithm and GitHub Pages Final</td>
    </tr>
 
    <tr>
     <td>2</td>
     <td>March 21 - 25</td>
-    <td>Python Console Programming and Animations</td>
+    <td>Python Class Programming</td>
     <td>TPT <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-2.0-Legal-and-Ethical-Concerns-5.5">5.5</a>-<a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-2.0-Safe-Computing-5.6">5.6</a></td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TT2-Python-Classes">TT2 Data Structures 2</a></td>
       <td><a href="https://poway.instructure.com/courses/112335/assignments/2062669">Classy Functions</a></td>
