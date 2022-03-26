@@ -99,7 +99,7 @@
     <td>4</td>
     <td>April 4 - 8</td>
     <td>PBL or Create Task relaunch</td>
-    <td>none</td>
+    <td>OO Hackathon Friday</td>
     <td>PBL Accounts and Login</td>
     <td>PBL or Create Task assignment</td>
    </tr>
@@ -108,7 +108,7 @@
     <td>3</td>
     <td>March 28 - April 1</td>
     <td>Crossover Week and Ketchup</td>
-    <td>OO Hackathon Friday</td>
+    <td>none</td>
     <td>Crossover Coding</td>
     <td>Algorithm and GitHub Pages Final</td>
    </tr>
