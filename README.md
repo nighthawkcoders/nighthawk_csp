@@ -110,7 +110,7 @@
     <td>Crossover Week and Video</td>
     <td>none</td>
     <td>Crossover Coding Days</td>
-    <td>Algorithm and GitHub Pages Final</td>
+    <td><a href="https://poway.instructure.com/courses/112335/assignments/2077246">Algorithm and GitHub Pages Final</a></td>
    </tr>
 
    <tr>
