@@ -107,7 +107,7 @@
    <tr>
     <td>3</td>
     <td>March 28 - April 1</td>
-    <td>Crossover Week and Ketchup</td>
+    <td>Crossover Week and Video</td>
     <td>none</td>
     <td>Crossover Coding</td>
     <td>Algorithm and GitHub Pages Final</td>
