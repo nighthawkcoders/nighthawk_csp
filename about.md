@@ -1,5 +1,3 @@
-{% include navigation.html %}
-
 # GitHub Activity
 ### <a href="https://github.com/nighthawkcoders/nighthawk_csp/graphs/contributors" target="_blank">CSP Repo Insights</a>
 <table>
