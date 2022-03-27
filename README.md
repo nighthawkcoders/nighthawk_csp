@@ -109,7 +109,7 @@
     <td>March 28 - April 1</td>
     <td>Crossover Week and Video</td>
     <td>none</td>
-    <td>Crossover Coding Days</td>
+    <td>Crossover Coding Tue, Wed</td>
     <td><a href="https://poway.instructure.com/courses/112335/assignments/2077246">Algorithm and GitHub Pages Final</a></td>
    </tr>
 
