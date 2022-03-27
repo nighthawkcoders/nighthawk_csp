@@ -1,9 +1,4 @@
----
-layout: post
-title:  "Reflection Example!"
----
-
-**Nailbot Reflection**, Pree Walia spoke about starting her business.
+### **Nailbot Reflection**, Pree Walia spoke about starting her business.
 
 Yesterday we had a speaker and me and Ms Naidu awarded extra credit for listening in.  I would like you all to understand how I would hope you would reflect and respond at such events.
 
