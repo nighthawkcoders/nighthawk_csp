@@ -107,9 +107,9 @@
    <tr>
     <td>3</td>
     <td>March 28 - April 1</td>
-    <td>Crossover Week and Video</td>
+    <td><a href="https://cspcoders.nighthawkcodingsociety.com/2022/03/27/Schedule.html">Blog: Crossover Week and Video</a></td>
     <td>none</td>
-    <td>Crossover Coding Tue, Wed</td>
+    <td>none</td>
     <td><a href="https://poway.instructure.com/courses/112335/assignments/2077246">Algorithm and GitHub Pages Final</a></td>
    </tr>
 
