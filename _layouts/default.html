@@ -1,0 +1,48 @@
+
+<!-- pages_python/_layouts/default.html
+     customization added to original midnight theme found through GitHub Pages -->
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    {% seo %}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="{{ '/assets/css/ie.css' | relative_url }}">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    {% include head-custom.html %}
+
+  </head>
+  <body>
+      
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>{{ site.title | default: site.github.repository_name }}</h1>
+          <p>{{ site.description | default: site.github.project_tagline }}</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
+          <!-- Credit goes to peron in next line, as nighthawkcoding society is rebranding this as their own
+               <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span> -->
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/NighthawkCoding">nighthawkcodingsociety</a></span> 
+        </div>
+        
+        <!-- nighthawk coding society has inserted navigation that can be updated in independent file -->
+        {% include navigation.html %}
+
+        <!-- this is Jekyll magic, each md file in site will be inserted here -->
+        {{ content }}
+
+      </section>
+
+    </div>
+  </body>
+</html>
