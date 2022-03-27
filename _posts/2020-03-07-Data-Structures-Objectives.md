@@ -1,9 +1,4 @@
----
-layout: post
-title:  "Data Structures Objectives!"
----
-
-**Primary Deliverables**: Algorithmic Project, Create Task, Sponsored PBL Project.
+### **Primary Deliverables**: Algorithmic Project, Create Task, Sponsored PBL Project.
 
 ## Primary deliverables for trimester:
 * Individual/Pair Algorithmic Project - every individual will manage their own Python project.  Replit deliverables with integrated GitHub version control are required.  Those who commit frequently and regularly will receive higher grades.  Requirements for this project will be provided via Tech Talks.
