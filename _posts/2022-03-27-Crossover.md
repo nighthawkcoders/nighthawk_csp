@@ -9,12 +9,10 @@
      * Write Factorial function using classes, providing implementation of call.
      * Select your own Math function. Write it in Imperative and OOP form.
      * Extra Credit(1 point).  Write Palindrome function using classes, must provide implementation of call.  Must indicate where error occurs on front and back comparison. 
-
 * **Tue-Wed Crossover coding**
     * Pick a crossover partner from a group other than your study group.  
     * Complete/Fix/Contribute to the crossover replit project, and indi GH Pages. 
     * Check for completion of all TT challenges (weeks0/1/2) and TPT GitHub pages actions(5.1 - 5.6) to meet the finals requirements of [Individual Coding](https://poway.instructure.com/courses/112335/assignments/2077246).
-
 * **Thu-Fri Algorithmic Final**
     * CCC,PBL  
     * Prepare for [Algorithmic Final/Video](https://poway.instructure.com/courses/112335/assignments/2077246) (Due Friday 11:59PM)
