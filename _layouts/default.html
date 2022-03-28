@@ -24,14 +24,14 @@
     <div class="wrapper">
 
       <section>
+        <!-- nighthawk coding society has altered arrangment and inserted navigation that is updated in independent file -->
         <div id="title">
           <h1><a href="https://github.com/nighthawkcoders/">{{ site.title | default: site.github.repository_name }}</a></h1>
           <p>{{ site.description | default: site.github.project_tagline }}</p>
           <hr>
+          {% include navigation.html %}
           <span class="credits left">Runtime <a href="https://csp.nighthawkcodingsociety.com/">nighthawkcoders</a></span>
           <span class="credits right">Twitter <a href="https://twitter.com/NighthawkCoding">@NighthawkCoding</a></span> 
-          <!-- nighthawk coding society has inserted navigation that can be updated in independent file -->
-          {% include navigation.html %}
         </div>
 
         <!-- this is Jekyll magic, each md file in site will be inserted here -->
