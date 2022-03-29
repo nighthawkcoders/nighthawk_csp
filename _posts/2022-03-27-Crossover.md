@@ -12,7 +12,7 @@
 * **Tue-Wed Crossover coding - each student must have 5-10 commits(both GH pages and Python in equal proportion) in peer Data Structures project**
     * Pick a crossover partner from a group other than your study group.  
     * Complete/Fix/Contribute to the crossover replit project, and indi GH Pages. Consider helping with something incomplete or add something **creative** from your year long experience in coding.  
-    * Should have/add animation and color to menu
+    * Should consider having animation and color to menu
     * Check for completion of all TT challenges (weeks0/1/2) and TPT GitHub pages actions(5.1 - 5.6) to meet the finals requirements of [Individual Coding](https://poway.instructure.com/courses/112335/assignments/2077246).
 * **Thu-Fri Algorithmic Final**
     * CCC,PBL  
