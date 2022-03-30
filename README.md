@@ -1,8 +1,4 @@
 # Time Box Tri 3
-## Primary deliverables for trimester:
-* Individual/Pair Algorithmic Project - every individual will manage their own Python project.  Replit deliverables with integrated GitHub version control are required.  Those who commit frequently and regularly will receive higher grades.  Requirements for this project will be provided via Tech Talks.
-* College Board Create Task - this project will be managed as individual or pair.  Each individual must work on and submit code according to College Board.  Ideas must be created by Individual or Individual/Pair collaboration.
-* PBL Customer Project - teams of four will work on a project throughout the trimester, this should be focus in all planning.  Recommendation is that you build or add to a project that was started in Trimester 1 or 2, or that you fork/extend an idea from CSP 2021 students.   It is highly advised to plan to incorporate algorithmic ideas and college board ideas into your final project.  Such planning will lead to leveraged and strategic implementation.  Teams that assign jobs, leverage work, and plan throughout the trimester will undoubtedly receive higher grades.  Requirements need to be approved by Project Owner, this job represents needs of Customer and must be someone outside of project team.
 
 <table>
    <tr>
@@ -55,8 +51,8 @@
     <td>May 9 - 13</td>
     <td>AP Exams Week 2</td>
     <td>CSP Exam May 9th</td>
-    <td>PBL, Full Stack Algorithms - Using Classes</td>
-    <td>AP Study Week/Customer Project Coding</td>
+    <td>PBL, Full Stack Algorithms - Classes</td>
+    <td>Sponsor Project Coding</td>
    </tr>
    
    <tr>
@@ -65,25 +61,25 @@
     <td>AP Exams Week 1</td>
     <td>Create Task Due May 2nd</td>
     <td>none</td>
-    <td>AP Study Week/Customer Project Coding</td>
+    <td>Sponsor Project Coding</td>
    </tr>
    
    <tr>
     <td>6</td>
     <td>April 25 - 29</td>
-    <td>College Board Create Task Work Week 2</td>
+    <td>Study Week 2</td>
     <td>MCQ Most Missed Session B</td>
     <td>Proctored MCQ 2</td>
-    <td>CB Live review</td>
+    <td>PBL or CB Create Task review</td>
    </tr>
    
    <tr>
     <td>5</td>
     <td>April 18 - 22</td>
-    <td>CSP College Board Create Task Work Week 1</td>
+    <td>Study Week 1</td>
     <td>MCQ Most Missed Session A</td>
     <td>Proctored MCQ 1</td>
-    <td>CB Video Take 1 Review</td>
+    <td>PBL or Create Task live reviews</td>
    </tr>
    
    <tr>
@@ -98,28 +94,28 @@
    <tr>
     <td>4</td>
     <td>April 4 - 8</td>
-    <td>PBL Algorithmic Project Due</td>
-    <td>Performance Task resource and videos</td>
-    <td>Hackathon</td>
-    <td>Individual Algorithmic Final</td>
+    <td>PBL or Create Task relaunch</td>
+    <td>OO Hackathon Friday</td>
+    <td>PBL Accounts and Login</td>
+    <td>PBL or Create Task assignment</td>
    </tr>
    
    <tr>
     <td>3</td>
     <td>March 28 - April 1</td>
-    <td>Algorithim Ketchup</td>
+    <td><a href="https://cspcoders.nighthawkcodingsociety.com/2022/03/27/Crossover.html">Crossover Week and Video</a></td>
     <td>none</td>
-    <td>TT3 Console Colors and Animation</td>
-    <td>Algorithmic Cross Over</td>
+    <td>none</td>
+    <td><a href="https://poway.instructure.com/courses/112335/assignments/2077246">Algorithm and GitHub Pages Final</a></td>
    </tr>
 
    <tr>
     <td>2</td>
     <td>March 21 - 25</td>
-    <td>Python Console Programming and Animations</td>
+    <td>Python Class Programming</td>
     <td>TPT <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-2.0-Legal-and-Ethical-Concerns-5.5">5.5</a>-<a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-2.0-Safe-Computing-5.6">5.6</a></td>
-    <td>TT2 Data Structures 2</td>
-    <td>Classy Lists and Adventure</td>
+    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TT2-Python-Classes">TT2 Data Structures 2</a></td>
+      <td><a href="https://poway.instructure.com/courses/112335/assignments/2062669">Classy Functions</a></td>
    </tr>
    
    <tr>

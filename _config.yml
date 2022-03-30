@@ -1,6 +1,9 @@
 theme: jekyll-theme-midnight
 title: Nighthawk CSP
 description: "This GitHub project provides Advance Placement Computer Science Principles (AP-CSP) code, training, and teaching materials.  This page is a 'GitHub Pages' website and contains guidance and development activities.   Cloning the GitHub Project provides Python-Flask webserver code.  Explore this page and links to develop, build, and deploy a Web Server."
+gitorg: "https://github.com/nighthawkcoders"
 email: "nighthawkcodingsociety@gmail.com"
-webserver: "csp.nighthawkcodingsociety.com"
-twitter: "twitter.com/NighthawkCoding"
+webserver: "https://csp.nighthawkcodingsociety.com/"
+webserverid: "nighthawkcodingsociety"
+twitter: "https://twitter.com/NighthawkCoding"
+twitterid: "@NighthawkCoding"

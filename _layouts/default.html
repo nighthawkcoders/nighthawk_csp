@@ -1,0 +1,44 @@
+<!-- pages_python/_layouts/default.html
+     customization added to original midnight theme found through GitHub Pages -->
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    {% seo %}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="{{ '/assets/css/ie.css' | relative_url }}">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    {% include head-custom.html %}
+
+  </head>
+  <body>
+      
+    <div class="wrapper">
+
+      <section>
+        <!-- nighthawk coding society has altered arrangment and inserted navigation that is updated in independent file -->
+        <div id="title">
+          <h1><a href={{ site.gitorg }}>{{ site.title | default: site.github.repository_name }}</a></h1>
+          <p>{{ site.description | default: site.github.project_tagline }}</p>
+          <hr>
+          {% include navigation.html %}
+          <span class="credits left">Runtime <a href={{ site.webserver }}>{{ site.webserverid }}</a></span>
+          <span class="credits right">Twitter <a href={{ site.twitter }}>{{ site.twitterid }}</a></span> 
+        </div>
+
+        <!-- this is Jekyll magic, each md file in site will be inserted here -->
+        {{ content }}
+
+      </section>
+
+    </div>
+  </body>
+</html>
