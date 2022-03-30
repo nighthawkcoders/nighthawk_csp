@@ -1,5 +1,6 @@
 from __init__ import db
 from crud.model import Users
+
 # import random
 
 
@@ -30,6 +31,19 @@ def users_all_sql():
     return json_ready
 
 
+# ALGORITHM to convert the results of an SQL Query to a JSON ready format in Python
+def sqlquery_2_list(rows):
+    out_list = []
+    keys = rows.keys()  # "Keys" are the columns of the sql query
+    for values in rows:  # "Values" are rows within the SQL database
+        row_dictionary = {}
+        for i in range(len(keys)):  # This loop lines up K, V pairs, same as JSON style
+            row_dictionary[keys[i]] = values[i]
+        row_dictionary["query"] = "by_sql"  # This is for fun a little watermark
+        out_list.append(row_dictionary)  # Finally we have a out_list row
+    return out_list
+
+
 # SQLAlchemy extract users from database matching term
 def users_ilike(term):
     """filter Users table by term into JSON list (ordered by User.name)"""
@@ -50,20 +64,21 @@ def user_by_email(email):
     return Users.query.filter_by(email=email).first()
 
 
-# ALGORITHM to convert the results of an SQL Query to a JSON ready format in Python
-def sqlquery_2_list(rows):
-    out_list = []
-    keys = rows.keys()  # "Keys" are the columns of the sql query
-    for values in rows:  # "Values" are rows within the SQL database
-        row_dictionary = {}
-        for i in range(len(keys)):  # This loop lines up K, V pairs, same as JSON style
-            row_dictionary[keys[i]] = values[i]
-        row_dictionary["query"] = "by_sql"  # This is for fun a little watermark
-        out_list.append(row_dictionary)  # Finally we have a out_list row
-    return out_list
+# check for user in database
+def is_user(email, password):
+    # query email and return user record
+    user_record = user_by_email(email)
+    # if user record found, check if password is correct
+    return user_record and Users.is_password_match(user_record, password)
 
 
 # Test queries
 if __name__ == "__main__":
-    for i in range(10):
-        print(users_all())
+    print("Convert all users to to JSON")
+    print(users_all())
+
+    print()
+
+    print("Check email and password")
+    print("Valid", is_user("tedison@example.com", "123toby"))
+    print("Invalid", is_user("tedison@example.com", "456toby"))
