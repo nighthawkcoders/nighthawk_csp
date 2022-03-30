@@ -47,7 +47,13 @@
                         if (key !== 'query') {
                             //create a DOM element for the data(cells) in table rows
                             const td = document.createElement("td");
-                            td.innerHTML = data[key];
+                            console.log(data[key]);
+                            //truncate the displayed password to length 20
+                            if (key == 'password'){
+                                td.innerHTML = data["password"].substring(0,20);
+                            }
+                            else{
+                                td.innerHTML = data[key];}
                             //append the DOM data element to the table
                             tr.appendChild(td);
                         }
@@ -113,7 +119,11 @@
                         if (key !== 'query') {
                             //create a cell for each key
                             const td = document.createElement("td");
-                            td.innerHTML = data[key];
+                            if (key == 'password'){
+                                td.innerHTML = data["password"].substring(0,20);
+                            }
+                            else{
+                            td.innerHTML = data[key];}
                             //add each cell to the table row
                             tr.appendChild(td);
                         }
