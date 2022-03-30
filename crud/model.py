@@ -1,9 +1,9 @@
 """ database dependencies to support Users db examples """
 from sqlalchemy.exc import IntegrityError
+from werkzeug.security import generate_password_hash, check_password_hash
 from __init__ import db
 
 # Tutorial: https://www.sqlalchemy.org/library.html#tutorials, try to get into Python shell and follow along
-
 
 # Define the Users table within the model
 # -- Object Relational Mapping (ORM) is the key concept of SQLAlchemy
@@ -22,7 +22,7 @@ class Users(db.Model):
     def __init__(self, name, email, password, phone):
         self.name = name
         self.email = email
-        self.password = password
+        self.set_password(password)
         self.phone = phone
 
     # CRUD create/add a new record to the table
@@ -56,7 +56,7 @@ class Users(db.Model):
         if len(name) > 0:
             self.name = name
         if len(password) > 0:
-            self.password = password
+            self.set_password(password)
         if len(phone) > 0:
             self.phone = phone
         db.session.commit()
@@ -68,6 +68,17 @@ class Users(db.Model):
         db.session.delete(self)
         db.session.commit()
         return None
+
+    # set password method is used to create encrypted password
+    def set_password(self, password):
+        """Create hashed password."""
+        self.password = generate_password_hash(password, method='sha256')
+
+    # check password to check versus encrypted password
+    def is_password_match(self, password):
+        """Check hashed password."""
+        result = check_password_hash(self.password, password)
+        return result
 
 
 """Database Creation and Testing section"""

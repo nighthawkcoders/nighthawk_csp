@@ -153,7 +153,7 @@
                         let rows = table.querySelectorAll('tbody tr');
                         for(let i = 0; i < rows.length; ++i) {
                             //search for the required userid starting at row 0, column 0
-                            if (parseInt(rows[i].cells[0].innerHTML) == parseInt(userid)) {
+                            if (parseInt(rows[i].cells[0].innerHTML) === parseInt(userid)) {
                                 //for the selected userid, update the username in column 1
                                 rows[i].cells[1].innerHTML = username;
                             }
@@ -198,7 +198,7 @@
                     //search for the required userid in the HTML table
                     for(let i = 0; i < rows.length; ++i) {
                         //search for the userid starting at row 0, column 0
-                        if (parseInt(rows[i].cells[0].innerHTML) == parseInt(userid)) {
+                        if (parseInt(rows[i].cells[0].innerHTML) === parseInt(userid)) {
                             //delete the table row for the matched userid
                             document.getElementById("users").deleteRow(i+1);
                             //remove the deleted userid from the dropdowns
@@ -265,7 +265,7 @@
                                     <td>{{ row['userID'] }}</td>
                                     <td>{{ row['name'] }}</td>
                                     <td>{{ row['email'] }}</td>
-                                    <td>{{ row['password'] }}</td>
+                                    <td>{{ row['password'] | truncate(20) }}</td>
                                     <td>{{ pnf }}</td>
                                 </tr>
                             {% endfor %}

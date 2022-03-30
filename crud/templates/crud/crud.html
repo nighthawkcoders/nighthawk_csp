@@ -59,7 +59,7 @@
                                     <td>{{ row['userID'] }}</td>
                                     <td>{{ row['name'] }}</td>
                                     <td>{{ row['email'] }}</td>
-                                    <td>{{ row['password'] }}</td>
+                                    <td>{{ row['password'] | truncate(20) }}</td>
                                     <td>{{ pnf }}</td>
                                 </tr>
                             {% endfor %}
