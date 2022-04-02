@@ -1,5 +1,7 @@
 from __init__ import db
 from crud.model import Users
+from flask_login import current_user, login_user, logout_user
+
 
 # import random
 
@@ -72,13 +74,77 @@ def is_user(email, password):
     return user_record and Users.is_password_match(user_record, password)
 
 
+# if login url, show phones table only
+def login(email, password):
+    # Bypass if user is logged in
+    if current_user.is_authenticated:
+        return True
+    # Login evaluation
+    if is_user(email, password):
+        login_user(user_by_email(email))  # set flask login user
+        return True
+    else:
+        return False
+
+
+# Authorise new user requires user_name, email, password
+def authorize(name, email, password):
+    if is_user(email, password):
+        return False
+    else:
+        auth_user = Users(
+            name=name,
+            email=email,
+            password=password,
+            phone="1234567890"
+        )
+        # encrypt their password and add it to the auth_user object
+        auth_user.create()
+        return True
+
+
+# logout user
+def logout():
+    logout_user()  # remove flask login user
+
+
 # Test queries
 if __name__ == "__main__":
-    print("Convert all users to to JSON")
-    print(users_all())
 
+    # Look at table
+    print("Print all at start")
+    for user in users_all():
+        print(user)
     print()
 
-    print("Check email and password")
-    print("Valid", is_user("tedison@example.com", "123toby"))
-    print("Invalid", is_user("tedison@example.com", "456toby"))
+    """ Password Lookup Sample Code """
+    # Expected success on Email and Password lookup
+    name = "Thomas Edison"
+    email = "tedison@example.com"
+    psw = "123toby"
+    print(f"Check is_user with valid email and password {email}, {psw}", is_user(email, psw))
+
+    # Expected failure on Email and Password lookup
+    psw1 = "1234puffs"
+    print(f"Check is_user with invalid password: {email}, {psw1}", is_user(email, psw1))
+
+    """ Authorization Screen Sample Code"""
+    # Expected failure as user exists
+    print(f"Check authorize with existing email and password: {name}, {psw}", authorize(name, email, psw))
+
+    # Expected success as user does not exist
+    name1 = "Coco Puffs"
+    email1 = "puffs@example.com"
+    print(f"Check authorize with new email and password: {name1}, {psw1}", authorize(name1, email1, psw1))
+
+    # Look at table
+    print()
+    print("Print all at end")
+    for user in users_all():
+        print(user)
+
+    # Clean up data from run, so it can run over and over the same
+    user_record = user_by_email(email1)
+    user_record.delete()
+
+

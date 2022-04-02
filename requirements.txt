@@ -1,11 +1,11 @@
-flask==2.1.0
+flask==2.1.1
 requests==2.27.1
-SQLAlchemy==1.4.32
-Werkzeug==2.1.0
+SQLAlchemy==1.4.34
+Werkzeug==2.1.1
 flask_login
 flask_sqlalchemy
 flask_migrate
 flask_restful
 numpy~=1.22.0
-Pillow==9.0.1
+Pillow==9.1.0
 pynput~=1.7.6
