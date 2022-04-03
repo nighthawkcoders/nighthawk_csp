@@ -10,4 +10,4 @@
 * **Wed 4/4 TT Accounts and Login**
 * **Thu 4/5-Fri 4/6 CCC - Code must contain comments and documentation throughout**
     * CB Create Task completed and documented on GH Pages -Prep to submit to CB on or before May, 2nd.
-    * Accounts and Logins Challenges/Hacks
+    * Accounts and Logins [Challenges/Hacks](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TT3--Accounts-and-Login).
