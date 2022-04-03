@@ -2,12 +2,12 @@
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
 from flask_login import login_required
 
-from crud.query import *
+from cruddy.query import *
 
 # blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
 app_crud = Blueprint('crud', __name__,
                      url_prefix='/crud',
-                     template_folder='templates/crud/',
+                     template_folder='templates/cruddy/',
                      static_folder='static',
                      static_url_path='static')
 
