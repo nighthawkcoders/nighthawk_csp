@@ -82,6 +82,10 @@ class Users(UserMixin, db.Model):
         result = check_password_hash(self.password, password)
         return result
 
+    # required for login_user, without override is id (versus userID)
+    def get_id(self):
+        return self.userID
+
 
 
 """Database Creation and Testing section"""

@@ -3,7 +3,7 @@ from flask import Blueprint, render_template
 from flask_restful import Api, Resource
 import requests
 
-from crud.sql import *
+from crud.query import *
 
 # blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
 

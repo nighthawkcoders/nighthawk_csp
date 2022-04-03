@@ -81,14 +81,16 @@ def login(email, password):
         return True
     # Login evaluation
     if is_user(email, password):
-        login_user(user_by_email(email))  # set flask login user
+        user_row = user_by_email(email)
+        login_user(user_row)  # set flask login user
         return True
     else:
         return False
 
+
 # this function is needed for Flask-Login to work.
 @login_manager.user_loader
-def model_user_loader(user_id):
+def user_loader(user_id):
     """Check if user is logged-in on every page load."""
     if user_id is not None:
         return Users.query.get(user_id)
@@ -154,5 +156,3 @@ if __name__ == "__main__":
     # Clean up data from run, so it can run over and over the same
     user_record = user_by_email(email1)
     user_record.delete()
-
-
