@@ -1,4 +1,4 @@
-### **Plan for the week of 4/2 - 4/6**
+### **Plan for the week of 4/4 - 4/8**
 * **Mon 4/2 Planning**
     * Steve Jobs Video
     * MIT Article on cheating
