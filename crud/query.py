@@ -1,4 +1,4 @@
-from __init__ import db
+from __init__ import login_manager, db
 from crud.model import Users
 from flask_login import current_user, login_user, logout_user
 
@@ -85,6 +85,14 @@ def login(email, password):
         return True
     else:
         return False
+
+# this function is needed for Flask-Login to work.
+@login_manager.user_loader
+def model_user_loader(user_id):
+    """Check if user is logged-in on every page load."""
+    if user_id is not None:
+        return Users.query.get(user_id)
+    return None
 
 
 # Authorise new user requires user_name, email, password

@@ -1,11 +1,9 @@
 """ database dependencies to support Users db examples """
+from __init__ import db
 from sqlalchemy.exc import IntegrityError
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import UserMixin, LoginManager
-from __init__ import app, db
+from flask_login import UserMixin
 
-login_manager = LoginManager()
-login_manager.init_app(app)
 
 # Tutorial: https://www.sqlalchemy.org/library.html#tutorials, try to get into Python shell and follow along
 
@@ -84,14 +82,6 @@ class Users(UserMixin, db.Model):
         result = check_password_hash(self.password, password)
         return result
 
-
-# this function is needed for Flask-Login to work.
-@login_manager.user_loader
-def model_user_loader(user_id):
-    """Check if user is logged-in on every page load."""
-    if user_id is not None:
-        return Users.query.get(user_id)
-    return None
 
 
 """Database Creation and Testing section"""
