@@ -16,4 +16,4 @@
     * Check for completion of all TT challenges (weeks0/1/2) and TPT GitHub pages actions(5.1 - 5.6) to meet the finals requirements of [Individual Coding](https://poway.instructure.com/courses/112335/assignments/2077246).
 * **Thu-Fri Algorithmic Final**
     * CCC,PBL  
-    * Prepare for [Algorithmic Final/Video](https://poway.instructure.com/courses/112335/assignments/2077246) (Due Friday 11:59PM)
+    * Prepare for [Algorithmic Final/Video](https://poway.instructure.com/courses/112335/assignments/2077246) (Due Monday, 4/2 @ 11:59PM)
