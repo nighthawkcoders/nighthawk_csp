@@ -94,7 +94,7 @@
    <tr>
     <td>4</td>
     <td>April 4 - 8</td>
-    <td>PBL or Create Task relaunch</td>
+    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-Week-PBL-Login-and-Create-Task">Create Task and Login</a></td>
     <td>OO Hackathon Friday</td>
     <td>PBL Accounts and Login</td>
     <td>PBL or Create Task assignment</td>
