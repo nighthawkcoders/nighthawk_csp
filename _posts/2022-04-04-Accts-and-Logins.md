@@ -1,9 +1,6 @@
 ### **Plan for the week of 4/4 - 4/8**
 * **Mon 4/2 Planning**
-    * Steve Jobs Video
-    * MIT Article on cheating
-    * Ethics
-    * Grading policy and self grading
+  * Prepare for College Board Create Task - Each individual must work on and submit code according to College Board. Ideas must be created by Individual or Individual/Pair collaboration
 * **Tue 4/3 Crossover grading**
     * INDIVIDUAL to send Indi score/10 (incl. name of grader next to score) 
     * DMs for Mortensen, Team Channel for Naidu : Share link(s) on slack to final work:  GitHub pages, Replit, Review Ticket(s), TimeBox, or other methods you have used to organize work.
