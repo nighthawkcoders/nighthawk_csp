@@ -38,9 +38,9 @@ def unauthorized():
 def crud_login():
     # obtains form inputs and fulfills login requirements
     if request.form:
-        email = request.form.get("email"),
+        email = request.form.get("email")
         password = request.form.get("password")
-        if login(email[0], password):       # zero index [0] used as email is a tuple
+        if login(email, password):       # zero index [0] used as email is a tuple
             return redirect(url_for('crud.crud'))
 
     # if not logged in, show the login page
@@ -52,11 +52,11 @@ def crud_authorize():
     # check form inputs and creates user
     if request.form:
         # validation should be in HTML
-        user_name = request.form.get("user_name"),
-        email = request.form.get("email"),
+        user_name = request.form.get("user_name")
+        email = request.form.get("email")
         password1 = request.form.get("password1")
         password2 = request.form.get("password1")           # password should be verified
-        if authorize(user_name[0], email[0], password1):    # zero index [0] used as user_name and email are type tuple
+        if authorize(user_name, email, password1):    # zero index [0] used as user_name and email are type tuple
             return redirect(url_for('crud.crud_login'))
     # show the auth user page if the above fails for some reason
     return render_template("authorize.html")
