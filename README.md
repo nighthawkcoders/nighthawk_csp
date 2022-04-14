@@ -79,7 +79,7 @@
     <td>Study Week 1</td>
     <td>MCQ Most Missed Session A</td>
     <td>Proctored MCQ 1</td>
-    <td>Proctored MCQ 1 - Quiz1,Quiz2 Scores</td>
+    <td><a href="https://poway.instructure.com/courses/112335/assignments/2094412">Proctored MCQ 1 - Quiz1,Quiz2 Scores</a></td>
    </tr>
    
    <tr>
