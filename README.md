@@ -60,8 +60,8 @@
     <td>May 2 - 6</td>
     <td>AP Exams Week 1</td>
     <td>Create Task Due May 2nd</td>
-    <td>none</td>
-    <td>Sponsor Project Coding</td>
+    <td>Proctored MCQ 3</td>
+    <td>Proctored MCQ 3 - Quiz5 Score</td>
    </tr>
    
    <tr>
@@ -70,7 +70,7 @@
     <td>Study Week 2</td>
     <td>MCQ Most Missed Session B</td>
     <td>Proctored MCQ 2</td>
-    <td>PBL or CB Create Task review</td>
+    <td>Proctored MCQ 2 - Quiz3,Quiz4 Scores</td>
    </tr>
    
    <tr>
@@ -79,7 +79,7 @@
     <td>Study Week 1</td>
     <td>MCQ Most Missed Session A</td>
     <td>Proctored MCQ 1</td>
-    <td>Proctored MCQ1,2 Scores</td>
+    <td>Proctored MCQ 1 - Quiz1,Quiz2 Scores</td>
    </tr>
    
    <tr>
