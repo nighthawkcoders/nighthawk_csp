@@ -79,7 +79,7 @@
     <td>Study Week 1</td>
     <td>MCQ Most Missed Session A</td>
     <td>Proctored MCQ 1</td>
-    <td>PBL or Create Task live reviews</td>
+    <td>Login Hacks and Create Task live reviews</td>
    </tr>
    
    <tr>
