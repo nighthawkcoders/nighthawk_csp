@@ -16,5 +16,5 @@ Plan for the week of 4/18 - 4/22
    * Create Task Prep/Sponsor PBL(for those not taking the AP Test)  
 
   
-  ##Note: Finals-Quiz1, Finals-Quiz2 scores of above 50% with test corrections gets a 5/5  
+  ##Note: Finals-Quiz1, Finals-Quiz2 scores of above 50% with test corrections get a 5/5  
   ##DMs for Mortensen, Team Channel for Naidu by Mon 4/25 at 8:00AM: Share link on slack to Github Pages with scores and test corrections.  
