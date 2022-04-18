@@ -1,6 +1,5 @@
 ### **2020 Tri 3 Week 5: 4/18 - 4/25, AP Preparation Week 1**  
 There will be two weeks of AP Test Study or PBL Coding based off your goals 
-
 * AP Testers
     * Check College Board for study material, procotored test will open up on the morning of the event.
     * On Tue and Thu you will have a 4 hour window where MCQ will be open.  This is to provide simulation of timed testing.
@@ -8,7 +7,6 @@ There will be two weeks of AP Test Study or PBL Coding based off your goals
 * PBL Coders
     * All teams have a project and should be establishing milestones in order to accomplish goals set by sponsor
     * For Indi points, assigned ticket, scrum master review, and tangibles for individual
-
 * **Mon 4/18 Live Crossover Review**
   * Live review of Login Hacks and CB Create task, notes and runtime (DMs for Mortensen, Team Channel for Naidu : Review ticket with score/5 and grader name on the top of the ticket)
   * **AP Testers** establish Individual Test plan ticket and record progress in individual GH Pages
