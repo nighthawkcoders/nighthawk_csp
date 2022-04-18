@@ -60,7 +60,7 @@
     <td>May 2 - 6</td>
     <td>AP Exams Week 1</td>
     <td>Create Task Due May 2nd</td>
-    <td>Proctored MCQs 3</td>
+    <td>Proctored MCQs</td>
     <td>Proctored MCQ - Quiz5 Score</td>
    </tr>
    
