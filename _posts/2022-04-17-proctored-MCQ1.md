@@ -21,6 +21,5 @@ There will be two weeks of AP Test Study or PBL Coding based off your goals
 * **Fri 4/22**
   * Test corrections for Finals-Quiz2 for AP Testers or CCC  
   * Review most missed question in Finals-Quiz2 for AP Testers or CCC   
-  
   ##Note: Finals-Quiz1, Finals-Quiz2 scores of above 50% with test corrections get a 5/5  
   ##DMs for Mortensen, Team Channel for Naidu by Mon 4/25 at 8:00AM: Share link on slack to Github Pages with scores and test corrections.  
