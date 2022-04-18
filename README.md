@@ -60,8 +60,8 @@
     <td>May 2 - 6</td>
     <td>AP Exams Week 1</td>
     <td>Create Task Due May 2nd</td>
-    <td>Proctored MCQ 3</td>
-    <td>Proctored MCQ 3 - Quiz5 Score</td>
+    <td>Proctored MCQs 3</td>
+    <td>Proctored MCQ - Quiz5 Score</td>
    </tr>
    
    <tr>
@@ -69,8 +69,8 @@
     <td>April 25 - 29</td>
     <td>College Board Prep Week2</td>
     <td>MCQ Most Missed Session B</td>
-    <td>Proctored MCQ 2</td>
-    <td>Proctored MCQ 2 - Quiz3,Quiz4 Scores</td>
+    <td>Proctored MCQs and Create Task</td>
+    <td>Proctored MCQs - Quiz3,Quiz4 Scores</td>
    </tr>
    
    <tr>
@@ -78,8 +78,8 @@
     <td>April 18 - 22</td>
       <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/_posts/2022-04-17-proctored-MCQ1.md">College Board Prep Week1</a></td>
     <td>MCQ Most Missed Session A</td>
-    <td>Proctored MCQ 1</td>
-    <td><a href="https://poway.instructure.com/courses/112335/assignments/2094412">Proctored MCQ 1 - Quiz1,Quiz2 Scores</a></td>
+    <td>Proctored MCQs and Create Task</td>
+    <td><a href="https://poway.instructure.com/courses/112335/assignments/2094412">Proctored MCQs - Quiz1,Quiz2 Scores</a></td>
    </tr>
    
    <tr>
