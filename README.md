@@ -15,7 +15,7 @@
     <td>June 6 - 9</td>
     <td>N@tM Week</td>
     <td>none</td>
-    <td>N@tM Tue 5/31 6-7:30pm</td>
+    <td>none</td>
     <td>none</td>
    </tr>
    
@@ -24,7 +24,7 @@
     <td>May 30 - June 3</td>
     <td>PBL Customer Project Due</td>
     <td>none</td>
-    <td>none</td>
+    <td>N@tM Tue 5/31 6-7:30pm</td>
     <td>Customer Project Final Review</td>
    </tr>
    
