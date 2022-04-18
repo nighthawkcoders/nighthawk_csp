@@ -22,6 +22,6 @@ There will be two weeks of AP Test Study or PBL Coding based off your goals. Som
     * Proctored MCQ test: Finals-Quiz2 on CB, 50 questions for AP Testers or CCC   
 * **Fri 4/22**
   * Test corrections for Finals-Quiz2 for AP Testers or CCC  
-  * Last 20 minutes, review most missed questions in MCQ(OO Sponsored) for AP Testers or CCC
+  * Last 20 minutes, review most missed questions in MCQ(OO Sponsored) for AP Testers or CCC  
 ##Note: Finals-Quiz1, Finals-Quiz2 scores of above 50% with test corrections get a 5/5  
 ##DMs for Mortensen, Team Channel for Naidu by Mon 4/25 at 8:00AM: Share link on slack to Github Pages with scores and test corrections.  
