@@ -12,10 +12,9 @@ There will be two weeks of AP Test Study or PBL Coding based off your goals
 
 **Timeline:**
 * **Mon 4/18 Live Crossover Review**
-  * Live review of Login Hacks and CB Create task, notes and runtime 
+  * Live review of Login Hacks and CB Create task, notes and runtime (DMs for Mortensen, Team Channel for Naidu : Review ticket with score/5 and grader name on the top of the ticket)
   * **AP Testers** establish Individual Test plan ticket and record progress in individual GH Pages
   * **PBL Coders** need to establish Individual Ticket and record Team progress in GH Pages 
-  * DMs for Mortensen, Team Channel for Naidu : Review ticket with score/5 and grader name on the top of the ticket  
 * **Tue 4/19**
     * Proctored MCQ test: Finals-Quiz1 on CB, 50 questions for AP Testers or CCC  
 * **Wed 4/20**
