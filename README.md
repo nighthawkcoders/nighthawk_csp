@@ -67,7 +67,7 @@
    <tr>
     <td>6</td>
     <td>April 25 - 29</td>
-    <td>Study Week 2</td>
+    <td>College Board Prep Week2</td>
     <td>MCQ Most Missed Session B</td>
     <td>Proctored MCQ 2</td>
     <td>Proctored MCQ 2 - Quiz3,Quiz4 Scores</td>
@@ -76,7 +76,7 @@
    <tr>
     <td>5</td>
     <td>April 18 - 22</td>
-    <td>Study Week 1</td>
+      <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/_posts/2022-04-17-proctored-MCQ1.md">College Board Prep Week1</a></td>
     <td>MCQ Most Missed Session A</td>
     <td>Proctored MCQ 1</td>
     <td><a href="https://poway.instructure.com/courses/112335/assignments/2094412">Proctored MCQ 1 - Quiz1,Quiz2 Scores</a></td>
