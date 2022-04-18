@@ -9,7 +9,7 @@ There will be two weeks of AP Test Study or PBL Coding based off your goals. Som
     * All teams have a project and should be establishing milestones in order to accomplish goals set by sponsor
     * For Indi points, assigned ticket, scrum master review, and tangibles for individual  
     
-**Activities Timeline:**  
+**Timeline for the week:**  
 * **Mon 4/18 Live Crossover Review**
   * Live review of Login Hacks and CB Create task, notes and runtime (DMs for Mortensen, Team Channel for Naidu : Review ticket with score/5 and grader name on the top of the ticket)
   * **AP Testers** establish Individual Test plan ticket and record progress in individual GH Pages
