@@ -1,6 +1,6 @@
 ### **2020 Tri 3 Week 5: 4/18 - 4/25, AP Preparation Week 1**  
-There will be two weeks of AP Test Study or PBL Coding based off your goals 
-**Activities:**  
+There will be two weeks of AP Test Study or PBL Coding based off your goals  
+**Activities:**    
 * AP Testers
     * Check College Board for study material, procotored test will open up on the morning of the event.
     * On Tue and Thu you will have a 4 hour window where MCQ will be open.  This is to provide simulation of timed testing.
