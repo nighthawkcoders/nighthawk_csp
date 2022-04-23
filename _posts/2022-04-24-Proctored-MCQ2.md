@@ -27,10 +27,14 @@ The big CS events for next week will be Monday, crossover grading including crea
 * W - Improv Prep, AP Test Study/CB Create Task or PBL
 * Th - MCQ testing, everyone
 * F - Improv Event
-### Exam Week Schedule
+###  Study Week 3 Schedule
 Next week look ahead.  Class will mostly be a study hall.  As an exception, other classroom study will be acceptable.  
 * M May 2 - Crossover Grading 20 minutes
 * Tu May 3 -  MCQ testing(AP Test takers)/PBL(others)
 * W May 4 - Study or PBL
 * Th May 5 - Study Hall
-* F May 6 - Study or PBL
+* F May 6 - Crossover Grading
+### AP Exam
+* M May 9 - AP Exam / PBL
+
+
