@@ -9,9 +9,9 @@ Review ticket should be provided by grader with check boxes and clear tangibles 
 * Adjustments
     * Crossover.  Grading has been very casual lately. If tangible work is not shown in review ticket, work should be considered incomplete and .5/1 should be maximum score.  In crossover session, you have options to suggest and update information during grading.  However, if grader provides 1/1 on work without tangibles they will max out at 4.5/5 on their own work.  Collaboration and Peer review is a key part of Computer Science.
     * Attendance.  Absence, Sick, or Events.  These last couple of weeks many have been missing class.  I have asked, in the past, that you message me in Slack and discuss what you can do to make things up.  In PBL, as well as Test Prep, attendance is very important.  Also, if you don't participate in the events of class, like peer review grading, you are missing important learning experiences.
-    * Teacher review.  From now on Teacher will reserve .5 after crossover evaluations.  Maximum crossover score will be 4.5/5.  Teacher will be looking at Tangbiles, Student completenes, and Grader evaluations for final .5.  
+    * Teacher review.  From now on Teacher will reserve .5 after crossover evaluations.  Maximum crossover score will be 4.5/5.  Teacher will be looking at Tangbiles, Student completeness, and Grader evaluations for final .5.  
 ### Here is Friday Improv Activity - Extra credit and donuts will be up for grabs for winners.
-Northeastern University requires all of its computer science majors to take improv class ... The Wall Street Journal says it "forces students to come out of their shells and exercise creative play" before they can get their diplomas. ... "We saw a lot of hysterics and crying," says Carla E. Brodley, dean of the computer science department.).  
+Northeastern University requires all of its computer science majors to take improv class ... The Wall Street Journal says it "forces students to come out of their shells and exercise creative play" before they can get their diplomas. ... "We saw a lot of hysterics and crying," says Carla E. Brodley, dean of the computer science department. 
 * Rules...
     1. Pick a subject that is related to Tech, Teaching, Study, Classroom or N@tM.
     2. Must be done in one or two Scrum Teams, not participating is a 1 point deduction from Seed
@@ -21,8 +21,8 @@ Northeastern University requires all of its computer science majors to take impr
     * Tech improv brain invigoration, over the top example: https://www.youtube.com/watch?v=14La4BKNoqc
 ### Study Week 2 Schedule
 Current week
-The big CS events for next week will be Monday, crossover grading including create task peer review
-* M - Intorduction to Week, Crossover Grading including create task peer review, Improv Prep
+The big CS event for this week will be Monday, crossover grading including create task peer review
+* M - Introduction to Week, Crossover Grading including create task peer review, Improv Prep
 * Tu - MCQ testing, everyone
 * W - Improv Prep, AP Test Study/CB Create Task or PBL
 * Th - MCQ testing, everyone
