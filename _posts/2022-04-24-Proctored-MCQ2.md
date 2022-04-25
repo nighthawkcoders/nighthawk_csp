@@ -1,8 +1,8 @@
 # 2022 Tri 3 Week 6: 4/25 - 5/2, AP Preparation Week 2.
 This is the second of two weeks of AP Test Study. Everyone will be performing AP Classroom MCQs, even PBL coders unless they get an exception.
 ### AP Exam
-*  Monday May 2 - AP Create Task Due
-*  Monday May 9 - AP Exam
+*  Monday May 2 - CB AP Create Task Due
+*  Monday May 9 - CB AP Exam
 
 
 ### Practice Testing and Create Task
