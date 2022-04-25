@@ -45,7 +45,7 @@ Class will mostly be a study hall.  As an exception, other classroom study will 
 * M May 2 - Crossover Grading 20 minutes
 * Tu May 3 -  MCQ testing(AP Test takers)/PBL(others)
 * W May 4 - Study Hall or PBL
-* Th May 5 - MCQ testing(AP Test takers)/PBL(others)
+* Th May 5 - MCQ testing(Optional)/PBL(others)
 * F May 6 - Crossover Grading
 
 
