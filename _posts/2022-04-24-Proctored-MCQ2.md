@@ -4,9 +4,11 @@ This is the second of two weeks of AP Test Study. Everyone will be performing AP
 *  Monday May 2 - AP Create Task Due
 *  Monday May 9 - AP Exam
 ### Practice Testing
-Everyone is doing test this week.  Only exception is if I have observed actions in your PBL and provided an exception.
-* Testing
-    * MCQ testing.  MCQ scores will be posted on GitHub Pages.  AP Testers will provide corrections, PBL Testers only need scores.
+Everyone is doing test this Tuesday.
+* Testing Rules
+    * MCQ testing completed during class.
+    * MCQ scores will be posted on GitHub Pages.  
+    * AP Testers will provide corrections, PBL Testers only need scores.
 
 
 ### Grading Adjustments
@@ -34,7 +36,7 @@ The big CS event for this week will be Monday, crossover grading including creat
 * M - Introduction to Week, Crossover Grading including create task peer review, ASI Prep
 * Tu - MCQ testing, everyone
 * W - ASI Prep, AP Test Study/CB Create Task or PBL
-* Th - MCQ testing, everyone
+* Th - Create Task Crossover and Working Session
 * F - ASI Event
 
 
@@ -42,8 +44,8 @@ The big CS event for this week will be Monday, crossover grading including creat
 Class will mostly be a study hall.  As an exception, other classroom study will be acceptable.  
 * M May 2 - Crossover Grading 20 minutes
 * Tu May 3 -  MCQ testing(AP Test takers)/PBL(others)
-* W May 4 - Study or PBL
-* Th May 5 - Study Hall
+* W May 4 - Study Hall or PBL
+* Th May 5 - MCQ testing(AP Test takers)/PBL(others)
 * F May 6 - Crossover Grading
 
 
