@@ -5,8 +5,8 @@ This is the second of two weeks of AP Test Study. Everyone will be performing AP
 *  Monday May 9 - AP Exam
 
 
-### Practice Testing nad Create Task
-Everyone is doing test this Tuesday.
+### Practice Testing and Create Task
+Everyone is taking test this Tuesday.
 * MCQ Testing Rules
     * MCQ testing completed during class.
     * MCQ scores will be posted on GitHub Pages.  
