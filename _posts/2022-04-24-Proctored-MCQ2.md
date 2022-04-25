@@ -10,15 +10,18 @@ Review ticket should be provided by grader with check boxes and clear tangibles 
     * Crossover.  Grading has been very casual lately. If tangible work is not shown in review ticket, work should be considered incomplete and .5/1 should be maximum score.  In crossover session, you have options to suggest and update information during grading.  However, if grader provides 1/1 on work without tangibles they will max out at 4.5/5 on their own work.  Collaboration and Peer review is a key part of Computer Science.
     * Attendance.  Absence, Sick, or Events.  These last couple of weeks many have been missing class.  I have asked, in the past, that you message me in Slack and discuss what you can do to make things up.  In PBL, as well as Test Prep, attendance is very important.  Also, if you don't participate in the events of class, like peer review grading, you are missing important learning experiences.
     * Teacher review.  From now on Teacher will reserve .5 after crossover evaluations.  Maximum crossover score will be 4.5/5.  Teacher will be looking at Tangbiles, Student completeness, and Grader evaluations for final .5.  
-### Here is Friday Improv Activity - Extra credit and donuts will be up for grabs for winners.
-Northeastern University requires all of its computer science majors to take improv class ... The Wall Street Journal says it "forces students to come out of their shells and exercise creative play" before they can get their diplomas. ... "We saw a lot of hysterics and crying," says Carla E. Brodley, dean of the computer science department. 
+
+### Here is Friday Acting/Skit/Improv (ASI) activity - Extra credit grading and donuts will be up for grabs.
+Northeastern University requires all of its computer science majors to take improv class ... The Wall Street Journal says it "forces students to come out of their shells and exercise creative play" before they can get their diplomas. ... "We saw a lot of hysterics and crying," says Carla E. Brodley, dean of the computer science department.).  
+
 * Rules...
-    1. Pick a subject that is related to Tech, Teaching, Study, Classroom or N@tM.
-    2. Must be done in one or two Scrum Teams, not participating is a 1 point deduction from Seed
-    3. Objective is to make Teacher(s) laugh, cry, or be amazed. Probably best if it has an educational basis.
-    4. Top improv or improv ideas may earn spots in N@tM finals, with additional REWARDS.
+    1. Pick a subject that is related to Tech, Algorithm, Teaching, Study, Classroom or N@tM experience.
+    2. Must be done in one or two Scrum Teams, anyone who does not participate will receive a 1 point deduction from Seed
+    3. Objective is to make Teacher(s) laugh, cry, or be amazed. Make sure there is some CS educational basis to ASI activity.
+    4. Top ASI and/or ASI ideas may earn spots in N@tM finals, with additional REWARDS.
     5. Time 2 to 5 minutes
-    * Tech improv brain invigoration, over the top example: https://www.youtube.com/watch?v=14La4BKNoqc
+    * ASI brain invigoration sample, an over the top example: https://www.youtube.com/watch?v=14La4BKNoqc
+    * CS education basis topics/parodies: Stand-up Meeting, Tech Talks, Test Prep Tue, Sorts, Frontent/Backend, Sassy, POJO, POM.xml, Class, Extends, Overrides, Templates, public/static/void/main, Instance, , Objects, VariablesIF ELSE, Live Grading, Crossover Grading, N@tM presentations, Sponsor requirements meeting, GitHub, GitHub Pages, Deployment, Paper testing, IntelliJ, Replit
 ### Study Week 2 Schedule
 Current week
 The big CS event for this week will be Monday, crossover grading including create task peer review
