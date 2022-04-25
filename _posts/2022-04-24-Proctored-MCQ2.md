@@ -23,11 +23,11 @@ Northeastern University requires all of its computer science majors to take impr
 ### Study Week 2 Schedule
 Current week
 The big CS event for this week will be Monday, crossover grading including create task peer review
-* M - Introduction to Week, Crossover Grading including create task peer review, Improv Prep
+* M - Introduction to Week, Crossover Grading including create task peer review, ASI Prep
 * Tu - MCQ testing, everyone
-* W - Improv Prep, AP Test Study/CB Create Task or PBL
+* W - ASI Prep, AP Test Study/CB Create Task or PBL
 * Th - MCQ testing, everyone
-* F - Improv Event
+* F - ASI Event
 ###  Study Week 3 Schedule look ahead
 Class will mostly be a study hall.  As an exception, other classroom study will be acceptable.  
 * M May 2 - Crossover Grading 20 minutes
