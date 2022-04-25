@@ -1,5 +1,8 @@
 # 2022 Tri 3 Week 6: 4/25 - 5/2, AP Preparation Week 2.
 This is the second of two weeks of AP Test Study. Everyone will be performing AP Classroom MCQs, even PBL coders unless they get an exception.
+### AP Exam
+*  M May 2 - AP Create Task Due
+*  M May 9 - AP Exam / PBL
 ### Practice Testing
 Everyone is doing test this week.  Only exception is if I have observed actions in your PBL and provided an exception.
 * Testing
@@ -42,10 +45,5 @@ Class will mostly be a study hall.  As an exception, other classroom study will 
 * W May 4 - Study or PBL
 * Th May 5 - Study Hall
 * F May 6 - Crossover Grading
-
-
-### AP Exam
-*  M May 2 - AP Create Task Due
-*  M May 9 - AP Exam / PBL
 
 
