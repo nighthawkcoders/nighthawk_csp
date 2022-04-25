@@ -12,8 +12,7 @@ Review ticket should be provided by grader with check boxes and clear tangibles 
     * Teacher review.  From now on Teacher will reserve .5 after crossover evaluations.  Maximum crossover score will be 4.5/5.  Teacher will be looking at Tangbiles, Student completeness, and Grader evaluations for final .5.  
 
 ### Here is Friday Acting/Skit/Improv (ASI) activity - Extra credit grading and donuts will be up for grabs.
-Northeastern University requires all of its computer science majors to take improv class ... The Wall Street Journal says it "forces students to come out of their shells and exercise creative play" before they can get their diplomas. ... "We saw a lot of hysterics and crying," says Carla E. Brodley, dean of the computer science department.).  
-
+Northeastern University requires all of its computer science majors to take improv class ... The Wall Street Journal says it "forces students to come out of their shells and exercise creative play" before they can get their diplomas. ... "We saw a lot of hysterics and crying," says Carla E. Brodley, dean of the computer science department.  
 * Rules...
     1. Pick a subject that is related to Tech, Algorithm, Teaching, Study, Classroom or N@tM experience.
     2. Must be done in one or two Scrum Teams, anyone who does not participate will receive a 1 point deduction from Seed
@@ -21,7 +20,7 @@ Northeastern University requires all of its computer science majors to take impr
     4. Top ASI and/or ASI ideas may earn spots in N@tM finals, with additional REWARDS.
     5. Time 2 to 5 minutes
     * ASI brain invigoration sample, an over the top example: https://www.youtube.com/watch?v=14La4BKNoqc
-    * CS education basis topics/parodies: Stand-up Meeting, Tech Talks, Test Prep Tue, Sorts, Frontent/Backend, Sassy, Class, Templates, Instance, , Objects, Variables, IF ELSE, Live Grading, Crossover Grading, N@tM presentations, Sponsor requirements meeting, GitHub, GitHub Pages, Deployment, Paper testing, IntelliJ, Replit
+    * CS education basis topics/parodies: Stand-up Meeting, Tech Talks, Test Prep Tue, Frontent/Backend, Sassy, Class, Instance, Objects, Templates, Variables, IF ELSE, Loops, Sorts, Recursion, CRUD, Live Grading, Crossover Grading, N@tM presentations, Sponsor requirements meeting, GitHub, GitHub Pages, PBL, Scrum Board, Issues, Scrum Master/other roles,  Deployment, RPi, AWS, DNS, Freenom, Paper testing, IntelliJ, Replit 
 ### Study Week 2 Schedule
 Current week
 The big CS event for this week will be Monday, crossover grading including create task peer review
