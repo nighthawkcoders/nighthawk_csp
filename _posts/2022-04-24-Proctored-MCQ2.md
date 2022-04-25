@@ -17,10 +17,10 @@ Everyone is doing test this Tuesday.
 
 
 ### Grading Adjustments
-Review ticket should be provided by coder with check boxes and clear tangibles showing completion. I have not been seeing this, yet the crossover grader is giving extremely high marks.  For remainder of year, particularly as we move back to PBL project, students need to provide clarity of tangibles in their review ticket.
+Review ticket should be provided by owner-coder with check boxes and clear tangibles showing completion. I have not been seeing this, yet the crossover-grader is giving extremely high marks.  For remainder of year, particularly as we move back to PBL project, owner-coder needs to provide clarity of tangibles in their review ticket.
 * Adjustments
-    * Crossover.  Collaboration and Peer review is a key part of Computer Science.  Grading has been very casual lately. If tangible work is not shown in review ticket, work should be considered incomplete and .5/1 should be maximum score.  In crossover session, you have options to suggest and update information with owner during grading.  In the end of grading session, if grader provides 1/1 on work without tangibles they will max out at 4.5/5 on their own work.  
-    * Attendance.  Absence, Sick, or Events.  These last couple of weeks many have been missing class.  I have asked, in the past, that you message me in Slack and discuss what you can do to make things up.  In PBL, as well as Test Prep, attendance is very important.  Also, if you don't participate in the events of class, like peer review grading, you are missing important learning experiences.
+    * Crossover grading.  Collaboration and Peer review is a key part of Computer Science.  Grading has been very casual lately. If tangible work is not shown in review ticket, work should be considered incomplete and .5/1 should be maximum score.  In crossover grading session, grader has the option to suggest and update information with owner-coder during grading.  In the end of grading session, if crossover-grader provides 1/1 on work without tangibles they will max out at 4.5/5 on their own work.  
+    * Attendance.  Absence, Sick, or Events.  These last couple of weeks many have been missing class.  I have asked, in the past, that you message me in Slack and discuss what you can do to make things up.  In PBL, as well as Test Prep, attendance is very important.  Also, if you don't participate in the events of class, like crossover-grading, you are missing out on an important learning experiences.
     * Teacher review.  From now on Teacher will reserve .5 after crossover evaluations.  Maximum crossover score will be 4.5/5.  Teacher will be looking at Tangbiles, Student completeness, and Grader evaluations for final .5.  
 
 
