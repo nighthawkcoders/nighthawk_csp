@@ -37,7 +37,7 @@ The big CS event for this week will be Monday, crossover grading including creat
 
 ###  Study Week 3 Schedule look ahead
 Class will mostly be a study hall.  As an exception, other classroom study will be acceptable.  
-* M May 2 - AP Create Task Due / Crossover Grading 20 minutes
+* M May 2 - Crossover Grading 20 minutes
 * Tu May 3 -  MCQ testing(AP Test takers)/PBL(others)
 * W May 4 - Study or PBL
 * Th May 5 - Study Hall
@@ -45,6 +45,7 @@ Class will mostly be a study hall.  As an exception, other classroom study will 
 
 
 ### AP Exam
-* M May 9 - AP Exam / PBL
+*  M May 2 - AP Create Task Due
+*  M May 9 - AP Exam / PBL
 
 
