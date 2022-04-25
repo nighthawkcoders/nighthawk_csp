@@ -38,7 +38,7 @@ Northeastern University requires all of its computer science majors to take impr
 
 
 ### Study Week 2 Schedule
-Current week
+Current week  
 The big CS event for this week will be Monday, crossover grading including create task peer review
 * M - Introduction to Week, Crossover Grading including create task peer review, ASI Planning
 * Tu - MCQ testing, everyone
