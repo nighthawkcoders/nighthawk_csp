@@ -18,7 +18,7 @@ Northeastern University requires all of its computer science majors to take impr
     3. Objective is to make Teacher(s) laugh, cry, or be amazed. Make sure there is some CS educational basis to ASI activity.
     4. Top ASI and/or ASI ideas may earn spots in N@tM finals, with additional REWARDS.
     5. Time 2 to 5 minutes
-    6. Video recording is a Plus, Plus
+    6. Stage is center table, white board, projections, pulpit.  Video recording is a Plus, Plus
     * ASI brain invigoration sample, an over the top example: https://www.youtube.com/watch?v=14La4BKNoqc
     * CS education basis topics/parodies: Stand-up Meeting, Tech Talks, Test Prep Tue, Frontent/Backend, Sassy, Class, Instance, Objects, Templates, Variables, IF ELSE, Loops, Sorts, Recursion, CRUD, Live Grading, Crossover Grading, N@tM presentations, Sponsor requirements meeting, GitHub, GitHub Pages, PBL, Scrum Board, Issues, Scrum Master/other roles,  Deployment, RPi, AWS, DNS, Freenom, Paper testing, IntelliJ, Replit 
 ### Study Week 2 Schedule
