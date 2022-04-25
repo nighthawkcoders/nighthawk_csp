@@ -4,7 +4,7 @@ This is the second of two weeks of AP Test Study. Everyone will be performing AP
 *  Monday May 2 - AP Create Task Due
 *  Monday May 9 - AP Exam
 ### Practice Testing and Create Task
-Everyone is taking test this Tuesday.
+Everyone is taking the test this Tuesday.
 * MCQ Testing Rules
     * MCQ testing completed during class.
     * MCQ scores will be posted on GitHub Pages.  
@@ -12,8 +12,6 @@ Everyone is taking test this Tuesday.
 * Create Task Crossover Review Rules
     * Reviewer must make comments on Video
     * Reviewer must make comments and evaluate Each section of write-up
-
-
 ### Grading Adjustments
 Review ticket should be provided by owner-coder with check boxes and clear tangibles showing completion. I have not been seeing this, yet the crossover-grader is giving extremely high marks.  For remainder of year, particularly as we move back to PBL project, owner-coder needs to provide clarity of tangibles in their review ticket.
 * Adjustments
