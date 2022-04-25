@@ -21,7 +21,7 @@ Northeastern University requires all of its computer science majors to take impr
     4. Top ASI and/or ASI ideas may earn spots in N@tM finals, with additional REWARDS.
     5. Time 2 to 5 minutes
     * ASI brain invigoration sample, an over the top example: https://www.youtube.com/watch?v=14La4BKNoqc
-    * CS education basis topics/parodies: Stand-up Meeting, Tech Talks, Test Prep Tue, Sorts, Frontent/Backend, Sassy, POJO, POM.xml, Class, Extends, Overrides, Templates, public/static/void/main, Instance, , Objects, VariablesIF ELSE, Live Grading, Crossover Grading, N@tM presentations, Sponsor requirements meeting, GitHub, GitHub Pages, Deployment, Paper testing, IntelliJ, Replit
+    * CS education basis topics/parodies: Stand-up Meeting, Tech Talks, Test Prep Tue, Sorts, Frontent/Backend, Sassy, Class, Templates, Instance, , Objects, Variables, IF ELSE, Live Grading, Crossover Grading, N@tM presentations, Sponsor requirements meeting, GitHub, GitHub Pages, Deployment, Paper testing, IntelliJ, Replit
 ### Study Week 2 Schedule
 Current week
 The big CS event for this week will be Monday, crossover grading including create task peer review
