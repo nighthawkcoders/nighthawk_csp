@@ -9,7 +9,7 @@ Everyone is doing test this Tuesday.
     * MCQ testing completed during class.
     * MCQ scores will be posted on GitHub Pages.  
     * AP Testers will provide corrections, PBL Testers only need scores.
-* Create Task Review Rules
+* Create Task Crossover Review Rules
     * Reviewer must make comments on Video
     * Reviewer must make comments and evaluate Each section of write-up
 
