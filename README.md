@@ -24,7 +24,7 @@
     <td>May 30 - June 3</td>
     <td>PBL Customer Project Due</td>
     <td>none</td>
-    <td>N@tM Tue 6/1     6-7:30pm</td>
+    <td>N@tM Tue 6/1 6-7:30pm</td>
     <td>Customer Project Final Review</td>
    </tr>
    
