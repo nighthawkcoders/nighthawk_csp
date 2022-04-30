@@ -1,5 +1,5 @@
 # 2022 Tri 3 Week 7: 5/2 - 5/6, AP Exams Week 1.
-This is the first of to weeks of AP Exams.
+This is the first of the two weeks of AP Exams.
 ### AP Exam
 *  Monday May 2 - CB AP Create Task Due **before 9PM on Monday 5/2**
 *  Monday May 9 - CB AP CSP MCQ Exam - **70 questions in 2 hours** 
