@@ -1,4 +1,4 @@
-# 2022 Tri 3 Week 6: 5/2 - 5/6, AP Exams Week 1.
+# 2022 Tri 3 Week 7: 5/2 - 5/6, AP Exams Week 1.
 This is the first of to weeks of AP Exams.
 ### AP Exam
 *  Monday May 2 - CB AP Create Task Due **before 9PM on Monday 5/2**
