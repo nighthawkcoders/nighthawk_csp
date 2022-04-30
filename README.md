@@ -59,7 +59,7 @@
     <td>7</td>
     <td>May 2 - 6</td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/_posts/2022-05-01-AP-Exams-Week1.md">AP Exams Week 1</a></td>
-    <td>Create Task Due May 2nd</td>
+    <td>Create Task Due May 2nd. 08:59PM PST</td>
     <td>Proctored MCQs</td>
     <td><a href="https://poway.instructure.com/courses/112335/assignments/2103663">Proctored MCQ - Quiz5 Score</a></td>
    </tr>
