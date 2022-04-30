@@ -1,5 +1,5 @@
 # 2022 Tri 3 Week 8: 5/9 - 5/13, AP Exams Week 2.
-This is the second of to weeks of AP Exams.
+This is the second of the twi weeks of AP Exams.
 ### AP Exam
 *  Monday May 9 - CB AP CSP MCQ Exam - **70 questions in 2 hours** 
 
