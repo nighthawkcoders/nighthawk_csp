@@ -20,11 +20,11 @@ Class will mostly be a study hall.  As an exception, other classroom study will 
 * F May 6 - Crossover grading, Study Hall/PBL 
 
 ###  AP Exams Week 2 Schedule look ahead
-* M May 2 - APCSP CB MCQ TEST -70 Questions in 2Hrs
-* Tu May 3 - Transition back to PBL
-* W May 4 -  CCC PBL
-* Th May 5 - TT
-* F May 6 - PBL Live Presentations To Class in N@tM format
+* M May 9 - APCSP CB MCQ TEST -70 Questions in 2Hrs
+* Tu May 10 - Transition back to PBL
+* W May 11 -  CCC PBL
+* Th May 12 - TT
+* F May 13 - PBL Live Presentations To Class in N@tM format
 
 ### Grading Adjustments
 Review ticket should be provided by owner-coder with check boxes and clear tangibles showing completion. I have not been seeing this, yet the crossover-grader is giving extremely high marks.  For remainder of year, particularly as we move back to PBL project, owner-coder needs to provide clarity of tangibles in their review ticket.
