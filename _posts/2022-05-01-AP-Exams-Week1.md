@@ -4,24 +4,24 @@ This is the first of the two weeks of AP Exams.
 *  Monday May 2 - CB AP Create Task Due **before 9PM on Monday 5/2**
 *  Monday May 9 - CB AP CSP MCQ Exam - **70 questions in 2 hours** 
 
-
 ### Practice Testing and Create Task
 * Complete Create Task and submit.
 * MCQ Testing Rules
     * MCQ Quiz5 completed during class.
     * MCQ scores should be posted on GitHub Pages.  
-    * 
+ 
+ 
 ###  AP Exams Week 1 Schedule
 Class will mostly be a study hall.  As an exception, other classroom study will be acceptable.  
-* M May 2 - Complete CB Create Task/ AP CSP MCQ test study
+* M May 2 - Complete CB Create Task/ AP CSP MCQ test study or PBL
 * Tu May 3 -  Crossover grading of CB Quiz score/corrections and Create Task on GH Pages - See Grading Adjustments below
 * W May 4 - MCQ Quiz5/PBL
 * Th May 5 - Study Hall or PBL  
 * F May 6 - Crossover grading, Study Hall/PBL 
 
 ###  AP Exams Week 2 Schedule look ahead
-* M May 9 - APCSP CB MCQ TEST -70 Questions in 2Hrs
-* Tu May 10 - Transition back to PBL
+* M May 9 - APCSP CB MCQ TEST - 70 Questions in 2Hrs
+* Tu May 10 - Transition back to PBL 
 * W May 11 -  CCC PBL
 * Th May 12 - TT
 * F May 13 - PBL Live Presentations To Class in N@tM format
