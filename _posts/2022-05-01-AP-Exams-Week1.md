@@ -13,17 +13,17 @@ This is the first of the two weeks of AP Exams.
  
 ###  AP Exams Week 1 Schedule
 Class will mostly be a study hall.  As an exception, other classroom study will be acceptable.  
-* M May 2 - Complete CB Create Task/ AP CSP MCQ test study or PBL
+* M May 2 - Complete CB Create Task/ Study Hall or PBL
 * Tu May 3 -  Crossover grading of CB Quiz score/corrections and Create Task on GH Pages - See Grading Adjustments below
-* W May 4 - MCQ Quiz5/PBL
+* W May 4 - MCQ Quiz5 or PBL
 * Th May 5 - Study Hall or PBL  
-* F May 6 - Crossover grading, Study Hall/PBL 
+* F May 6 - Crossover grading, Study Hall or PBL 
 
 ###  AP Exams Week 2 Schedule look ahead
 * M May 9 - APCSP CB MCQ TEST - 70 Questions in 2Hrs
 * Tu May 10 - Transition back to PBL 
-* W May 11 -  CCC PBL
-* Th May 12 - TT
+* W May 11 -  Plan Plan Plan or Code Code Code
+* Th May 12 - Tech Talk, Code Code Code
 * F May 13 - PBL Live Presentations To Class in N@tM format
 
 ### Grading Adjustments
