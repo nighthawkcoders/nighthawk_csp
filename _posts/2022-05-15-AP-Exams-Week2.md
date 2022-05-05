@@ -7,7 +7,7 @@ This is the second of the two weeks of AP Exams.
 * M May 9 - APCSP CB MCQ TEST - 70 Questions in 2Hrs
 * Tu May 10 - Transition back to PBL
 * W May 11 -  CCC PBL
-* Th May 12 - TT
+* Th May 12 - TT - Python Markdown
 * F May 13 - PBL Live Presentations To Class in N@tM format
 
 
