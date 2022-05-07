@@ -51,7 +51,7 @@
     <td>May 9 - 13</td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/_posts/2022-05-15-AP-Exams-Week2.md">AP Exams Week 2</a></td>
     <td>CSP Exam May 9th</td>
-    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri3-TT4-Notes-using-SQL-Database">Notes Using SQL,Python Markdown, PBL</a></td>
+    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri3-TT4-Markdown-Notes-using-SQL-Database">Notes Using SQL,Python Markdown, PBL</a></td>
     <td><a href="https://poway.instructure.com/courses/112335/assignments/2103666">Sponsor Project Coding</a></td>
    </tr>
    
