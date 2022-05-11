@@ -96,7 +96,7 @@
     <td>April 4 - 8</td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-Week-PBL-Login-and-Create-Task">Create Task and Login</a></td>
     <td>CB Create Task</td>
-    <td><a href = "https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TT3--Accounts-and-Login">Accounts and Login</a></td>
+    <td><a href = "https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3:-Tech-Talk-Week-4:-Accounts-and-Login">Accounts and Login</a></td>
       <td><a href="https://poway.instructure.com/courses/112335/assignments/2091155">Logins and CB Create Task</a></td>
    </tr>
    
