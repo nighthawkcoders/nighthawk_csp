@@ -170,15 +170,13 @@
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2-TPT-9---Computing-Systems-and-Networks">TPT9</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/2017405">Create Task Check</a></td>
    </tr>
-   
    <tr>
     <td>8</td>
     <td>Google Search</td>
     <td>none</td>
-    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-Tech-Talk-8-Google-Search">TT8</a></td>
+    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-Tech-Talk-Week-8:-Google-Search">TT8</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/2013668">Crossover Coding</a></td>
    </tr>
-   https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TT7-Graphing,-Simulations,-Snake
    <tr>
     <td>7</td>
     <td>Graphing, Simulation, Snake</td>
