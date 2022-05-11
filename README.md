@@ -154,12 +154,11 @@
     <td>none</td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/2017407">PBL Final</a></td>
    </tr>
-   
    <tr>
     <td>10</td>
     <td>PBL 2, Teacher TPT, Student TT</td>
     <td><a href="https://apclassroom.collegeboard.org/103/home?unit=5">5.1 - 5.6</a></td>
-    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2-TPT-10----Going-Beyond-CB">TPT10</a></td>
+    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TPT-Week-10:-Going-Beyond-CB">TPT10</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/2017406">Final Exam</a></td>
    </tr>
    <tr>
