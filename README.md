@@ -215,11 +215,12 @@
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TT3---Deployment---Subdomains-and-Certbot">TT3</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1943626">WIP Review</a></td>
   </tr>
+   https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TT2-SQLite-Database-Intro
   <tr>
     <td>2</td>
     <td>Databases, Policies</td>
     <td><a href="https://apclassroom.collegeboard.org/103/home?unit=2">2.3,2.4</a></td>
-    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TT2-SQLite-Database-Intro">TT2</a></td>
+    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-Tech-Talk-Week-2:-SQLite-Database-Intro">TT2</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1943619">Home Pages</a></td>
   </tr>
   <tr>
