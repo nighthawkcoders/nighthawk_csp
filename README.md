@@ -166,7 +166,7 @@
     <td>9</td>
     <td>PBL 1, Teacher TPT, Student TT</td>
     <td><a href="https://apclassroom.collegeboard.org/103/home?unit=4">4.1, 4.2, 4.3</a></td>
-    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2-TPT-9---Computing-Systems-and-Networks">TPT9</a></td>
+    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TPT-Week-9:-Computing-Systems-and-Networks">TPT9</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/2017405">Create Task Check</a></td>
    </tr>
    <tr>
@@ -198,7 +198,6 @@
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1967730">PBL Showing</a></td>
    </tr>
    <tr>
-      https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TT4-Binary-Search,-Calling-Procedures,-and-Developing-Procedures
     <td>4</td>
     <td>Procedures, Blueprint, <a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/GitHub-Pages-and-Jekyll">Jekyll</a></td>
     <td><a href="https://apclassroom.collegeboard.org/103/home?unit=3">3.11,3.12,3.13</a></td>
@@ -212,7 +211,6 @@
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-Tech-Talk-Week-3:-Deployment-Subdomains-and-Certbot">TT3</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1943626">WIP Review</a></td>
   </tr>
-   https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TT2-SQLite-Database-Intro
   <tr>
     <td>2</td>
     <td>Databases, Policies</td>
