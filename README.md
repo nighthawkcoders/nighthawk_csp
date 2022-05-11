@@ -193,12 +193,13 @@
     <td>none</td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TT6-Vocab-Competency">TT6</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1995361">Mid Term Vocab Competency</a></td>
-   </tr>
+   </tr
+      https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2%3A-TT5---Algorithms/_edit>
    <tr>
     <td>5</td>
     <td>Algorithms, <a href="https://csp.nighthawkcodingsociety.com/algorithm/fibonacci/">Fibo</a>, <a href="https://csp.nighthawkcodingsociety.com/algorithm/palindrome/">Pali</a></td>
     <td><a href="https://apclassroom.collegeboard.org/103/home?unit=3">3.14,3.15</a></td>
-    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TT5---Algorithms">TT5</a></td>
+    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-Tech-Talk-Week-5:-Algorithms">TT5</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1967730">PBL Showing</a></td>
    </tr>
    <tr>
