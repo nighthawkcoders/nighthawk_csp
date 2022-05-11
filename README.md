@@ -186,15 +186,13 @@
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TT7-Graphing,-Simulations,-Snake">TT7</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1967730">PBL Showing Take 2</a></td>
    </tr>
-      
    <tr>
     <td>6</td>
     <td>Mid Term and Ketchup</td>
     <td>none</td>
-    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TT6-Vocab-Competency">TT6</a></td>
+    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-Tech-Talk-Week-6:-Vocab-Competency">TT6</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1995361">Mid Term Vocab Competency</a></td>
    </tr
-      https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2%3A-TT5---Algorithms/_edit>
    <tr>
     <td>5</td>
     <td>Algorithms, <a href="https://csp.nighthawkcodingsociety.com/algorithm/fibonacci/">Fibo</a>, <a href="https://csp.nighthawkcodingsociety.com/algorithm/palindrome/">Pali</a></td>
