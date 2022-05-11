@@ -162,7 +162,6 @@
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2-TPT-10----Going-Beyond-CB">TPT10</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/2017406">Final Exam</a></td>
    </tr>
-   
    <tr>
     <td>9</td>
     <td>PBL 1, Teacher TPT, Student TT</td>
