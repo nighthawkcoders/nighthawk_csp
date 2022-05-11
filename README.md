@@ -212,7 +212,7 @@
     <td>3</td>
     <td>Certbot, CB-exam</td>
     <td><a href="https://apclassroom.collegeboard.org/103/assignments?quizId=4323650&status=assigned">MCQ Test</a></td>
-    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TT3---Deployment---Subdomains-and-Certbot">TT3</a></td>
+    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-Tech-Talk-Week-3:-Deployment-Subdomains-and-Certbot">TT3</a></td>
     <td><a href="https://poway.instructure.com/courses/112435/assignments/1943626">WIP Review</a></td>
   </tr>
    https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-2:-TT2-SQLite-Database-Intro
