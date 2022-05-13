@@ -43,7 +43,7 @@
     <td>none</td>
     <td>PBL, checkpoints Wed-Thu</td>
     <td>CRUD help on request</td>
-    <td>Customer Project Feature Acceptance</td>
+    <td>none</td>
    </tr>
    
    <tr>
