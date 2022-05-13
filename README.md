@@ -32,17 +32,17 @@
     <td>10</td>
     <td>May 23 - 27</td>
     <td>none</td>
+    <td>PBL, checkpoints Wed-Thu</td>
+    <td>CRUD help on request</td>
     <td>none</td>
-    <td>PBL, Sharing database via API's with Crossover Team</td>
-    <td>Customer Project Deployment Review</td>
    </tr>
    
    <tr>
     <td>9</td>
     <td>May 16 - 20</td>
     <td>none</td>
-    <td>PBL, Full Stack Algoritms - Sorting</td>
-    <td>PBL, CRUD operations and Async</td>
+    <td>PBL, checkpoints Wed-Thu</td>
+    <td>CRUD help on request</td>
     <td>Customer Project Feature Acceptance</td>
    </tr>
    
