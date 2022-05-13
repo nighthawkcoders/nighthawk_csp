@@ -31,8 +31,8 @@
    <tr>
     <td>10</td>
     <td>May 23 - 27</td>
-    <td>none</td>
     <td>PBL, checkpoints Wed-Thu</td>
+    <td>none</td>
     <td>CRUD help on request</td>
     <td>none</td>
    </tr>
@@ -40,8 +40,8 @@
    <tr>
     <td>9</td>
     <td>May 16 - 20</td>
-    <td>none</td>
     <td>PBL, checkpoints Wed-Thu</td>
+    <td>none</td>
     <td>CRUD help on request</td>
     <td>none</td>
    </tr>
