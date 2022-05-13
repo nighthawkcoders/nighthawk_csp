@@ -25,7 +25,7 @@
     <td>PBL Customer Project Due</td>
     <td>none</td>
     <td>N@tM Tue 6/1 6-7:30pm</td>
-    <td>Customer Project Final Review</td>
+    <td><a href="https://poway.instructure.com/courses/112335/assignments/2109518">Customer Project Final Review</a></td>
    </tr>
    
    <tr>
