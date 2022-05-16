@@ -23,7 +23,7 @@ This is the first of the two weeks dedicated to Project Development.  Teacher ex
        * Meeting team and sponsor objectives
 
 #### Team Expectations - Weekly (Wednesday at EOD, 6:00pm)
-* Mortensen AWS is a must for weekly reviews
+* Mortensen PUSD AWS is a must for every team for weekly reviews
 * Minimum of 3 Scrum Team Review Tickets
     * Checkpoint with Individual progress and meeting Individual Expectations
     * Checkpoint with Scrum Master and meeting Master plan
