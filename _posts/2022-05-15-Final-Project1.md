@@ -14,15 +14,16 @@ This is the first of the two weeks dedicated to Project Development.  Teacher ex
 ### Expectations
 
 #### Individual Expectation - Weekly (Wednesday at BOD, 8:00am)
-* Minimum of 5 hours of Code, Code, Code
+* Minimum of 5 hours of Code, Code, Code; 4 hours can easily be performed in class
 * A personally developed Review Ticket with Tangibles
 * Tangibles that easily help individuals visualize work in project, honest contributions!
 * In ticket, review comments with Scrum Team crossover and Scrum Master
    * Score of 2 points, 1.8 maximum
-       * Meeting 5 hours with commit evidence
+       * Meeting 5 hours with commit evidence is minumum for .9
        * Meeting team and sponsor objectives
 
 #### Team Expectations - Weekly (Wednesday at EOD, 6:00pm)
+* Mortensen AWS is a must for weekly reviews
 * Minimum of 3 Scrum Team Review Tickets
     * Checkpoint with Individual progress and meeting Individual Expectations
     * Checkpoint with Scrum Master and meeting Master plan
