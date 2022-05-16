@@ -6,7 +6,7 @@ This is the first of the two weeks dedicated to Project Development.  Teacher ex
     
 ###  Final Project Development Week 1 Schedule
 * M May 16 - Expectations Speech, PBL Code Code Code
-* Tu May 17 - Tech Talk, PBL Code Code Code
+* Tu May 17 - PBL Code Code Code
 * W May 18 - Sponsor review, PBL Code Code Code
 * Th May 19 - Teacher review, PBL Code Code Code 
 * F May 20 - PBL Code Code Code  
