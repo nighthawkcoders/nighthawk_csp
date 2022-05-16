@@ -22,7 +22,7 @@
    <tr>
     <td>11</td>
     <td>May 30 - June 3</td>
-    <td>N@tM Week, PBL Customer Project Due</td>
+    <td>N@tM Week, PBL Sponsor Project Due</td>
     <td>none</td>
     <td>N@tM Tue 6/1 6-7:30pm</td>
     <td><a href="https://poway.instructure.com/courses/112335/assignments/2109518">Customer Project Final Review</a></td>
