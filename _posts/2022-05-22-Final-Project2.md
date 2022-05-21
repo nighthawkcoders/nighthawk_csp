@@ -11,7 +11,7 @@ This is the second of the two weeks dedicated to Project Development.  Teacher e
 * Th May 26 - Teacher review, PBL Code Code Code 
 * F May 27 - PBL Code Code Code  
 
-1 minute commercial video on Sponsor Project (advertise your accomplishments). ### **Due Tuesday 5/31 at 8:00AM**
+1 minute commercial video on Sponsor Project (advertise your accomplishments). **Due Tuesday 5/31 at 8:00AM**
 
 ### Expectations
 
