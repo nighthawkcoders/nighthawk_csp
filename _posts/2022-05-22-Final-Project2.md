@@ -1,5 +1,5 @@
-# 2022 Tri 3 Week 9: 5/23 - 5/27, Final Project Development Week 1.
-This is the first of the two weeks dedicated to Project Development.  Teacher expects 5 days of CompSci classroom work.
+# 2022 Tri 3 Week 9: 5/23 - 5/27, Final Project Development Week 2.
+This is the second of the two weeks dedicated to Project Development.  Teacher expects 5 days of CompSci classroom work.
 ### Live Review scheduled with Teacher and Sponsor 
 *  Thu is scheduled Teacher meeting
 *  Review Ticket required
@@ -11,7 +11,7 @@ This is the first of the two weeks dedicated to Project Development.  Teacher ex
 * Th May 26 - Teacher review, PBL Code Code Code 
 * F May 27 - PBL Code Code Code  
 
-### **1 minute commercial video on Sponsor Project (advertise your accomplishments). Due Tuesday 5/31 at 8:00AM**
+1 minute commercial video on Sponsor Project (advertise your accomplishments). ### **Due Tuesday 5/31 at 8:00AM**
 
 ### Expectations
 
