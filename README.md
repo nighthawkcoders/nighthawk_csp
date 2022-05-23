@@ -33,7 +33,7 @@
     <td>May 23 - 27</td>
     <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/_posts/2022-05-22-Final-Project2.md">Final Project Dev 2 </a></td>
     <td>none</td>
-    <td>CRUD help on request</td>
+    <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3:-Tech-Talk-Week-10:-Uploading-content-to-a-Web-Site">Uploading Content to a Web Site</a></td>
     <td>none</td>
    </tr>
    
