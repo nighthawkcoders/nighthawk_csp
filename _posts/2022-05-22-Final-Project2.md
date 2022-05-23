@@ -6,7 +6,7 @@ This is the second of the two weeks dedicated to Project Development. Teacher ha
 *  Review Ticket required
     
 ###  Final Project Development Week 2 Schedule
-* M May 23 - Teacher's Message, PBL Code Code Code
+* M May 23 - Teacher's Message, Notes, Uploads expectations, PBL Code Code Code
 * Tu May 24 - PBL Code Code Code
 * W May 25 - Sponsor review, PBL Code Code Code
 * Th May 26 - Teacher review, PBL Code Code Code 
