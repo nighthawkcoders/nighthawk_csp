@@ -14,7 +14,7 @@ This is the second of the two weeks dedicated to Project Development. Teacher ha
 
 1 minute commercial video on Sponsor Project (advertise your accomplishments). **Due Tuesday 5/31 at 8:00AM**
 
-### Expectations remain the same as explained last week.
+### Expectations on CCC remain the same as explained last week.
 
 #### Individual Expectation - Weekly (Wednesday at BOD, 8:00am)
 * Minimum of 5 hours of Code, Code, Code; 4 hours can easily be performed in class
