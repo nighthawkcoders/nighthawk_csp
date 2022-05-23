@@ -1,5 +1,6 @@
 # 2022 Tri 3 Week 10: 5/23 - 5/27, Final Project Development Week 2.
-This is the second of the two weeks dedicated to Project Development.  Teacher expects 5 days of CompSci classroom work.
+This is the second of the two weeks dedicated to Project Development. Teacher has provided Notes, and Uploads as options to enhance your project. I am particularly concerned about the lack of balance and meaninful contribution by all members within the team. Technical advancement, challenge, and project participation is the only way to get an "A" on this assignment. "A" and "B" grade will be dependent on how the points play out with regards to your effort and self-challenge on this project. Don't show up with pretty pictures and nothing regarding Data or Data Strucutres (group work will not carry those who don't participate). 7 classroom days remain.
+
 ### Live Review scheduled with Teacher and Sponsor 
 *  Thu is scheduled Teacher meeting
 *  Review Ticket required
@@ -13,7 +14,7 @@ This is the second of the two weeks dedicated to Project Development.  Teacher e
 
 1 minute commercial video on Sponsor Project (advertise your accomplishments). **Due Tuesday 5/31 at 8:00AM**
 
-### Expectations
+### Expectations remain the same as explained last week.
 
 #### Individual Expectation - Weekly (Wednesday at BOD, 8:00am)
 * Minimum of 5 hours of Code, Code, Code; 4 hours can easily be performed in class
