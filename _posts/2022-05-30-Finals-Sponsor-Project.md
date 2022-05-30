@@ -12,12 +12,12 @@ This is the Finals week for the sponsor project and presentation at the N@tM.
 
 ### Schecule for presentation at N@tM
 
-P4 Mort  6:00pm A101
-P4 Naidu 6:00pm A151
-P2 Mort  6:30pm A151
-P3 Mort  6:30pm A101
-P1 Mort  7:00pm A151
-P5 Naidu 7:00pm A101
+P4 Mort  6:00pm A101  
+P4 Naidu 6:00pm A151  
+P2 Mort  6:30pm A151  
+P3 Mort  6:30pm A101  
+P1 Mort  7:00pm A151  
+P5 Naidu 7:00pm A101  
 
     
 ###  Final Sponsor Project Week Schedule
