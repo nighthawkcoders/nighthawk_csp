@@ -12,7 +12,7 @@ This is the Finals week for the sponsor project and presentation at the N@tM.
     
 ###  Final Sponsor Project Week Schedule
 * Tu May 31 - Teacher's Message, Notes, Uploads, PBL Code Code Code
-* W  Jun 1  - PBL Final Code Code Code, present on the deployed website at the N@tM
+* W  Jun 1  - PBL Final Code Code Code, deploy, present on the deployed website at the N@tM
 * Th Jun 2  - Teacher review/final grading for seniors
 * F  Jun 3  - Teacher review/final grading for seniors
 
