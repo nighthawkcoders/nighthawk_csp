@@ -1,0 +1,7 @@
+version: '3'
+services:
+        web:
+                image: python_cspv1
+                build: .
+                ports:
+                        - "8082:8080"
