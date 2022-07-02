@@ -2,6 +2,8 @@ from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_cors import CORS
+
 
 """
 These object will be used throughout project.
@@ -21,3 +23,4 @@ Migrate(app, db)
 # Setup LoginManager object (app)
 login_manager = LoginManager()
 login_manager.init_app(app)
+CORS(app)

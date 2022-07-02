@@ -3,6 +3,7 @@ requests==2.27.1
 SQLAlchemy==1.4.34
 Werkzeug==2.0.0
 flask_login
+flask_cors
 flask_sqlalchemy
 flask_migrate
 flask_restful
